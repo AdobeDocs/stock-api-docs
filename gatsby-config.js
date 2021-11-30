@@ -14,9 +14,29 @@ module.exports = {
   siteMetadata: {
     pages: [
       {
-        title: 'Stock',
+        title: 'Stock Overview',
         path: '/'
       },
+      {
+        title: 'Api',
+        path: '/api/'
+      },
+      {
+        title: 'Getting started',
+        path: '/getting-started'
+      }
+    ],
+    subPages: [
+      {
+        title: 'Getting started',
+        path: '/getting-started/',
+        pages: [
+          {
+            title: 'Apps',
+            path: '/apps/'
+          }
+        ]
+      }
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`],
