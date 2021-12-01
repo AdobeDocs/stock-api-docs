@@ -2,7 +2,6 @@
 
 The API provides the following endpoints in the `https://stock.adobe.io/Rest` namespace:
 
-
 | **Endpoint** | **Purpose** |
 |----|----|
 | [/Media/1/Search/Files](api/11-search-reference.md) | Find, filter, sort, and paginate assets from Adobe Stock. |
@@ -15,9 +14,7 @@ The API provides the following endpoints in the `https://stock.adobe.io/Rest` na
 
 This reference also provides the following information:
 
-
 | **Topic** | **Content** |
 |----|----|
 | [Headers](api/10-headers-for-api-calls.md) | List of required and optional headers for all calls to the Adobe Stock API. |
 | [Locales](api/14-locale-codes.md) | List of all valid locale codes for localization. |
-

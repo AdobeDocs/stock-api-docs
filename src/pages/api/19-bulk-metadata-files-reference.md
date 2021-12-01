@@ -2,34 +2,37 @@
 
 The Files API is used to retrieve metadata from Adobe Stock, either one asset at a time, or in bulk.
 
-<!-- MarkdownTOC -->
+&lt;!-- MarkdownTOC --&gt;
 
-- [Files requests](#files-requests)
-    - [Authentication](#authentication)
-    - [Request headers](#request-headers)
-    - [URL parameters](#url-parameters)
-- [Responses](#responses)
-- [Example requests and responses](#example-requests-and-responses)
-- [Error handling](#error-handling)
-    - [Example invalid requests and error responses](#example-invalid-requests-and-error-responses)
+*   [Files requests](#files-requests)
+    *   [Authentication](#authentication)
+    *   [Request headers](#request-headers)
+    *   [URL parameters](#url-parameters)
+*   [Responses](#responses)
+*   [Example requests and responses](#example-requests-and-responses)
+*   [Error handling](#error-handling)
+    *   [Example invalid requests and error responses](#example-invalid-requests-and-error-responses)
 
-<!-- /MarkdownTOC -->
+&lt;!-- /MarkdownTOC --&gt;
 
 <a id="files-requests"></a>
+
 ## Files requests
 
 The Files API returns a JSON-formatted list of metadata attributes for a given list of Stock asset IDs.
 
 | Endpoints | Methods |
 |-----------|---------|
-| https://stock.adobe.io/Rest/Media/1/Files | GET | 
+| https://stock.adobe.io/Rest/Media/1/Files | GET |
 
 <a id="authentication"></a>
+
 ### Authentication
 
 Optional. The Authorization header is only required for retrieving the `is_licensed` field.
 
 <a id="request-headers"></a>
+
 ### Request headers
 
 See [Headers for Stock API Calls](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/10-headers-for-api-calls.md) for details about header content.
@@ -39,15 +42,17 @@ See [Headers for Stock API Calls](https://www.adobe.io/apis/creativecloud/stock/
 ● Optional headers: `X-Product-Location`, `X-Request-Id`
 
 <a id="url-parameters"></a>
+
 ### URL parameters
 
-| Parameter | Description | 
+| Parameter | Description |
 | ------------ | ------------- |
-| ids | Comma-separated list of file IDs, e.g. "`ids=100,101`". Maximum number of IDs is 110. Exceeding this limit triggers an error. String. | 
-| locale | Optional. Location language code for the API to use when returning localized messages. The API can usually get the user's default locale through the Authorization header. This value overrides that or provides a locale if not available through Authorization. String.<br><br>Default is en-US. See the full list of[  Locales](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/14-locale-codes.md). | 
-| result_columns[] | Optional. Fields to include in response. Note that some fields (`is_licensed`) require an authorization token. Array[].<br><br>__Tip:__ To combine results, use this syntax: `result_columns[]=is_licensed&result_columns[]=creation_date`<br><br>By default, only `id` is returned. For the full list, see the [Search API reference](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/11-search-reference.md). | 
+| ids | Comma-separated list of file IDs, e.g. "`ids=100,101`". Maximum number of IDs is 110. Exceeding this limit triggers an error. String. |
+| locale | Optional. Location language code for the API to use when returning localized messages. The API can usually get the user's default locale through the Authorization header. This value overrides that or provides a locale if not available through Authorization. String.<br/><br/>Default is en-US. See the full list of[  Locales](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/14-locale-codes.md). |
+| result_columns[] | Optional. Fields to include in response. Note that some fields (`is_licensed`) require an authorization token. Array[].<br/><br/>**Tip:** To combine results, use this syntax: `result_columns[]=is_licensed&result_columns[]=creation_date`<br/><br/>By default, only `id` is returned. For the full list, see the [Search API reference](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/11-search-reference.md). |
 
 <a id="responses"></a>
+
 ## Responses
 
 The response for any given request is dependent on the value of the `result_columns` argument. As mentioned, the only field returned by default is `id` (Stock asset ID, integer).
@@ -55,6 +60,7 @@ The response for any given request is dependent on the value of the `result_colu
 For a complete list of return fields, see the [Search API reference](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/11-search-reference.md).
 
 <a id="example-requests-and-responses"></a>
+
 ## Example requests and responses
 
 The basic use of the API (without setting result columns) only returns the list of IDs without additional metadata.
@@ -119,6 +125,7 @@ x-api-key: MyApiKey
 ```
 
 <a id="error-handling"></a>
+
 ## Error handling
 
 If any error is encountered, the response will be a JSON object containing the key `error` with a textual description of the error and the key `code` with a numeric identifier for the error.
@@ -134,6 +141,7 @@ If any error is encountered, the response will be a JSON object containing the k
 | 400 | 606 | More than 110 IDs supplied for `ids` parameter |
 
 <a id="example-invalid-requests-and-error-responses"></a>
+
 ### Example invalid requests and error responses
 
 ```javascript

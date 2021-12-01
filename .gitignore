@@ -1,2 +1,13 @@
+# mac 
 .DS_Store
 thumbs.db
+
+# npm yarn
+node_modules
+package.lock
+yarn-error.log
+
+# gatsby files
+.env
+.cache
+public

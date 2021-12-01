@@ -1,20 +1,21 @@
 # API authentication headers
 
-> _**Tl;dr version:** All Stock API requests require two basic headers, and authenticated requests require you to add an access token. Here you can learn the format for these headers and test them._
+> ***Tl;dr version:** All Stock API requests require two basic headers, and authenticated requests require you to add an access token. Here you can learn the format for these headers and test them.*
 
 #### Contents
-<!-- MarkdownTOC -->
 
-- [Overview](#overview)
-- [Store your credentials](#store-your-credentials)
-- [Create your basic header](#create-your-basic-header)
-    - [Test your API key header](#test-your-api-key-header)
-- [Generate an access token](#generate-an-access-token)
-    - [Important: Use the correct scope in your JWT](#important-use-the-correct-scope-in-your-jwt)
-- [Add token to header](#add-token-to-header)
-    - [Test your access token](#test-your-access-token)
+&lt;!-- MarkdownTOC --&gt;
 
-<!-- /MarkdownTOC -->
+*   [Overview](#overview)
+*   [Store your credentials](#store-your-credentials)
+*   [Create your basic header](#create-your-basic-header)
+    *   [Test your API key header](#test-your-api-key-header)
+*   [Generate an access token](#generate-an-access-token)
+    *   [Important: Use the correct scope in your JWT](#important-use-the-correct-scope-in-your-jwt)
+*   [Add token to header](#add-token-to-header)
+    *   [Test your access token](#test-your-access-token)
+
+&lt;!-- /MarkdownTOC --&gt;
 
 ## Overview
 
@@ -22,18 +23,15 @@ In the previous step, you registered your application on the [Adobe I/O Console]
 
 Note that these topics are explored in detail in each of these workflow guides, so only the summary of the process will be discussed here:
 
-
-
 *   [Service account workflow](07-workflow-guides.md)
 *   [OAuth workflow](07-workflow-guides.md)
 *   [Affiliate (API key) workflow](07-workflow-guides.md)
 
 ## Store your credentials
 
-The first thing you will need is the information given to you when you registered your application. Depending on which integration method you chose, you will only need particular fields (see a [screenshot](../images/io_all-integration-details.png) of each integration type).
+The first thing you will need is the information given to you when you registered your application. Depending on which integration method you chose, you will only need particular fields (see a [screenshot](./io_all-integration-details.png) of each integration type).
 
 Other than the API key, the information here--especially the client secret--should be safeguarded like any sensitive credentials, similar to your application's private key. At a minimum, this data should be stored on your server in an file inaccessible to the public. At no time should it be exposed in front-end JavaScript, for example.
-
 
 | **Integration type** | **Fields required** |
 |----|----|
@@ -45,19 +43,15 @@ Other than the API key, the information here--especially the client secret--shou
 
 The Adobe Stock APIs is a REST-based service. Subsequently, all requests to the Stock APIs require these HTTP headers:
 
-
-
 *   **x-api-key**: Your API key
 *   **X-Product**: Your application's name
 
 Example:
 
-
 ```http
     X-Product: MySampleApp/1.0
     X-API-Key: abc123c9f1194eac8a63cc25c1b9b9df
 ```
-
 
 The format for X-Product can be any string, however a common convention is to include the version number separated by a slash.
 
@@ -66,7 +60,6 @@ The format for X-Product can be any string, however a common convention is to in
 For unauthenticated requests such as normal search queries, this is all you need, and you can start building your application. But before you do, run a quick test to make sure it is working. Simply replace "YourApiKeyHere" with the key you generated, and when you run this command, you should get back JSON results of cats wearing costumes, proving that it works.
 
 Example search query using [curl](https://curl.haxx.se/). Note that line breaks have been added for clarity.
-
 
 ```bash
 curl "https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US
@@ -83,23 +76,20 @@ The creation of tokens is beyond the scope of this article, however it is covere
 For complete information about creating access tokens, see the Adobe I/O[ API Authentication Guide](https://www.adobe.io/content/udp/en/apis/cloudplatform/console/authentication). Here you will also find examples of creating JWTs using Java and Node.js.
 
 <a id="important-use-the-correct-scope-in-your-jwt"></a>
-### Important: Use the correct scope in your JWT
-Please note that if you are following the Service Account workflow, the Adobe I/O API Authentication Guide (above) uses a different scope in its sample JWT payload than the one required by the Stock API. The correct scope for your application is listed in the __JWT__ tab of the Adobe I/O Console, and it will include your proper payload.
 
-![JWT tab of Service Account integration](../images/io_jwt-tab.png)
+### Important: Use the correct scope in your JWT
+
+Please note that if you are following the Service Account workflow, the Adobe I/O API Authentication Guide (above) uses a different scope in its sample JWT payload than the one required by the Stock API. The correct scope for your application is listed in the **JWT** tab of the Adobe I/O Console, and it will include your proper payload.
+
+![JWT tab of Service Account integration](./io_jwt-tab.png)
 
 ## Add token to header
 
 Once your token is generated, add it to your authenticated request using this syntax:
 
-
-```
-    Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
-```
-
+        Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
 
 The sample token above comes from [jwt.io](https://jwt.io/), an excellent resource for learning about and troubleshooting tokens.
-
 
 ### Test your access token
 
@@ -107,14 +97,11 @@ Like we tested our API key header, now we can test our access token by combining
 
 Replace the text "PutYourAccessToken" with the token you generated, and replace "YourApiKeyHere" with your key, and run from a terminal prompt.
 
-
 ```bash
     curl "https://stock.adobe.io/Rest/Libraries/1/Member/Profile?locale=en_US" -H "authorization: Bearer PutYourAccessToken" -H "x-api-key: YourApiKeyHere" -H "x-product: MySampleApp/1.0"
 ```
 
-
-If you correctly generated an access token, you should see something like this (JSON has been formatted for display). 
-
+If you correctly generated an access token, you should see something like this (JSON has been formatted for display).
 
 ```json
     {
@@ -139,7 +126,6 @@ If you correctly generated an access token, you should see something like this (
     }
 ```
 
-
 Even if your image quota is 0, congratulations for getting this far! Generating the token is the most difficult part of the Stock API process.
 
-__>>> NEXT:__ Learn the Stock API command structure and  [start building your app](./04-creating-apps.md)!
+**&gt;&gt;&gt; NEXT:** Learn the Stock API command structure and  [start building your app](./04-creating-apps.md)!

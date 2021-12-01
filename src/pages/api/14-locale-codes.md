@@ -1,8 +1,6 @@
-
 # Locale codes
 
 Several API methods allow the use of locale codes so that you can retrieve asset information in your user's language.
-
 
 | Locale Code | Name |
 | ----- | ----- |
