@@ -2,17 +2,17 @@
 
 &lt;!-- MarkdownTOC --&gt;
 
-*   [Search requests](#search-requests)
-    *   [About search and filter criteria](#about-search-and-filter-criteria)
-    *   [Authentication](#authentication)
-    *   [Request headers](#request-headers)
-    *   [URL parameters](#url-parameters)
-*   [Responses](#responses)
-*   [Example returned comps values](#example-returned-comps-values)
-*   [Example queries and responses](#example-queries-and-responses)
-    *   [Common search queries](#common-search-queries)
-*   [Error codes](#error-codes)
-*   [More information](#more-information)
+- [Search requests](#search-requests)
+  - [About search and filter criteria](#about-search-and-filter-criteria)
+  - [Authentication](#authentication)
+  - [Request headers](#request-headers)
+  - [URL parameters](#url-parameters)
+- [Responses](#responses)
+- [Example returned comps values](#example-returned-comps-values)
+- [Example queries and responses](#example-queries-and-responses)
+  - [Common search queries](#common-search-queries)
+- [Error codes](#error-codes)
+- [More information](#more-information)
 
 &lt;!-- /MarkdownTOC --&gt;
 
@@ -26,8 +26,8 @@ A request using the Stock Search API retrieves a list of assets from Adobe Stock
 
 For a guide to usage and additional examples, see [Creating Adobe Stock applications](../getting-started/04-creating-apps.md).
 
-| Endpoint | Methods |
-| ------------ | ------------- |
+| Endpoint                                         | Methods                                                |
+| ------------------------------------------------ | ------------------------------------------------------ |
 | https://stock.adobe.io/Rest/Media/1/Search/Files | GET POST (only when using the similar_image parameter) |
 
 <a id="about-search-and-filter-criteria"></a>
@@ -38,17 +38,17 @@ Search commands have three formats:
 
 1.  **Search parameters.** In general, search parameters identify asset information for values that cannot be predetermined, such as ID numbers or keywords. Parameters for searches look like this:
 
-    `search_parameters[*search_item*]=*value*`
+    <code>search_parameters[*search_item*]=*value*</code>
 
     For example:
 
-    `search_parameters[words]=dog big happy`
+    <code>search_parameters[words]=dog big happy</code>
 
-    Search parameters are treated as AND. For example, you could combine `[words]` and `[creator_id]` to search for assets created by a specific creator that have the specified keywords.
+    Search parameters are treated as AND. For example, you could combine <code>[words]</code> and <code>[creator_id]</code> to search for assets created by a specific creator that have the specified keywords.
 
-    `search_parameters[words]=dog big happy&search_parameters[creator_id]=12345`
+    <code>search_parameters[words]=dog big happy&search_parameters[creator_id]=12345</code>
 
-    **Tip:** You must specify at least one `search_parameters` value for each Search.
+    **Tip:** You must specify at least one <code>search_parameters</code> value for each Search.
 
 1.  **Filtering values.** These optional qualifiers specify which of the found assets to return. In general, filters identify asset information that has a known set of values, such as true/false or file type. Parameters for filtering look like this:
 
@@ -58,9 +58,9 @@ Search commands have three formats:
 
     `search_parameters[filters][orientation]=horizontal`
 
-    You can specify multiple filtering values for content_type, template_type_id, and template_category_id; search returns assets that match any of those values.  The remaining filters are treated as AND.
+    You can specify multiple filtering values for content_type, template_type_id, and template_category_id; search returns assets that match any of those values. The remaining filters are treated as AND.
 
-1.  **Response control.** In addition to the filter and search mechanisms above, search queries by default return a fixed number of fields. To increase or decrease the scope of the response data, add one or more `result_columns[]` to the query. For example, this command will return *only* content IDs.
+1.  **Response control.** In addition to the filter and search mechanisms above, search queries by default return a fixed number of fields. To increase or decrease the scope of the response data, add one or more `result_columns[]` to the query. For example, this command will return _only_ content IDs.
 
     `result_columns[]=id`
 
@@ -106,8 +106,8 @@ If you do pass a valid token, then the Adobe Stock service returns the license s
 
 See [API authentication](../getting-started/03-api-authentication.md) and [Headers for Stock API calls](10-headers-for-api-calls.md) for details about header content.
 
-*   Required headers: `x-Product`, `x-api-key`
-*   Optional headers: `Authorization` (required to view license state), `X-Request-Id`
+- Required headers: `x-Product`, `x-api-key`
+- Optional headers: `Authorization` (required to view license state), `X-Request-Id`
 
 <a id="url-parameters"></a>
 
@@ -135,12 +135,10 @@ Pass the following URL parameters with the GET request.
    </td>
    <td>Keyword search. Space-separated list of keywords. String.
 
-Words can also be individual media identifiers (media_id), for example:
-
-<code>search_parameters[words]=71182279
+      Words can also be individual media identifiers (media_id), for example:
+      <code>search_parameters[words]=71182279</code>
 
    </td>
-
   </tr>
 
   <tr>
@@ -167,43 +165,45 @@ See the note below for <code>search_parameters[filters][premium]</code> and refe
 
    <td>Start position in query. Valid values are 0 (the first found asset) or higher integers. With each successive call for your search, increment this by the [limit] value to get the next page of assets.
 
-For example, by default your first call uses a 0 offset and limit of 32 to return the first 32 found assets.  Call this API again with an offset of 32 to retrieve the next page. Integer. Default is 0.
+For example, by default your first call uses a 0 offset and limit of 32 to return the first 32 found assets. Call this API again with an offset of 32 to retrieve the next page. Integer. Default is 0.
 
    </td>
 
   </tr>
 
-  <tr>      
+  <tr>
 
    <td>search_parameters[order]
 
    </td>
 
-   <td>Sort order in which to return found assets. Default is "relevance". String. 
+   <td>Sort order in which to return found assets. Default is "relevance". String.
 
-Valid strings and their meanings:<ul>
+Valid strings and their meanings:
 
-<li><code>relevance</code></li>
+<ul>
+
+   <li><code>relevance</code></li>
 
 How closely it matches your search request, closest matches first.
 
-<li><code>creation</code></li>
+   <li><code>creation</code></li>
 
 Creation date in descending order (newest first).
 
-<li><code>featured</code></li>
+   <li><code>featured</code></li>
 
 Attempts to display the highest quality content first, as scored by Adobe Sensei's machine learning algorithms. In practice, it performs best on lifestyle imagery.
 
-<li><code>nb_downloads</code></li>
+   <li><code>nb_downloads</code></li>
 
 In descending order by the number of downloads by all users since the asset was added to Adobe Stock.
 
-<li><code>undiscovered</code></li>
+   <li><code>undiscovered</code></li>
 
-Starting with assets that have not commonly been viewed or downloaded.</li>
+   <li>Starting with assets that have not commonly been viewed or downloaded.</li>
 
-<li><code><s>popularity</s></code></li>
+   <li><code><s>popularity</s></code></li>
 
 <s>In descending order by the number of views by all users.</s> This filter option is no longer maintained, and may be removed in the future.
 
@@ -269,7 +269,7 @@ Starting with assets that have not commonly been viewed or downloaded.</li>
 
    <td>Search for assets that are similar in appearance to an asset with a specific media ID. Integer. For example:
 
-<code>search_parameters[similar]=99338
+<code>search_parameters[similar]=99338</code>
 
    </td>
 
@@ -283,7 +283,7 @@ Starting with assets that have not commonly been viewed or downloaded.</li>
 
    <td>Search for assets that are similar in appearance to an image at a specific URL. String. For example:
 
-<code>search_parameters[similar_url]=http://my.site.com/images/cutedog.jpg
+<code>search_parameters[similar_url]=http://my.site.com/images/cutedog.jpg</code>
 
    </td>
 
@@ -347,23 +347,23 @@ For more information see the <a href="17-categorytree.md">CategoryTree API refer
 
    <td>Thumbnail size in pixels. Specify the size of thumbnail to return for each found asset. Integer.
 
-Valid values and meanings:
+      Valid values and meanings:
 
-<ul>
+   <ul>
 
-<li><code>110</code>: Small (110 px)
+   <li><code>110</code>: Small (110 px)</li>
 
-<li><code>160</code>: Medium (160 px)
+   <li><code>160</code>: Medium (160 px)</li>
 
-<li><code>220</code>: Medium-Large (220 px)
+   <li><code>220</code>: Medium-Large (220 px)</li>
 
-<li><code>240</code>: Large (240 px)
+   <li><code>240</code>: Large (240 px)</li>
 
-<li><code>500</code>: Extra large (XL) (500 px). Returned with watermark. (default)
+   <li><code>500</code>: Extra large (XL) (500 px). Returned with watermark. (default)</li>
 
-<li><code>1000</code>: Extra-extra large (XXL) (1000 px). Returned with watermark.</li>
+   <li><code>1000</code>: Extra-extra large (XXL) (1000 px). Returned with watermark.</li>
 
-</ul>
+   </ul>
 
    </td>
 
@@ -371,9 +371,9 @@ Valid values and meanings:
 
   <tr>
 
-    <td><s>search_parameters[filters][area_pixels]</s></td>
+   <td><s>search_parameters[filters][area_pixels]</s></td>
 
-    <td>This filter will be deprecated in an upcoming release. Please use the filters <code>[area_m_pixels]</code>, <code>[image_width]</code>, and <code>[image_height]</code> in its place.</td>
+   <td>This filter will be deprecated in an upcoming release. Please use the filters <code>[area_m_pixels]</code>, <code>[image_width]</code>, and <code>[image_height]</code> in its place.</td>
 
   </tr>
 
@@ -415,11 +415,11 @@ Valid values and meanings:
         Example:
 
 
-        
+
             <em>Only include images with a width of at least 5000 pixels</em><br>
             <code>search_parameters[filters][image_width]=5000-</code><br>
             OR <code>search_parameters[filters][image_width]=5000</code>
-        
+
 
 
     </td>
@@ -437,16 +437,16 @@ Valid values and meanings:
         Examples:
 
 
-        
+
             <em>Only include images with a height between 2000-4000 pixels</em><br>
             <code>search_parameters[filters][image_height]=2000-4000</code>
-        
 
 
-        
+
+
             <em>Only include images with a max height of 3000 pixels</em><br>
             <code>search_parameters[filters][image_height]=-3000</code>
-        
+
 
 
     </td>
@@ -463,11 +463,11 @@ Valid values and meanings:
 
    <ul>
 
-   <li><code>false</code>: only return assets with a premium level of either 0 (core) or 1 (free). 
+   <li><code>false</code>: only return assets with a premium level of either 0 (core) or 1 (free).</li>
 
-   <li><code>true</code>: only return assets with a premium level > 1. 
+   <li><code>true</code>: only return assets with a premium level > 1.</li>
 
-   <li><code>all</code>: Return everything. String.
+   <li><code>all</code>: Return everything. String.</li>
 
    </ul>
 
@@ -483,11 +483,12 @@ Strongly recommend <strong>always</strong> setting this parameter to one of its 
 
    </td>
 
-   <td>A multiple-value array specifying which 3D types to return. Valid values and meanings:<ul>
-
-<li><code>1</code>: Models
-<li><code>2</code>: Lights
-<li><code>3</code>: Materials</li></ul>
+   <td>A multiple-value array specifying which 3D types to return. Valid values and meanings:
+      <ul>
+         <li><code>1</code>: Models</li>
+         <li><code>2</code>: Lights</li>
+         <li><code>3</code>: Materials</li>
+      </ul>
 
    </td>
 
@@ -499,13 +500,13 @@ Strongly recommend <strong>always</strong> setting this parameter to one of its 
 
    </td>
 
-   <td>Return found templates (starter files) for PSD or  AI only if they are of the specified type. A multiple-value array specifying which template types to return.  
+   <td>Return found templates (starter files) for PSD or  AI only if they are of the specified type. A multiple-value array specifying which template types to return.
 
 Valid values and meanings:
 
 <ul>
 
-<li><code>1</code>: Photoshop PSDT
+<li><code>1</code>: Photoshop PSDT</li>
 
 <li><code>2</code>: Illustrator AIT</li>
 
@@ -525,7 +526,7 @@ For example:
 
   </tr>
 
-<!--  
+<!--
 
 
 
@@ -617,11 +618,14 @@ Valid values and meanings:<ul>
 
    <td>Return found assets only if the  asset has model or property releases. String.
 
-Valid values and meanings:<ul>
+Valid values and meanings:
 
-<li><code>true</code>: Return only assets with releases.
-<li><code>false</code>: Return only assets without releases. 
-<li><code>all</code>: (Default.) Return assets regardless of release status.</li></ul>
+<ul>
+
+<li><code>true</code>: Return only assets with releases.</li>
+<li><code>false</code>: Return only assets without releases. </li>
+<li><code>all</code>: (Default.) Return assets regardless of release status.</li>
+</ul>
 
    </td>
 
@@ -711,7 +715,7 @@ Valid values and meanings:<ul>
 
   </tr>
 
-<!-- 
+<!--
 
 
 
@@ -940,7 +944,7 @@ Valid values and meanings:<ul>
 
 
 
-   <td>Return found assets of the specified orientation. String. 
+   <td>Return found assets of the specified orientation. String.
 
 
 
@@ -1058,25 +1062,22 @@ Return found assets of the specified age (weeks, months, years). String. Valid v
 
 -->
 
-   </td>
-
-  </tr>
-
   <tr>
 
-   <td>search_parameters[filters][video_duration]
-
-   </td>
+   <td>search_parameters[filters][video_duration]</td>
 
    <td>Return found videos whose duration is no longer than the specified duration in seconds. String.
 
-Valid values and meanings:<ul>
+Valid values and meanings:
 
-<li><code>10</code>: Only videos up to 10 seconds.
-<li><code>20</code>: Only videos up to 20 seconds.
-<li><code>30</code>:  Only videos up to 30 seconds.
-<li><code>30-</code>: Only videos longer than 30 seconds.
-<li><code>all</code>: Default. Videos of all durations.</li></ul>
+<ul>
+
+   <li><code>10</code>: Only videos up to 10 seconds.</li>
+   <li><code>20</code>: Only videos up to 20 seconds.</li>
+   <li><code>30</code>:  Only videos up to 30 seconds.</li>
+   <li><code>30-</code>: Only videos longer than 30 seconds.</li>
+   <li><code>all</code>: Default. Videos of all durations.</li>
+</ul>
 
    </td>
 
@@ -1136,7 +1137,7 @@ Example:<br/>
 
 <strong>Note 1:</strong> Fields marked with <strong>\*</strong> are returned by default, but if the <code>result_columns[]</code> command is present, the default fields will not be returned unless explicitly included. <br/> <strong>Note 2:</strong> <code>is_licensed</code> requires an authentication header.
 
-<code>\*nb_results</code>   <code>\*id</code>   <code>\*title</code>   <code>\*creator_name</code>   <code>\*creator_id</code>   <code>country_name</code>   <code>\*width</code>   <code>\*height</code>   <code>\*thumbnail_url</code>   <code>\*thumbnail_html_tag</code>   <code>\*thumbnail_width</code>   <code>\*thumbnail_height</code>   <code>thumbnail\_110\_url</code>   <code>thumbnail\_110\_width</code>   <code>thumbnail\_110\_height</code>   <code>thumbnail\_160\_url</code>   <code>thumbnail\_160\_width</code>   <code>thumbnail\_160\_height</code>   <code>thumbnail\_220\_url</code>   <code>thumbnail\_220\_width</code>   <code>thumbnail\_220\_height</code>   <code>thumbnail\_240\_url</code>   <code>thumbnail\_240\_width</code>   <code>thumbnail\_240\_height</code>   <code>thumbnail\_500\_url</code>   <code>thumbnail\_500\_width</code>   <code>thumbnail\_500\_height</code>   <code>thumbnail\_1000\_url</code>   <code>thumbnail\_1000\_width</code>   <code>thumbnail\_1000\_height</code>   <code>\*media_type_id</code>   <code>\*category</code>   <code>\*category_hierarchy</code>   <code>nb_views</code>   <code>nb_downloads</code>   <code>creation_date</code>   <code>keywords</code>   <code>has_releases</code>   <code>comp_url</code>   <code>comp_width</code>   <code>comp_height</code>   <code>is_licensed</code>   <code>\*vector_type</code>   <code>\*content_type</code>   <code>framerate</code>   <code>duration</code>   <code>comps</code>   <code>details_url</code>   <code>template_type_id</code>   <code>template_category_ids</code>   <code>marketing_text</code>   <code>description</code>   <code>size_bytes</code>   <code>\*premium_level_id</code>   <code>is_premium</code>   <code>licenses</code>   <code>video_preview_url</code>   <code>video_preview_width</code>   <code>video_preview_height</code>   <code>video_preview_content_length</code>   <code>video_preview_content_type</code>   <code>video_small_preview_url</code>   <code>video_small_preview_width</code>   <code>video_small_preview_height</code>   <code>video_small_preview_content_length</code>   <code>video_small_preview_content_type</code>
+<code>\*nb_results</code> <code>\*id</code> <code>\*title</code> <code>\*creator_name</code> <code>\*creator_id</code> <code>country_name</code> <code>\*width</code> <code>\*height</code> <code>\*thumbnail_url</code> <code>\*thumbnail_html_tag</code> <code>\*thumbnail_width</code> <code>\*thumbnail_height</code> <code>thumbnail_110_url</code> <code>thumbnail_110_width</code> <code>thumbnail_110_height</code> <code>thumbnail_160_url</code> <code>thumbnail_160_width</code> <code>thumbnail_160_height</code> <code>thumbnail_220_url</code> <code>thumbnail_220_width</code> <code>thumbnail_220_height</code> <code>thumbnail_240_url</code> <code>thumbnail_240_width</code> <code>thumbnail_240_height</code> <code>thumbnail_500_url</code> <code>thumbnail_500_width</code> <code>thumbnail_500_height</code> <code>thumbnail_1000_url</code> <code>thumbnail_1000_width</code> <code>thumbnail_1000_height</code> <code>\*media_type_id</code> <code>\*category</code> <code>\*category_hierarchy</code> <code>nb_views</code> <code>nb_downloads</code> <code>creation_date</code> <code>keywords</code> <code>has_releases</code> <code>comp_url</code> <code>comp_width</code> <code>comp_height</code> <code>is_licensed</code> <code>\*vector_type</code> <code>\*content_type</code> <code>framerate</code> <code>duration</code> <code>comps</code> <code>details_url</code> <code>template_type_id</code> <code>template_category_ids</code> <code>marketing_text</code> <code>description</code> <code>size_bytes</code> <code>\*premium_level_id</code> <code>is_premium</code> <code>licenses</code> <code>video_preview_url</code> <code>video_preview_width</code> <code>video_preview_height</code> <code>video_preview_content_length</code> <code>video_preview_content_type</code> <code>video_small_preview_url</code> <code>video_small_preview_width</code> <code>video_small_preview_height</code> <code>video_small_preview_content_length</code> <code>video_small_preview_content_type</code>
 
    </td>
   </tr>
@@ -1156,12 +1157,12 @@ All responses are in a JSON array with this general structure:
 {"nb_results" : value
     "files": [
      { details_for_first_file ...
-          field_name: value,       
+          field_name: value,
           ...
      },
      { details_for_second_file   ...
-          field_name: value,       
-          ...      
+          field_name: value,
+          ...
      }
   ]
 }
@@ -1291,11 +1292,11 @@ Example:
 
    <td>The Adobe Stock licensing state for the asset. String. Values and meaning:<ul>
 
-<li><code>Standard</code>: License for the full-resolution asset
-<li><code>Extended</code>: Extended license
-<li><code>Video_HD</code>: Video HD license
-<li><code>Video_4K</code>: Video 4K license
-<li><code>Standard_M</code>: License for a medium-size asset approximately 1600x1200 pixels
+<li><code>Standard</code>: License for the full-resolution asset</li>
+<li><code>Extended</code>: Extended license</li>
+<li><code>Video_HD</code>: Video HD license</li>
+<li><code>Video_4K</code>: Video 4K license</li>
+<li><code>Standard_M</code>: License for a medium-size asset approximately 1600x1200 pixels</li>
 <li><code>""</code> <em>(empty string)</em>: No license applies</li></ul>
 
    </td>
@@ -1370,13 +1371,18 @@ Example:
 
    <td>JSON structure with information about the category assigned to the asset.
 
-````add_language<code>"category": {
 
-    "id": 0000,
+```json
+add_language"category": {"id": 0000,"name":"..." }
+```
 
-    "name":"..." }</code>```
 
-For example: <br/> <code>"category": {  "id": 47,  "name": "Dogs"}</code>
+For example: 
+
+```json
+"category": {  "id": 47,  "name": "Dogs"}
+```
+
 
    </td>
 
@@ -1388,7 +1394,7 @@ For example: <br/> <code>"category": {  "id": 47,  "name": "Dogs"}</code>
 
    </td>
 
-   <td>Identifier for the category assigned to the asset. Integer. 
+   <td>Identifier for the category assigned to the asset. Integer.
 
    </td>
 
@@ -1428,15 +1434,15 @@ For example: <br/> <code>"category": {  "id": 47,  "name": "Dogs"}</code>
 
 <ul>
 
-<li><code>1</code>: Photos
+<li><code>1</code>: Photos</li>
 
-<li><code>2</code>: Illustrations
+<li><code>2</code>: Illustrations</li>
 
-<li><code>3</code>: Vectors
+<li><code>3</code>: Vectors</li>
 
-<li><code>4</code>: Videos
+<li><code>4</code>: Videos</li>
 
-<li><code>6</code>: 3D
+<li><code>6</code>: 3D</li>
 
 <li><code>7</code>: Templates</li>
 
@@ -1452,12 +1458,13 @@ For example: <br/> <code>"category": {  "id": 47,  "name": "Dogs"}</code>
 
    </td>
 
-   <td>If the asset is a vector, this indicates whether it is an SVG or an AI/EPS asset. String. 
+   <td>If the asset is a vector, this indicates whether it is an SVG or an AI/EPS asset. String.
 
-   Values and meanings:<ul>
-
-<li><code>svg</code>: SVG file
-<li><code>zip</code>: AI/EPS file</li></ul>
+   Values and meanings:
+   <ul>
+   <li><code>svg</code>: SVG file</li>
+   <li><code>zip</code>: AI/EPS file</li>
+   </ul>
 
    </td>
 
@@ -1519,7 +1526,7 @@ For example: <br/> <code>"category": {  "id": 47,  "name": "Dogs"}</code>
 
    </td>
 
-   <td>URL to the Adobe Stock details page for the asset. If you pass the Authorization header with the call, Adobe Stock generates an SSO jump URL. String. 
+   <td>URL to the Adobe Stock details page for the asset. If you pass the Authorization header with the call, Adobe Stock generates an SSO jump URL. String.
 
    </td>
 
@@ -1531,11 +1538,13 @@ For example: <br/> <code>"category": {  "id": 47,  "name": "Dogs"}</code>
 
    </td>
 
-   <td>The ID of the 3D type, if the return asset is 3D. Values and meanings:<ul>
+   <td>The ID of the 3D type, if the return asset is 3D. Values and meanings:
+   <ul>
 
-<li>1 - Models
-<li>2 - Lights
-<li>3 - Materials</li></ul>
+<li>1 - Models</li>
+<li>2 - Lights</li>
+<li>3 - Materials</li>
+</ul>
 
    </td>
 
@@ -1547,7 +1556,8 @@ For example: <br/> <code>"category": {  "id": 47,  "name": "Dogs"}</code>
 
    </td>
 
-   <td>The ID of the template type, if the returned asset is a template. Integer. Values and meanings:<ul>
+   <td>The ID of the template type, if the returned asset is a template. Integer. Values and meanings:
+   <ul>
 
 <li><code>1</code>: PSDT</li>
 
@@ -1656,7 +1666,7 @@ GET /Rest/Media/1/Search/Files?locale=en_US&search_parameters[words]=dogs&search
 Host: stock.adobe.io
 X-Product: MySampleApp/1.0
 x-api-key: MyApiKey
-````
+```
 
 The preceding request returns two asset descriptions. `nb_results` shows that 399,884 assets currently match the keyword "dog".
 
@@ -1670,11 +1680,11 @@ The preceding request returns two asset descriptions. `nb_results` shows that 39
      "height": 2303,
      "creator_name": "Christin Lola",
      "creator_id": 204004289,
-     "thumbnail_url": 
-        "https://as1.ftcdn.net/jpg/00/86/76/04/110_F_86760419_NEhOeuriYu82RwfgDqjTeIL9yx7ih5iv.jpg",  
-     "thumbnail_html_tag": 
-        "<img src='https://as1.ftcdn.net/jpg/00/86/76/04/110_F_86760419_NEhOeuriYu82RwfgDqjTeIL9yx7ih5iv.jpg' 
-        alt='German Shepherd Dog Sticking Head Out Driving Car Window' 
+     "thumbnail_url":
+        "https://as1.ftcdn.net/jpg/00/86/76/04/110_F_86760419_NEhOeuriYu82RwfgDqjTeIL9yx7ih5iv.jpg",
+     "thumbnail_html_tag":
+        "<img src='https://as1.ftcdn.net/jpg/00/86/76/04/110_F_86760419_NEhOeuriYu82RwfgDqjTeIL9yx7ih5iv.jpg'
+        alt='German Shepherd Dog Sticking Head Out Driving Car Window'
         title='Photo: German Shepherd Dog Sticking Head Out Driving Car Window' />",
      "thumbnail_width": 110,
      "thumbnail_height": 73,
@@ -1693,9 +1703,9 @@ The preceding request returns two asset descriptions. `nb_results` shows that 39
      "creator_name": "SSilver",
      "creator_id": 200407313,
      "thumbnail_url": "https://as1.ftcdn.net/jpg/00/84/97/72/110_F_84977202_JplQMoMQ5QiZCgVeWLwKhFHCrr4HG99Q.jpg",
-     "thumbnail_html_tag":    
+     "thumbnail_html_tag":
         "<img src='https://as1.ftcdn.net/jpg/00/84/97/72/110_F_84977202_JplQMoMQ5QiZCgVeWLwKhFHCrr4HG99Q.jpg'
-         alt='Happy dog playing outside and carrying the American flag' 
+         alt='Happy dog playing outside and carrying the American flag'
          title='Photo: Happy dog playing outside and carrying the American flag' />",
      "thumbnail_width": 110,
      "thumbnail_height": 73,
@@ -1716,29 +1726,29 @@ The preceding request returns two asset descriptions. `nb_results` shows that 39
 
 Here are simple examples of common searches.
 
-*   Keyword search; assets matching "purple" and "clouds":
+- Keyword search; assets matching "purple" and "clouds":
 
-    `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=purple clouds`
+  `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=purple clouds`
 
-*   Using pagination, get the 3rd page of results (rows 64-95) for the word "dogs":
+- Using pagination, get the 3rd page of results (rows 64-95) for the word "dogs":
 
-    `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=dogs&search_parameters[limit]=32&search_parameters[offset]=64`
+  `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=dogs&search_parameters[limit]=32&search_parameters[offset]=64`
 
-*   Search for assets similar in appearance to the specified asset ID:
+- Search for assets similar in appearance to the specified asset ID:
 
-    `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[similar]=121353611`
+  `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[similar]=121353611`
 
-*   Search for assets similar in appearance to the specified URL:
+- Search for assets similar in appearance to the specified URL:
 
-    `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[similar_url]=https://i.kinja-img.com/gawker-media/image/upload/xqkbwkexcl7udc5va7pn.jpg`
+  `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[similar_url]=https://i.kinja-img.com/gawker-media/image/upload/xqkbwkexcl7udc5va7pn.jpg`
 
-*   Similar asset by URL and keyword:
+- Similar asset by URL and keyword:
 
-    `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[similar_url]=https://i.kinja-img.com/gawker-media/image/upload/xqkbwkexcl7udc5va7pn.jpg&search_parameters[words]=cats`
+  `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[similar_url]=https://i.kinja-img.com/gawker-media/image/upload/xqkbwkexcl7udc5va7pn.jpg&search_parameters[words]=cats`
 
-*   Search for assets depicting the specified model:
+- Search for assets depicting the specified model:
 
-    `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[model_id]=58344279`
+  `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[model_id]=58344279`
 
 <a id="error-codes"></a>
 
@@ -1746,17 +1756,17 @@ Here are simple examples of common searches.
 
 Each error generates a JSON array that contains the following keys and values. If your application receives this array and you need assistance, send the array to Adobe.
 
-*   An **`error`** key.
-*   Optionally a **`code`** key. Specifies an integer designating the category of error. Code values:
-    *   `10`: Invalid access token. The access token that you passed is invalid or expired.
-    *   `11`: Invalid API Key. The API key that you passed is not valid or has expired.
-    *   `20`: Invalid parameters. The URL parameters that you passed are not supported.
-    *   `31`: Invalid Method. The method that you specified does not exist in the method list.
-    *   `100`: Invalid data. Data that you specified as arguments are not supported.
+- An **`error`** key.
+- Optionally a **`code`** key. Specifies an integer designating the category of error. Code values:
+  - `10`: Invalid access token. The access token that you passed is invalid or expired.
+  - `11`: Invalid API Key. The API key that you passed is not valid or has expired.
+  - `20`: Invalid parameters. The URL parameters that you passed are not supported.
+  - `31`: Invalid Method. The method that you specified does not exist in the method list.
+  - `100`: Invalid data. Data that you specified as arguments are not supported.
 
 <a id="more-information"></a>
 
 ## More information
 
-*   See the practical search example in [Search for assets](../getting-started/apps/05-search-for-assets.md).
-*   Refer to the [Affiliate API Workflow](../getting-started/07-workflow-guides.md) guide for a complete guide to partnering with Adobe Stock and using the Search API.
+- See the practical search example in [Search for assets](../getting-started/apps/05-search-for-assets.md).
+- Refer to the [Affiliate API Workflow](../getting-started/07-workflow-guides.md) guide for a complete guide to partnering with Adobe Stock and using the Search API.
