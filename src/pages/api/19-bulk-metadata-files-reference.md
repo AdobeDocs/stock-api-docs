@@ -2,7 +2,7 @@
 
 The Files API is used to retrieve metadata from Adobe Stock, either one asset at a time, or in bulk.
 
-&lt;!-- MarkdownTOC --&gt;
+<!-- MarkdownTOC -->
 
 *   [Files requests](#files-requests)
     *   [Authentication](#authentication)
@@ -13,7 +13,7 @@ The Files API is used to retrieve metadata from Adobe Stock, either one asset at
 *   [Error handling](#error-handling)
     *   [Example invalid requests and error responses](#example-invalid-requests-and-error-responses)
 
-&lt;!-- /MarkdownTOC --&gt;
+<!-- /MarkdownTOC -->
 
 <a id="files-requests"></a>
 

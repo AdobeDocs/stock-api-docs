@@ -1,6 +1,6 @@
 # License History Reference
 
-&lt;!-- MarkdownTOC --&gt;
+<!-- MarkdownTOC -->
 
 *   [License History calls](#license-history-calls)
     *   [Authentication](#authentication)
@@ -11,7 +11,7 @@
     *   [Simple example](#simple-example)
     *   [Example fetching all history and using pagination](#example-fetching-all-history-and-using-pagination)
 
-&lt;!-- /MarkdownTOC --&gt;
+<!-- /MarkdownTOC -->
 
 The License History API is used to retrieve past license history. For information on licensing Adobe Stock content, see [Licensing Stock assets](../getting-started/apps/06-licensing-assets.md).
 

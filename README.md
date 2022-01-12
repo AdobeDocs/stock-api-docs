@@ -6,7 +6,7 @@ Before you begin, be sure to review the [Developer Terms of Use](supplemental/te
 
 If you are browsing this at GitHub, here is an index and reading order:
 
-* [Getting started with the Adobe Stock API](docs/01-getting-started.md)
+* [Getting started with the Adobe Stock API](docs/getting-started/index.md)
     - [Register your application](docs/getting-started/02-register-app.md)
     - [API authentication headers](docs/getting-started/03-api-authentication.md)
     - [Creating Adobe Stock applications](docs/getting-started/apps/04-creating-apps.md)

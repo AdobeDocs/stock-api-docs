@@ -4,14 +4,14 @@
 
 #### Contents
 
-&lt;!-- MarkdownTOC depth=1 --&gt;
+<!-- MarkdownTOC depth=1 -->
 
 *   [Authentication overview](#authentication-overview)
 *   [Choose an integration type and register](#choose-an-integration-type-and-register)
 *   [API authentication requirements](#api-authentication-requirements)
 *   [Q&A](#qa)
 
-&lt;!-- /MarkdownTOC --&gt;
+<!-- /MarkdownTOC -->
 
 ## Authentication overview
 

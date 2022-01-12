@@ -2,7 +2,7 @@
 
 ***Tl;dr version:** Convert your app requirements into commands and build your search query using the Search API reference.*
 
-&lt;!-- MarkdownTOC --&gt;
+<!-- MarkdownTOC -->
 
 *   [Practical search example](#practical-search-example)
 *   [Tips and techniques](#tips-and-techniques)
@@ -18,7 +18,7 @@
         *   [Search on standard or Premium content](#search-on-standard-or-premium-content)
         *   [Important: Get tracking credit](#important-get-tracking-credit)
 
-&lt;!-- /MarkdownTOC --&gt;
+<!-- /MarkdownTOC -->
 
 To perform a search, you will call to the Search/Files endpoint and supply one or more search_parameter commands, which form the heart of your search query. Your search URL can perform three tasks:
 
@@ -99,13 +99,13 @@ After consulting the Search API reference, let's break down these extra requirem
 
 *   Only show photos
 
-&lt;!----&gt;
+<!---->
 
         search_parameters[filters][content_type:photo]=1
 
 *   Sort by most-downloaded
 
-&lt;!----&gt;
+<!---->
 
         search_parameters[order]=nb_downloads
 
@@ -113,19 +113,19 @@ And we'll use the third ability of the Search API to choose only the result fiel
 
 *   Get the title
 
-&lt;!----&gt;
+<!---->
 
         result_columns[]=title
 
 *   Get a link that goes to the Adobe Stock page for that image
 
-&lt;!----&gt;
+<!---->
 
         result_columns[]=details_url
 
 *   Because the default image result is 500, we need a larger size for our 800px requirement. So we'll get the 1000px thumbnail instead:
 
-&lt;!----&gt;
+<!---->
 
         result_columns[]=thumbnail_1000_url
 
@@ -216,19 +216,19 @@ The Search API supports three types of visual search:
 
 *   Similar to the image being uploaded.
 
-&lt;!----&gt;
+<!---->
 
         search_parameters[similar_image]=1&similar_image=<FILE>
 
 *   Similar to an image URL.
 
-&lt;!----&gt;
+<!---->
 
         search_parameters[similar_url]=<URL>
 
 *   Similar to an existing Stock ID.
 
-&lt;!----&gt;
+<!---->
 
         search_parameters[similar]=<ID>
 

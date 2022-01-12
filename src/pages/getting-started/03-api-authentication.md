@@ -4,7 +4,7 @@
 
 #### Contents
 
-&lt;!-- MarkdownTOC --&gt;
+<!-- MarkdownTOC -->
 
 *   [Overview](#overview)
 *   [Store your credentials](#store-your-credentials)
@@ -15,7 +15,7 @@
 *   [Add token to header](#add-token-to-header)
     *   [Test your access token](#test-your-access-token)
 
-&lt;!-- /MarkdownTOC --&gt;
+<!-- /MarkdownTOC -->
 
 ## Overview
 

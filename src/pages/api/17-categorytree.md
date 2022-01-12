@@ -1,6 +1,6 @@
 # CategoryTree API reference
 
-&lt;!-- MarkdownTOC --&gt;
+<!-- MarkdownTOC -->
 
 *   [Category Tree calls](#category-tree-calls)
     *   [Authentication](#authentication)
@@ -9,7 +9,7 @@
 *   [Responses](#responses)
 *   [Example requests and responses](#example-requests-and-responses)
 
-&lt;!-- /MarkdownTOC --&gt;
+<!-- /MarkdownTOC -->
 
 The Category Tree API returns category information for selected category IDs. If you call the API without specifying a category, `CategoryTree` returns a list of all top-level Adobe Stock categories.
 

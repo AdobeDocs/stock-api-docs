@@ -1,8 +1,8 @@
-&lt;!-- omit in toc --&gt;
+<!-- omit in toc -->
 
 # Licensing reference
 
-&lt;!-- MarkdownTOC--&gt;
+<!-- MarkdownTOC-->
 
 *   [Content and Member requests](#content-and-member-requests)
     *   [Authentication](#authentication)
@@ -25,7 +25,7 @@
     *   [Download errors](#download-errors)
 *   [More information](#more-information)
 
-&lt;!-- /MarkdownTOC --&gt;
+<!-- /MarkdownTOC -->
 
 ## Content and Member requests
 

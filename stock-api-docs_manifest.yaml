@@ -4,7 +4,7 @@ order: 1
 title: Adobe Stock API documentation
 pages:
 - title: Getting started
-  url: adobe/stock-api-docs/master/docs/01-getting-started.md
+  url: adobe/stock-api-docs/master/docs/getting-started/index.md
   pages:
   - title: Register your application
     url: adobe/stock-api-docs/master/docs/getting-started/02-register-app.md

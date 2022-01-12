@@ -1,4 +1,4 @@
-&lt;!-- omit in toc --&gt;
+<!-- omit in toc -->
 
 # Licensing assets and stuff\*
 
@@ -6,7 +6,7 @@
 
 ***Tl;dr version:** Use the Member/Profile API to check the status of an asset you want to purchase and your current quota, use Content/License to get a license, and download your asset. Also, use the Member/LicenseHistory API to get a list of past purchases.*
 
-&lt;!-- MarkdownTOC --&gt;
+<!-- MarkdownTOC -->
 
 *   [Licensing workflow](#licensing-workflow)
     *   [1. Get a token](#1-get-a-token)
@@ -22,7 +22,7 @@
     *   [Other problems](#other-problems)
 *   [Q&A](#qa)
 
-&lt;!-- /MarkdownTOC --&gt;
+<!-- /MarkdownTOC -->
 
 In the previous section, we covered how to hook up the Search API into your application. In this article, we'll cover the Adobe Stock **Content** and **Member** methods of the License API. These can get information about a user's licensing (entitlement) status, determine whether the user has an existing license for an asset, request a new license for an asset for that user, get a signed download URL for the asset, and get a history of past licensed assets.
 
@@ -364,7 +364,7 @@ Visit the [License history API reference](../../api/13-license-history.md) for m
 
 You have completed the Adobe Stock API getting started guide.
 
-*   If you want more detail on anything you have read thus far, explore the [API reference documentation](../../01-getting-started.md).
+*   If you want more detail on anything you have read thus far, explore the [API reference documentation](../../getting-started/01-getting-started.md).
 *   If you are ready to get started in earnest, browse our [sample code and SDKs](../08-sample-code-sdks.md).
 
 <a id="troubleshooting-licensing-requests"></a>
