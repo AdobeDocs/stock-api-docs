@@ -2,7 +2,9 @@
 keywords:
   - Stock API
 title: Stock APIs
-description: The Stock API overview page.
+description: Getting started with the Adobe Stock API.
 ---
 
-Hello world!
+import GettingStarted from './getting-started/index.md'
+
+<GettingStarted />

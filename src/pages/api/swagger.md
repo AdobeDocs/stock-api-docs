@@ -1,0 +1,3 @@
+---
+openAPISpec: ./swagger.json
+---

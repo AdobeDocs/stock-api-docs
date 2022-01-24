@@ -28,6 +28,10 @@ module.exports = {
     ],
     subPages: [
       {
+        path: '/getting-started/',
+        title: 'Getting started with the Stock API',
+      },
+      {
         path: '/getting-started/02-register-app.md',
         title: 'Register your application',
       },
@@ -54,6 +58,10 @@ module.exports = {
       {
         path: '/getting-started/08-sample-code-sdks.md',
         title: 'Sample code and SDKs',
+      },
+      {
+        path: '/api/',
+        title: 'Adobe Stock API reference',
       },
       {
         path: '/api/10-headers-for-api-calls.md',
@@ -84,12 +92,16 @@ module.exports = {
         title: 'Locale codes',
       },
       {
-        title: 'API Business FAQ',
-        path: '/faq/stock-api-business-faq.md',
+        path: '/api/swagger.md',
+        title: 'OpenAPI spec',
       },
       {
-        title: 'API Technical FAQ',
-        path: '/faq/15-faq.md',
+        title: 'Stock API technical FAQ',
+        path: '/faq/',
+      },
+      {
+        title: 'Stock API business FAQ',
+        path: '/faq/stock-api-business-faq.md',
       },
       {
         path: '/faq/terms-for-adobe-stock-developers.md',

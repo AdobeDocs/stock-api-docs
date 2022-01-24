@@ -1,9 +1,10 @@
 # Search for assets
 
-***Tl;dr version:** Convert your app requirements into commands and build your search query using the Search API reference.*
+Convert your app requirements into commands and build your search query using the Search API reference.
 
 <!-- MarkdownTOC -->
 
+<!--
 *   [Practical search example](#practical-search-example)
 *   [Tips and techniques](#tips-and-techniques)
     *   [Paginating results](#paginating-results)
@@ -17,8 +18,10 @@
         *   [Filter by photos, vectors, video, etc.](#filter-by-photos-vectors-video-etc)
         *   [Search on standard or Premium content](#search-on-standard-or-premium-content)
         *   [Important: Get tracking credit](#important-get-tracking-credit)
-
+-->
 <!-- /MarkdownTOC -->
+
+## Overview
 
 To perform a search, you will call to the Search/Files endpoint and supply one or more search_parameter commands, which form the heart of your search query. Your search URL can perform three tasks:
 

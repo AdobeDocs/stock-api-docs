@@ -28,9 +28,7 @@ All Adobe Stock API applications must be registered by creating an integration u
 
 *   **Service account.** This is the most secure authentication method, because it occurs on the backend, server-to-server, and because it requires the integrator to store a public key certificate on Adobe, and use a private key to sign requests. Adobe exchanges tokens with the application using the JSON Web Token (JWT) scheme. As a result, the application can authenticate itself without any user involvement or login.
     *   **Note:** For Enterprise customers *only*. You will need to sign into Adobe I/O using your system admin credentials. See [Q&A](02-register-app.md#qa) below if you are unsure whether your company has Adobe Stock for Enterprise.
-
     *   For a guided walkthrough, see the [Adobe Stock Service Account workflow](07-workflow-guides.md).
-
     *   Learn more about [Service Accounts](https://www.adobe.io/authentication/auth-methods.html#!adobeio/adobeio-documentation/master/auth/JWTAuthenticationQuickStart.md) in the Adobe Cloud Platform documentation.
 *   **OAuth.** Also called [OAuth 2.0](https://oauth.net/2/), this is a web standard for allowing users to sign in directly to Adobe without sharing any credentials with the 3rd party application, and requires the user to give explicit permission to the application to access their data. Once login is complete, the application will receive an access token which can be used to make authenticated requests on behalf of the user. If you are not an Adobe Enterprise customer, then this is the only method you may use to access the Licensing API.
     *   **Special note:** In addition to creating an Adobe Stock OAuth integration, you will also need to add **Creative SDK** integration to enable the Adobe login. Because this method is more complex, refer to the [Authorization Code Workflow Guide](07-workflow-guides.md) for a complete guide.
@@ -40,6 +38,7 @@ All Adobe Stock API applications must be registered by creating an integration u
     *   **Note:** There is no "API Key" integration choice for Adobe Stock. Instead, choose "OAuth," and put whatever URL you want for the *Redirect URI*, because it will not be used. (*Yes*, we know this is confusing!) Here is a [screenshot](https://raw.githubusercontent.com/adobe/stock-api-docs/master/docs/images/io_api-key-integration.png) of a completed integration form on the I/O Console.
     *   For a guided walkthrough, see the [Affiliate API Workflow guide](07-workflow-guides.md).
     *   More details on [API Key integrations](https://www.adobe.io/apis/cloudplatform/console/authentication/api_key_workflow.html) (Adobe Cloud Platform).
+
 
 ### Use case matrix
 
@@ -53,15 +52,9 @@ Based on your business case, this table shows which integration type would best 
 | **POD/Retail** | X |||
 | **Affiliates** ||| X |
 
-## Note 1
+**Note 1**: *While it is possible to use OAuth integration for Enterprise and DAM applications, you would typically not have your users sign in directly to Adobe Stock, and instead your application would manage the experience for them.*
 
-*While it is possible to use OAuth integration for Enterprise and DAM applications, you would typically not have your users sign in directly to Adobe Stock, and instead your application would manage the experience for them.*
-
-## Note 2
-
-*If your platform is going to let users access their own Stock accounts, then OAuth is the method of choice. Otherwise, if your platform is going to license assets and give them to your users as part of your service, then the Service Account would be appropriate.*
-
-**&gt;&gt;&gt; NEXT:** Learn the basics of [authentication](03-api-authentication.md).
+**Note 2**: *If your platform is going to let users access their own Stock accounts, then OAuth is the method of choice. Otherwise, if your platform is going to license assets and give them to your users as part of your service, then the Service Account would be appropriate.*
 
 ## API authentication requirements
 
@@ -103,6 +96,8 @@ Any request where the end user must be authenticated using their credentials or 
 *   API key: Required
 *   Authorization header: Required
 *   Client secret: Required for some API requests
+
+**&gt;&gt;&gt; NEXT:** Learn the basics of [authentication](03-api-authentication.md).
 
 ## Q&A
 

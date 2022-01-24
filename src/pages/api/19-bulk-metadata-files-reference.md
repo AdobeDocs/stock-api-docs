@@ -3,7 +3,7 @@
 The Files API is used to retrieve metadata from Adobe Stock, either one asset at a time, or in bulk.
 
 <!-- MarkdownTOC -->
-
+<!-- 
 *   [Files requests](#files-requests)
     *   [Authentication](#authentication)
     *   [Request headers](#request-headers)
@@ -12,7 +12,7 @@ The Files API is used to retrieve metadata from Adobe Stock, either one asset at
 *   [Example requests and responses](#example-requests-and-responses)
 *   [Error handling](#error-handling)
     *   [Example invalid requests and error responses](#example-invalid-requests-and-error-responses)
-
+-->
 <!-- /MarkdownTOC -->
 
 <a id="files-requests"></a>
@@ -37,9 +37,8 @@ Optional. The Authorization header is only required for retrieving the `is_licen
 
 See [Headers for Stock API Calls](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/10-headers-for-api-calls.md) for details about header content.
 
-● Required headers: `x-Product`, `x-api-key`, `Authorization`
-
-● Optional headers: `X-Product-Location`, `X-Request-Id`
+* Required headers: `x-Product`, `x-api-key`, `Authorization`
+* Optional headers: `X-Product-Location`, `X-Request-Id`
 
 <a id="url-parameters"></a>
 
@@ -47,7 +46,7 @@ See [Headers for Stock API Calls](https://www.adobe.io/apis/creativecloud/stock/
 
 | Parameter | Description |
 | ------------ | ------------- |
-| ids | Comma-separated list of file IDs, e.g. "`ids=100,101`". Maximum number of IDs is 110. Exceeding this limit triggers an error. String. |
+| ids | Comma-separated list of file IDs, e.g. `ids=100,101`. Maximum number of IDs is 110. Exceeding this limit triggers an error. String. |
 | locale | Optional. Location language code for the API to use when returning localized messages. The API can usually get the user's default locale through the Authorization header. This value overrides that or provides a locale if not available through Authorization. String.<br/><br/>Default is en-US. See the full list of[  Locales](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/14-locale-codes.md). |
 | result_columns[] | Optional. Fields to include in response. Note that some fields (`is_licensed`) require an authorization token. Array[].<br/><br/>**Tip:** To combine results, use this syntax: `result_columns[]=is_licensed&result_columns[]=creation_date`<br/><br/>By default, only `id` is returned. For the full list, see the [Search API reference](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/11-search-reference.md). |
 

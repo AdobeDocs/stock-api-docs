@@ -2,8 +2,6 @@
 
 These guides are meant to supplement the API documentation with detailed instructions for specific workflows.
 
-## Authentication
-
 For a complete description and business case for these types of integrations, refer to [Register your application](02-register-app.md).
 
 *   **[Enterprise service account](https://www.adobe.io/content/dam/udp/assets/StockAPI/Service-Account-API-workflow.pdf).** This is for customers with Adobe Stock enterprise entitlements only who want to create an integration between their application and their Stock account, without requiring users to sign in.

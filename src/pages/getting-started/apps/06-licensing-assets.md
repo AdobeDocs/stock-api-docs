@@ -1,34 +1,31 @@
-<!-- omit in toc -->
-
 # Licensing assets and stuff\*
 
-> &lt;super&gt;\*&lt;/super&gt;Not a very catchy title, but there's more to this topic than how to get a license!
-
-***Tl;dr version:** Use the Member/Profile API to check the status of an asset you want to purchase and your current quota, use Content/License to get a license, and download your asset. Also, use the Member/LicenseHistory API to get a list of past purchases.*
+**\*** Not a very catchy title, but there's more to this topic than how to get a license! Use the Member/Profile API to check the status of an asset you want to purchase and your current quota, use Content/License to get a license, and download your asset. Also, use the Member/LicenseHistory API to get a list of past purchases.
 
 <!-- MarkdownTOC -->
-
-*   [Licensing workflow](#licensing-workflow)
-    *   [1. Get a token](#1-get-a-token)
-    *   [2. Get Stock asset ID](#2-get-stock-asset-id)
-    *   [3. Check if licensed](#3-check-if-licensed)
-    *   [4. Check if licensing is possible](#4-check-if-licensing-is-possible)
-    *   [5. License the asset](#5-license-the-asset)
-    *   [6. Download the file](#6-download-the-file)
-*   [Getting license history](#getting-license-history)
-*   [Next steps](#next-steps)
-*   [Troubleshooting licensing requests](#troubleshooting-licensing-requests)
-    *   [Member/Profile issues](#memberprofile-issues)
-    *   [Other problems](#other-problems)
-*   [Q&A](#qa)
-
+<!--
+- [Licensing assets and stuff\*](#licensing-assets-and-stuff)
+  - [Licensing workflow](#licensing-workflow)
+    - [1. Get a token](#1-get-a-token)
+    - [2. Get Stock asset ID](#2-get-stock-asset-id)
+    - [3. Check if licensed](#3-check-if-licensed)
+    - [4. Check if licensing is possible](#4-check-if-licensing-is-possible)
+    - [5. License the asset](#5-license-the-asset)
+    - [6. Download the file](#6-download-the-file)
+  - [Getting license history](#getting-license-history)
+  - [Next steps](#next-steps)
+  - [Troubleshooting licensing requests](#troubleshooting-licensing-requests)
+    - [Member/Profile issues](#memberprofile-issues)
+    - [Other problems](#other-problems)
+  - [Q&A](#qa)
+-->
 <!-- /MarkdownTOC -->
-
-In the previous section, we covered how to hook up the Search API into your application. In this article, we'll cover the Adobe Stock **Content** and **Member** methods of the License API. These can get information about a user's licensing (entitlement) status, determine whether the user has an existing license for an asset, request a new license for an asset for that user, get a signed download URL for the asset, and get a history of past licensed assets.
 
 <a id="licensing-workflow"></a>
 
 ## Licensing workflow
+
+In the previous section, we covered how to hook up the Search API into your application. In this article, we'll cover the Adobe Stock **Content** and **Member** methods of the License API. These can get information about a user's licensing (entitlement) status, determine whether the user has an existing license for an asset, request a new license for an asset for that user, get a signed download URL for the asset, and get a history of past licensed assets.
 
 Before you can purchase an asset using the API, there are a few tasks you will want to perform as part of your application flow, and this may trigger multiple decision points depending on your [use case](../02-register-app.md#use-case-matrix). Like a children's board game, the process is not difficult as long as you understand the rules.
 
@@ -389,7 +386,6 @@ In that case, we would have seen a JSON response message like this:
 
 If this happens, you can build some checks into your application.
 
-<br/><br/>
 ![Premium or Video asset](./Licensing-assets8.png)
 
 <a id="problem-asset-type-cant-be-licensed"></a>

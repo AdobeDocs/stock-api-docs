@@ -1,7 +1,7 @@
 # Search API reference
 
 <!-- MarkdownTOC -->
-
+<!--
 - [Search API reference](#search-api-reference)
   - [Search requests](#search-requests)
     - [About search and filter criteria](#about-search-and-filter-criteria)
@@ -14,7 +14,7 @@
     - [Common search queries](#common-search-queries)
   - [Error codes](#error-codes)
   - [More information](#more-information)
-
+-->
 <!-- /MarkdownTOC -->
 
 You can query Adobe Stock for assets that meet your specified search criteria. You can filter the results, specify the sort order in which the results are returned, and choose how many assets to return for each page of results.
@@ -39,21 +39,21 @@ Search commands have three formats:
 
 1.  **Search parameters.** In general, search parameters identify asset information for values that cannot be predetermined, such as ID numbers or keywords. Parameters for searches look like this:
 
-    <code>search_parameters[*search_item*]=*value*</code>
+    `search_parameters[*search_item*]=*value*`
 
     For example:
 
-    <code>search_parameters[words]=dog big happy</code>
+    `search_parameters[words]=dog big happy`
 
-    Search parameters are treated as AND. For example, you could combine <code>[words]</code> and <code>[creator_id]</code> to search for assets created by a specific creator that have the specified keywords.
+    Search parameters are treated as AND. For example, you could combine `[words]` and `[creator_id]` to search for assets created by a specific creator that have the specified keywords.
 
-    <code>search_parameters[words]=dog big happy&search_parameters[creator_id]=12345</code>
+    `search_parameters[words]=dog big happy&search_parameters[creator_id]=12345`
 
-    **Tip:** You must specify at least one <code>search_parameters</code> value for each Search.
+    **Tip:** You must specify at least one `search_parameters` value for each Search.
 
 1.  **Filtering values.** These optional qualifiers specify which of the found assets to return. In general, filters identify asset information that has a known set of values, such as true/false or file type. Parameters for filtering look like this:
 
-    `search_parameters[filters][*filter_item*]=*value*`
+    `search_parameters[filters][{FILTER NAME}]={VALUE}`
 
     For example:
 
@@ -61,9 +61,11 @@ Search commands have three formats:
 
     You can specify multiple filtering values for content_type, template_type_id, and template_category_id; search returns assets that match any of those values. The remaining filters are treated as AND.
 
-1.  **Response control.** In addition to the filter and search mechanisms above, search queries by default return a fixed number of fields. To increase or decrease the scope of the response data, add one or more `result_columns[]` to the query. For example, this command will return _only_ content IDs.
+2.  **Response control.** In addition to the filter and search mechanisms above, search queries by default return a fixed number of fields. To increase or decrease the scope of the response data, add one or more `result_columns[]` to the query. For example, this command will return _only_ content IDs.
 
-    `result_columns[]=id`
+```http
+  ?result_columns[]=id
+```
 
 ```json
 {

@@ -1,3 +1,12 @@
+---
+keywords:
+  - Stock API
+title: Stock APIs
+description: The Stock API overview page.
+---
+
+<!-- 09-api-summary.md -->
+
 # Adobe Stock API reference
 
 The API provides the following endpoints in the `https://stock.adobe.io/Rest` namespace:

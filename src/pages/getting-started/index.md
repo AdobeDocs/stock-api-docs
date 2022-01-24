@@ -2,7 +2,7 @@
 keywords:
   - Stock API
 title: Stock APIs
-description: The Stock API overview page.
+description: Getting started with the Adobe Stock API.
 ---
 
 <!-- 01-getting-started.md -->
@@ -10,33 +10,26 @@ description: The Stock API overview page.
 
 # Getting started with the Adobe Stock API
 
-> ***Tl;dr version:** (1) register for an Adobe Stock API key at [console.adobe.io](https://console.adobe.io/) (Integration -> New Integration -> Access API -> Adobe Stock -> oAuth -> Fill in with fake info) -> copy generated API Key) , (2) Add the api key in the following [curl](https://curl.haxx.se/) command and make your first search query! (3) return here to learn more!*
+```shell
+curl -H 'x-api-key:myAPIKey' -H 'x-product:myTestApp1.0' https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US%26search_parameters%5Bwords%5D=kittens
+```
 
-    curl -H 'x-api-key:myAPIKey' -H 'x-product:myTestApp1.0' https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US%26search_parameters%5Bwords%5D=kittens 
-
-<!-- omit in toc -->
+> ***Tl;dr version:** (1) register for an Adobe Stock API key at [console.adobe.io](https://console.adobe.io/), (2) Add the api key in the following [curl](https://curl.haxx.se/) command and make your first search query, then (3) return here to learn more!
 
 ## Read me first!
 
 Before you begin, be sure to review the [Developer Terms of Use](../supplemental/terms-for-adobe-stock-developers.md). Or better yet, bookmark it. There will be a quiz later :)
 
-<!-- omit in toc -->
-
 ## Contents
 
-<!-- MarkdownTOC -->
+- [Read me first!](#read-me-first)
+- [Overview](#overview)
+- [Design phase](#design-phase)
+- [Next steps](#next-steps)
+- [More topics](#more-topics)
 
-- [Getting started with the Adobe Stock API](#getting-started-with-the-adobe-stock-api)
-  - [Read me first!](#read-me-first)
-  - [Contents](#contents)
-  - [Overview](#overview)
-  - [Design phase](#design-phase)
-  - [Next steps](#next-steps)
-  - [More topics](#more-topics)
 
-<!-- /MarkdownTOC -->
-
-> Not a developer, but are interested in partnering? Please take a look at the [Stock API Business FAQ](../supplemental/stock-api-business-faq.md), and then [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BAdobe%20I%2FO%5D%20Stock%20partnership%20inquiry). Please note that it is not required to register as a partner to use the Adobe Stock API, as all usage of the API is governed by the [Adobe Developer Terms of Use](https://www.adobe.com/go/developer-terms) and the [Adobe Stock Terms of Use](http://www.adobe.com/go/stockterms).
+>Not a developer, but are interested in partnering? Please take a look at the [Stock API Business FAQ](../supplemental/stock-api-business-faq.md), and then [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BAdobe%20I%2FO%5D%20Stock%20partnership%20inquiry). Please note that it is not required to register as a partner to use the Adobe Stock API, as all usage of the API is governed by the [Adobe Developer Terms of Use](https://www.adobe.com/go/developer-terms) and the [Adobe Stock Terms of Use](http://www.adobe.com/go/stockterms).
 
 The Adobe Stock API provides programmatic access to [Adobe Stock](https://stock.adobe.com/) content. You can integrate this API into your organization's applications and processes. You can use the API in scripts or programs to search for and retrieve Adobe Stock assets such as photos, videos, and vector files, and to license assets for your users.
 
