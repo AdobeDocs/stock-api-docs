@@ -185,11 +185,6 @@ Pass the following URL parameters with the GET request.
                     Stock.</li>
                 <li><code>undiscovered</code><br />
                     Starting with assets that have not commonly been viewed or downloaded.</li>
-                <li><code><s>popularity</s></code><br />
-                    <s>In descending order by the number of views by all users.</s> This filter option is no longer
-                    maintained,
-                    and may be removed in the future.
-                </li>
             </ul>
         </td>
     </tr>

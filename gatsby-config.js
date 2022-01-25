@@ -93,7 +93,7 @@ module.exports = {
       },
       {
         path: '/api/swagger.md',
-        title: 'OpenAPI spec',
+        title: 'OpenAPI spec [BETA]',
       },
       {
         title: 'Stock API technical FAQ',
@@ -114,5 +114,5 @@ module.exports = {
     ],
   },
   plugins: ['@adobe/gatsby-theme-aio'],
-  pathPrefix: process.env.PATH_PREFIX || '/stock/',
+  pathPrefix: process.env.PATH_PREFIX || '/stock/docs/',
 };
