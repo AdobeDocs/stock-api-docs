@@ -20,11 +20,11 @@ Before you can register your application, get your API key and start making requ
 1.  Which APIs require authentication?
 1.  Which authentication method is right for your application?
 
-Once you have answered these questions, you can visit the [Adobe I/O Console](https://console.adobe.io/) and sign up.
+Once you have answered these questions, you can visit the [Adobe Developer Console](https://developer.adobe.com/console/) and sign up.
 
 ## Choose an integration type and register
 
-All Adobe Stock API applications must be registered by creating an integration using the [Adobe I/O Console](https://console.adobe.io/). You will need to choose one of these integration types. After reading the descriptions, see below for a table of which business use case matches up to its respective integration.
+All Adobe Stock API applications must be registered by creating an integration using the [Adobe Developer Console](https://developer.adobe.com/console/). You will need to choose one of these integration types. After reading the descriptions, see below for a table of which business use case matches up to its respective integration.
 
 *   **Service account.** This is the most secure authentication method, because it occurs on the backend, server-to-server, and because it requires the integrator to store a public key certificate on Adobe, and use a private key to sign requests. Adobe exchanges tokens with the application using the JSON Web Token (JWT) scheme. As a result, the application can authenticate itself without any user involvement or login.
     *   **Note:** For Enterprise customers *only*. You will need to sign into Adobe I/O using your system admin credentials. See [Q&A](02-register-app.md#qa) below if you are unsure whether your company has Adobe Stock for Enterprise.
@@ -34,7 +34,7 @@ All Adobe Stock API applications must be registered by creating an integration u
     *   **Special note:** In addition to creating an Adobe Stock OAuth integration, you will also need to add **Creative SDK** integration to enable the Adobe login. Because this method is more complex, refer to the [Authorization Code Workflow Guide](07-workflow-guides.md) for a complete guide.
     *   Checkout [OAuth 2.0 Playground](https://adobeioruntime.net/api/v1/web/io-solutions/adobe-oauth-playground/oauth.html) tool to genenrate an access token
     *   Find more details on [OAuth integrations](https://www.adobe.io/apis/cloudplatform/console/authentication/oauth_workflow.html) (Adobe Cloud Platform).
-*   **API Key.** This is the simplest method, as all it requires is that you register your application on the Adobe I/O Console. The I/O Console will generate a Stock API key, which you will use for all subsequent requests. Note that an API key is required for *all* authentication methods, however some APIs only require the key, such as the Search API.
+*   **API Key.** This is the simplest method, as all it requires is that you register your application on the Adobe Developer Console. The I/O Console will generate a Stock API key, which you will use for all subsequent requests. Note that an API key is required for *all* authentication methods, however some APIs only require the key, such as the Search API.
     *   **Note:** There is no "API Key" integration choice for Adobe Stock. Instead, choose "OAuth," and put whatever URL you want for the *Redirect URI*, because it will not be used. (*Yes*, we know this is confusing!) Here is a [screenshot](https://raw.githubusercontent.com/adobe/stock-api-docs/master/docs/images/io_api-key-integration.png) of a completed integration form on the I/O Console.
     *   For a guided walkthrough, see the [Affiliate API Workflow guide](07-workflow-guides.md).
     *   More details on [API Key integrations](https://www.adobe.io/apis/cloudplatform/console/authentication/api_key_workflow.html) (Adobe Cloud Platform).
@@ -129,4 +129,4 @@ These are the typical business scenarios for using the Stock API. See the [API B
 
 ### Why do I need to add Creative SDK to my OAuth integration, and why is the API Key integration called "OAuth"?
 
-Adobe Stock is still working through these issues with the Adobe Cloud Platform team. The API Key integration is simply mislabeled in the Adobe I/O Console, while the OAuth integration is new to Adobe Stock. Because it is still a new method, the Stock API Key integration lacks the proper scopes required by the Adobe login mechanism. However, Creative SDK does have the proper scopes, allowing the sign-in workflow to succeed.
+Adobe Stock is still working through these issues with the Adobe Cloud Platform team. The API Key integration is simply mislabeled in the Adobe Developer Console, while the OAuth integration is new to Adobe Stock. Because it is still a new method, the Stock API Key integration lacks the proper scopes required by the Adobe login mechanism. However, Creative SDK does have the proper scopes, allowing the sign-in workflow to succeed.

@@ -19,7 +19,7 @@
 
 ## Overview
 
-In the previous step, you registered your application on the [Adobe I/O Console](https://console.adobe.io). Now you will take the credentials created for you, and use them to build proper headers.
+In the previous step, you registered your application on the [Adobe Developer Console](https://developer.adobe.com/console). Now you will take the credentials created for you, and use them to build proper headers.
 
 Note that these topics are explored in detail in each of these workflow guides, so only the summary of the process will be discussed here:
 
@@ -79,7 +79,7 @@ For complete information about creating access tokens, see the Adobe I/O[ API Au
 
 ### Important: Use the correct scope in your JWT
 
-Please note that if you are following the Service Account workflow, the Adobe I/O API Authentication Guide (above) uses a different scope in its sample JWT payload than the one required by the Stock API. The correct scope for your application is listed in the **JWT** tab of the Adobe I/O Console, and it will include your proper payload.
+Please note that if you are following the Service Account workflow, the Adobe I/O API Authentication Guide (above) uses a different scope in its sample JWT payload than the one required by the Stock API. The correct scope for your application is listed in the **JWT** tab of the Adobe Developer Console, and it will include your proper payload.
 
 ![JWT tab of Service Account integration](./io_jwt-tab.png)
 

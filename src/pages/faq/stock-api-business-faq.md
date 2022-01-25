@@ -87,13 +87,13 @@ Yes.
 
 ### What are the criteria for applying for the Adobe Stock API?
 
-Anyone can create an Adobe Stock API key at no cost by signing up for a free [Adobe ID account](https://console.adobe.io).
+Anyone can create an Adobe Stock API key at no cost by signing up for a free [Adobe ID account](https://developer.adobe.com/console).
 
 <a id="how-can-i-test-the-search-api"></a>
 
 ### How can I test the Search API?
 
-Create an Adobe Stock API key for free at <https://console.adobe.io>.
+Create an Adobe Stock API key for free at <https://developer.adobe.com/console>.
 
 <a id="how-can-i-test-the-licensing-api"></a>
 

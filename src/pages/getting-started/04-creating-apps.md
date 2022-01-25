@@ -11,7 +11,7 @@ Here is a summary of the general steps you follow when integrating with the Stoc
     *   define your thumbnail sizes, localization preferences, and the number of thumbnails to display on the page;
     *   plan which sorting and filtering capabilities to support, such as relevancy, creation date, and what asset types to return, such as only photos or only videos and/or premium content;
     *   and decide which types of searches to support, such as keyword search and image similarity search.
-3.  [Register your application](./02-register-app.md) as a client of the Stock API and obtain your API Key (client ID) by creating an integration on the Adobe I/O Console. If you need to call licensing APIs, you will need additional credentials.
+3.  [Register your application](./02-register-app.md) as a client of the Stock API and obtain your API Key (client ID) by creating an integration on the Adobe Developer Console. If you need to call licensing APIs, you will need additional credentials.
 4.  Set up your [headers for authentication](./03-api-authentication.md), which could mean only the API key and application name, but could also require a user or organization token.
     *   You will need to craft additional code (not specific to the Stock APIs) to generate your tokens.
 5.  Build and execute a [search query](./apps/05-search-for-assets.md) using your design decisions and user choices. Parse the JSON response and display information or thumbnails for the quantity of assets returned. Include metadata and thumbnails where appropriate.

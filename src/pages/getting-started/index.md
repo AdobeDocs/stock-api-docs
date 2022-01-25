@@ -14,7 +14,7 @@ description: Getting started with the Adobe Stock API.
 curl -H 'x-api-key:myAPIKey' -H 'x-product:myTestApp1.0' https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US%26search_parameters%5Bwords%5D=kittens
 ```
 
-> ***Tl;dr version:** (1) register for an Adobe Stock API key at [console.adobe.io](https://console.adobe.io/), (2) Add the api key in the following [curl](https://curl.haxx.se/) command and make your first search query, then (3) return here to learn more!
+> ***Tl;dr version:** (1) register for an Adobe Stock API key at [console.adobe.io](https://developer.adobe.com/console/), (2) Add the api key in the following [curl](https://curl.haxx.se/) command and make your first search query, then (3) return here to learn more!
 
 ## Read me first!
 
@@ -77,7 +77,7 @@ As you read the documentation, keep some questions in mind. Some of these will b
 
 ## Next steps
 
-1.  Learn how to [register](getting-started/02-register-app.md) your application on the Adobe I/O Console. You can add as many integrations as you need.
+1.  Learn how to [register](getting-started/02-register-app.md) your application on the Adobe Developer Console. You can add as many integrations as you need.
 1.  Test how your application will [authenticate](getting-started/03-api-authentication.md) to the Adobe Stock API.
 1.  Finally, start [building](getting-started/04-creating-apps.md) your app, test and deploy to your users!
 
