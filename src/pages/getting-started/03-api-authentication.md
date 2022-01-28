@@ -1,11 +1,10 @@
 # API authentication headers
 
-> ***Tl;dr version:** All Stock API requests require two basic headers, and authenticated requests require you to add an access token. Here you can learn the format for these headers and test them.*
-
-#### Contents
+<InlineAlert variant="success" slots="text"/>
+TL;DR: All Stock API requests require two basic headers, and authenticated requests require you to add an access token. Here you can learn the format for these headers and test them.
 
 <!-- MarkdownTOC -->
-
+<!--
 *   [Overview](#overview)
 *   [Store your credentials](#store-your-credentials)
 *   [Create your basic header](#create-your-basic-header)
@@ -14,7 +13,7 @@
     *   [Important: Use the correct scope in your JWT](#important-use-the-correct-scope-in-your-jwt)
 *   [Add token to header](#add-token-to-header)
     *   [Test your access token](#test-your-access-token)
-
+-->
 <!-- /MarkdownTOC -->
 
 ## Overview
@@ -48,7 +47,7 @@ The Adobe Stock APIs is a REST-based service. Subsequently, all requests to the 
 
 Example:
 
-```http
+```shell
     X-Product: MySampleApp/1.0
     X-API-Key: abc123c9f1194eac8a63cc25c1b9b9df
 ```
@@ -61,10 +60,11 @@ For unauthenticated requests such as normal search queries, this is all you need
 
 Example search query using [curl](https://curl.haxx.se/). Note that line breaks have been added for clarity.
 
-```bash
+```shell
 curl "https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US
-&search_parameters%5Bwords%5D=cats%20in%20costume" 
--H "x-api-key: YourApiKeyHere" -H "x-product: MySampleApp/1.0"
+    &search_parameters%5Bwords%5D=cats%20in%20costume" 
+    -H "x-api-key: YourApiKeyHere" 
+    -H "x-product: MySampleApp/1.0"
 ```
 
 ## Generate an access token
@@ -97,8 +97,8 @@ Like we tested our API key header, now we can test our access token by combining
 
 Replace the text "PutYourAccessToken" with the token you generated, and replace "YourApiKeyHere" with your key, and run from a terminal prompt.
 
-```bash
-    curl "https://stock.adobe.io/Rest/Libraries/1/Member/Profile?locale=en_US" -H "authorization: Bearer PutYourAccessToken" -H "x-api-key: YourApiKeyHere" -H "x-product: MySampleApp/1.0"
+```shell
+  curl "https://stock.adobe.io/Rest/Libraries/1/Member/Profile?locale=en_US" -H "authorization: Bearer PutYourAccessToken" -H "x-api-key: YourApiKeyHere" -H "x-product: MySampleApp/1.0"
 ```
 
 If you correctly generated an access token, you should see something like this (JSON has been formatted for display).

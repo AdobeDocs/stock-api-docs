@@ -1,9 +1,8 @@
 # Creating Adobe Stock applications
 
->&nbsp;  &nbsp;
-
 As discussed previously, the Adobe Stock API is a RESTful web service. To call the API, you make requests using HTTPS GET and POST methods. The API provides several methods, defined as URL endpoints, for requesting information or assets from Adobe Stock. There are methods for searching, licensing assets, and getting purchase history. You pass parameters to the method appended to a URL endpoint, and in return the API provides responses in JSON structures. In this section, we will explore the API command structure and learn techniques for searching and licensing content.
 
+## Overview
 Here is a summary of the general steps you follow when integrating with the Stock API:
 
 1.  Spend some time browsing and searching content on the [Adobe Stock website](https://stock.adobe.com/), to get a sense of the typical end-user workflows.

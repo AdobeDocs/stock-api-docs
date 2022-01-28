@@ -10,11 +10,12 @@ description: Getting started with the Adobe Stock API.
 
 # Getting started with the Adobe Stock API
 
+<InlineAlert variant="success" slots="text"/>
+TL;DR: (1) register for an Adobe Stock API key at [Adobe Developer Console](https://developer.adobe.com/console/), (2) Add the api key in the following [curl](https://curl.haxx.se/) command and make your first search query, then (3) return here to learn more!
+
 ```shell
 curl -H 'x-api-key:myAPIKey' -H 'x-product:myTestApp1.0' https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US%26search_parameters%5Bwords%5D=kittens
 ```
-
-> ***Tl;dr version:** (1) register for an Adobe Stock API key at [console.adobe.io](https://developer.adobe.com/console/), (2) Add the api key in the following [curl](https://curl.haxx.se/) command and make your first search query, then (3) return here to learn more!
 
 ## Read me first!
 

@@ -12,7 +12,6 @@ A list of technical frequently asked questions. Don't see your question answered
 
 If you are looking for the Stock API Business FAQ, it is [located here](../supplemental/stock-api-business-faq.md).
 
-- [Stock API FAQ](#stock-api-faq)
   - [General](#general)
     - [What thumbnail preview sizes are available?](#what-thumbnail-preview-sizes-are-available)
     - [Why are there more search results returned than the 'limit' value?](#why-are-there-more-search-results-returned-than-the-limit-value)
@@ -568,21 +567,9 @@ Please also note that the Free collection can change. An image which is availabl
 
 Free assets can be identified by their metadata, specifically by the `premium_level_id` field. **A value of '1' indicates a Free asset.**
 
-<table>
-  <tr>
-   <td><code>premium_level_id</code>
-   </td>
-   <td>Asset's premium (pricing) level. Integer.
-    <ul>
-      <li><code>0</code>: Core/standard</li>
-      <li><code>1</code>: Free &nbsp;&nbsp;<strong>&lt;== Filter on this value</strong></li>
-      <li><code>2</code>: Premium level 1</li>
-      <li><code>3</code>: Premium level 2</li>
-      <li><code>4</code>: Premium level 3</li>
-    </ul>
-   </td>
-  </tr>
-</table>
+| Name | Description |
+|---------------|-----------------|
+| premium_level_id | Asset's premium (pricing) level. Integer.<br /> <ul><li class="spectrum-Body--sizeS"><inlineCode>0</inlineCode>: Core/standard</li><li class="spectrum-Body--sizeS"><inlineCode>1</inlineCode>: Free &nbsp;&nbsp;<strong>&lt;== Filter on this value</strong></li><li class="spectrum-Body--sizeS"><inlineCode>2</inlineCode>: Premium level 1</li><li class="spectrum-Body--sizeS"><inlineCode>3</inlineCode>: Premium level 2</li><li class="spectrum-Body--sizeS"><inlineCode>4</inlineCode>: Premium level 3</li></ul> |
 
 In this workflow, a scheduled script would periodically check to see if curated assets are still available and whether their price status has changed.
 

@@ -48,7 +48,7 @@ Pass the following URL parameters with the GET request.
 
 | Parameter | Description |
 |---------------|-----------------|
-| locale | Location language code. String. Default is <code>en_US</code>. See the full list of <a href="14-locale-codes.md">Locales</a>. |
+| locale | Location language code. String. Default is `en_US`. See the full list of <a href="14-locale-codes.md">Locales</a>. |
 | search_parameters[limit] | Optional, for pagination. Maximum number of assets to return in the call. Call repeatedly with different `[offset]` values to page through the found assets. Valid values are 1 through 100. Integer. Default is 100. |
 | search_parameters[offset] | Optional, start position in query. Valid values are 0 (the first found asset) or higher integers. Integer. Default is 0. <br/><br/> With each successive call for your search, increment this by the `[limit]` value to get the next page of assets. For example, by default your first call uses a 0 offset and limit of 100 to return the first 100 found assets. Call this API again with an offset of 100 to retrieve the next page. |
 | search_parameters[thumbnail_size] | Optional, thumbnail size in pixels. Specify the size of thumbnail to return for each found asset. Integer. <br/><br/>Valid values and meanings:<br/> `110`: Small (110px)<br/> `160`: Medium (160px)<br/> `240`: Large (240px)<br/> `500`: Extra large (500px). Returned with watermark.<br/> `1000`: Extra-extra large (1000px). Returned with watermark. |
@@ -120,12 +120,8 @@ In the table below, fields marked with **\*** are returned by default.
 
 ### Simple example
 
-```http
-GET /Rest/Libraries/1/Member/LicenseHistory HTTP/1.1
-Host: stock.adobe.io
-X-Product: MySampleApp/1.0
-x-api-key: MyApiKey
-Authorization: Bearer MyAccessToken
+```shell
+curl --location --request GET 'https://stock.adobe.io/Rest/Libraries/1/Member/LicenseHistory?locale=en_US' --header 'X-Product:  MySampleApp/1.0' --header 'x-api-key:  MyApiKey' --header 'Authorization:  Bearer MyAccessToken'
 ```
 
 ```javascript
@@ -156,12 +152,8 @@ Authorization: Bearer MyAccessToken
 
 ### Example fetching all history and using pagination
 
-```http
-GET /Rest/Libraries/1/Member/LicenseHistory?search_parameters[limit]=20&search_parameters[offset]=0&all=true HTTP/1.1
-Host: stock.adobe.io
-X-Product: MySampleApp/1.0
-x-api-key: MyApiKey
-Authorization: Bearer MyAccessToken
+```shell
+curl --location -g --request GET 'https://stock.adobe.io/Rest/Libraries/1/Member/LicenseHistory?locale=en_US&search_parameters[limit]=20&search_parameters[offset]=0&all=true' --header 'X-Product:  MySampleApp/1.0' --header 'x-api-key:  MyApiKey' --header 'Authorization:  Bearer MyAccessToken'
 ```
 
 In the example above, the request will return the first 20 of 239 results. Without this command, the API returned only 13 results (see previous example.)

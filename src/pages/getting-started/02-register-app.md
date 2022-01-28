@@ -1,16 +1,15 @@
 # Register your application
 
-> ***Tl;dr version:** The Stock APIs require different forms of authentication depending on your goals. If you already know whether you need a Service Account, OAuth integration or just an API key, you may [skip ahead to register]*
-
-#### Contents
+<InlineAlert variant="success" slots="text"/>
+TL;DR: The Stock APIs require different forms of authentication depending on your goals. If you already know whether you need a Service Account, OAuth integration or just an API key, you may [skip ahead to register]
 
 <!-- MarkdownTOC depth=1 -->
-
+<!--
 *   [Authentication overview](#authentication-overview)
 *   [Choose an integration type and register](#choose-an-integration-type-and-register)
 *   [API authentication requirements](#api-authentication-requirements)
 *   [Q&A](#qa)
-
+-->
 <!-- /MarkdownTOC -->
 
 ## Authentication overview

@@ -92,10 +92,6 @@ module.exports = {
         title: 'Locale codes',
       },
       {
-        path: '/api/swagger.md',
-        title: 'OpenAPI spec [BETA]',
-      },
-      {
         title: 'Stock API technical FAQ',
         path: '/faq/',
       },
