@@ -1,10 +1,11 @@
 # Adobe Stock API documentation
 This repo contains the source files for the [Adobe Stock](https://stock.adobe.com) API documentation. The home page for Adobe Stock API is located here:
-https://www.adobe.io/apis/creativecloud/stock/docs.html.
+https://developer.adobe.com/stock/docs/.
 
 Before you begin, be sure to review the [Developer Terms of Use](supplemental/terms-for-adobe-stock-developers.md).
 
-If you are browsing this at GitHub, here is an index and reading order:
+<!--
+If you are browsing this at GitHub, here is an index and reading order. 
 
 * [Getting started with the Adobe Stock API](docs/getting-started/index.md)
     - [Register your application](docs/getting-started/02-register-app.md)
@@ -25,5 +26,7 @@ If you are browsing this at GitHub, here is an index and reading order:
 * [Frequently asked questions](docs/15-faq.md)
 * [Fotolia API migration resources](docs/18-fotolia-migration-resources.md)
 * [Application approval guidelines](docs/16-app-approval.md)
+-->
 
-Contributions are welcome! If you find a mistake, please follow the [issue template](ISSUE_TEMPLATE.md) or would like to add or clarify something, please see the [contributing guidelines](CONTRIBUTING.md).
+
+Contributions are welcome! If you find issues, please follow the [issue template](ISSUE_TEMPLATE.md) or would like to add or clarify something, please see the [contributing guidelines](CONTRIBUTING.md).

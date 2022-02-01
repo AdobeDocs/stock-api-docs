@@ -50,7 +50,7 @@ Pass the following parameters with a GET request.
 
 | Parameter   | Description                                                                                            |
 |-------------|--------------------------------------------------------------------------------------------------------|
-| locale      | Location language code. String. Default is <code>en_US</code>. See the full list of <a href="14-locale-codes.md">Locales</a>. String.                          |
+| locale      | Location language code. String. Default is <inlineCode class="spectrum-Body--sizeS">en_US</inlineCode>. See the full list of <a href="14-locale-codes.md">Locales</a>. String.                          |
 | category_id | Optional. Unique identifier for an existing category; results are returned for this category. Integer. |
 
 <a id="responses"></a>
