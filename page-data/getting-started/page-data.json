@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-getting-started-index-md",
+    "path": "/getting-started/",
+    "result": {"pageContext":{"frontmatter":{"keywords":["Stock API"],"title":"Stock APIs","description":"Getting started with the Adobe Stock API."}}},
+    "staticQueryHashes": ["915530536"]}

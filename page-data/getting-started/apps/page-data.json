@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-getting-started-apps-index-md",
+    "path": "/getting-started/apps/",
+    "result": {"pageContext":{"frontmatter":{"keywords":["Stock API"],"title":"Stock APIs","description":"The Stock API overview page."}}},
+    "staticQueryHashes": ["915530536"]}
