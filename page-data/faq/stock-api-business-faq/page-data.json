@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-faq-stock-api-business-faq-md",
     "path": "/faq/stock-api-business-faq/",
-    "result": {"pageContext":{"frontmatter":{}}},
+    "result": {"pageContext":{"frontmatter":{"keywords":["Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud"],"title":"Stock API FAQs and supplemental info","description":"Stock API Frequently Asked Questions."}}},
     "staticQueryHashes": ["915530536"]}
