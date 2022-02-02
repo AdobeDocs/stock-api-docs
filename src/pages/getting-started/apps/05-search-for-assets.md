@@ -1,25 +1,13 @@
+---
+keywords:
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock APIs
+description: Getting started with the Adobe Stock API. Build an API application to access millions of royalty-free stock images, photos, graphics, vectors, video footage, illustrations, templates, 3d assets, editorial assets and high-quality premium content.
+---
+
 # Search for assets
 
 Convert your app requirements into commands and build your search query using the Search API reference.
-
-<!-- MarkdownTOC -->
-
-<!--
-*   [Practical search example](#practical-search-example)
-*   [Tips and techniques](#tips-and-techniques)
-    *   [Paginating results](#paginating-results)
-        *   [Pagination example](#pagination-example)
-    *   [Change the order of your results](#change-the-order-of-your-results)
-    *   [Similarity (visual) search](#similarity-visual-search)
-        *   [Image similarity POST example](#image-similarity-post-example)
-        *   [Combining visual search with other filters](#combining-visual-search-with-other-filters)
-    *   [Jump to a search results page on Adobe Stock](#jump-to-a-search-results-page-on-adobe-stock)
-        *   [Search by keyword](#search-by-keyword)
-        *   [Filter by photos, vectors, video, etc.](#filter-by-photos-vectors-video-etc)
-        *   [Search on standard or Premium content](#search-on-standard-or-premium-content)
-        *   [Important: Get tracking credit](#important-get-tracking-credit)
--->
-<!-- /MarkdownTOC -->
 
 ## Overview
 
@@ -30,6 +18,8 @@ To perform a search, you will call to the Search/Files endpoint and supply one o
 *   **Set response fields.** The Search API will only return a default set of fields in the JSON response unless you override this behavior and tell it which fields you want. There are many more fields available than what is returned by default, for performance reasons.
 
 ## Practical search example
+
+  > ***Did you know?*** You can earn commissions from hosting Adobe Stock search and banners on your website that lead to conversions. See a detailed guide at [Get Paid to Search Adobe Stock!](https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312)
 
 You have been asked to create a simple web page that lets a user enter a word and show them the most-downloaded photo result along with a title. Furthermore, you want the image to be displayed at 800 pixels size, and have a clickable link that takes the user to a page on the Adobe Stock website where the image can be licensed.
 

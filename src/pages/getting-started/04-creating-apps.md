@@ -1,3 +1,10 @@
+---
+keywords:
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock APIs
+description: Getting started with the Adobe Stock API. Build an API application to access millions of royalty-free stock images, photos, graphics, vectors, video footage, illustrations, templates, 3d assets, editorial assets and high-quality premium content.
+---
+
 # Creating Adobe Stock applications
 
 As discussed previously, the Adobe Stock API is a RESTful web service. To call the API, you make requests using HTTPS GET and POST methods. The API provides several methods, defined as URL endpoints, for requesting information or assets from Adobe Stock. There are methods for searching, licensing assets, and getting purchase history. You pass parameters to the method appended to a URL endpoint, and in return the API provides responses in JSON structures. In this section, we will explore the API command structure and learn techniques for searching and licensing content.

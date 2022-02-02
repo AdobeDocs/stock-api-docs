@@ -1,20 +1,14 @@
+---
+keywords:
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock APIs
+description: Getting started with the Adobe Stock API. Build an API application to access millions of royalty-free stock images, photos, graphics, vectors, video footage, illustrations, templates, 3d assets, editorial assets and high-quality premium content.
+---
+
 # API authentication headers
 
 <InlineAlert variant="success" slots="text"/>
 TL;DR: All Stock API requests require two basic headers, and authenticated requests require you to add an access token. Here you can learn the format for these headers and test them.
-
-<!-- MarkdownTOC -->
-<!--
-*   [Overview](#overview)
-*   [Store your credentials](#store-your-credentials)
-*   [Create your basic header](#create-your-basic-header)
-    *   [Test your API key header](#test-your-api-key-header)
-*   [Generate an access token](#generate-an-access-token)
-    *   [Important: Use the correct scope in your JWT](#important-use-the-correct-scope-in-your-jwt)
-*   [Add token to header](#add-token-to-header)
-    *   [Test your access token](#test-your-access-token)
--->
-<!-- /MarkdownTOC -->
 
 ## Overview
 
@@ -28,7 +22,7 @@ Note that these topics are explored in detail in each of these workflow guides, 
 
 ## Store your credentials
 
-The first thing you will need is the information given to you when you registered your application. Depending on which integration method you chose, you will only need particular fields (see a [screenshot](./io_all-integration-details.png) of each integration type).
+The first thing you will need is the information given to you when you registered your application. Depending on which integration method you chose, you will only need particular fields.
 
 Other than the API key, the information here--especially the client secret--should be safeguarded like any sensitive credentials, similar to your application's private key. At a minimum, this data should be stored on your server in an file inaccessible to the public. At no time should it be exposed in front-end JavaScript, for example.
 

@@ -35,7 +35,7 @@ Optional. The Authorization header is only required for retrieving the `is_licen
 
 ### Request headers
 
-See [Headers for Stock API Calls](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/10-headers-for-api-calls.md) for details about header content.
+See [Headers for Stock API Calls](/api/10-headers-for-api-calls.md) for details about header content.
 
 * Required headers: `x-Product`, `x-api-key`, `Authorization`
 * Optional headers: `X-Product-Location`, `X-Request-Id`
@@ -47,8 +47,8 @@ See [Headers for Stock API Calls](https://www.adobe.io/apis/creativecloud/stock/
 | Parameter | Description |
 | ------------ | ------------- |
 | ids | Comma-separated list of file IDs, e.g. `ids=100,101`. Maximum number of IDs is 110. Exceeding this limit triggers an error. String. |
-| locale | Optional. Location language code for the API to use when returning localized messages. The API can usually get the user's default locale through the Authorization header. This value overrides that or provides a locale if not available through Authorization. String.<br/><br/>Default is en-US. See the full list of[  Locales](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/14-locale-codes.md). |
-| result_columns[] | Optional. Fields to include in response. Note that some fields (`is_licensed`) require an authorization token. Array[].<br/><br/>**Tip:** To combine results, use this syntax: `result_columns[]=is_licensed&result_columns[]=creation_date`<br/><br/>By default, only `id` is returned. For the full list, see the [Search API reference](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/11-search-reference.md). |
+| locale | Optional. Location language code for the API to use when returning localized messages. The API can usually get the user's default locale through the Authorization header. This value overrides that or provides a locale if not available through Authorization. String.<br/><br/>Default is en-US. See the full list of[  Locales](/api/14-locale-codes.md). |
+| result_columns[] | Optional. Fields to include in response. Note that some fields (`is_licensed`) require an authorization token. Array[].<br/><br/>**Tip:** To combine results, use this syntax: `result_columns[]=is_licensed&result_columns[]=creation_date`<br/><br/>By default, only `id` is returned. For the full list, see the [Search API reference](/api/11-search-reference.md). |
 
 <a id="responses"></a>
 
@@ -56,7 +56,7 @@ See [Headers for Stock API Calls](https://www.adobe.io/apis/creativecloud/stock/
 
 The response for any given request is dependent on the value of the `result_columns` argument. As mentioned, the only field returned by default is `id` (Stock asset ID, integer).
 
-For a complete list of return fields, see the [Search API reference](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/11-search-reference.md).
+For a complete list of return fields, see the [Search API reference](/api/11-search-reference.md).
 
 <a id="example-requests-and-responses"></a>
 

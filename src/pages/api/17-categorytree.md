@@ -37,7 +37,7 @@ An `Authorization` header is not required.
 
 ### Request headers
 
-See [API authentication](../getting-started/03-api-authentication.md) and [Headers for Stock API calls](10-headers-for-api-calls.md) for details about header content.
+See [API authentication](../getting-started/03-api-authentication.md) and [Headers for Stock API calls](./10-headers-for-api-calls.md) for details about header content.
 
 *   Required headers: `x-Product`, `x-api-key`
 *   Optional headers: `Authorization`, `X-Request-Id`
@@ -50,7 +50,7 @@ Pass the following parameters with a GET request.
 
 | Parameter   | Description                                                                                            |
 |-------------|--------------------------------------------------------------------------------------------------------|
-| locale      | Location language code. String. Default is <inlineCode class="spectrum-Body--sizeS">en_US</inlineCode>. See the full list of <a href="14-locale-codes.md">Locales</a>. String.                          |
+| locale      | Location language code. String. Default is <inlineCode class="spectrum-Body--sizeS">en_US</inlineCode>. See the full list of <a href="./14-locale-codes.md">Locales</a>. String.                          |
 | category_id | Optional. Unique identifier for an existing category; results are returned for this category. Integer. |
 
 <a id="responses"></a>
@@ -76,7 +76,7 @@ CategoryTree's response is returned in a JSON array that can contain multiple ca
 |------|--------------------------------------------------------------------------------------------------|
 | id   | Unique identifier for the category. Integer.                                                     |
 | link | Category path. The format is: <br/>`/Category/linkname/category_id` <br/>See below for example usage. String. |
-| name | Localized category name. See <a href="14-locale-codes.md">Locales</a>. String.                                                    |
+| name | Localized category name. See <a href="./14-locale-codes.md">Locales</a>. String.                                                    |
 
 <a id="example-requests-and-responses"></a>
 

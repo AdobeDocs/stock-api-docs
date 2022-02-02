@@ -1,3 +1,10 @@
+---
+keywords:
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock API FAQs and supplemental info
+description: Stock API Frequently Asked Questions.
+---
+
 # Terms for Adobe Stock Developers
 
 By using the Adobe Stock Developer Tools (defined below), I acknowledge that I have read and agreed to these Terms for Adobe Stock Developers ("**Stock Developer Terms**"). These Stock Developer Terms incorporate by reference the Adobe Developer Additional Terms found at https://wwwimages2.adobe.com/content/dam/acom/en/legal/servicetou/Adobe-Developer-Additional-Terms_en_US_20180605_2200.pdf (or successor URL), and capitalized terms not defined here have the same meaning as defined in the Adobe Developer Additional Terms. These Stock Developer Terms are supplemental to, and will not replace or limit any other agreement you have with Adobe, except that in the event of any conflict between the Adobe Developer Additional Terms, these Stock Developer Terms will control with regard to Adobe Stock only. You are solely responsible and liable for the use of the Adobe Stock Developer Tools by your employer, employees, contractors, colleagues, and clients.

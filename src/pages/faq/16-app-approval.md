@@ -1,3 +1,10 @@
+---
+keywords:
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock API FAQs and supplemental info
+description: Stock API Frequently Asked Questions.
+---
+
 # Adobe Stock application approval guidelines
 
 Per the [Adobe Developer Terms of Use](http://www.adobe.com/go/developer-terms), Adobe reserves the right to restrict distribution of any Developer Software (including access to Services and Software by Developer Software) unless approved by Adobe.

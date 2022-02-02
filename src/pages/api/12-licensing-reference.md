@@ -54,7 +54,7 @@ The Stock API provides the following methods related to licensing and getting mo
     *   *User has enough quota to license the next asset.* Display the returned message, which shows the user's current quota before purchasing.
     *   *User doesn't have enough quota but can handle overage* (they have a saved purchase method on file). Display the returned message, which includes the price and asks the user to license the asset with overage.
     *   *User doesn't have quota and there is no overage plan.* Display the returned message, which indicates that the user will be redirect to the [Adobe Stock site](https://stock.adobe.com/) to review plans.
-*   **Member/LicenseHistory.** Requests a list of licenses and download URLs for every previously licensed asset. This is covered in the next section, [License history reference](13-license-history.md).
+*   **Member/LicenseHistory.** Requests a list of licenses and download URLs for every previously licensed asset. This is covered in the next section, [License history reference](./13-license-history.md).
 
 ### Authentication
 
@@ -62,7 +62,7 @@ The Authorization header is required for any of the licensing calls. The API use
 
 ### Request headers
 
-See [Headers for Stock API calls](10-headers-for-api-calls.md) for details about header content.
+See [Headers for Stock API calls](./10-headers-for-api-calls.md) for details about header content.
 
 *   Required headers: `x-Product`, `x-api-key`, `Authorization`
 *   Optional headers: `X-Request-Id`
@@ -141,7 +141,7 @@ Pass URL-encoded parameters with the GET request.
                 get the user's default locale through the Authorization header. This value overrides that or provides a
                 locale if not available through Authorization. String.
             </p>
-            <p class="spectrum-Body--sizeS">Default is <inlineCode class="spectrum-Body--sizeS">en_US</inlineCode>. See the full list of <a href="14-locale-codes.md">Locales</a>.</p>
+            <p class="spectrum-Body--sizeS">Default is <inlineCode class="spectrum-Body--sizeS">en_US</inlineCode>. See the full list of <a href="./14-locale-codes.md">Locales</a>.</p>
         </td>
     </tr>
     <tr>

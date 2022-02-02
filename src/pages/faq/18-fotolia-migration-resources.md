@@ -1,36 +1,25 @@
+---
+keywords:
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock API FAQs and supplemental info
+description: Stock API Frequently Asked Questions.
+---
+
 # Fotolia API migration resources
 
 This guide is intended for developers migrating from Fotolia API to the Adobe Stock API.
-
-<!-- MarkdownTOC -->
-
-*   [First steps](#first-steps)
-*   [Feature mapping](#feature-mapping)
-    *   [Endpoints](#endpoints)
-    *   [Search filters and parameters](#search-filters-and-parameters)
-*   [Deprecated API methods](#deprecated-api-methods)
-*   [Licensing and authentication](#licensing-and-authentication)
-    *   [Licensing changes](#licensing-changes)
-    *   [Authentication](#authentication)
-*   [Next steps](#next-steps)
-    *   [Get registered](#get-registered)
-    *   [Get a Stock account](#get-a-stock-account)
-    *   [Sign a contract](#sign-a-contract)
-    *   [Build an app](#build-an-app)
-
-<!-- /MarkdownTOC -->
 
 <a id="first-steps"></a>
 
 ## First steps
 
-If you are new to using Adobe APIs, we recommend you begin by reading [Getting Started with the Adobe Stock API](https://www.adobe.io/apis/creativecloud/stock/docs.html), and browse the [Adobe Stock website](https://stock.adobe.com/) to become familar with navigation, search, and the new content types available.
+If you are new to using Adobe APIs, we recommend you begin by reading [Getting Started with the Adobe Stock API](https://developer.adobe.com/stock/docs/), and browse the [Adobe Stock website](https://stock.adobe.com/) to become familar with navigation, search, and the new content types available.
 
 Overall, the transition from the Fotolia API to the Adobe Stock API should not require much work, since most of the commands and parameters are the same, and both return standard JSON responses. One of the main advantages of switching to Adobe Stock is the robust platform offered by Adobe I/O, which hosts all of Adobe's APIs. Unlike Fotolia, Adobe Stock does not currently enforce API limits. For marketers, creative agencies and production houses, Stock also has a greater amount of quality content. In addition to all the photo, vector and video content on Fotolia, Adobe Stock has exclusive asset types such as 3D, Templates (including Motion Graphics Templates), Editorial assets, and a deep collection of Premium content by award-winning artists and agencies.
 
 The most significant difference between the APIs is the authentication method. Fotolia supported only basic authentication based on user name and password to receive a token, while Adobe requires a more secure method. Adobe offers two methods: one based on user login (OAuth), and a fully automated method for enterprise service accounts. See [Authentication](#authentication) for more details.
 
-Because the licensing workflow is different, we recommend you also review [our guide on licensing](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/getting-started/apps/06-licensing-assets.md). Furthermore, unlike Fotolia, when licensing a Standard image from Stock (non-Premium and non-Editorial), you will always receive a license for the *original size*. Therefore, there is no reason for "L", "XL" and "XXL" licenses. See [Licensing changes](#licensing-changes) for specific details on the differences.
+Because the licensing workflow is different, we recommend you also review [our guide on licensing](/getting-started/apps/06-licensing-assets.md). Furthermore, unlike Fotolia, when licensing a Standard image from Stock (non-Premium and non-Editorial), you will always receive a license for the *original size*. Therefore, there is no reason for "L", "XL" and "XXL" licenses. See [Licensing changes](#licensing-changes) for specific details on the differences.
 
 <a id="feature-mapping"></a>
 
@@ -48,8 +37,8 @@ Here is a list of existing Fotolia API endpoints and their new Stock API equival
 | [getSearchResults](https://us.fotolia.com/Services/API/Rest/Method/getSearchResults) | Search/Files         | Full search capabilities                       | See [Search filters and parameters](#search-filters-and-parameters) for details on search filters                                                                                                        |
 | [getCategories1](https://us.fotolia.com/Services/API/Rest/Method/getCategories1)<br/>[getCategories2](https://us.fotolia.com/Services/API/Rest/Method/getCategories2) | Search/CategoryTree  | Return categories               | Categories are considered a legacy feature. While they are still available on Adobe Stock, they are less reliable than searching by keywords |
 | **Media**            |                      |                                                |                                                                                                                                              |
-| [getMediaData](https://us.fotolia.com/Services/API/Rest/Method/getMediaData)     | [Media/1/Files](api/19-bulk-metadata-files-reference.md)                  | Return all information about a media           | This API can be used to get metadata for files one at time, or in bulk |
-| [getBulkMediaData](https://us.fotolia.com/Services/API/Rest/Method/getBulkMediaData) | Media/1/Files]\(api/19-bulk-metadata-files-reference.md)                  | Return all information about a media           | Same as above |
+| [getMediaData](https://us.fotolia.com/Services/API/Rest/Method/getMediaData)     | [Media/1/Files](/api/19-bulk-metadata-files-reference.md)                  | Return all information about a media           | This API can be used to get metadata for files one at time, or in bulk |
+| [getBulkMediaData](https://us.fotolia.com/Services/API/Rest/Method/getBulkMediaData) | Media/1/Files]\(/api/19-bulk-metadata-files-reference.md)                  | Return all information about a media           | Same as above |
 | [getMedia](https://us.fotolia.com/Services/API/Rest/Method/getMedia)         | Content/License      | Return download link (media purchase)          |                                                                                                                                              |
 | [getMediaComp](https://us.fotolia.com/Services/API/Rest/Method/getMediaComp)     | Search/Files         | Return url of the comp image                   |                                                                                                                                              |
 | **User**             |                      |                                                |                                                                                                                                              |
@@ -63,11 +52,11 @@ If you have a business requirement to access Stock Contributor APIs, please plea
 
 ### Search filters and parameters
 
-Nearly all the Fotolia search parameters and filters are also available in Adobe Stock. Note that there are more filters available to Adobe Stock, especially for new content types (Templates, 3D, Premium, Editorial, etc.), as well as more controls for searching by similar images. Refer the [Stock Search API Reference](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/11-search-reference.md) for full details.
+Nearly all the Fotolia search parameters and filters are also available in Adobe Stock. Note that there are more filters available to Adobe Stock, especially for new content types (Templates, 3D, Premium, Editorial, etc.), as well as more controls for searching by similar images. Refer the [Stock Search API Reference](/api/11-search-reference.md) for full details.
 
 | Fotolia                                               | Adobe Stock                             | Notes                                                                                                                                                       |
 |-------------------------------------------------------|-----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| search_parameters[language_id]                        | **locale**                                  | See [Locale codes reference](api/14-locale-codes.md).                                                                                                                                 |
+| search_parameters[language_id]                        | **locale**                                  | See [Locale codes reference](/api/14-locale-codes.md).                                                                                                                                 |
 | search_parameters[words]                              | Same                                    | Keyword search                                                                                                                                              |
 | search_parameters[creator_id]                         | Same                                    | Search by creator                                                                                                                                           |
 | search_parameters[cat1\_id]<br/>search_parameters[cat2\_id]                           | **search_parameters[category]**             | Search by  category                                                                                                                                         |
@@ -91,7 +80,7 @@ Nearly all the Fotolia search parameters and filters are also available in Adobe
 | search_parameters[limit]                              | Same                                    | Maximum number of assets returned per request                                                                                                                            |
 | search_parameters[offset]                             | Same                                    | Start position in query                                                                                                                                     |
 | search_parameters[thumbnail_size]                     | Same                                    | Sets the desired thumbnail size in pixels                                                                                                                                              |
-| result_columns                                        | result_columns[]                        | Refer to the [Stock Search API Reference](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/11-search-reference.md) for a full list of fields that can be returned. Default fields returned are mostly the same, but have slight differences.                     |
+| result_columns                                        | result_columns[]                        | Refer to the [Stock Search API Reference](/api/11-search-reference.md) for a full list of fields that can be returned. Default fields returned are mostly the same, but have slight differences.                     |
 
 <a id="deprecated-api-methods"></a>
 
@@ -143,7 +132,7 @@ Unlike Fotolia, all Standard assets require one license or credit to purchase, r
 >
 > Note that if you purchase Extended licenses, these precautions are not necessary, but the cost per asset is much higher. To discuss your use case and expected volume, please [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question) for additional terms and instructions.
 
-In terms of technical workflow, continue reading for an overview. Please refer to [Licensing assets and stuff](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/getting-started/apps/06-licensing-assets.md) for full details.
+In terms of technical workflow, continue reading for an overview. Please refer to [Licensing assets and stuff](/getting-started/apps/06-licensing-assets.md) for full details.
 
 To license an asset, your application will want to follow these steps:
 
@@ -151,10 +140,10 @@ To license an asset, your application will want to follow these steps:
 1.  Get a Stock asset ID by using the Search API, or by entering it from data.
 1.  Check if the asset is already licensed. If you are a Print on Demand retailer (see above), continue the process. But if you are using the image for internal use such as on a marketing campaign or website, go to step #6.
 1.  Check if licensing is possible. Because there are multiple types of assets and credits, it is possible that your plan does not include the asset you are trying to license. This step will let you know and give you the available remaining credits.
-1.  License the asset. This uses credits from the account and results in a download link, but does not start the download. As discussed above, if you are a POD retailer, the API provides a command to license an asset again. See the [FAQ](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/15-faq.md).
+1.  License the asset. This uses credits from the account and results in a download link, but does not start the download. As discussed above, if you are a POD retailer, the API provides a command to license an asset again. See the [FAQ](/faq/).
 1.  Download the file from the link. This link is also available from a standard search. Note that unlike Fotolia, downloading the asset does not trigger a license action. Users can download the asset as often as needed with a valid token.
 
-Another use of the License API is to retrieve a history of licensed assets. For more details, see the [License History reference](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/api/13-license-history.md).
+Another use of the License API is to retrieve a history of licensed assets. For more details, see the [License History reference](/api/13-license-history.md).
 
 <a id="authentication"></a>
 
@@ -168,7 +157,7 @@ Here is an overview of authentication types supported by Adobe Stock, but for fu
     *   This authentication type is available to *Adobe Enterprise customers only*.
 *   OAuth: Allows your application to sign in a user to access their Adobe services, including Stock. This is based on the OAuth 2.0 model, which is used by other services such as Facebook, Google, Dropbox, etc. Once the user signs in, your application will receive an access token and a refresh token. The refresh token is used to renew the login for a set amount of time.
 
-For technical details on either workflow, see the [Stock workflow guides](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/getting-started/07-workflow-guides.md).
+For technical details on either workflow, see the [Stock workflow guides](/getting-started/07-workflow-guides.md).
 
 Both workflows result in creating an access token, which is used to identify that user (or Enterprise organization), and can be used to license assets, get license history, and authorize downloads. The token must be treated like a secret, and not be exposed to the public.
 
@@ -182,7 +171,7 @@ Now that you have an overview, check out the links below.
 
 ### Get registered
 
-You may start testing the Search APIs at any time; all that is required is a free Adobe ID account to receive an API key. Look at [Register your application](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/getting-started/02-register-app.md) for details.
+You may start testing the Search APIs at any time; all that is required is a free Adobe ID account to receive an API key. Look at [Register your application](/getting-started/02-register-app.md) for details.
 
 <a id="get-a-stock-account"></a>
 
@@ -190,7 +179,7 @@ You may start testing the Search APIs at any time; all that is required is a fre
 
 If you are an individual customer, go to the [Plans and Pricing](https://stock.adobe.com/plans) page to sign up for an account. Note that if you plan to sell images for print use (e.g., you have a Print on Demand business), you will need to [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question) for additional terms and instructions, and to discuss your volume and use case. If you plan to use assets only for internal use (such as for general marketing and design), then you can choose your plan accordingly.
 
-If you do not need your own account but need to sign in others using the OAuth model, refer to the [Authorization code workflow](https://github.com/adobe/stock-api-docs/raw/master/supplemental/Stock-Authorization-Code-Workflow.pdf) guide. If you have a business need, you may [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question) if you need access to a demo account with dummy credits to test licensing.
+If you do not need your own account but need to sign in others using the OAuth model, refer to the [Authorization code workflow](/Stock-Authorization-Code-Workflow.pdf) guide. If you have a business need, you may [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question) if you need access to a demo account with dummy credits to test licensing.
 
 <a id="sign-a-contract"></a>
 
@@ -202,4 +191,4 @@ As discussed earlier, if you plan to use Adobe Stock for commercial purposes--es
 
 ### Build an app
 
-You should begin with the [Getting started guide](https://www.adobe.io/apis/creativecloud/stock/docs.html), and then look at [Creating Adobe Stock applications](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/getting-started/04-creating-apps.md). If you have integration questions, send a message to stockapis@adobe.com.
+You should begin with the [Getting started guide](https://developer.adobe.com/stock/docs/), and then look at [Creating Adobe Stock applications](/getting-started/04-creating-apps.md). If you have integration questions, send a message to stockapis@adobe.com.

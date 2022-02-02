@@ -1,16 +1,16 @@
 ---
 keywords:
-  - Stock API
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
 title: Stock API FAQs and supplemental info
-description: The Stock API Frequently Asked Questions.
+description: Stock API Frequently Asked Questions.
 ---
 <!-- omit in toc -->
 
-# Stock API FAQ
+# Stock API: Technical frequently asked questions
 
 A list of technical frequently asked questions. Don't see your question answered here? Email us at stockapis@adobe.com.
 
-If you are looking for the Stock API Business FAQ, it is [located here](../supplemental/stock-api-business-faq.md).
+If you are looking for the Stock API Business FAQ, it is [located here](/faq/stock-api-business-faq.md).
 
   - [General](#general)
     - [What thumbnail preview sizes are available?](#what-thumbnail-preview-sizes-are-available)
@@ -47,7 +47,7 @@ If you are looking for the Stock API Business FAQ, it is [located here](../suppl
 * `500`: Extra large (XL) (500 px). Returned with watermark (default)
 * `1000`: Extra-extra large (XXL) (1000 px). Returned with watermark
 
-See the [Search API reference](api/11-search-reference.md).
+See the [Search API reference](/api/11-search-reference.md).
 
 <a id="why-are-there-more-search-results-returned-than-the-limit-value"></a>
 
@@ -98,7 +98,7 @@ The issue is caused by extra **Premium** results being added to the search. To w
 
     search_parameters[filters][premium] = true | false | all
 
-This command is documented in the [Search API reference](api/11-search-reference.md). By setting to `true`, it will *only* return Premium assets. Setting to `false` will exclude (remove) Premium assets from the results. And setting to `all` will show both types of assets. However, any of these values will fix the `limit` issue.
+This command is documented in the [Search API reference](/api/11-search-reference.md). By setting to `true`, it will *only* return Premium assets. Setting to `false` will exclude (remove) Premium assets from the results. And setting to `all` will show both types of assets. However, any of these values will fix the `limit` issue.
 
 Example:
 Limit set to 2, and exactly 2 results returned.
@@ -127,7 +127,7 @@ Free assets are a "rotating" collection, so an image could technically be a paid
 
 These assets types will be searchable from the Adobe Stock website because there is business logic in place to make sure that only authorized users or applications can interact with them--Stock partners cannot guarantee these special asset types will be handled correctly so they are blocked by default.
 
-The Search API is the only service affected. If the goal is to retrieve metadata, then Search is not the correct method--instead apps should use the [Files API](api/19-bulk-metadata-files-reference.md). The Files API will retrieve metadata on any ID. Similarly, all the License APIs will work with these assets as well, if given a valid ID.
+The Search API is the only service affected. If the goal is to retrieve metadata, then Search is not the correct method--instead apps should use the [Files API](/api/19-bulk-metadata-files-reference.md). The Files API will retrieve metadata on any ID. Similarly, all the License APIs will work with these assets as well, if given a valid ID.
 
 ### Why am I getting 429 errors from the API?
 The 429 `Too Many Requests` HTTP response status code indicates the application has made too many queries in a given amount of time. This is not an error, but a message from the server instructing the application to stop sending requests because there are not enough connections to process it. The Adobe Stock service has a finite number of connections available, and when that limit is reached, 429 responses are returned.
@@ -179,9 +179,9 @@ More information on this topic from external websites:
 There are two kinds of preview images available: cached thumbnail images from the CDN, and non-cached comp images which need to be downloaded from the API. The first type of images are most common, and recommended for most applications. This is a sample URL:
 <https://t4.ftcdn.net/jpg/00/84/66/63/240_F_84666330_LoeYCZ5LCobNwWePKbykqEfdQOZ6fipq.jpg>
 
-For best performance, use this type of image when possible. In some circumstances, however, you may need the "comp" image version instead. This image requires a different workflow. First you must get the URL from the API, and then download it using the *same method to download licensed files*. For documentation on downloading files, see [Downloading licensed files](api/12-licensing-reference.md#downloading-licensed-files).
+For best performance, use this type of image when possible. In some circumstances, however, you may need the "comp" image version instead. This image requires a different workflow. First you must get the URL from the API, and then download it using the *same method to download licensed files*. For documentation on downloading files, see [Downloading licensed files](/api/12-licensing-reference.md#downloading-licensed-files).
 
-*   Get comp URL from media ID using the [Files API](api/19-bulk-metadata-files-reference.md)
+*   Get comp URL from media ID using the [Files API](/api/19-bulk-metadata-files-reference.md)
 
 ```http
   GET /Rest/Media/1/Files?ids=176175683&result_columns[]=comp_url HTTP/1.1
@@ -212,14 +212,14 @@ When downloading files from Adobe Stock, be sure to *follow redirects*.
 
 ### How do I bulk download all of my license history?
 
-To download all of your licensed images, you will need to create a script or application that performs some of the same process described in [Licensing assets and stuff](getting-started/apps/06-licensing-assets.md), but with fewer steps. In summary, your script must:
+To download all of your licensed images, you will need to create a script or application that performs some of the same process described in [Licensing assets and stuff](/getting-started/apps/06-licensing-assets.md), but with fewer steps. In summary, your script must:
 
 1.  Get a token
 1.  Call Member/LicenseHistory
 1.  Parse and paginate the list to get the download URL for each asset
 1.  Perform a download with a token
 
-Step #1 is covered in detail in [Stock API Authentication](getting-started/03-api-authentication.md) and in the individual [OAuth and Service Account workflow guides](getting-started/07-workflow-guides.md). Documentation for steps #2 and #3 are found in [Licensing assets and stuff](getting-started/apps/06-licensing-assets.md) and the [License history API reference](api/13-license-history.md). The key piece of data you will need is the `download_url` property, for example:
+Step #1 is covered in detail in [Stock API Authentication](/getting-started/03-api-authentication.md) and in the individual [OAuth and Service Account workflow guides](/getting-started/07-workflow-guides.md). Documentation for steps #2 and #3 are found in [Licensing assets and stuff](/getting-started/apps/06-licensing-assets.md) and the [License history API reference](/api/13-license-history.md). The key piece of data you will need is the `download_url` property, for example:
 
 ```javascript
     "license_date": "11/6/17, 2:54 AM",
@@ -259,7 +259,7 @@ There are two steps involved:
 1.  Get a list of required and optional fields from a Member/Profile request
 1.  Send a POST request to Content/License, including the fields as JSON
 
-In step 1, you call Member/Profile as described in [Licensing assets and stuff](getting-started/apps/06-licensing-assets.md)
+In step 1, you call Member/Profile as described in [Licensing assets and stuff](/getting-started/apps/06-licensing-assets.md)
 
 ```http
   GET /Rest/Libraries/1/Member/Profile?content_id=172563501&license=Standard HTTP/1.1
@@ -312,7 +312,7 @@ To learn how to add or edit license reference fields, see [Edit a product profil
 
 Enterprise service accounts use JWT files instead of OAuth logins to retrieve access tokens. Occasionally, there will be errors in the workflow, often because the fields in the JWT do not match the fields in Adobe I/O. For a list of error codes, see [JWT authentication](https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/JWT/JWT.md).
 
-However, if your JWT is working one day and suddenly fails the next, the most likely cause is that your public key certificate *has expired*. If it has, all you need to do is create a new one and upload to Adobe I/O on the same integration page. Nothing will need to change in your configuration, except make sure you are pointing to the correct private key file. See page 4 of the [Enterprise service account](https://www.adobe.io/content/dam/udp/assets/StockAPI/Service-Account-API-workflow.pdf) workflow guide.
+However, if your JWT is working one day and suddenly fails the next, the most likely cause is that your public key certificate *has expired*. If it has, all you need to do is create a new one and upload to Adobe I/O on the same integration page. Nothing will need to change in your configuration, except make sure you are pointing to the correct private key file. See page 4 of the [Enterprise service account](/Service-Account-API-workflow.pdf) workflow guide.
 
 Note that the sample command in the documentation sets the expiration to 365 days (1 year):
 
@@ -372,7 +372,7 @@ X-Product: MySampleApp/1.0
 X-API-Key: YourApiKeyHere
 ```
 
-See [Search API reference](api/11-search-reference.md).
+See [Search API reference](/api/11-search-reference.md).
 
 <a id="how-do-i-filter-for-high-resolution-images-only"></a>
 
@@ -418,7 +418,7 @@ X-Product: MySampleApp/1.0
 X-API-Key: YourApiKeyHere
 ```
 
-For more details, see [Search API reference](api/11-search-reference.md).
+For more details, see [Search API reference](/api/11-search-reference.md).
 
 <a id="what-type-of-image-quota-do-i-have"></a>
 
@@ -432,9 +432,9 @@ In the examples below, user #1 has an image subscription only, user #2 has both 
 
 ![Sample Stock quota types](./web_pod-quota-types.png)
 
-When using the Stock API, the quota type will be returned by the [Member/Profile API](api/12-licensing-reference.md) as part of the JSON object `available_entitlement.full_entitlement_quota`.
+When using the Stock API, the quota type will be returned by the [Member/Profile API](/api/12-licensing-reference.md) as part of the JSON object `available_entitlement.full_entitlement_quota`.
 
-```JavaScript
+```js
 "available_entitlement": {
     "quota": 0,         <== Image subscription quota (ignore)
     "license_type_id": 1,
@@ -458,7 +458,7 @@ Using the previous screenshot example, the `Member/Profile` responses would look
 
 **Image subscription only**
 
-```JavaScript
+```js
 "available_entitlement": {
     "quota": 3,
     "license_type_id": 1,
@@ -473,7 +473,7 @@ Using the previous screenshot example, the `Member/Profile` responses would look
 
 **Image subscriptions + credit pack in same account**
 
-```JavaScript
+```js
 "available_entitlement": {
     "quota": 10,
     "license_type_id": 1,
@@ -489,7 +489,7 @@ Using the previous screenshot example, the `Member/Profile` responses would look
 
 **Credit pack only**
 
-```JavaScript
+```js
 "available_entitlement": {
     "quota": 0,
     "license_type_id": 5,
@@ -506,7 +506,7 @@ Using the previous screenshot example, the `Member/Profile` responses would look
 
 ### How do I check if the images I am selling are still available on Stock?
 
-When curating Adobe Stock assets for sale on your print site, it is important that you incorporate a sync/update into your POD workflow so that you verify that the Stock images are still available at the time the customer is ready to order them. The simplest way to do this is to check whether the ID still exists on Stock using the [Files API](api/19-bulk-metadata-files-reference.md) for bulk metadata. For more information on why an asset might not be available, see [Why can't I download an asset from license history?](#why-cant-i-download-an-asset-from-license-history)
+When curating Adobe Stock assets for sale on your print site, it is important that you incorporate a sync/update into your POD workflow so that you verify that the Stock images are still available at the time the customer is ready to order them. The simplest way to do this is to check whether the ID still exists on Stock using the [Files API](/api/19-bulk-metadata-files-reference.md) for bulk metadata. For more information on why an asset might not be available, see [Why can't I download an asset from license history?](#why-cant-i-download-an-asset-from-license-history)
 
 The Files API allows you to request up to 101 asset IDs at a time from Stock, and return any metadata associated with these assets. This can be used both to populate your image catalog with data and to verify that the images are still available.
 
@@ -561,7 +561,7 @@ Please also note that the Free collection can change. An image which is availabl
 
 1.  Free content is automatically excluded from the Search API by default. For POD customers who use the Stock Search API, these new assets will not appear in regular search results. If Stock Search is exposed directly to users, they will not accidentally find any of the free content. This is by design. They can still get their own free content directly from the Stock website.
 
-1.  POD customers who do *offline* curation of Stock assets must use other methods to filter out free assets. For example, any images that are hand curated and saved in the customers database should be reviewed periodically for free content using the [**Files API**](api/19-bulk-metadata-files-reference.md).
+1.  POD customers who do *offline* curation of Stock assets must use other methods to filter out free assets. For example, any images that are hand curated and saved in the customers database should be reviewed periodically for free content using the [**Files API**](/api/19-bulk-metadata-files-reference.md).
 
 #### Filtering free assets with the Files API
 
@@ -582,6 +582,7 @@ For example, your website has assets #171817067 and #171817041 in its collection
 
 Here is the response from the API.
 
+```json
     {
         "files": [
             {
@@ -602,5 +603,6 @@ Here is the response from the API.
             }
         ]
     }
+```
 
 As shown in the response, the second asset has a `premium_level_id` of 1, which means it is a Free asset. This should be removed from the database at the next update.

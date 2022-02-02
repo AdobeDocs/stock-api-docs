@@ -1,25 +1,13 @@
+---
+keywords:
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock APIs
+description: Getting started with the Adobe Stock API. Build an API application to access millions of royalty-free stock images, photos, graphics, vectors, video footage, illustrations, templates, 3d assets, editorial assets and high-quality premium content.
+---
+
 # Licensing assets and stuff\*
 
-**\*** Not a very catchy title, but there's more to this topic than how to get a license! Use the Member/Profile API to check the status of an asset you want to purchase and your current quota, use Content/License to get a license, and download your asset. Also, use the Member/LicenseHistory API to get a list of past purchases.
-
-<!-- MarkdownTOC -->
-<!--
-- [Licensing assets and stuff\*](#licensing-assets-and-stuff)
-  - [Licensing workflow](#licensing-workflow)
-    - [1. Get a token](#1-get-a-token)
-    - [2. Get Stock asset ID](#2-get-stock-asset-id)
-    - [3. Check if licensed](#3-check-if-licensed)
-    - [4. Check if licensing is possible](#4-check-if-licensing-is-possible)
-    - [5. License the asset](#5-license-the-asset)
-    - [6. Download the file](#6-download-the-file)
-  - [Getting license history](#getting-license-history)
-  - [Next steps](#next-steps)
-  - [Troubleshooting licensing requests](#troubleshooting-licensing-requests)
-    - [Member/Profile issues](#memberprofile-issues)
-    - [Other problems](#other-problems)
-  - [Q&A](#qa)
--->
-<!-- /MarkdownTOC -->
+\* Not a very catchy title, but there's more to this topic than how to get a license! Use the Member/Profile API to check the status of an asset you want to purchase and your current quota, use Content/License to get a license, and download your asset. Also, use the Member/LicenseHistory API to get a list of past purchases.
 
 <a id="licensing-workflow"></a>
 
@@ -138,7 +126,7 @@ Assuming the asset is not already licensed, then you will check to see if it's p
 
 For this step, you will use the **Member/Profile** API. In addition to checking if the asset can be licensed, this will return the user's quota and also return a localized message about how many credits the license will cost. Getting the quota is useful as you can show that the user has "X" number of credits in your application's UI.
 
-For the query string, you will need to provide the Stock ID with the `content_id` parameter. Ideally, also provide the license type if it is known (because some assets can have multiple license types); for images the normal default is "Standard." Refer to the [Licensing API reference](../../api/12-licensing-reference.md) for more details. Also, if you want a localized message, also provide the language code.
+For the query string, you will need to provide the Stock ID with the `content_id` parameter. Ideally, also provide the license type if it is known (because some assets can have multiple license types); for images the normal default is "Standard." Refer to the [Licensing API reference](/api/12-licensing-reference/) for more details. Also, if you want a localized message, also provide the language code.
 
 ```shell
 curl "https://stock.adobe.io/Rest/Libraries/1/Member/Profile?content_id=112670342&license=Standard&locale=en_US" \
@@ -342,7 +330,7 @@ Notice that one of the fields returned is the download URL, making this a conven
 https://stock.adobe.com/Download/DownloadFileDirectly/ikMRKBPqHDrtTifHkbbxGfKhIGVQPw6y?token=AccessTokenHere
 ```
 
-Note that *by default* the License History API does not return *all* history for the organization, but only for the current user and/or Stock profile. For example, if your Enterprise organization has 30 profiles (i.e., Product License Configurations, or PLCs) and you call this API, you will only get back the license history for one of the 30 profiles. The current profile is either determined by which profile you have selected in the Adobe Stock website, or by which Enterprise service account is associated with that profile--see the [Enterprise service account](https://www.adobe.io/content/dam/udp/assets/StockAPI/Service-Account-API-workflow.pdf) workflow guide for more information.
+Note that *by default* the License History API does not return *all* history for the organization, but only for the current user and/or Stock profile. For example, if your Enterprise organization has 30 profiles (i.e., Product License Configurations, or PLCs) and you call this API, you will only get back the license history for one of the 30 profiles. The current profile is either determined by which profile you have selected in the Adobe Stock website, or by which Enterprise service account is associated with that profile--see the [Enterprise service account](/Service-Account-API-workflow.pdf) workflow guide for more information.
 
 To retrieve all the license history across all profiles, use the command `all=true`. Example:
 
@@ -353,7 +341,7 @@ curl "https://stock.adobe.io/Rest/Libraries/1/Member/LicenseHistory?all=true" \
   -H "authorization: Bearer AccessTokenHere"
 ```
 
-Visit the [License history API reference](../../api/13-license-history.md) for more information.
+Visit the [License history API reference](/api/13-license-history.md) for more information.
 
 <a id="next-steps"></a>
 
@@ -361,8 +349,8 @@ Visit the [License history API reference](../../api/13-license-history.md) for m
 
 You have completed the Adobe Stock API getting started guide.
 
-*   If you want more detail on anything you have read thus far, explore the [API reference documentation](../../getting-started/01-getting-started.md).
-*   If you are ready to get started in earnest, browse our [sample code and SDKs](../08-sample-code-sdks.md).
+*   If you want more detail on anything you have read thus far, explore the [API reference documentation](/api/).
+*   If you are ready to get started in earnest, browse our [sample code and SDKs](/getting-started/08-sample-code-sdks.md).
 
 <a id="troubleshooting-licensing-requests"></a>
 

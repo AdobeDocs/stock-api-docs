@@ -1,5 +1,12 @@
+---
+keywords:
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock API FAQs and supplemental info
+description: Stock API Frequently Asked Questions.
+---
+
 <!-- omit in toc -->
-# Adobe Stock API: Frequently Asked Questions
+# Stock API: Business frequently asked questions
 
 <!-- MarkdownTOC -->
 
@@ -57,7 +64,7 @@
 
 If you want to partner with Adobe Stock or have questions about the business aspects of Stock integrations, please email <Grp-AdobeStockPartnerships@adobe.com>. You can also find out more about the Stock partnership program at <https://www.adobe.io/apis/creativecloud/stock.html>.
 
-If you need technical help with your Stock API integration, please email <stockapis@adobe.com>. Please visit <https://www.adobe.io/apis/creativecloud/stock/docs.html> for help resources, technical documentation and sample code.
+If you need technical help with your Stock API integration, please email <stockapis@adobe.com>. Please visit <https://developer.adobe.com/stock/docs/> for help resources, technical documentation and sample code.
 
 <a id="how-much-does-it-cost-to-access-adobe-stock-api"></a>
 
@@ -99,7 +106,7 @@ Create an Adobe Stock API key for free at <https://developer.adobe.com/console>.
 
 ### How can I test the Licensing API?
 
-Apply for a demo account. If you are going to use [OAuth authentication](#definitions-and-terms) please follow [this guide](Partner-instructions-for-Stock-OAuth-demo-account.pdf). If you need a [Service Account](#definitions-and-terms) integration please see [this guide](Partner-instructions-for-Stock-Enterprise-demo-account.pdf). Note that Service Accounts are only available to Adobe Enterprise customers.
+Apply for a demo account. If you are going to use [OAuth authentication](#definitions-and-terms) please follow [this guide](/Partner-instructions-for-Stock-OAuth-demo-account.pdf). If you need a [Service Account](#definitions-and-terms) integration please see [this guide](/Partner-instructions-for-Stock-Enterprise-demo-account.pdf). Note that Service Accounts are only available to Adobe Enterprise customers.
 
 If you are not sure which type of authentication you need for your integration, please [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=Adobe%20Stock%20API%20FAQ%20-%20which%20demo%20account).
 
@@ -107,13 +114,13 @@ If you are not sure which type of authentication you need for your integration, 
 
 ### Where I can find a technical reference?
 
-<https://www.adobe.io/apis/creativecloud/stock/docs.html>
+<https://developer.adobe.com/stock/docs/>
 
 <a id="is-there-any-sdk-which-can-facilitate-building-the-adobe-stock-api-integration"></a>
 
 ### Is there any SDK which can facilitate building the Adobe Stock API integration?
 
-Yes. At <https://github.com/adobe/stock-api-sdk> you can access SDKs for PHP and Java.
+Yes. At <https://github.com/adobedocs/stock-api-sdk> you can access SDKs for PHP and Java.
 
 <a id="what-standard-size-previews-are-available-via-the-api"></a>
 
@@ -141,7 +148,7 @@ This requires an Adobe Stock Enterprise contract. Please [contact the Stock for 
 
 ### I am using Fotolia API. How can I migrate to Adobe Stock?
 
-You can find technical resources [here](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/18-fotolia-migration-resources.md).
+You can find technical resources [here](/faq/18-fotolia-migration-resources.md).
 
 <a id="are-there-any-framework-agreements-which-govern-all-adobe-stock-api-partnerships"></a>
 
@@ -212,14 +219,14 @@ However, from a Legal standpoint, Print on Demand customers may access __only St
 
 ![Premium banner](premium_assets_banner.png)
 
-To filter out Premium content from Stock API search results, see the [Stock API FAQ](https://www.adobe.io/apis/creativecloud/stock/docs.html#!adobe/stock-api-docs/master/docs/15-faq.md).
+To filter out Premium content from Stock API search results, see the [Stock API FAQ](/faq/).
 
 <a id="what-is-an-online-example-of-the-adobe-stock-api-print-on-demand-use-case"></a>
 
-### What is an online example of the Adobe Stock API Print on Demand use case?
+### What are online examples of the Adobe Stock API Print on Demand use case?
 
-https://nikkel-art.com
-https://www.wallsauce.com/
+* https://nikkel-art.com
+* https://www.wallsauce.com/
 
 
 <a id="what-is-the-print-on-demand-pricing-model"></a>
@@ -285,7 +292,7 @@ If the DAM provider needs to create an integration for an Adobe Enterprise custo
 
 ### Does Adobe Stock have a pre-built integration with the \_\_\_\_\_ DAM platform? (or) Can Adobe Stock build an integration with \_\_\_\_ platform?
 
-Adobe Stock is working with multiple DAM partners to create new integrations, but currently the only available integration with the [Adobe Experience Manager](https://www.adobe.com/marketing/experience-manager.html) (AEM) Assets platform. If you are an AEM user, see [more information here](https://helpx.adobe.com/experience-manager/kt/assets/using/adobe-stock-aem-assets-technical-video-setup.html).
+Adobe Stock is working with multiple DAM partners to create new integrations, but currently the only available integration with the [Adobe Experience Manager](https://www.adobe.com/marketing/experience-manager.html) (AEM) Assets platform. If you are an AEM user, see [more information here](https://experienceleague.adobe.com/docs/experience-manager-65/assets/using/aem-assets-adobe-stock.html?lang=en).
 
 Adobe will be happy to work with any platform provider or customer who wishes to create a new integration, and can provide technical support, sample code and architecture guidance, but does not have the resources to perform the integration work. If necessary, Adobe can recommend some third-party firms who can be engaged to create the integration.
 
@@ -349,4 +356,4 @@ See the Medium article, “[Get Paid to Search Adobe Stock](https://medium.com/a
 
 ### Are there any examples of Adobe Stock API Affiliates use cases available online?
 
-Monoimages.com has a nice experience. The link below should work but note that image pages may be taken down without notice.   <https://www.monoimages.com/images/bar-chairs-tables-cafe/>
+Freepik is a partner of Adobe Stock, and it has banners and custom search result widgets for Stock available on most search pages: https://www.freepik.com/search?format=search&query=dogs

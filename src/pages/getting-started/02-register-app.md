@@ -1,16 +1,14 @@
+---
+keywords:
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock APIs
+description: Getting started with the Adobe Stock API. Build an API application to access millions of royalty-free stock images, photos, graphics, vectors, video footage, illustrations, templates, 3d assets, editorial assets and high-quality premium content.
+---
+
 # Register your application
 
 <InlineAlert variant="success" slots="text"/>
 TL;DR: The Stock APIs require different forms of authentication depending on your goals. If you already know whether you need a Service Account, OAuth integration or just an API key, you may [skip ahead to register]
-
-<!-- MarkdownTOC depth=1 -->
-<!--
-*   [Authentication overview](#authentication-overview)
-*   [Choose an integration type and register](#choose-an-integration-type-and-register)
-*   [API authentication requirements](#api-authentication-requirements)
-*   [Q&A](#qa)
--->
-<!-- /MarkdownTOC -->
 
 ## Authentication overview
 
@@ -34,7 +32,7 @@ All Adobe Stock API applications must be registered by creating an integration u
     *   Checkout [OAuth 2.0 Playground](https://adobeioruntime.net/api/v1/web/io-solutions/adobe-oauth-playground/oauth.html) tool to genenrate an access token
     *   Find more details on [OAuth integrations](https://www.adobe.io/apis/cloudplatform/console/authentication/oauth_workflow.html) (Adobe Cloud Platform).
 *   **API Key.** This is the simplest method, as all it requires is that you register your application on the Adobe Developer Console. The I/O Console will generate a Stock API key, which you will use for all subsequent requests. Note that an API key is required for *all* authentication methods, however some APIs only require the key, such as the Search API.
-    *   **Note:** There is no "API Key" integration choice for Adobe Stock. Instead, choose "OAuth," and put whatever URL you want for the *Redirect URI*, because it will not be used. (*Yes*, we know this is confusing!) Here is a [screenshot](https://raw.githubusercontent.com/adobe/stock-api-docs/master/docs/images/io_api-key-integration.png) of a completed integration form on the I/O Console.
+    *   **Note:** There is no "API Key" integration choice for Adobe Stock. Instead, choose "OAuth," and put whatever URL you want for the *Redirect URI*, because it will not be used. (*Yes*, we know this is confusing!) 
     *   For a guided walkthrough, see the [Affiliate API Workflow guide](07-workflow-guides.md).
     *   More details on [API Key integrations](https://www.adobe.io/apis/cloudplatform/console/authentication/api_key_workflow.html) (Adobe Cloud Platform).
 
@@ -118,7 +116,7 @@ Depending on the version of your console, you should see one of the two experien
 
 ### What are the different use cases for the Adobe Stock API?
 
-These are the typical business scenarios for using the Stock API. See the [API Business FAQ](../../supplemental/stock-api-business-faq.md) to learn more about partnering with Adobe Stock.
+These are the typical business scenarios for using the Stock API. See the [API Business FAQ](/faq/stock-api-business-faq.md) to learn more about partnering with Adobe Stock.
 
 *   **Enterprise.** This is a broad category that may overlap with some of the other use cases below, where Adobe Stock is used for internal applications, such as for branded websites or internal applications. When it licenses assets, they are available for the entire organization. Adobe Enterprise customers have a more secure authentication method that is only available to them.
 *   **Print on Demand (POD) & Retail.** POD is a specific retail business type in which a company prints goods (could be wall art, marketing brochures, t-shirts, etc.) using artwork either created in-house or licensed Stock content. Because it is printed "on demand," print quantities are typically done in very small batches, per customer order. However, the Retail use case could also include traditional manufacturers, who may license a Stock asset and use it to mass-print hundreds of items at once. Note that a different [license type](https://stock.adobe.com/license-terms) may apply. In all cases, the retailer would have its own Stock account and need to access it for search and licensing.

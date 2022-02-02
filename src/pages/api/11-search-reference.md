@@ -1,28 +1,11 @@
 ---
 keywords:
-  - Stock API
-title: Search API reference
-description: The Stock Search API reference
+  - Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud
+title: Stock API reference
+description: Stock Search API reference
 ---
 
 # Search API reference
-
-<!-- MarkdownTOC -->
-<!--
-- [Search API reference](#search-api-reference)
-  - [Search requests](#search-requests)
-    - [About search and filter criteria](#about-search-and-filter-criteria)
-    - [Authentication](#authentication)
-    - [Request headers](#request-headers)
-    - [URL parameters](#url-parameters)
-  - [Responses](#responses)
-  - [Example returned comps values](#example-returned-comps-values)
-  - [Example queries and responses](#example-queries-and-responses)
-    - [Common search queries](#common-search-queries)
-  - [Error codes](#error-codes)
-  - [More information](#more-information)
--->
-<!-- /MarkdownTOC -->
 
 You can query Adobe Stock for assets that meet your specified search criteria. You can filter the results, specify the sort order in which the results are returned, and choose how many assets to return for each page of results.
 
@@ -110,7 +93,7 @@ If you do pass a valid token, then the Adobe Stock service returns the license s
 
 ### Request headers
 
-See [API authentication](../getting-started/03-api-authentication.md) and [Headers for Stock API calls](10-headers-for-api-calls.md) for details about header content.
+See [API authentication](../getting-started/03-api-authentication.md) and [Headers for Stock API calls](./10-headers-for-api-calls.md) for details about header content.
 
 - Required headers: `x-Product`, `x-api-key`
 - Optional headers: `Authorization` (required to view license state), `X-Request-Id`
@@ -136,7 +119,7 @@ Pass the following URL parameters with the GET request.
     <tr>
         <td>locale
         </td>
-        <td>Location language code. String. Default is en_US. This command is crucial for relevant localized search results. See <a href="14-locale-codes.md">Locale codes reference</a>.
+        <td>Location language code. String. Default is en_US. This command is crucial for relevant localized search results. See <a href="./14-locale-codes.md">Locale codes reference</a>.
         </td>
     </tr>
     <tr>
@@ -154,7 +137,7 @@ Pass the following URL parameters with the GET request.
             Call repeatedly with different [offset] values to page through the found assets. <strong>Tip:</strong>
             The
             number of images returned in each call can vary, but never exceeds 64 entries.
-            See the note below for <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][premium]</inlineCode> and refer to the FAQ question, <a href="../15-faq.md?#why-are-there-more-search-results-returned-than-the-limit-value">Why are there more search results returned than the 'limit' value?</a>
+            See the note below for <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][premium]</inlineCode> and refer to the FAQ question, <a href="/faq/?#why-are-there-more-search-results-returned-than-the-limit-value">Why are there more search results returned than the 'limit' value?</a>
         </td>
     </tr>
     <tr>
@@ -228,7 +211,7 @@ Pass the following URL parameters with the GET request.
         <td>search_parameters[similar_url]
         </td>
         <td>Search for assets that are similar in appearance to an image at a specific URL. String. For example:
-            <inlineCode class="spectrum-Body--sizeS">search_parameters[similar_url]=http://my.site.com/images/cutedog.jpg</inlineCode>
+            <inlineCode class="spectrum-Body--sizeS">search_parameters[similar_url]=https://my.site/cutedog.jpg</inlineCode>
         </td>
     </tr>
     <tr>
@@ -253,7 +236,7 @@ Pass the following URL parameters with the GET request.
         <td>Search for assets with a specific category ID. Integer.
             For example, to search for assets in the category "travel":
             <inlineCode class="spectrum-Body--sizeS">search_parameters[category]=1043</inlineCode>
-            For more information see the <a href="17-categorytree.md">CategoryTree API reference</a>.
+            For more information see the <a href="./17-categorytree.md">CategoryTree API reference</a>.
         </td>
     </tr>
     <tr>
@@ -331,7 +314,7 @@ Pass the following URL parameters with the GET request.
             <p class="spectrum-Body--sizeS">
               Strongly recommend <strong>always</strong> setting this parameter to one of its three values, as it
               works around an issue where more assets can be returned than set in the <inlineCode class="spectrum-Body--sizeS">search_parameters[limit]</inlineCode>
-              parameter, which can throw off pagination. See the FAQ, <a href="../15-faq.md?#why-are-there-more-search-results-returned-than-the-limit-value">Why are there more search results returned than the 'limit' value?</a>
+              parameter, which can throw off pagination. See the FAQ, <a href="/faq/?#why-are-there-more-search-results-returned-than-the-limit-value">Why are there more search results returned than the 'limit' value?</a>
             </p>
         </td>
     </tr>
@@ -361,7 +344,7 @@ Pass the following URL parameters with the GET request.
                 <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">5</inlineCode>: After Effects Motion Graphics Template</li>
             </ul>
             For example:
-            <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][template_type_id][]=2&search_parameters[filters][template_type_id][]=3</inlineCode>
+            <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][template_type_id][]=2 &search_parameters[filters][template_type_id][]=3</inlineCode>
         </td>
     </tr>
     <tr>
