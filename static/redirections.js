@@ -17,12 +17,12 @@
       : "stock/docs/";
   let redirectPath = "";
 
-  // redirect paths must land on developer.adobe.com/stock/docs/
-  // or on localhost/
+  // redirect paths must land on developer.adobe.com/stock/docs/getting-started/
+  // due to redirect getting-started is the site base or on localhost/
   if (
     (window.location.hash !== "" &&
       window.location.host.indexOf("localhost") < 0 &&
-      window.location.pathname === "/stock/docs/") ||
+      window.location.pathname === "/stock/docs/getting-started/") ||
     (window.location.hash !== "" &&
       window.location.host.indexOf("localhost") >= 0 &&
       window.location.pathname === "/")
