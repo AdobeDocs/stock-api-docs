@@ -17,7 +17,7 @@ TL;DR: (1) register for an Adobe Stock API key at the Adobe Developer Console*, 
 curl -H 'x-api-key:myAPIKey' -H 'x-product:myTestApp1.0' https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US%26search_parameters%5Bwords%5D=kittens
 ```
 
-  > \*  **Adobe Developer Console**: [https://curl.haxx.se/](https://developer.adobe.com/console/)<br />
+  > \*   **Adobe Developer Console**: [https://developer.adobe.com/console/](https://developer.adobe.com/console/)<br />
   > \*\* **curl**: [https://curl.haxx.se/](https://curl.haxx.se/)
 
 ## Read me first!
