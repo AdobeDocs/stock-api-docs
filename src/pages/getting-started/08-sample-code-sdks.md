@@ -14,24 +14,24 @@ Adobe Stock created SDK libraries to simplify the process of writing application
 Adobe offers SDKs written in three languages: PHP, Java and JavaScript. Each page has a README with instructions on how to install, build and test the libraries. All are hosted as open source software by Adobe on GitHub.
 
 Get the SDKs here:
-https://github.com/adobe/stock-api-sdk
+[https://github.com/adobe/stock-api-sdk](https://github.com/adobe/stock-api-sdk)
 
 ## Stock sample code
 
 The examples demonstrate how to use the Stock SDKs as well as how to generate service tokens.
 
 Examples:
-https://github.com/adobe/stock-api-samples
+[https://github.com/adobe/stock-api-samples](https://github.com/adobe/stock-api-samples)
 
 ### Stock Gallery Helper
 
 The Stock Gallery Helper is an experimental extension for Chrome to manage Stock galleries/collections using the API. This sample code is a work in progress.
 
-https://github.com/adobe/stock-api-samples/tree/master/StockGalleryHelper
+[https://github.com/adobe/stock-api-samples/tree/master/StockGalleryHelper](https://github.com/adobe/stock-api-samples/tree/master/StockGalleryHelper)
 
 
 ### Stock SearchBar sample app
 
 When dropped into your page, this sample library creates a gallery of Stock search thumbnails. While you can add different search parameters, its primary purpose is to search on a similar image URL (such as the main image on your page), or on keywords. This sample code includes a live demo.
 
-https://github.com/adobe/stock-api-samples/tree/master/stockthumbs
+[https://github.com/adobe/stock-api-samples/tree/master/stockthumbs](https://github.com/adobe/stock-api-samples/tree/master/stockthumbs)
