@@ -64,3 +64,13 @@ Several API methods allow the use of locale codes so that you can retrieve asset
 | en_NG | English - Nigeria |
 | en_MA | English - Morocco |
 | es_BO | Spanish - Bolivia |
+| en_JO | Jordan - English |
+| es_PA | Panamá - Spanish |
+| es_SV | El Salvador - Spanish |
+| es_PY | Paraguay - Spanish |
+| en_HR | Croatia - English |
+| en_LB | Lebanon - English |
+| en_KW | Kuwait - English |
+| en_OM | Oman - English |
+| en_QA | Qatar - English |
+| en_BH | Bahrain - English |
