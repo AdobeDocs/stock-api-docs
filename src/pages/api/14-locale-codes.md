@@ -74,3 +74,8 @@ Several API methods allow the use of locale codes so that you can retrieve asset
 | en_OM | Oman - English |
 | en_QA | Qatar - English |
 | en_BH | Bahrain - English |
+| en_AE | English - United Arab Emirates |
+| en_KE | English - Kenya |
+| en_DZ | English - Algeria |
+| en_LK | English - Sri Lanka |
+| es_DO | Spanish - Dominican Republic |
