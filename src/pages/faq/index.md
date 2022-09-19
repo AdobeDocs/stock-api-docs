@@ -29,7 +29,6 @@ If you are looking for the Stock API Business FAQ, it is [located here](/faq/sto
     - [Why do I see Premium and Video in my search results if I don't have credits?](#why-do-i-see-premium-and-video-in-my-search-results-if-i-dont-have-credits)
     - [How do I filter out Premium content?](#how-do-i-filter-out-premium-content)
     - [How do I filter for high-resolution images only?](#how-do-i-filter-for-high-resolution-images-only)
-    - [What type of image quota do I have?](#what-type-of-image-quota-do-i-have)
     - [How do I check if the images I am selling are still available on Stock?](#how-do-i-check-if-the-images-i-am-selling-are-still-available-on-stock)
     - [How do I filter out Free content?](#how-do-i-filter-out-free-content)
 
@@ -420,109 +419,31 @@ X-API-Key: YourApiKeyHere
 
 For more details, see [Search API reference](/api/11-search-reference.md).
 
-<a id="what-type-of-image-quota-do-i-have"></a>
-
-### What type of image quota do I have?
-
-This question only applies to Individual and Team customers, not to Enterprise customers.
-
-Different types of Stock quotas are easy to distinguish in the Adobe Stock web UI, but are slightly more confusing as displayed in the Stock API. In the Stock web UI, image quota is displayed as "Images," and credit quota as "Credits."
-
-In the examples below, user #1 has an image subscription only, user #2 has both a subscription and credit pack, and user #3 has a credit pack only.
-
-![Sample Stock quota types](./web_pod-quota-types.png)
-
-When using the Stock API, the quota type will be returned by the [Member/Profile API](/api/12-licensing-reference.md) as part of the JSON object `available_entitlement.full_entitlement_quota`.
-
-```js
-"available_entitlement": {
-    "quota": 0,         <== Image subscription quota (ignore)
-    "license_type_id": 1,
-    "has_credit_model": false,
-    "has_agency_model": false,
-    "is_cce": false,
-    "full_entitlement_quota": {
-       ...               <== Quota types listed here (see below)
-    }
-},
-```
-
-Individual and Team customers can see two types of `full_entitlement_quota`:
-
-*   `image_quota`: The available images available in an image subscription.
-*   `individual_universal_credits_quota`: The available credits available from a credit pack.
-
-The top-level `quota` attribute can be ignored as it only applies to image subscriptions and may be deprecated in the future.
-
-Using the previous screenshot example, the `Member/Profile` responses would look like this when returned by the API:
-
-**Image subscription only**
-
-```js
-"available_entitlement": {
-    "quota": 3,
-    "license_type_id": 1,
-    "has_credit_model": false,
-    "has_agency_model": false,
-    "is_cce": false,
-    "full_entitlement_quota": {
-        "image_quota": 3
-    }
-},
-```
-
-**Image subscriptions + credit pack in same account**
-
-```js
-"available_entitlement": {
-    "quota": 10,
-    "license_type_id": 1,
-    "has_credit_model": false,
-    "has_agency_model": false,
-    "is_cce": false,
-    "full_entitlement_quota": {
-        "image_quota": 10,
-        "individual_universal_credits_quota": 40
-    }
-},
-```
-
-**Credit pack only**
-
-```js
-"available_entitlement": {
-    "quota": 0,
-    "license_type_id": 5,
-    "has_credit_model": false,
-    "has_agency_model": false,
-    "is_cce": false,
-    "full_entitlement_quota": {
-        "individual_universal_credits_quota": 93
-    }
-},
-```
-
 <a id="how-do-i-check-if-the-images-i-am-selling-are-still-available-on-stock"></a>
 
 ### How do I check if the images I am selling are still available on Stock?
 
-When curating Adobe Stock assets for sale on your print site, it is important that you incorporate a sync/update into your POD workflow so that you verify that the Stock images are still available at the time the customer is ready to order them. The simplest way to do this is to check whether the ID still exists on Stock using the [Files API](/api/19-bulk-metadata-files-reference.md) for bulk metadata. For more information on why an asset might not be available, see [Why can't I download an asset from license history?](#why-cant-i-download-an-asset-from-license-history)
+When curating Adobe Stock assets for sale on your print site, it is required that you incorporate a sync/update into your POD workflow so that you can verify that the Stock images are still available at the time the customer is ready to order them. The simplest way to do this is to check whether the ID still exists on Stock using the [Files API](/api/19-bulk-metadata-files-reference.md) for bulk metadata. For more information on why an asset might not be available, see [Why can't I download an asset from license history?](#why-cant-i-download-an-asset-from-license-history)
 
-The Files API allows you to request up to 101 asset IDs at a time from Stock, and return any metadata associated with these assets. This can be used both to populate your image catalog with data and to verify that the images are still available.
+The Files API allows you to request up to 110 asset IDs at a time from Stock, and return any metadata associated with these assets. This can be used both to populate your image catalog with data and to verify that the images are still available.
 
-In the example below, you supply a list of 8 asset IDs and request back the number of results and the IDs for each. While this seems redundant, it is a small and fast request which will verify if any are no longer available.
+Assuming you are sending at least 100 asset IDs per request, it should only minutes to check your entire collection, even if you only send ~5 requests per second (RPS), which is the recommended maximum request rate. For example, if you curated a collection of 200,000 Stock images, it would take approximately 7 minutes per day: 200,000 / 100 asset IDs / 5 RPS / 60 seconds = 6.67 minutes to send 400 requests.
+
+For customers that have higher volume, there is also an S3 list of assets available that can be used to sync your collection, which requires a basic Amazon AWS account. Email stockapis@adobe.com if you have this use case. In this model, your application would ingest *all* Stock asset IDs and their metadata, and use daily removal and update lists to determine the delta of what is new or removed from the Stock database, and use that to sync your own data.
+
+Please note tou cannot use the CDN image thumbnail to determine if an image is still available for purchase, because we cannot guarantee when the thumbnails will clear from our system, however the API is always up to date. Net, the CDN image may still exist even if the asset is offline from the Stock website, but it will also be offline in the Stock API, which should always be your source of "truth."
+
+In the example below, you supply a list of 8 asset IDs and request back the number of results (`nb_results`) and the IDs for each. While this seems redundant, it is a small and fast request which will verify if any are no longer available.
 
 ```shell
 curl -X GET \
   'https://stock.adobe.io/Rest/Media/1/Files?ids=1234567,89961792,57185897,94682947,180905406,175119903,113187776,120451263&result_columns[]=id&result_columns[]=nb_results' \
   -H 'Host: stock.adobe.io' \
-  -H 'X-Product: WreckBallTest/1.0' \
-  -H 'cache-control: no-cache' \
   -H 'X-Product: MySampleApp/1.0' \
   -H 'x-api-key: MyApiKey'
 ```
 
-When the response comes back, you can see immediately there is an issue because there are only 7 returned assets. By scanning the IDs, you can see that `1234567` is no longer available.
+When the response comes back, you can see immediately there is an issue because there are only 7 returned assets instead of 8. By scanning the list of IDs, you can see that `1234567` is no longer available.
 
 ```javascript
 {
