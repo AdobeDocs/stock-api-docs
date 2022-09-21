@@ -188,15 +188,13 @@ Pass the following URL parameters with the GET request.
     <tr>
         <td>search_parameters[model_id]
         </td>
-        <td>Search for assets that portray a specific person (model) using the model's ID. Integer.
+        <td>Search for all assets that contain the same model as shown in this media ID. Integer.
         </td>
     </tr>
     <tr>
         <td>search_parameters[serie_id]
         </td>
-        <td>Search for assets in the specified series using the series ID. Returns all assets that the creator has
-            grouped
-            into this single series. Integer.
+        <td>Search for all assets grouped in the same series as this media ID. Integer.
         </td>
     </tr>
     <tr>
