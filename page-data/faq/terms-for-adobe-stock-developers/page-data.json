@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-faq-terms-for-adobe-stock-developers-md",
-    "path": "/faq/terms-for-adobe-stock-developers/",
-    "result": {"pageContext":{"frontmatter":{"keywords":["Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud"],"title":"Stock API FAQs and supplemental info","description":"Stock API Frequently Asked Questions."}}},
-    "staticQueryHashes": ["915530536"]}
+{"componentChunkName":"component---src-pages-faq-terms-for-adobe-stock-developers-md","path":"/faq/terms-for-adobe-stock-developers/","result":{"pageContext":{"frontmatter":{"keywords":["Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud"],"title":"Stock API FAQs and supplemental info","description":"Stock API Frequently Asked Questions."}}},"staticQueryHashes":["915530536"]}

@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-getting-started-07-workflow-guides-md",
-    "path": "/getting-started/07-workflow-guides/",
-    "result": {"pageContext":{"frontmatter":{"keywords":["Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud"],"title":"Stock APIs","description":"Getting started with the Adobe Stock API. Build an API application to access millions of royalty-free stock images, photos, graphics, vectors, video footage, illustrations, templates, 3d assets, editorial assets and high-quality premium content."}}},
-    "staticQueryHashes": ["915530536"]}
+{"componentChunkName":"component---src-pages-getting-started-07-workflow-guides-md","path":"/getting-started/07-workflow-guides/","result":{"pageContext":{"frontmatter":{"keywords":["Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud"],"title":"Stock APIs","description":"Getting started with the Adobe Stock API. Build an API application to access millions of royalty-free stock images, photos, graphics, vectors, video footage, illustrations, templates, 3d assets, editorial assets and high-quality premium content."}}},"staticQueryHashes":["915530536"]}

@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-api-10-headers-for-api-calls-md",
-    "path": "/api/10-headers-for-api-calls/",
-    "result": {"pageContext":{"frontmatter":{"keywords":["Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud"],"title":"Stock API reference","description":"Adobe Stock API reference documentation"}}},
-    "staticQueryHashes": ["915530536"]}
+{"componentChunkName":"component---src-pages-api-10-headers-for-api-calls-md","path":"/api/10-headers-for-api-calls/","result":{"pageContext":{"frontmatter":{"keywords":["Adobe Stock, Stock API, stock photos, stock video, premium images, illustrations, Creative Cloud"],"title":"Stock API reference","description":"Adobe Stock API reference documentation"}}},"staticQueryHashes":["915530536"]}
