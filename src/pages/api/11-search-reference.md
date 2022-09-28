@@ -106,7 +106,7 @@ Pass the following URL parameters with the GET request.
 
 **Tip:** The only required parameter is at least one search_parameters[].
 
-<table class="spectrum-Table">
+<table class="spectrum-Table spectrum-Table--sizeM">
     <thead class="spectrum-Table-head">
         <tr class="spectrum-Table-row css-us97lb-Tr">
             <th class="spectrum-Table-headCell"><strong>Parameter</strong>
@@ -557,7 +557,7 @@ All responses are in a JSON array with this general structure:
 
 These are the fields returned either by default or by explicit use by the `result_columns[]` parameter.
 
-<table class="spectrum-Table">
+<table class="spectrum-Table spectrum-Table--sizeM">
     <thead class="spectrum-Table-head">
         <tr class="spectrum-Table-row css-us97lb-Tr">
             <th class="spectrum-Table-headCell"><strong>Parameter</strong>
