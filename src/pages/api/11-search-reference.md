@@ -481,6 +481,18 @@ Pass the following URL parameters with the GET request.
         </td>
     </tr>
     <tr>
+        <td>search_parameters[filters][is_loop]
+        </td>
+        <td>Filter to return loop assets; applicable only to audio & video assets. Value 'all' returns all the audio/video assets; Value '1' or 'true' filters for audio/video asset that is a loop. Note: 'false' or '0' is not a valid option
+            Valid values and meanings:
+            <ul>
+                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode></li>
+                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">true</inlineCode></li>
+                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">all</inlineCode></li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>result_columns[]
         </td>
         <td>
@@ -516,6 +528,7 @@ Pass the following URL parameters with the GET request.
                 <inlineCode class="spectrum-Body--sizeS">template_type_id</inlineCode> <inlineCode class="spectrum-Body--sizeS">template_category_ids</inlineCode> <inlineCode class="spectrum-Body--sizeS">marketing_text</inlineCode>
                 <inlineCode class="spectrum-Body--sizeS">description</inlineCode> <inlineCode class="spectrum-Body--sizeS">size_bytes</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*premium_level_id</inlineCode>
                 <inlineCode class="spectrum-Body--sizeS">is_premium</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">is_loop</inlineCode>
                 <inlineCode class="spectrum-Body--sizeS">licenses</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_preview_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_preview_width</inlineCode>
                 <inlineCode class="spectrum-Body--sizeS">video_preview_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_preview_content_length</inlineCode>
                 <inlineCode class="spectrum-Body--sizeS">video_preview_content_type</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_small_preview_url</inlineCode>
@@ -860,6 +873,12 @@ These are the fields returned either by default or by explicit use by the `resul
                 <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">3</inlineCode>: Premium level 2</li>
                 <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">4</inlineCode>: Premium level 3</li>
             </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>is_loop
+        </td>
+        <td>True is the asset is a looping video or audio clip. Boolean.
         </td>
     </tr>
     </tbody>
