@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkstock_api_docs=self.webpackChunkstock_api_docs||[]).push([[435],{752:function(t,n,o){o.r(n),o.d(n,{_frontmatter:function(){return p},default:function(){return d}});var e=o(7462),c=o(3366),r=(o(5007),o(4983)),u=o(1515),s=o(6056),a=["components"],p={},f={_frontmatter:p},m=u.Z;function d(t){var n=t.components,o=(0,c.Z)(t,a);return(0,r.mdx)(m,(0,e.Z)({},f,o,{components:n,mdxType:"MDXLayout"}),(0,r.mdx)(s.default,{mdxType:"FAQ"}))}d.isMDXComponent=!0}}]);
-//# sourceMappingURL=component---src-pages-faq-15-faq-md-9435f11748e3d3b034c9.js.map
