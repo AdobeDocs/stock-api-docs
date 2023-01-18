@@ -14,4 +14,5 @@ These guides are meant to supplement the API documentation with detailed instruc
 *   **[OAuth (auth code) integration](https://www.adobe.io/developer-console/docs/guides/authentication/OAuth/).** This can be used for authenticating any type of user who has an Adobe Stock account so they can access protected resources such as the License API.
     *  Note that if your application is being created for an Adobe Enterprise customer (including most Print on Demand customers), OAuth is *not* the correct workflow for you. Instead, choose Service Account (above.) OAuth integrations always require an interactive user login--it cannot be fully automated.
 *   **[Affiliate workflow (search only)](/Affiliate-API-workflow.pdf).** This guide covers how to integrate with the Search API and redirect users to the Adobe Stock website to complete the transaction.
+    *  To join the Adobe Affiliate Program, go here: [https://www.adobe.com/affiliates.html](https://www.adobe.com/affiliates.html).
     *  For an in-depth use case, see [Get Paid to Search Adobe Stock!](https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312)
