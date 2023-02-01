@@ -33,9 +33,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adobe/gatsby-theme-aio@npm:4.7.11-search1":
-  version: 4.7.11-search1
-  resolution: "@adobe/gatsby-theme-aio@npm:4.7.11-search1"
+"@adobe/gatsby-theme-aio@npm:4.7.11":
+  version: 4.7.11
+  resolution: "@adobe/gatsby-theme-aio@npm:4.7.11"
   dependencies:
     "@adobe/focus-ring-polyfill": ^0.1.5
     "@adobe/gatsby-source-github-file-contributors": ^0.3.1
@@ -125,7 +125,7 @@ __metadata:
     gatsby: ^4.22.0
     react: ^17.0.2
     react-dom: ^17.0.2
-  checksum: 95d20e16bf9b39f3e52dbc901c3b6559737c46ec557b915fffabbffe8ba4db3353172549dfe0e8e9727e4d911c30b622dc16a638744406cc74b3c645caaa449c
+  checksum: ab1328e1c66a67e609b28cb0f15be255b472130d0c1c06c72383906904415730252f5139ffce24e7574003488570ce217c6090767df5f07c77f4a12307a0c782
   languageName: node
   linkType: hard
 
@@ -19899,7 +19899,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "stock-api-docs@workspace:."
   dependencies:
-    "@adobe/gatsby-theme-aio": 4.7.11-search1
+    "@adobe/gatsby-theme-aio": 4.7.11
     "@adobe/parliament-markdown-cleaner": ^1.5.9
     gatsby: 4.22.0
     react: ^17.0.2
