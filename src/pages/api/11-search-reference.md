@@ -484,7 +484,17 @@ Pass the following URL parameters with the GET request.
         <td>search_parameters[filters][is_loop]
         </td>
         <td>Filter to return loop assets; applicable only to audio & video assets. Value 'all' returns all the audio/video assets; Value '1' or 'true' filters for audio/video asset that is a loop. Note: 'false' or '0' is not a valid option
-            Valid values and meanings:
+            <ul>
+                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode></li>
+                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">true</inlineCode></li>
+                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">all</inlineCode></li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>search_parameters[filters][transparent]
+        </td>
+        <td>Filter PNG assets by transparency. When set, only PNG images with a transparent background are included. Value 'all' returns all the images (equivalent to not having the filter in the query); Value `1` or `true` filters for images that have transparency.
             <ul>
                 <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode></li>
                 <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">true</inlineCode></li>
@@ -509,31 +519,32 @@ Pass the following URL parameters with the GET request.
                 header.
             </p>
             <p class="spectrum-Body--sizeS">
-                <inlineCode class="spectrum-Body--sizeS">\*nb_results</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*id</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*title</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*creator_name</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">\*creator_id</inlineCode> <inlineCode class="spectrum-Body--sizeS">country_name</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*width</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*height</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">\*thumbnail_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*thumbnail_html_tag</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*thumbnail_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">\*thumbnail_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_110_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_110_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_110_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_160_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_160_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_160_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_220_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_220_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_220_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_240_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_240_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_240_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_500_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_500_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_500_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_1000_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">thumbnail_1000_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_1000_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*media_type_id</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*category</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">\*category_hierarchy</inlineCode> <inlineCode class="spectrum-Body--sizeS">nb_views</inlineCode> <inlineCode class="spectrum-Body--sizeS">nb_downloads</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">\*nb_results</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*id</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*title</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*creator_name</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">\*creator_id</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">country_name</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*width</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*height</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">\*thumbnail_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*thumbnail_html_tag</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*thumbnail_width</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">\*thumbnail_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_110_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_110_width</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">thumbnail_110_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_160_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_160_width</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">thumbnail_160_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_220_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_220_width</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">thumbnail_220_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_240_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_240_width</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">thumbnail_240_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_500_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_500_width</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">thumbnail_500_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_1000_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_1000_width</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">thumbnail_1000_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*media_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*category</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">\*category_hierarchy</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">nb_views</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">nb_downloads</inlineCode>
                 <inlineCode class="spectrum-Body--sizeS">creation_date</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">keywords</inlineCode> <inlineCode class="spectrum-Body--sizeS">has_releases</inlineCode> <inlineCode class="spectrum-Body--sizeS">comp_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">comp_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">comp_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">is_licensed</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*vector_type</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">keywords</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">has_releases</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">comp_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">comp_width</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">comp_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">is_licensed</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*vector_type</inlineCode>
                 <inlineCode class="spectrum-Body--sizeS">\*content_type</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">framerate</inlineCode> <inlineCode class="spectrum-Body--sizeS">duration</inlineCode> <inlineCode class="spectrum-Body--sizeS">comps</inlineCode> <inlineCode class="spectrum-Body--sizeS">details_url</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">template_type_id</inlineCode> <inlineCode class="spectrum-Body--sizeS">template_category_ids</inlineCode> <inlineCode class="spectrum-Body--sizeS">marketing_text</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">description</inlineCode> <inlineCode class="spectrum-Body--sizeS">size_bytes</inlineCode> <inlineCode class="spectrum-Body--sizeS">\*premium_level_id</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">framerate</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">duration</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">comps</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">details_url</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">template_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">template_category_ids</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">marketing_text</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">description</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">size_bytes</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*premium_level_id</inlineCode>
                 <inlineCode class="spectrum-Body--sizeS">is_premium</inlineCode>
                 <inlineCode class="spectrum-Body--sizeS">is_loop</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">licenses</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_preview_url</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_preview_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">video_preview_height</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_preview_content_length</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">video_preview_content_type</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_small_preview_url</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">video_small_preview_width</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_small_preview_height</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">video_small_preview_content_length</inlineCode> <inlineCode class="spectrum-Body--sizeS">video_small_preview_content_type</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">is_transparent</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">licenses</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_preview_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_preview_width</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">video_preview_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_preview_content_length</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">video_preview_content_type</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_small_preview_url</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">video_small_preview_width</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_small_preview_height</inlineCode>
+                <inlineCode class="spectrum-Body--sizeS">video_small_preview_content_length</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_small_preview_content_type</inlineCode>
             </p>
         </td>
     </tr>
@@ -879,6 +890,12 @@ These are the fields returned either by default or by explicit use by the `resul
         <td>is_loop
         </td>
         <td>True is the asset is a looping video or audio clip. Boolean.
+        </td>
+    </tr>
+    <tr>
+        <td>is_transparent
+        </td>
+        <td>True for PNG assets that have transparency. Boolean.
         </td>
     </tr>
     </tbody>
