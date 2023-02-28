@@ -151,7 +151,7 @@ Another use of the License API is to retrieve a history of licensed assets. For 
 
 The Fotolia API supported basic authentication by posting a user name and plain-text password, and receiving back a session token. This has been replaced at Adobe with a much more secure authentication workflow which is common to all Adobe cloud-based services.
 
-Here is an overview of authentication types supported by Adobe Stock, but for full details, see the [Adobe I/O Authentication guide](https://www.adobe.io/authentication.html).
+Here is an overview of authentication types supported by Adobe Stock, but for full details, see the [Adobe I/O Authentication guide](https://developer.adobe.com/developer-console/docs/guides/authentication/).
 
 *   JWT service account: Allows for fully automated scripting without requiring a user login. In this scheme, a developer shares a public key certificate with Adobe, and uses scope and credentials to create a signed JWT. The JWT is exchanged with Adobe to receive an access token.
     *   This authentication type is available to *Adobe Enterprise customers only*.

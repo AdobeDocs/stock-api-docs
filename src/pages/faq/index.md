@@ -309,7 +309,7 @@ To learn how to add or edit license reference fields, see [Edit a product profil
 
 ### Why do I get an error when sending the JWT?
 
-Enterprise service accounts use JWT files instead of OAuth logins to retrieve access tokens. Occasionally, there will be errors in the workflow, often because the fields in the JWT do not match the fields in Adobe I/O. For a list of error codes, see [JWT authentication](https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/JWT/JWT.md).
+Enterprise service accounts use JWT files instead of OAuth logins to retrieve access tokens. Occasionally, there will be errors in the workflow, often because the fields in the JWT do not match the fields in Adobe I/O. For a list of error codes, see [JWT authentication](https://developer.adobe.com/developer-console/docs/guides/authentication/JWT/).
 
 However, if your JWT is working one day and suddenly fails the next, the most likely cause is that your public key certificate *has expired*. If it has, all you need to do is create a new one and upload to Adobe I/O on the same integration page. Nothing will need to change in your configuration, except make sure you are pointing to the correct private key file. See page 4 of the [Enterprise service account](/Service-Account-API-workflow.pdf) workflow guide.
 

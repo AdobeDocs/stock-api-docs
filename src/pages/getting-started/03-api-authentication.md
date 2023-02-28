@@ -67,7 +67,7 @@ All License API requests to Adobe Stock must be authenticated and authorized usi
 
 The creation of tokens is beyond the scope of this article, however it is covered in depth in the Service Account workflow and OAuth workflow guides.
 
-For complete information about creating access tokens, see the Adobe I/O[ API Authentication Guide](https://www.adobe.io/content/udp/en/apis/cloudplatform/console/authentication). Here you will also find examples of creating JWTs using Java and Node.js.
+For complete information about creating access tokens, see the Adobe I/O [API Authentication Guide](https://developer.adobe.com/developer-console/docs/guides/authentication/). Here you will also find examples of creating JWTs using Java and Node.js.
 
 <a id="important-use-the-correct-scope-in-your-jwt"></a>
 

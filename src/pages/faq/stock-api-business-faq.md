@@ -62,7 +62,7 @@ description: Stock API Frequently Asked Questions.
 
 ### How can I contact Adobe Stock to discuss a partnership or get technical assistance?
 
-If you want to partner with Adobe Stock or have questions about the business aspects of Stock integrations, please email <Grp-AdobeStockPartnerships@adobe.com>. You can also find out more about the Stock partnership program at <https://www.adobe.io/apis/creativecloud/stock.html>.
+If you want to partner with Adobe Stock or have questions about the business aspects of Stock integrations, please email <Grp-AdobeStockPartnerships@adobe.com>. You can also find out more about the Stock partnership program at <https://developer.adobe.com/stock/>.
 
 If you need technical help with your Stock API integration, please email <stockapis@adobe.com>. Please visit <https://developer.adobe.com/stock/docs/> for help resources, technical documentation and sample code.
 
