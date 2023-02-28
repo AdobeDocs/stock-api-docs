@@ -52,7 +52,7 @@ If you try to access these resources using a non-upgraded connection, you may ex
 ### Examples
 Here are some sample API use cases where your application may or may not be affected by the changes.
 
-- Search only: You use the Stock SDK for JavaScript to search Stock content, display thumbnails and redirect users to Adobe Stock to make purchases.
+- Search only: You use the Stock APIs to search Stock content, display thumbnails and redirect users to Adobe Stock to make purchases.
     + Are you affected? Probably not at all, because the browser is handling all interactions with Stock.
 - Print on demand: You search content from Stock and get image metadata to populate titles and keywords. When your end users want to purchase a printable item, you license the asset from Stock and download the image to your printer.
     + Are you affected? ~~Mostly you are not affected, because all your search and license requests are routed through stock.adobe.io. However, the download of the file is affected because it uses stock.adobe.com.~~ __Yes.__ all search and license requests, as well as download of files will require a TLS 1.2 connection.
@@ -93,7 +93,7 @@ $ python3 -c "import json, urllib.request; print(json.loads(urllib.request.urlop
 ```
 
 ### If I use the Stock SDK, am I protected from this change?
-No, because the SDK is only a layer on top of your web infrastructure. It is your infrastructure/server environment that must be equipped to handle this change in security policy. Users of the SDK for JavaScript are probably least affected, however if your server uses Node.js, you will need to make sure that it supports TLSv1.2 as well.
+No, because the SDK is only a layer on top of your web infrastructure. It is your infrastructure/server environment that must be equipped to handle this change in security policy. 
 
 ### Test URLs
 Finally, you can test TLS 1.2 support on any server by appending "s" to the subdomain of any Stock or Fotolia thumbnail:
