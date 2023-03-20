@@ -79,3 +79,14 @@ Several API methods allow the use of locale codes so that you can retrieve asset
 | en_DZ | English - Algeria |
 | en_LK | English - Sri Lanka |
 | es_DO | Spanish - Dominican Republic |
+| en_AM | English - Armenia |
+| en_AZ | English - Azerbaijan |
+| en_GE | English - Georgia |
+| ru_KG | Russian - Kyrgyzstan |
+| en_MU | English - Mauritius |
+| en_MD | English - Moldova |
+| ru_TJ | Russian - Tajikistan |
+| en_TT | English - Trinidad and Tobago |
+| en_TM | English - Turkmenistan |
+| es_UY | Spanish - Uruguay |
+| zh_MO | Chinese - Macao |
