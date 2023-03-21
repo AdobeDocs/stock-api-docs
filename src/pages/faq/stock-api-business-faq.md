@@ -8,6 +8,8 @@ description: Stock API Frequently Asked Questions.
 <!-- omit in toc -->
 # Stock API: Business frequently asked questions
 
+A list of questions and answers for customers and partners looking to use Stock APIs, from a business perspective. For technical questions on the Stock APIs, see the [Technical FAQ](/faq/).
+
 <!-- MarkdownTOC -->
 
 - [General FAQ](#general-faq)
@@ -30,21 +32,22 @@ description: Stock API Frequently Asked Questions.
 - [Print on demand FAQ](#print-on-demand-faq)
   - [What are the main objectives of the print on demand use case?](#what-are-the-main-objectives-of-the-print-on-demand-use-case)
   - [What type of assets can I access by using Adobe Stock API for print on demand?](#what-type-of-assets-can-i-access-by-using-adobe-stock-api-for-print-on-demand)
-  - [What is an online example of the Adobe Stock API Print on Demand use case?](#what-is-an-online-example-of-the-adobe-stock-api-print-on-demand-use-case)
+  - [What are online examples of the Adobe Stock API Print on Demand use case?](#what-are-online-examples-of-the-adobe-stock-api-print-on-demand-use-case)
   - [What is the Print on demand pricing model?](#what-is-the-print-on-demand-pricing-model)
   - [Do I need a contract to start my API Print on demand business?](#do-i-need-a-contract-to-start-my-api-print-on-demand-business)
   - [Is there any software with build-in support or software developers specialized in integrating Adobe Stock API for Print-on-demand?](#is-there-any-software-with-build-in-support-or-software-developers-specialized-in-integrating-adobe-stock-api-for-print-on-demand)
+- [Enterprise FAQ](#enterprise-faq)
+  - [Do I need to sign a contract to build my Enterprise integration?](#do-i-need-to-sign-a-contract-to-build-my-enterprise-integration)
+  - [Is there a separate cost to use the Stock API?](#is-there-a-separate-cost-to-use-the-stock-api)
+  - [How can I automate my Stock workflows?](#how-can-i-automate-my-stock-workflows)
+  - [May I use my Creative Cloud Professional or Professional Plus plan with the Stock API?](#may-i-use-my-creative-cloud-professional-or-professional-plus-plan-with-the-stock-api)
 - [Marketing Platforms FAQ](#marketing-platforms-faq)
   - [What are the common use cases of Marketing Platform integrations?](#what-are-the-common-use-cases-of-marketing-platform-integrations)
   - [What are the benefits of integrating Adobe Stock into a Marketing Platform?](#what-are-the-benefits-of-integrating-adobe-stock-into-a-marketing-platform)
   - [Do I need sign a contract to build my marketing platform integration?](#do-i-need-sign-a-contract-to-build-my-marketing-platform-integration)
 - [DAMs FAQ](#dams-faq)
   - [Do I need to sign a contract to build my DAM/MAM platform integration?](#do-i-need-to-sign-a-contract-to-build-my-dammam-platform-integration)
-  - [Does Adobe Stock have a pre-built integration with the \_\_\_\_\_ DAM platform? (or) Can Adobe Stock build an integration with \_\_\_\_ platform?](#does-adobe-stock-have-a-pre-built-integration-with-the-_____-dam-platform-or-can-adobe-stock-build-an-integration-with-____-platform)
-- [Enterprise FAQ](#enterprise-faq)
-  - [Do I need to sign a contract to build my Enterprise integration?](#do-i-need-to-sign-a-contract-to-build-my-enterprise-integration)
-  - [Is there a separate cost to use the Stock API?](#is-there-a-separate-cost-to-use-the-stock-api)
-  - [How can I automate my Stock workflows?](#how-can-i-automate-my-stock-workflows)
+  - [Does Adobe Stock have a pre-built integration with the my DAM platform? (or) Can Adobe Stock build an integration with my platform?](#does-adobe-stock-have-a-pre-built-integration-with-the-my-dam-platform-or-can-adobe-stock-build-an-integration-with-my-platform)
 - [Affiliates FAQ](#affiliates-faq)
   - [How can I earn affiliate commissions by promoting Adobe Stock?](#how-can-i-earn-affiliate-commissions-by-promoting-adobe-stock)
   - [How can the Adobe Stock API help me earn by promoting Adobe Stock?](#how-can-the-adobe-stock-api-help-me-earn-by-promoting-adobe-stock)
@@ -250,6 +253,48 @@ Yes. Please [contact the Stock for Enterprise team](https://stockenterprise.adob
 * Durst Smart Shop: https://durst-professional-services.com/en/smart-shop
 * OnPrintShop: https://www.onprintshop.com/
 
+<a id="enterprise-faq"></a>
+
+## Enterprise FAQ
+
+<a id="do-i-need-to-sign-a-contract-to-build-my-enterprise-integration"></a>
+
+### Do I need to sign a contract to build my Enterprise integration?
+
+If you are an existing Enterprise customer, typically your use of the API is included in the terms of your contract. Please contact your sales representative if you have any doubts.
+
+If you are not an Adobe Stock Enterprise customer, [contact the Stock for Enterprise team](https://stockenterprise.adobe.com/).
+
+<a id="is-there-a-separate-cost-to-use-the-stock-api"></a>
+
+### Is there a separate cost to use the Stock API?
+
+No. Usage of the Stock API is free for all users.
+
+<a id="how-can-i-automate-my-stock-workflows"></a>
+
+### How can I automate my Stock workflows?
+
+All Adobe Enterprise customers have access to a Service Account integration. The Service Account uses special credentials to authorize and access its Adobe licenses which do not require a user to sign in. Subsequently, this application can perform tasks on an automated scheduled with no user interaction.
+
+Any Stock API may be used in an automated method. Examples include downloading new assets from a group’s license history, licensing assets in bulk (e.g., from a list of IDs), or integrating controls inside a corporate application which allow a non-Adobe user to download assets which have been previously licensed by a different user.
+
+### May I use my Creative Cloud Professional or Professional Plus plan with the Stock API?
+
+Creative Cloud Professional (CC Pro) and Pro Plus plans are not designed for API use outside Adobe.  Any use of these plans through API requires Adobe business approval of the intended use case and assistance from the Stock product team.
+
+CC Pro and Pro Plus plans allow unlimited download of Adobe stock assets, without quota. For the following reasons, API access is made available only on an approved exception basis. 
+* API access may encourage “stockpiling” or bulk downloading of Adobe Stock Pro assets in violation of the governing terms of use.  
+* API access may enable download of Stock assets for machine learning purposes, which is not permitted by the governing terms of use.  
+* API access may encourage or enable use of Stock Pro assets in client projects as a part of agency and similar workflows.  This is not permitted by the governing terms of use.
+* API access may encourage or enable use of Stock Pro assets in support of a Print on Demand (POD) business model, which is not permitted by the terms governing Adobe CC Pro and Pro Plus plans. A separate agreement with Adobe is required for such uses.
+*  Use of API to access Stock Pro assets may make tracking of downloaded Stock assets more difficult. Assets downloaded under CC Pro and Pro Plus plans may not be used perpetually. Once a customer’s subscription ends, the customer must cease use of previously downloaded assets in new projects. If an asset is downloaded to a Digital Asset Manager (DAM), those assets need to be removed at the end of subscription to prevent their continued use.
+
+For more information, please see the [Adobe Stock Additional Terms](http://www.adobe.com/go/stockterms) or the PSLT that governs your use of Adobe Stock.  
+
+Despite the concerns stated above, it is technically possible to use a service account with CC Pro plans for internal automation tasks but requires Adobe business approval of the use case and help from the Stock product team. Please contact us only if you understand the use restrictions and have a legitimate business requirement.
+
+
 <a id="marketing-platforms-faq"></a>
 
 ## Marketing Platforms FAQ
@@ -290,37 +335,11 @@ If the DAM provider needs to create an integration for an Adobe Enterprise custo
 
 <a id="does-adobe-stock-have-a-pre-built-integration-with-the-_____-dam-platform-or-can-adobe-stock-build-an-integration-with-____-platform"></a>
 
-### Does Adobe Stock have a pre-built integration with the \_\_\_\_\_ DAM platform? (or) Can Adobe Stock build an integration with \_\_\_\_ platform?
+### Does Adobe Stock have a pre-built integration with the my DAM platform? (or) Can Adobe Stock build an integration with my platform?
 
 Adobe Stock is working with multiple DAM partners to create new integrations, but currently the only available integration with the [Adobe Experience Manager](https://www.adobe.com/marketing/experience-manager.html) (AEM) Assets platform. If you are an AEM user, see [more information here](https://experienceleague.adobe.com/docs/experience-manager-65/assets/using/aem-assets-adobe-stock.html?lang=en).
 
 Adobe will be happy to work with any platform provider or customer who wishes to create a new integration, and can provide technical support, sample code and architecture guidance, but does not have the resources to perform the integration work. If necessary, Adobe can recommend some third-party firms who can be engaged to create the integration.
-
-<a id="enterprise-faq"></a>
-
-## Enterprise FAQ
-
-<a id="do-i-need-to-sign-a-contract-to-build-my-enterprise-integration"></a>
-
-### Do I need to sign a contract to build my Enterprise integration?
-
-If you are an existing Enterprise customer, typically your use of the API is included in the terms of your contract. Please contact your sales representative if you have any doubts.
-
-If you are not an Adobe Stock Enterprise customer, [contact the Stock for Enterprise team](https://stockenterprise.adobe.com/).
-
-<a id="is-there-a-separate-cost-to-use-the-stock-api"></a>
-
-### Is there a separate cost to use the Stock API?
-
-No. Usage of the Stock API is free for all users.
-
-<a id="how-can-i-automate-my-stock-workflows"></a>
-
-### How can I automate my Stock workflows?
-
-All Adobe Enterprise customers have access to a Service Account integration. The Service Account uses special credentials to authorize and access its Adobe licenses which do not require a user to sign in. Subsequently, this application can perform tasks on an automated scheduled with no user interaction.
-
-Any Stock API may be used in an automated method. Examples include downloading new assets from a group’s license history, licensing assets in bulk (e.g., from a list of IDs), or integrating controls inside a corporate application which allow a non-Adobe user to download assets which have been previously licensed by a different user.
 
 <a id="affiliates-faq"></a>
 
