@@ -19,6 +19,7 @@ A list of technical frequently asked questions. Don't see your question answered
     - [How do I download a comp image?](#how-do-i-download-a-comp-image)
     - [How do I bulk download all of my license history?](#how-do-i-bulk-download-all-of-my-license-history)
     - [Why can't I download an asset from license history?](#why-cant-i-download-an-asset-from-license-history)
+    - [For vector assets, can I request a JPEG or PNG version instead of AI or SVG?](#for-vector-assets-can-i-request-a-jpeg-or-png-version-instead-of-ai-or-svg)
   - [Enterprise](#enterprise)
     - [Why can’t I create a JWT Service Account for my CC Pro subscription?](#why-cant-i-create-a-jwt-service-account-for-my-cc-pro-subscription)
     - [How can I detect assets from the CC Pro plan in my license history?](#how-can-i-detect-assets-from-the-cc-pro-plan-in-my-license-history)
@@ -242,6 +243,39 @@ Here is an example download command using `curl`. Be sure to follow redirects (w
 ### Why can't I download an asset from license history?
 
 Adobe Stock provides access to millions of creative assets that have been submitted by our worldwide community of contributors as well as strategic content partners. In very rare situations, assets may be removed from our site. As a stock service provider, we are able to provide a downloadable copy of an asset only while it is active on our platform. We encourage all customers to download copies of assets as soon as they are licensed. Please note that, even if a licensed asset is removed from our site, your license is still valid in perpetuity (subject to the licensing terms) and that your License History will continue to display when the asset was licensed.
+
+### For vector assets, can I request a JPEG or PNG version instead of AI or SVG?
+
+Vector assets from Stock are delivered as native Illustrator AI/EPS files, or as SVG, depending on how they were originally created by the Stock Contributor. Previously, the only way you could get bitmap/raster versions those assets was to download the vector file and use Illustrator or Photoshop to convert to JPEG or PNG. Under the terms of the license, you are freely allowed to download both the original vector and any JPEG/PNG version.
+
+The Download API now supports JPEG download for all vector assets, and PNG with transparency for *some* assets, depending if those assets support transparency. (JPEG does not allow transparency.)
+
+Add the command `format=jpeg` or `format=png`​ to the download URL. Example:
+
+```
+https://stock.adobe.com/Rest/Libraries/Download/490764909/2?token={{TOKEN}}&format=jpeg
+
+https://stock.adobe.com/Rest/Libraries/Download/563988182/2?token={{TOKEN}}&format=png
+```
+
+Please note that if a PNG with transparency does not exist, the API may return an error. Therefore, you can use the Files API or Search API to learn if a file has transparency. In the following example, both assets are vectors, but only the second file has transparency and can return a PNG asset:
+
+```
+https://stock.adobe.io/Rest/Media/1/Files?locale=en-US&ids=490764909,563988182&result_columns[]=id&result_columns[]=is_transparent&result_columns[]=content_type
+
+    "files": [
+        {
+            "id": 490764909,
+            "is_transparent": false,
+            "content_type": "application/illustrator"
+        },
+        {
+            "id": 563988182,
+            "is_transparent": true,
+            "content_type": "application/illustrator"
+        }
+    ]
+```
 
 <a id="enterprise-licensing"></a>
 
