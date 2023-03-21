@@ -8,20 +8,21 @@ description: Stock API Frequently Asked Questions.
 
 # Stock API: Technical frequently asked questions
 
-A list of technical frequently asked questions. Don't see your question answered here? Email us at stockapis@adobe.com.
-
-If you are looking for the Stock API Business FAQ, it is [located here](/faq/stock-api-business-faq.md).
-
+A list of technical frequently asked questions. Don't see your question answered here? Email us at stockapis@adobe.com. If you are looking for the Stock API Business FAQ, it is [located here](/faq/stock-api-business-faq.md).
+- [Stock API: Technical frequently asked questions](#stock-api-technical-frequently-asked-questions)
   - [General](#general)
     - [What thumbnail preview sizes are available?](#what-thumbnail-preview-sizes-are-available)
-    - [Why are there more search results returned than the 'limit' value?](#why-are-there-more-search-results-returned-than-the-limit-value)
     - [Why don't all assets show up in Search API results?](#why-dont-all-assets-show-up-in-search-api-results)
     - [Why am I getting 429 errors from the API?](#why-am-i-getting-429-errors-from-the-api)
+    - [Why are there more search results returned than the 'limit' value?](#why-are-there-more-search-results-returned-than-the-limit-value)
   - [Downloading](#downloading)
     - [How do I download a comp image?](#how-do-i-download-a-comp-image)
     - [How do I bulk download all of my license history?](#how-do-i-bulk-download-all-of-my-license-history)
     - [Why can't I download an asset from license history?](#why-cant-i-download-an-asset-from-license-history)
-  - [Enterprise licensing](#enterprise-licensing)
+    - [For vector assets, can I request a JPEG or PNG version instead of AI or SVG?](#for-vector-assets-can-i-request-a-jpeg-or-png-version-instead-of-ai-or-svg)
+  - [Enterprise](#enterprise)
+    - [Why can’t I create a JWT Service Account for my CC Pro subscription?](#why-cant-i-create-a-jwt-service-account-for-my-cc-pro-subscription)
+    - [How can I detect assets from the CC Pro plan in my license history?](#how-can-i-detect-assets-from-the-cc-pro-plan-in-my-license-history)
     - [How do I add license references?](#how-do-i-add-license-references)
     - [Why do I get an error when sending the JWT?](#why-do-i-get-an-error-when-sending-the-jwt)
   - [Print on Demand (POD)](#print-on-demand-pod)
@@ -31,6 +32,7 @@ If you are looking for the Stock API Business FAQ, it is [located here](/faq/sto
     - [How do I filter for high-resolution images only?](#how-do-i-filter-for-high-resolution-images-only)
     - [How do I check if the images I am selling are still available on Stock?](#how-do-i-check-if-the-images-i-am-selling-are-still-available-on-stock)
     - [How do I filter out Free content?](#how-do-i-filter-out-free-content)
+      - [Filtering free assets with the Files API](#filtering-free-assets-with-the-files-api)
 
 <a id="general"></a>
 
@@ -49,6 +51,58 @@ If you are looking for the Stock API Business FAQ, it is [located here](/faq/sto
 See the [Search API reference](/api/11-search-reference.md).
 
 <a id="why-are-there-more-search-results-returned-than-the-limit-value"></a>
+
+### Why don't all assets show up in Search API results?
+Because of because decisions, it is expected behavior that some assets will be hidden from search results. This can include:
+
+*   Editorial: https://stock.adobe.com/editorial
+*   Audio: https://stock.adobe.com/audio
+*   Free: https://stock.adobe.com/free
+
+Free assets are a "rotating" collection, so an image could technically be a paid asset today (and appear in search), and become a free asset tomorrow (and be removed from search).
+
+These assets types will be searchable from the Adobe Stock website because there is business logic in place to make sure that only authorized users or applications can interact with them--Stock partners cannot guarantee these special asset types will be handled correctly so they are blocked by default.
+
+The Search API is the only service affected. If the goal is to retrieve metadata, then Search is not the correct method--instead apps should use the [Files API](/api/19-bulk-metadata-files-reference.md). The Files API will retrieve metadata on any ID. Similarly, all the License APIs will work with these assets as well, if given a valid ID.
+
+### Why am I getting 429 errors from the API?
+The 429 `Too Many Requests` HTTP response status code indicates the application has made too many queries in a given amount of time. This is not an error, but a message from the server instructing the application to stop sending requests because there are not enough connections to process it. The Adobe Stock service has a finite number of connections available, and when that limit is reached, 429 responses are returned.
+
+Your application should expect these responses and be able to handle them. The simplest way is to wait to send another request. Often, the status code is sent with a `Retry-after` header that specifies a period of time to wait before sending another request. In the example below, the API response requests that you wait one (1) second before attempting the request again.
+
+```javascript
+HTTP/1.1 429 Too Many Requests
+Server: openresty
+Date: Fri, 10 Dec 2021 00:53:46 GMT
+Content-Type: application/json
+Retry-After: 1
+
+{"error_code":"429050","message":"Too many requests"}
+```
+
+A more comprehensive approach is to implement *exponential backoff*. Exponential backoff uses progressively longer waits between retries for consecutive error responses. For example, if the initial wait time was set to 1 second and the application started receiving errors, the app could sequence the requests like this:
+
+* 1st request: *No wait*
+  * Status: `429 Too Many Requests`
+* 2nd request: *Wait 1 second*
+  * Status: `429 Too Many Requests`
+* 3rd request: *Wait 2 seconds*
+  * Status: `429 Too Many Requests`
+* 4th request: *Wait 4 seconds*
+  * Status: `200 OK`
+* 5th request: *No wait*
+  * Status: `429 Too Many Requests`
+* 6th request: *Wait 1 second*
+  * Status: `429 Too Many Requests`
+* 7th request: *Wait 2 seconds*
+  * etc.
+
+In addition, the application would have a maximum retries variable, such that it would only make attempts until the max retries value is reached. 
+
+More information on this topic from external websites:
+* [What an HTTP Error 429 Means & How to Fix It](https://blog.hubspot.com/website/http-error-429)
+* [Implementing exponential backoff](https://cloud.google.com/iot/docs/how-tos/exponential-backoff)
+* [Error retries and exponential backoff in AWS](https://docs.aws.amazon.com/general/latest/gr/api-retries.html)
 
 ### Why are there more search results returned than the 'limit' value?
 
@@ -113,59 +167,6 @@ https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=Flower
         }
     ]
 ```
-
-### Why don't all assets show up in Search API results?
-
-Because of because decisions, it is expected behavior that some assets will be hidden from search results. This can include:
-
-*   Editorial: https://stock.adobe.com/editorial
-*   Audio: https://stock.adobe.com/audio
-*   Free: https://stock.adobe.com/free
-
-Free assets are a "rotating" collection, so an image could technically be a paid asset today (and appear in search), and become a free asset tomorrow (and be removed from search).
-
-These assets types will be searchable from the Adobe Stock website because there is business logic in place to make sure that only authorized users or applications can interact with them--Stock partners cannot guarantee these special asset types will be handled correctly so they are blocked by default.
-
-The Search API is the only service affected. If the goal is to retrieve metadata, then Search is not the correct method--instead apps should use the [Files API](/api/19-bulk-metadata-files-reference.md). The Files API will retrieve metadata on any ID. Similarly, all the License APIs will work with these assets as well, if given a valid ID.
-
-### Why am I getting 429 errors from the API?
-The 429 `Too Many Requests` HTTP response status code indicates the application has made too many queries in a given amount of time. This is not an error, but a message from the server instructing the application to stop sending requests because there are not enough connections to process it. The Adobe Stock service has a finite number of connections available, and when that limit is reached, 429 responses are returned.
-
-Your application should expect these responses and be able to handle them. The simplest way is to wait to send another request. Often, the status code is sent with a `Retry-after` header that specifies a period of time to wait before sending another request. In the example below, the API response requests that you wait one (1) second before attempting the request again.
-
-```javascript
-HTTP/1.1 429 Too Many Requests
-Server: openresty
-Date: Fri, 10 Dec 2021 00:53:46 GMT
-Content-Type: application/json
-Retry-After: 1
-
-{"error_code":"429050","message":"Too many requests"}
-```
-
-A more comprehensive approach is to implement *exponential backoff*. Exponential backoff uses progressively longer waits between retries for consecutive error responses. For example, if the initial wait time was set to 1 second and the application started receiving errors, the app could sequence the requests like this:
-
-* 1st request: *No wait*
-  * Status: `429 Too Many Requests`
-* 2nd request: *Wait 1 second*
-  * Status: `429 Too Many Requests`
-* 3rd request: *Wait 2 seconds*
-  * Status: `429 Too Many Requests`
-* 4th request: *Wait 4 seconds*
-  * Status: `200 OK`
-* 5th request: *No wait*
-  * Status: `429 Too Many Requests`
-* 6th request: *Wait 1 second*
-  * Status: `429 Too Many Requests`
-* 7th request: *Wait 2 seconds*
-  * etc.
-
-In addition, the application would have a maximum retries variable, such that it would only make attempts until the max retries value is reached. 
-
-More information on this topic from external websites:
-* [What an HTTP Error 429 Means & How to Fix It](https://blog.hubspot.com/website/http-error-429)
-* [Implementing exponential backoff](https://cloud.google.com/iot/docs/how-tos/exponential-backoff)
-* [Error retries and exponential backoff in AWS](https://docs.aws.amazon.com/general/latest/gr/api-retries.html)
 
 <a id="downloading"></a>
 
@@ -243,9 +244,50 @@ Here is an example download command using `curl`. Be sure to follow redirects (w
 
 Adobe Stock provides access to millions of creative assets that have been submitted by our worldwide community of contributors as well as strategic content partners. In very rare situations, assets may be removed from our site. As a stock service provider, we are able to provide a downloadable copy of an asset only while it is active on our platform. We encourage all customers to download copies of assets as soon as they are licensed. Please note that, even if a licensed asset is removed from our site, your license is still valid in perpetuity (subject to the licensing terms) and that your License History will continue to display when the asset was licensed.
 
+### For vector assets, can I request a JPEG or PNG version instead of AI or SVG?
+
+Vector assets from Stock are delivered as native Illustrator AI/EPS files, or as SVG, depending on how they were originally created by the Stock Contributor. Previously, the only way you could get bitmap/raster versions those assets was to download the vector file and use Illustrator or Photoshop to convert to JPEG or PNG. Under the terms of the license, you are freely allowed to download both the original vector and any JPEG/PNG version.
+
+The Download API now supports JPEG download for all vector assets, and PNG with transparency for *some* assets, depending if those assets support transparency. (JPEG does not allow transparency.)
+
+Add the command `format=jpeg` or `format=png`​ to the download URL. Example:
+
+```
+https://stock.adobe.com/Rest/Libraries/Download/490764909/2?token={{TOKEN}}&format=jpeg
+
+https://stock.adobe.com/Rest/Libraries/Download/563988182/2?token={{TOKEN}}&format=png
+```
+
+Please note that if a PNG with transparency does not exist, the API may return an error. Therefore, you can use the Files API or Search API to learn if a file has transparency. In the following example, both assets are vectors, but only the second file has transparency and can return a PNG asset:
+
+```
+https://stock.adobe.io/Rest/Media/1/Files?locale=en-US&ids=490764909,563988182&result_columns[]=id&result_columns[]=is_transparent&result_columns[]=content_type
+
+    "files": [
+        {
+            "id": 490764909,
+            "is_transparent": false,
+            "content_type": "application/illustrator"
+        },
+        {
+            "id": 563988182,
+            "is_transparent": true,
+            "content_type": "application/illustrator"
+        }
+    ]
+```
+
 <a id="enterprise-licensing"></a>
 
-## Enterprise licensing
+## Enterprise
+
+### Why can’t I create a JWT Service Account for my CC Pro subscription?
+Creative Cloud Professional (CC Pro) and Pro Plus plans allow unlimited download of Adobe Stock assets, without quota. API integrations with Stock are disabled by design but can be enabled with Adobe business approval and product team assistance. See [May I use my Creative Cloud Professional or Professional Plus plan with the Stock API?](/faq/stock-api-business-faq/#may-i-use-my-creative-cloud-professional-or-professional-plus-plan-with-the-stock-api) 
+
+Be aware that if you do enable the integration and you download CC Pro assets to your servers, you will need to track these downloads, because if the customer unsubscribes from a CC Pro plan, those assets may not be used for new projects and must be deleted, by the terms of use. Please contact us if you understand the legal risks and have a business requirement.
+
+### How can I detect assets from the CC Pro plan in my license history?
+The current version of the License History API cannot differentiate between CC Pro Extended licenses and perpetual Extended licenses. This makes tracking of Stock Pro assets more difficult and creates compliance risk discussed in the question above, [Why can’t I create a JWT Service Account for my CC Pro subscription?](/faq/#why-cant-i-create-a-jwt-service-account-for-my-cc-pro-subscription)
 
 <a id="how-do-i-add-license-references"></a>
 
@@ -256,7 +298,7 @@ License references are extra metadata that you can add to a license record at th
 There are two steps involved:
 
 1.  Get a list of required and optional fields from a Member/Profile request
-1.  Send a POST request to Content/License, including the fields as JSON
+2.  Send a POST request to Content/License, including the fields as JSON
 
 In step 1, you call Member/Profile as described in [Licensing assets and stuff](/getting-started/apps/06-licensing-assets.md)
 
