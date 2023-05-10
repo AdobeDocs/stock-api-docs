@@ -23,8 +23,8 @@ A request using the Stock Search API retrieves a list of assets from Adobe Stock
 
 For a guide to usage and additional examples, see [Creating Adobe Stock applications](../getting-started/04-creating-apps.md).
 
-| Endpoint                                         | Methods                                                |
-| ------------------------------------------------ | ------------------------------------------------------ |
+| Endpoint                                         | Methods                                                 |
+| ------------------------------------------------ | ------------------------------------------------------- |
 | https://stock.adobe.io/Rest/Media/1/Search/Files | GET, POST (only when using the similar_image parameter) |
 
 <a id="about-search-and-filter-criteria"></a>
@@ -57,7 +57,7 @@ Search commands have three formats:
 
     You can specify multiple filtering values for content_type, template_type_id, and template_category_id; search returns assets that match any of those values. The remaining filters are treated as AND.
 
-2.  **Response control.** In addition to the filter and search mechanisms above, search queries by default return a fixed number of fields. To increase or decrease the scope of the response data, add one or more `result_columns[]` to the query. For example, using `?result_columns[]=id` by itself will return _only_ content IDs.
+1.  **Response control.** In addition to the filter and search mechanisms above, search queries by default return a fixed number of fields. To increase or decrease the scope of the response data, add one or more `result_columns[]` to the query. For example, using `?result_columns[]=id` by itself will return _only_ content IDs.
 
 ```json
 {
@@ -112,16 +112,16 @@ Pass the following URL parameters with the GET request.
 
 **Tip:** The only required parameter is at least one search_parameters[].
 
-<table class="spectrum-Table spectrum-Table--sizeM">
-    <thead class="spectrum-Table-head">
-        <tr class="spectrum-Table-row css-us97lb-Tr">
-            <th class="spectrum-Table-headCell"><strong>Parameter</strong>
+<table columnWidths="30,70">
+    <thead>
+        <tr>
+            <th><strong>Parameter</strong>
             </th>
-            <th class="spectrum-Table-headCell"><strong>Description</strong>
+            <th><strong>Description</strong>
             </th>
         </tr>
     </thead>
-    <tbody class="spectrum-Table-body">
+    <tbody>
     <tr>
         <td>locale
         </td>
@@ -133,7 +133,7 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>Keyword search. Space-separated list of keywords. String.
             Words can also be individual media identifiers (media_id), for example:
-            <inlineCode class="spectrum-Body--sizeS">search_parameters[words]=71182279</inlineCode>
+            <inlineCode>search_parameters[words]=71182279</inlineCode>
         </td>
     </tr>
     <tr>
@@ -143,7 +143,7 @@ Pass the following URL parameters with the GET request.
             Call repeatedly with different [offset] values to page through the found assets. <strong>Tip:</strong>
             The
             number of images returned in each call can vary, but never exceeds 64 entries.
-            See the note below for <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][premium]</inlineCode> and refer to the FAQ question, <a href="/faq/?#why-are-there-more-search-results-returned-than-the-limit-value">Why are there more search results returned than the 'limit' value?</a>
+            See the note below for <inlineCode>search_parameters[filters][premium]</inlineCode> and refer to the FAQ question, <a href="/faq/?#why-are-there-more-search-results-returned-than-the-limit-value">Why are there more search results returned than the 'limit' value?</a>
         </td>
     </tr>
     <tr>
@@ -163,18 +163,18 @@ Pass the following URL parameters with the GET request.
         <td>Sort order in which to return found assets. Default is "relevance". String.
             Valid strings and their meanings:
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">relevance</inlineCode><br />
+                <li><inlineCode>relevance</inlineCode><br />
                     How closely it matches your search request, closest matches first.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">creation</inlineCode><br />
+                <li><inlineCode>creation</inlineCode><br />
                     Creation date in descending order (newest first).</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">featured</inlineCode><br />
+                <li><inlineCode>featured</inlineCode><br />
                     Attempts to display the highest quality content first, as scored by Adobe Sensei's machine
                     learning
                     algorithms. In practice, it performs best on lifestyle imagery.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">nb_downloads</inlineCode><br />
+                <li><inlineCode>nb_downloads</inlineCode><br />
                     In descending order by the number of downloads by all users since the asset was added to Adobe
                     Stock.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">undiscovered</inlineCode><br />
+                <li><inlineCode>undiscovered</inlineCode><br />
                     Starting with assets that have not commonly been viewed or downloaded.</li>
             </ul>
         </td>
@@ -208,30 +208,30 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>Search for assets that are similar in appearance to an asset with a specific media ID. Integer. For
             example:
-            <inlineCode class="spectrum-Body--sizeS">search_parameters[similar]=99338</inlineCode>
+            <inlineCode>search_parameters[similar]=99338</inlineCode>
         </td>
     </tr>
     <tr>
         <td>search_parameters[similar_url]
         </td>
         <td>Search for assets that are similar in appearance to an image at a specific URL. String. For example:
-            <inlineCode class="spectrum-Body--sizeS">search_parameters[similar_url]=https://my.site/cutedog.jpg</inlineCode>
+            <inlineCode>search_parameters[similar_url]=https://my.site/cutedog.jpg</inlineCode>
         </td>
     </tr>
     <tr>
         <td>search_parameters[similar_image]
         </td>
         <td>Whether to use similar_image data for visual similarity search. Integer.
-            <inlineCode class="spectrum-Body--sizeS">0 | 1</inlineCode> (if using image data).
+            <inlineCode>0 | 1</inlineCode> (if using image data).
         </td>
     </tr>
     <tr>
         <td>similar_image
         </td>
         <td>Image data to use when searching for visually similar assets. Must also specify:
-            <inlineCode class="spectrum-Body--sizeS">search_parameters[similar_image]=1</inlineCode>
+            <inlineCode>search_parameters[similar_image]=1</inlineCode>
             Supported in POST only. Valid image data is for JPG, PNG, or GIF files. Use multipart/form-data.
-            Ignored if <inlineCode class="spectrum-Body--sizeS">search_parameters[similar_url]</inlineCode> is specified.
+            Ignored if <inlineCode>search_parameters[similar_url]</inlineCode> is specified.
         </td>
     </tr>
     <tr>
@@ -239,7 +239,7 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>Search for assets with a specific category ID. Integer.
             For example, to search for assets in the category "travel":
-            <inlineCode class="spectrum-Body--sizeS">search_parameters[category]=1043</inlineCode>
+            <inlineCode>search_parameters[category]=1043</inlineCode>
             For more information see the <a href="./17-categorytree.md">CategoryTree API reference</a>.
         </td>
     </tr>
@@ -249,12 +249,12 @@ Pass the following URL parameters with the GET request.
         <td>Thumbnail size in pixels. Specify the size of thumbnail to return for each found asset. Integer.
             Valid values and meanings:
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">110</inlineCode>: Small (110 px)</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">160</inlineCode>: Medium (160 px)</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">220</inlineCode>: Medium-Large (220 px)</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">240</inlineCode>: Large (240 px)</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">500</inlineCode>: Extra large (XL) (500 px). Returned with watermark. (default)</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1000</inlineCode>: Extra-extra large (XXL) (1000 px). Returned with watermark.</li>
+                <li><inlineCode>110</inlineCode>: Small (110 px)</li>
+                <li><inlineCode>160</inlineCode>: Medium (160 px)</li>
+                <li><inlineCode>220</inlineCode>: Medium-Large (220 px)</li>
+                <li><inlineCode>240</inlineCode>: Large (240 px)</li>
+                <li><inlineCode>500</inlineCode>: Extra large (XL) (500 px). Returned with watermark. (default)</li>
+                <li><inlineCode>1000</inlineCode>: Extra-extra large (XXL) (1000 px). Returned with watermark.</li>
             </ul>
         </td>
     </tr>
@@ -262,47 +262,47 @@ Pass the following URL parameters with the GET request.
         <td>search_parameters[filters][area_m_pixels]
         </td>
         <td>
-            Image sizes in megapixels (millions of pixels) to return, specified as a range in the format <inlineCode class="spectrum-Body--sizeS">min-max</inlineCode>.<br/> <inlineCode class="spectrum-Body--sizeS">min</inlineCode> and <inlineCode class="spectrum-Body--sizeS">max</inlineCode> are both optional and default to open
+            Image sizes in megapixels (millions of pixels) to return, specified as a range in the format <inlineCode>min-max</inlineCode>.<br/> <inlineCode>min</inlineCode> and <inlineCode>max</inlineCode> are both optional and default to open
             ranges. Values must be (whole) integers.
-            <p class="spectrum-Body--sizeS">Examples:<br />
+            <p>Examples:<br />
               <em>Search for an image that has a minimum pixel area of 4000x2500 (10Mpix) and maximum area of
                   5000x5000 (25Mpix):</em><br />
-              <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][area_m_pixels]:10-25</inlineCode>
+              <inlineCode>search_parameters[filters][area_m_pixels]:10-25</inlineCode>
             </p>
-            <p class="spectrum-Body--sizeS">
+            <p>
               <em>Search for an image that has a minimum area size of 4000x5000 pixels (20Mpix).</em><br />
-              <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][area_m_pixels]:20-</inlineCode>
+              <inlineCode>search_parameters[filters][area_m_pixels]:20-</inlineCode>
             </p>
         </td>
     </tr>
     <tr>
         <td>search_parameters[filters][image_width]</td>
         <td>
-            Asset width specified as a range of pixels in the format <inlineCode class="spectrum-Body--sizeS">min-max</inlineCode>.<br /> 
-            <inlineCode class="spectrum-Body--sizeS">min</inlineCode> and
-            <inlineCode class="spectrum-Body--sizeS">max</inlineCode> are both optional and default to open ranges.
-            <p class="spectrum-Body--sizeS">
+            Asset width specified as a range of pixels in the format <inlineCode>min-max</inlineCode>.<br /> 
+            <inlineCode>min</inlineCode> and
+            <inlineCode>max</inlineCode> are both optional and default to open ranges.
+            <p>
               Example:<br />
               <em>Only include images with a width of at least 5000 pixels</em><br />
-              <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][image_width]=5000-</inlineCode> <br />
-              OR <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][image_width]=5000</inlineCode>
+              <inlineCode>search_parameters[filters][image_width]=5000-</inlineCode> <br />
+              OR <inlineCode>search_parameters[filters][image_width]=5000</inlineCode>
             </p>
         </td>
     </tr>
     <tr>
         <td>search_parameters[filters][image_height]</td>
         <td>
-            Asset height specified as a range of pixels in the format <inlineCode class="spectrum-Body--sizeS">min-max</inlineCode>. <br /> 
-            <inlineCode class="spectrum-Body--sizeS">min</inlineCode> and
-            <inlineCode class="spectrum-Body--sizeS">max</inlineCode> are both optional and default to open ranges.
-            <p class="spectrum-Body--sizeS">
+            Asset height specified as a range of pixels in the format <inlineCode>min-max</inlineCode>. <br /> 
+            <inlineCode>min</inlineCode> and
+            <inlineCode>max</inlineCode> are both optional and default to open ranges.
+            <p>
               Examples:<br />
               <em>Only include images with a height between 2000-4000 pixels</em><br />
-              <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][image_height]=2000-4000</inlineCode>
+              <inlineCode>search_parameters[filters][image_height]=2000-4000</inlineCode>
             </p>
-            <p class="spectrum-Body--sizeS">
+            <p>
               <em>Only include images with a max height of 3000 pixels</em><br />
-              <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][image_height]=-3000</inlineCode>
+              <inlineCode>search_parameters[filters][image_height]=-3000</inlineCode>
             </p>
         </td>
     </tr>
@@ -311,13 +311,13 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>Whether to return Premium assets or not. Possible values:
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">false</inlineCode>: only return assets with a premium level of either 0 (core) or 1 (free).</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">true</inlineCode>: only return assets with a premium level > 1.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">all</inlineCode>: Return everything. String.</li>
+                <li><inlineCode>false</inlineCode>: only return assets with a premium level of either 0 (core) or 1 (free).</li>
+                <li><inlineCode>true</inlineCode>: only return assets with a premium level > 1.</li>
+                <li><inlineCode>all</inlineCode>: Return everything. String.</li>
             </ul>
-            <p class="spectrum-Body--sizeS">
+            <p>
               Strongly recommend <strong>always</strong> setting this parameter to one of its three values, as it
-              works around an issue where more assets can be returned than set in the <inlineCode class="spectrum-Body--sizeS">search_parameters[limit]</inlineCode>
+              works around an issue where more assets can be returned than set in the <inlineCode>search_parameters[limit]</inlineCode>
               parameter, which can throw off pagination. See the FAQ, <a href="/faq/?#why-are-there-more-search-results-returned-than-the-limit-value">Why are there more search results returned than the 'limit' value?</a>
             </p>
         </td>
@@ -327,9 +327,9 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>A multiple-value array specifying which 3D types to return. Valid values and meanings:
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode>: Models</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">2</inlineCode>: Lights</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">3</inlineCode>: Materials</li>
+                <li><inlineCode>1</inlineCode>: Models</li>
+                <li><inlineCode>2</inlineCode>: Lights</li>
+                <li><inlineCode>3</inlineCode>: Materials</li>
             </ul>
         </td>
     </tr>
@@ -341,14 +341,14 @@ Pass the following URL parameters with the GET request.
             array specifying which template types to return.
             Valid values and meanings:
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode>: Photoshop PSDT</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">2</inlineCode>: Illustrator AIT</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">3</inlineCode>: Indesign INDT</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">4</inlineCode>: Premiere Pro Motion Graphics Template</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">5</inlineCode>: After Effects Motion Graphics Template</li>
+                <li><inlineCode>1</inlineCode>: Photoshop PSDT</li>
+                <li><inlineCode>2</inlineCode>: Illustrator AIT</li>
+                <li><inlineCode>3</inlineCode>: Indesign INDT</li>
+                <li><inlineCode>4</inlineCode>: Premiere Pro Motion Graphics Template</li>
+                <li><inlineCode>5</inlineCode>: After Effects Motion Graphics Template</li>
             </ul>
             For example:
-            <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][template_type_id][]=2 &search_parameters[filters][template_type_id][]=3</inlineCode>
+            <inlineCode>search_parameters[filters][template_type_id][]=2 &search_parameters[filters][template_type_id][]=3</inlineCode>
         </td>
     </tr>
     <tr>
@@ -357,9 +357,9 @@ Pass the following URL parameters with the GET request.
         <td>Return found assets only if the asset has model or property releases. String.
             Valid values and meanings:
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">true</inlineCode>: Return only assets with releases.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">false</inlineCode>: Return only assets without releases. </li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">all</inlineCode>: (Default.) Return assets regardless of release status.</li>
+                <li><inlineCode>true</inlineCode>: Return only assets with releases.</li>
+                <li><inlineCode>false</inlineCode>: Return only assets without releases. </li>
+                <li><inlineCode>all</inlineCode>: (Default.) Return assets regardless of release status.</li>
             </ul>
         </td>
     </tr>
@@ -367,42 +367,42 @@ Pass the following URL parameters with the GET request.
         <td>search_parameters[filters][content_type:photo]
         </td>
         <td>Include found assets that are photos. Integer.<br />
-            <inlineCode class="spectrum-Body--sizeS">0 | 1</inlineCode>
+            <inlineCode>0 | 1</inlineCode>
         </td>
     </tr>
     <tr>
         <td>search_parameters[filters][content_type:illustration]
         </td>
         <td>Include found assets that are illustrations. Integer.<br />
-            <inlineCode class="spectrum-Body--sizeS">0 | 1</inlineCode>
+            <inlineCode>0 | 1</inlineCode>
         </td>
     </tr>
     <tr>
         <td>search_parameters[filters][content_type:vector]
         </td>
         <td>Include found assets that are vectors. Integer.<br />
-            <inlineCode class="spectrum-Body--sizeS">0 | 1</inlineCode>
+            <inlineCode>0 | 1</inlineCode>
         </td>
     </tr>
     <tr>
         <td>search_parameters[filters][content_type:video]
         </td>
         <td>Include found assets that are videos. Integer.<br />
-            <inlineCode class="spectrum-Body--sizeS">0 | 1</inlineCode>
+            <inlineCode>0 | 1</inlineCode>
         </td>
     </tr>
     <tr>
         <td>search_parameters[filters][content_type:template]
         </td>
         <td>Include found assets that are templates. Integer.<br />
-            <inlineCode class="spectrum-Body--sizeS">0 | 1</inlineCode>
+            <inlineCode>0 | 1</inlineCode>
         </td>
     </tr>
     <tr>
         <td>search_parameters[filters][content_type:3d]
         </td>
         <td>Include found assets that are 3D items. Integer.<br />
-            <inlineCode class="spectrum-Body--sizeS">0 | 1</inlineCode>
+            <inlineCode>0 | 1</inlineCode>
         </td>
     </tr>
     <tr>
@@ -410,8 +410,8 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>Return found assets only if they are flagged as including Explicit/Nudity/Violence. Integer.
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">0</inlineCode>: Default. Omit assets in this group.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode>: Return assets only if they are in this group.</li>
+                <li><inlineCode>0</inlineCode>: Default. Omit assets in this group.</li>
+                <li><inlineCode>1</inlineCode>: Return assets only if they are in this group.</li>
             </ul>
         </td>
     </tr>
@@ -420,8 +420,8 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>Return found assets only if the subject is isolated from the background by being on a uniformly colored
             background. Integer.<ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">0</inlineCode>: Default. Omit assets that are isolated.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode>: Return assets only if they are isolated.</li>
+                <li><inlineCode>0</inlineCode>: Default. Omit assets that are isolated.</li>
+                <li><inlineCode>1</inlineCode>: Return assets only if they are isolated.</li>
             </ul>
         </td>
     </tr>
@@ -430,8 +430,8 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>Return found assets only if they are panoramic (can be combined with [orientation]). Integer.
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">0</inlineCode>: Default. Omit panoramic assets.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode>: Return assets only if they are panoramic.</li>
+                <li><inlineCode>0</inlineCode>: Default. Omit panoramic assets.</li>
+                <li><inlineCode>1</inlineCode>: Return assets only if they are panoramic.</li>
             </ul>
         </td>
     </tr>
@@ -439,10 +439,10 @@ Pass the following URL parameters with the GET request.
         <td>search_parameters[filters][orientation]
         </td>
         <td>Return found assets of the specified orientation. String. Valid values and meanings:<ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">horizontal</inlineCode>: Only horizontal images.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">vertical</inlineCode>: Only vertical images.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">square</inlineCode>: Only square images.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">all</inlineCode>: Default. All image orientations.</li>
+                <li><inlineCode>horizontal</inlineCode>: Only horizontal images.</li>
+                <li><inlineCode>vertical</inlineCode>: Only vertical images.</li>
+                <li><inlineCode>square</inlineCode>: Only square images.</li>
+                <li><inlineCode>all</inlineCode>: Default. All image orientations.</li>
             </ul>
         </td>
     </tr>
@@ -451,11 +451,11 @@ Pass the following URL parameters with the GET request.
         <td>Return found videos whose duration is no longer than the specified duration in seconds. String.
             Valid values and meanings:
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">10</inlineCode>: Only videos up to 10 seconds.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">20</inlineCode>: Only videos up to 20 seconds.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">30</inlineCode>: Only videos up to 30 seconds.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">30-</inlineCode>: Only videos longer than 30 seconds.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">all</inlineCode>: Default. Videos of all durations.</li>
+                <li><inlineCode>10</inlineCode>: Only videos up to 10 seconds.</li>
+                <li><inlineCode>20</inlineCode>: Only videos up to 20 seconds.</li>
+                <li><inlineCode>30</inlineCode>: Only videos up to 30 seconds.</li>
+                <li><inlineCode>30-</inlineCode>: Only videos longer than 30 seconds.</li>
+                <li><inlineCode>all</inlineCode>: Default. Videos of all durations.</li>
             </ul>
         </td>
     </tr>
@@ -466,7 +466,7 @@ Pass the following URL parameters with the GET request.
             the
             specified colors. String.
             Example:<br />
-            <inlineCode class="spectrum-Body--sizeS">search_parameters[filters][colors]=ff0000,00ff00,0000ff</inlineCode>
+            <inlineCode>search_parameters[filters][colors]=ff0000,00ff00,0000ff</inlineCode>
         </td>
     </tr>
     <tr>
@@ -480,10 +480,10 @@ Pass the following URL parameters with the GET request.
     <tr>
         <td>search_parameters[filters][copy_space]
         </td>
-        <td>Image copy space. Value <inlineCode class="spectrum-Body--sizeS">all</inlineCode> returns all the images (equivalent to not having the filter in
+        <td>Image copy space. Value <inlineCode>all</inlineCode> returns all the images (equivalent to not having the filter in
             the
-            query); value <inlineCode class="spectrum-Body--sizeS">1</inlineCode> filters for images that have copy space. String.
-            <inlineCode class="spectrum-Body--sizeS">all | 1</inlineCode>
+            query); value <inlineCode>1</inlineCode> filters for images that have copy space. String.
+            <inlineCode>all | 1</inlineCode>
         </td>
     </tr>
     <tr>
@@ -491,9 +491,9 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>Filter to return loop assets; applicable only to audio & video assets. Value 'all' returns all the audio/video assets; Value '1' or 'true' filters for audio/video asset that is a loop. Note: 'false' or '0' is not a valid option
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode></li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">true</inlineCode></li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">all</inlineCode></li>
+                <li><inlineCode>1</inlineCode></li>
+                <li><inlineCode>true</inlineCode></li>
+                <li><inlineCode>all</inlineCode></li>
             </ul>
         </td>
     </tr>
@@ -502,9 +502,9 @@ Pass the following URL parameters with the GET request.
         </td>
         <td>Filter PNG assets by transparency. When set, only PNG images with a transparent background are included. Value 'all' returns all the images (equivalent to not having the filter in the query); Value `1` or `true` filters for images that have transparency.
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode></li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">true</inlineCode></li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">all</inlineCode></li>
+                <li><inlineCode>1</inlineCode></li>
+                <li><inlineCode>true</inlineCode></li>
+                <li><inlineCode>all</inlineCode></li>
             </ul>
         </td>
     </tr>
@@ -515,42 +515,42 @@ Pass the following URL parameters with the GET request.
             Specific fields you wish to include in the search result, excluding all other fields. Array[]. For a
                 detailed
                 description of each field, see <a href="#responses">Responses</a>, below.
-            <p class="spectrum-Body--sizeS"><strong>Tip:</strong> To combine result columns, use this syntax:
-                <inlineCode class="spectrum-Body--sizeS">result_columns[]=is_licensed&result_columns[]=creation_date</inlineCode>
+            <p><strong>Tip:</strong> To combine result columns, use this syntax:
+                <inlineCode>result_columns[]=is_licensed&result_columns[]=creation_date</inlineCode>
             </p>
-            <p class="spectrum-Body--sizeS"><strong>Note 1:</strong> Fields marked with <strong>\*</strong> are returned by default, but if the
-                <inlineCode class="spectrum-Body--sizeS">result_columns[]</inlineCode> command is present, the default fields will not be returned unless
+            <p><strong>Note 1:</strong> Fields marked with <strong>\*</strong> are returned by default, but if the
+                <inlineCode>result_columns[]</inlineCode> command is present, the default fields will not be returned unless
                 explicitly
-                included. <br /> <strong>Note 2:</strong> <inlineCode class="spectrum-Body--sizeS">is_licensed</inlineCode> requires an authentication
+                included. <br /> <strong>Note 2:</strong> <inlineCode>is_licensed</inlineCode> requires an authentication
                 header.
             </p>
-            <p class="spectrum-Body--sizeS">
-                <inlineCode class="spectrum-Body--sizeS">\*nb_results</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*id</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*title</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*creator_name</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">\*creator_id</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">country_name</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*width</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*height</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">\*thumbnail_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*thumbnail_html_tag</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*thumbnail_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">\*thumbnail_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_110_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_110_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_110_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_160_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_160_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_160_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_220_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_220_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_220_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_240_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_240_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_240_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_500_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_500_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_500_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_1000_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">thumbnail_1000_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">thumbnail_1000_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*media_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*category</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">\*category_hierarchy</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">nb_views</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">nb_downloads</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">creation_date</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">keywords</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">has_releases</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">comp_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">comp_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">comp_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">is_licensed</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*vector_type</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">\*content_type</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">framerate</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">duration</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">comps</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">details_url</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">template_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">template_category_ids</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">marketing_text</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">description</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">size_bytes</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">\*premium_level_id</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">is_premium</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">is_loop</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">is_transparent</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">licenses</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_preview_url</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_preview_width</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">video_preview_height</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_preview_content_length</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">video_preview_content_type</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_small_preview_url</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">video_small_preview_width</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_small_preview_height</inlineCode>
-                <inlineCode class="spectrum-Body--sizeS">video_small_preview_content_length</inlineCode>&nbsp;|&nbsp;<inlineCode class="spectrum-Body--sizeS">video_small_preview_content_type</inlineCode>
+            <p>
+                <inlineCode>\*nb_results</inlineCode>&nbsp;|&nbsp;<inlineCode>\*id</inlineCode>&nbsp;|&nbsp;<inlineCode>\*title</inlineCode>&nbsp;|&nbsp;<inlineCode>\*creator_name</inlineCode>
+                <inlineCode>\*creator_id</inlineCode>&nbsp;|&nbsp;<inlineCode>country_name</inlineCode>&nbsp;|&nbsp;<inlineCode>\*width</inlineCode>&nbsp;|&nbsp;<inlineCode>\*height</inlineCode>
+                <inlineCode>\*thumbnail_url</inlineCode>&nbsp;|&nbsp;<inlineCode>\*thumbnail_html_tag</inlineCode>&nbsp;|&nbsp;<inlineCode>\*thumbnail_width</inlineCode>
+                <inlineCode>\*thumbnail_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_110_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_110_width</inlineCode>
+                <inlineCode>thumbnail_110_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_160_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_160_width</inlineCode>
+                <inlineCode>thumbnail_160_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_220_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_220_width</inlineCode>
+                <inlineCode>thumbnail_220_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_240_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_240_width</inlineCode>
+                <inlineCode>thumbnail_240_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_500_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_500_width</inlineCode>
+                <inlineCode>thumbnail_500_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_1000_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_1000_width</inlineCode>
+                <inlineCode>thumbnail_1000_height</inlineCode>&nbsp;|&nbsp;<inlineCode>\*media_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode>\*category</inlineCode>
+                <inlineCode>\*category_hierarchy</inlineCode>&nbsp;|&nbsp;<inlineCode>nb_views</inlineCode>&nbsp;|&nbsp;<inlineCode>nb_downloads</inlineCode>
+                <inlineCode>creation_date</inlineCode>
+                <inlineCode>keywords</inlineCode>&nbsp;|&nbsp;<inlineCode>has_releases</inlineCode>&nbsp;|&nbsp;<inlineCode>comp_url</inlineCode>&nbsp;|&nbsp;<inlineCode>comp_width</inlineCode>
+                <inlineCode>comp_height</inlineCode>&nbsp;|&nbsp;<inlineCode>is_licensed</inlineCode>&nbsp;|&nbsp;<inlineCode>\*vector_type</inlineCode>
+                <inlineCode>\*content_type</inlineCode>
+                <inlineCode>framerate</inlineCode>&nbsp;|&nbsp;<inlineCode>duration</inlineCode>&nbsp;|&nbsp;<inlineCode>comps</inlineCode>&nbsp;|&nbsp;<inlineCode>details_url</inlineCode>
+                <inlineCode>template_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode>template_category_ids</inlineCode>&nbsp;|&nbsp;<inlineCode>marketing_text</inlineCode>
+                <inlineCode>description</inlineCode>&nbsp;|&nbsp;<inlineCode>size_bytes</inlineCode>&nbsp;|&nbsp;<inlineCode>\*premium_level_id</inlineCode>
+                <inlineCode>is_premium</inlineCode>
+                <inlineCode>is_loop</inlineCode>
+                <inlineCode>is_transparent</inlineCode>
+                <inlineCode>licenses</inlineCode>&nbsp;|&nbsp;<inlineCode>video_preview_url</inlineCode>&nbsp;|&nbsp;<inlineCode>video_preview_width</inlineCode>
+                <inlineCode>video_preview_height</inlineCode>&nbsp;|&nbsp;<inlineCode>video_preview_content_length</inlineCode>
+                <inlineCode>video_preview_content_type</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_url</inlineCode>
+                <inlineCode>video_small_preview_width</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_height</inlineCode>
+                <inlineCode>video_small_preview_content_length</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_content_type</inlineCode>
             </p>
         </td>
     </tr>
@@ -587,16 +587,16 @@ All responses are in a JSON array with this general structure:
 
 These are the fields returned either by default or by explicit use by the `result_columns[]` parameter.
 
-<table class="spectrum-Table spectrum-Table--sizeM">
-    <thead class="spectrum-Table-head">
-        <tr class="spectrum-Table-row css-us97lb-Tr">
-            <th class="spectrum-Table-headCell"><strong>Parameter</strong>
+<table columnWidths="30,70">
+    <thead>
+        <tr>
+            <th><strong>Parameter</strong>
             </th>
-            <th class="spectrum-Table-headCell"><strong>Description</strong>
+            <th><strong>Description</strong>
             </th>
         </tr>
     </thead>
-    <tbody class="spectrum-Table-body">
+    <tbody>
     <tr>
         <td>nb_results
         </td>
@@ -643,15 +643,15 @@ These are the fields returned either by default or by explicit use by the `resul
         <td>thumbnail_url
         </td>
         <td>URL for the default-sized asset thumbnail. You can use this to display the thumbnail on your page using
-            your preferred display method. Alternatively, use <inlineCode class="spectrum-Body--sizeS">thumbnail_html_tag</inlineCode>. String.
+            your preferred display method. Alternatively, use <inlineCode>thumbnail_html_tag</inlineCode>. String.
         </td>
     </tr>
     <tr>
         <td>thumbnail_html_tag
         </td>
-        <td>HTML &lt;img&gt; tag that you can use to display the default asset thumbnail. This is a convenience for displaying the thumbnail and references the <inlineCode class="spectrum-Body--sizeS">thumbnail_url</inlineCode>. String.
+        <td>HTML &lt;img&gt; tag that you can use to display the default asset thumbnail. This is a convenience for displaying the thumbnail and references the <inlineCode>thumbnail_url</inlineCode>. String.
             Example:
-            <inlineCode class="spectrum-Body--sizeS">"thumbnail_html_tag": "&lt;img src='https://thumbnail-url' alt='German Shepherd Dog Sticking Head Out Driving Car Window' /&gt;"</inlineCode>
+            <inlineCode>"thumbnail_html_tag": "&lt;img src='https://thumbnail-url' alt='German Shepherd Dog Sticking Head Out Driving Car Window' /&gt;"</inlineCode>
         </td>
     </tr>
     <tr>
@@ -671,7 +671,7 @@ These are the fields returned either by default or by explicit use by the `resul
         </td>
         <td>Width for the thumbnail of the requested size, where * is the thumbnail size in pixels. Float.
             For example:<br />
-            <inlineCode class="spectrum-Body--sizeS">"thumbnail_160_width": 200</inlineCode>
+            <inlineCode>"thumbnail_160_width": 200</inlineCode>
         </td>
     </tr>
     <tr>
@@ -685,7 +685,7 @@ These are the fields returned either by default or by explicit use by the `resul
         </td>
         <td>URL for the requested thumbnail size, where * is the thumbnail size in pixels. You can use this to
             display the thumbnail on your page using your preferred display method. Alternatively, use
-            <inlineCode class="spectrum-Body--sizeS">thumbnail_*_html_tag</inlineCode>. String.
+            <inlineCode>thumbnail_*_html_tag</inlineCode>. String.
         </td>
     </tr>
     <tr>
@@ -693,7 +693,7 @@ These are the fields returned either by default or by explicit use by the `resul
         </td>
         <td>HTML &lt;img&gt; tag that you can use to display the thumbnail of the requested size, where where * is
             the thumbnail size in pixels. This is a convenience for displaying the thumbnail and references the
-            <inlineCode class="spectrum-Body--sizeS">thumbnail_*_url</inlineCode>. String.
+            <inlineCode>thumbnail_*_url</inlineCode>. String.
         </td>
     </tr>
     <tr>
@@ -712,12 +712,12 @@ These are the fields returned either by default or by explicit use by the `resul
         <td>is_licensed
         </td>
         <td>The Adobe Stock licensing state for the asset. String. Values and meaning:<ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Standard</inlineCode>: License for the full-resolution asset</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Extended</inlineCode>: Extended license</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Video_HD</inlineCode>: Video HD license</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Video_4K</inlineCode>: Video 4K license</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Standard_M</inlineCode>: License for a medium-size asset approximately 1600x1200 pixels</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">""</inlineCode> <em>(empty string)</em>: No license applies</li>
+                <li><inlineCode>Standard</inlineCode>: License for the full-resolution asset</li>
+                <li><inlineCode>Extended</inlineCode>: Extended license</li>
+                <li><inlineCode>Video_HD</inlineCode>: Video HD license</li>
+                <li><inlineCode>Video_4K</inlineCode>: Video 4K license</li>
+                <li><inlineCode>Standard_M</inlineCode>: License for a medium-size asset approximately 1600x1200 pixels</li>
+                <li><inlineCode>""</inlineCode> <em>(empty string)</em>: No license applies</li>
             </ul>
         </td>
     </tr>
@@ -755,9 +755,9 @@ These are the fields returned either by default or by explicit use by the `resul
         <td>category
         </td>
         <td>JSON structure with information about the category assigned to the asset.
-            <inlineCode class="spectrum-Body--sizeS">&#34;category&#34;: &#123; &#34;id&#34;: 0000,&#34;name&#34;:&#34;...&#34; &#125;</inlineCode>
-            <p class="spectrum-Body--sizeS">For example:</p>
-            <inlineCode class="spectrum-Body--sizeS">&#34;category&#34;: &#123; &#34;id&#34;: 47, &#34;name&#34;: &#34;Dogs&#34;&#125;</inlineCode>
+            <inlineCode>&#34;category&#34;: &#123; &#34;id&#34;: 0000,&#34;name&#34;:&#34;...&#34; &#125;</inlineCode>
+            <p>For example:</p>
+            <inlineCode>&#34;category&#34;: &#123; &#34;id&#34;: 47, &#34;name&#34;: &#34;Dogs&#34;&#125;</inlineCode>
         </td>
     </tr>
     <tr>
@@ -783,12 +783,12 @@ These are the fields returned either by default or by explicit use by the `resul
         </td>
         <td>Type of the asset. Integer.
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode>: Photos</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">2</inlineCode>: Illustrations</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">3</inlineCode>: Vectors</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">4</inlineCode>: Videos</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">6</inlineCode>: 3D</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">7</inlineCode>: Templates</li>
+                <li><inlineCode>1</inlineCode>: Photos</li>
+                <li><inlineCode>2</inlineCode>: Illustrations</li>
+                <li><inlineCode>3</inlineCode>: Vectors</li>
+                <li><inlineCode>4</inlineCode>: Videos</li>
+                <li><inlineCode>6</inlineCode>: 3D</li>
+                <li><inlineCode>7</inlineCode>: Templates</li>
             </ul>
         </td>
     </tr>
@@ -798,8 +798,8 @@ These are the fields returned either by default or by explicit use by the `resul
         <td>If the asset is a vector, this indicates whether it is an SVG or an AI/EPS asset. String.
             Values and meanings:
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">svg</inlineCode>: SVG file</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">zip</inlineCode>: AI/EPS file</li>
+                <li><inlineCode>svg</inlineCode>: SVG file</li>
+                <li><inlineCode>zip</inlineCode>: AI/EPS file</li>
             </ul>
         </td>
     </tr>
@@ -807,7 +807,7 @@ These are the fields returned either by default or by explicit use by the `resul
         <td>content-type
         </td>
         <td>Mime type of the asset's content. String. For example: 
-            <inlineCode class="spectrum-Body--sizeS">"content_type": "image/jpeg"</inlineCode>
+            <inlineCode>"content_type": "image/jpeg"</inlineCode>
         </td>
     </tr>
     <tr>
@@ -842,9 +842,9 @@ These are the fields returned either by default or by explicit use by the `resul
         </td>
         <td>The ID of the 3D type, if the return asset is 3D. Values and meanings:
             <ul>
-                <li class="spectrum-Body--sizeS">1 - Models</li>
-                <li class="spectrum-Body--sizeS">2 - Lights</li>
-                <li class="spectrum-Body--sizeS">3 - Materials</li>
+                <li>1 - Models</li>
+                <li>2 - Lights</li>
+                <li>3 - Materials</li>
             </ul>
         </td>
     </tr>
@@ -853,11 +853,11 @@ These are the fields returned either by default or by explicit use by the `resul
         </td>
         <td>The ID of the template type, if the returned asset is a template. Integer. Values and meanings:
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode>: PSDT</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">2</inlineCode>: AIT</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">3</inlineCode>: INDT</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">4</inlineCode>: PPRO Motion Graphics Template</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">5</inlineCode>: AE Motion Graphics Template</li>
+                <li><inlineCode>1</inlineCode>: PSDT</li>
+                <li><inlineCode>2</inlineCode>: AIT</li>
+                <li><inlineCode>3</inlineCode>: INDT</li>
+                <li><inlineCode>4</inlineCode>: PPRO Motion Graphics Template</li>
+                <li><inlineCode>5</inlineCode>: AE Motion Graphics Template</li>
             </ul>
         </td>
     </tr>
@@ -884,11 +884,11 @@ These are the fields returned either by default or by explicit use by the `resul
         </td>
         <td>Asset's premium (pricing) level. Integer.
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">0</inlineCode>: Core/standard</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">1</inlineCode>: Free</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">2</inlineCode>: Premium level 1</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">3</inlineCode>: Premium level 2</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">4</inlineCode>: Premium level 3</li>
+                <li><inlineCode>0</inlineCode>: Core/standard</li>
+                <li><inlineCode>1</inlineCode>: Free</li>
+                <li><inlineCode>2</inlineCode>: Premium level 1</li>
+                <li><inlineCode>3</inlineCode>: Premium level 2</li>
+                <li><inlineCode>4</inlineCode>: Premium level 3</li>
             </ul>
         </td>
     </tr>
