@@ -9,7 +9,7 @@ description: The Stock License API reference
 
 # Licensing reference
 
-The Stock API provides the following methods related to licensing and getting more info about licensed assets.  For a guide to usage and additional examples, see [Licensing Stock assets](../getting-started/apps/06-licensing-assets.md).
+The Stock API provides the following methods related to licensing and getting more info about licensed assets. For a guide to usage and additional examples, see [Licensing Stock assets](../getting-started/apps/06-licensing-assets.md).
 
 <!-- MarkdownTOC-->
 <!--
@@ -48,13 +48,13 @@ The Stock API provides the following methods related to licensing and getting mo
 
 #### Description of endpoints
 
-*   **Content/Info.** Requests licensing information about a specific asset for a specific user or enterprise organization.
-*   **Content/License.** Requests a license for an asset.
-*   **Member/Profile.** Asks for the licensing capabilities for a specific user or organization.  Call this before requesting an asset license so that you can display the user's existing quota or direct the user to the Adobe Stock site to purchase a plan or asset. This API returns the user's available purchase quota and information that you can use to present licensing options to the user when the user next requests an asset purchase. Depending on the user's quota and plan the following cases can occur:
-    *   *User has enough quota to license the next asset.* Display the returned message, which shows the user's current quota before purchasing.
-    *   *User doesn't have enough quota but can handle overage* (they have a saved purchase method on file). Display the returned message, which includes the price and asks the user to license the asset with overage.
-    *   *User doesn't have quota and there is no overage plan.* Display the returned message, which indicates that the user will be redirect to the [Adobe Stock site](https://stock.adobe.com/) to review plans.
-*   **Member/LicenseHistory.** Requests a list of licenses and download URLs for every previously licensed asset. This is covered in the next section, [License history reference](./13-license-history.md).
+- **Content/Info.** Requests licensing information about a specific asset for a specific user or enterprise organization.
+- **Content/License.** Requests a license for an asset.
+- **Member/Profile.** Asks for the licensing capabilities for a specific user or organization. Call this before requesting an asset license so that you can display the user's existing quota or direct the user to the Adobe Stock site to purchase a plan or asset. This API returns the user's available purchase quota and information that you can use to present licensing options to the user when the user next requests an asset purchase. Depending on the user's quota and plan the following cases can occur:
+  - _User has enough quota to license the next asset._ Display the returned message, which shows the user's current quota before purchasing.
+  - _User doesn't have enough quota but can handle overage_ (they have a saved purchase method on file). Display the returned message, which includes the price and asks the user to license the asset with overage.
+  - _User doesn't have quota and there is no overage plan._ Display the returned message, which indicates that the user will be redirect to the [Adobe Stock site](https://stock.adobe.com/) to review plans.
+- **Member/LicenseHistory.** Requests a list of licenses and download URLs for every previously licensed asset. This is covered in the next section, [License history reference](./13-license-history.md).
 
 ### Authentication
 
@@ -64,8 +64,8 @@ The Authorization header is required for any of the licensing calls. The API use
 
 See [Headers for Stock API calls](./10-headers-for-api-calls.md) for details about header content.
 
-*   Required headers: `x-Product`, `x-api-key`, `Authorization`
-*   Optional headers: `X-Request-Id`
+- Required headers: `x-Product`, `x-api-key`, `Authorization`
+- Optional headers: `X-Request-Id`
 
 <a name="url-parameters"></a>
 
@@ -73,17 +73,18 @@ See [Headers for Stock API calls](./10-headers-for-api-calls.md) for details abo
 
 Pass URL-encoded parameters with the GET request.
 
-<table>
-    <tr>
-        <td><strong>Parameter</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
-    </tr>
+<table columnWidths="30,70">
+    <thead>
+      <tr>
+        <th><strong>Parameter</strong></th>
+        <th><strong>Description</strong></th>
+      </tr>
+    </thead>
+    <tbody>
     <tr>
         <td>content_id
         </td>
-        <td>Asset's unique identifier. You can get this from a search response's <inlineCode class="spectrum-Body--sizeS">id </inlineCode>attribute. Integer.
+        <td>Asset's unique identifier. You can get this from a search response's <inlineCode>id </inlineCode>attribute. Integer.
         </td>
     </tr>
     <tr>
@@ -93,40 +94,40 @@ Pass URL-encoded parameters with the GET request.
             The Adobe Stock licensing state for the asset. String.
             Valid values and meaning:<br />
             <ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">""</inlineCode> <em>(empty string)</em>: No license applies</li>
-                <li class="spectrum-Body--sizeS">For standard/core photos, illustrations, and vectors (non-Premium):
+                <li><inlineCode>""</inlineCode> <em>(empty string)</em>: No license applies</li>
+                <li>For standard/core photos, illustrations, and vectors (non-Premium):
                     <ul>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Standard</inlineCode>: License for the full-resolution image</li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Extended</inlineCode>: Extended license for the full-resolution image</li>
+                        <li><inlineCode>Standard</inlineCode>: License for the full-resolution image</li>
+                        <li><inlineCode>Extended</inlineCode>: Extended license for the full-resolution image</li>
                     </ul>
                 </li>
-                <li class="spectrum-Body--sizeS">For video:
+                <li>For video:
                     <ul>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Video_HD</inlineCode>: License for the HD-resolution video</li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Video_4K</inlineCode>: License for the 4K-resolution video. <strong>Tip:</strong> Not all
+                        <li><inlineCode>Video_HD</inlineCode>: License for the HD-resolution video</li>
+                        <li><inlineCode>Video_4K</inlineCode>: License for the 4K-resolution video. <strong>Tip:</strong> Not all
                             videos are available in 4K.</li>
                     </ul>
                 </li>
-                <li class="spectrum-Body--sizeS">For vector assets: <inlineCode class="spectrum-Body--sizeS">Standard</inlineCode> or <inlineCode class="spectrum-Body--sizeS">Extended</inlineCode></li>
-                <li class="spectrum-Body--sizeS">For 3D assets: <inlineCode class="spectrum-Body--sizeS">Standard</inlineCode></li>
-                <li class="spectrum-Body--sizeS">For templates: <inlineCode class="spectrum-Body--sizeS">Standard</inlineCode></li>
-                <li class="spectrum-Body--sizeS">For Premium:
+                <li>For vector assets: <inlineCode>Standard</inlineCode> or <inlineCode>Extended</inlineCode></li>
+                <li>For 3D assets: <inlineCode>Standard</inlineCode></li>
+                <li>For templates: <inlineCode>Standard</inlineCode></li>
+                <li>For Premium:
                     <ul>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Standard</inlineCode>: License for the full-resolution image</li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Standard_M</inlineCode>: License for a medium-size asset approximately 1600x1200 pixels.
+                        <li><inlineCode>Standard</inlineCode>: License for the full-resolution image</li>
+                        <li><inlineCode>Standard_M</inlineCode>: License for a medium-size asset approximately 1600x1200 pixels.
                             <strong>Tip:</strong> Not all Premium assets offer this license.</li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Extended</inlineCode>: Extended license for the full-resolution image</li>
+                        <li><inlineCode>Extended</inlineCode>: Extended license for the full-resolution image</li>
                     </ul>
                 </li>
-                <li class="spectrum-Body--sizeS">Additional license values if Alternative Licenses are available:
+                <li>Additional license values if Alternative Licenses are available:
                     <ul>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Internal_Use</inlineCode></li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Video_HD_Internal_Use</inlineCode></li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Digital_Use</inlineCode></li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Video_HD_Digital_Use</inlineCode></li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Social_Media</inlineCode></li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Video_HD_Social_Media</inlineCode></li>
-                        <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Video_HD_Standard</inlineCode></li>
+                        <li><inlineCode>Internal_Use</inlineCode></li>
+                        <li><inlineCode>Video_HD_Internal_Use</inlineCode></li>
+                        <li><inlineCode>Digital_Use</inlineCode></li>
+                        <li><inlineCode>Video_HD_Digital_Use</inlineCode></li>
+                        <li><inlineCode>Social_Media</inlineCode></li>
+                        <li><inlineCode>Video_HD_Social_Media</inlineCode></li>
+                        <li><inlineCode>Video_HD_Standard</inlineCode></li>
                     </ul>
                 </li>
             </ul>
@@ -136,12 +137,12 @@ Pass URL-encoded parameters with the GET request.
         <td>locale
         </td>
         <td>Use with Member/Profile and Member/LicenseHistory.
-            <p class="spectrum-Body--sizeS">
+            <p>
                 Optional. Location language code for the API to use when returning localized messages. The API can usually
                 get the user's default locale through the Authorization header. This value overrides that or provides a
                 locale if not available through Authorization. String.
             </p>
-            <p class="spectrum-Body--sizeS">Default is <inlineCode class="spectrum-Body--sizeS">en_US</inlineCode>. See the full list of <a href="./14-locale-codes.md">Locales</a>.</p>
+            <p>Default is <inlineCode>en_US</inlineCode>. See the full list of <a href="./14-locale-codes.md">Locales</a>.</p>
         </td>
     </tr>
     <tr>
@@ -149,14 +150,15 @@ Pass URL-encoded parameters with the GET request.
         </td>
         <td>
             Use with Content/License. Optional. Used to re-license an asset, deducting licenses/credits as if it were a new transaction. Boolean.
-            <p class="spectrum-Body--sizeS">Default is <inlineCode class="spectrum-Body--sizeS">false</inlineCode>, meaning that if Content/License is used on an asset that is already
-                licensed, it will not trigger a new license. Using <inlineCode class="spectrum-Body--sizeS">true</inlineCode> overrides that behavior, and forces
+            <p>Default is <inlineCode>false</inlineCode>, meaning that if Content/License is used on an asset that is already
+                licensed, it will not trigger a new license. Using <inlineCode>true</inlineCode> overrides that behavior, and forces
                 a new license event.</p>
-            <p class="spectrum-Body--sizeS">
-              <inlineCode class="spectrum-Body--sizeS">curl "https://stock.adobe.io/Rest/Libraries/1/Content/License?content_id=112670342&license=Standard&license_again=true" -H "x-api-key: YourApiKeyHere" -H "x-product: MySampleApp/1.0" -H "authorization: Bearer AccessTokenHere"</inlineCode>
+            <p>
+              <inlineCode>curl "https://stock.adobe.io/Rest/Libraries/1/Content/License?content_id=112670342&license=Standard&license_again=true" -H "x-api-key: YourApiKeyHere" -H "x-product: MySampleApp/1.0" -H "authorization: Bearer AccessTokenHere"</inlineCode>
           </p>
         </td>
     </tr>
+    </tbody>
 </table>
 
 ## Responses
@@ -165,7 +167,7 @@ Calls return information in JSON structures.
 
 ### Response JSON summaries
 
-*   **Content/Info** returns this structure. Some attributes appear only in certain situations.
+- **Content/Info** returns this structure. Some attributes appear only in certain situations.
 
 ```javascript
 {
@@ -187,7 +189,7 @@ Calls return information in JSON structures.
 }
 ```
 
-*   **Content/License** returns this structure. Some attributes appear only in certain situations.
+- **Content/License** returns this structure. Some attributes appear only in certain situations.
 
 ```javascript
 {
@@ -221,7 +223,7 @@ Calls return information in JSON structures.
 }
 ```
 
-*   **Member/Profile** returns this structure. Some attributes appear only in certain situations.
+- **Member/Profile** returns this structure. Some attributes appear only in certain situations.
 
 ```javascript
 {
@@ -245,7 +247,7 @@ Calls return information in JSON structures.
 }
 ```
 
-*   **Member/Profile** can also return the attribute `possible_licenses` if Alternative Licenses are enabled on the account.
+- **Member/Profile** can also return the attribute `possible_licenses` if Alternative Licenses are enabled on the account.
 
 ```javascript
 {
@@ -290,13 +292,14 @@ Calls return information in JSON structures.
 
 ### Response attributes
 
-<table>
+<table columnWidths="30,70">
+  <thead>
     <tr>
-        <td><strong>Name</strong>
-        </td>
-        <td><strong>Description</strong>
-        </td>
+        <th><strong>Name</strong></th>
+        <th><strong>Description</strong></th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
         <td>available_entitlement&#123;...&#125;
         </td>
@@ -343,12 +346,12 @@ Calls return information in JSON structures.
             &nbsp;&nbsp;&nbsp;&nbsp;full_entitlement_quota
         </td>
         <td>Licensing quota types available. This information is subject to change as new license types are added and
-            subtracted; best practice is to use the main <inlineCode class="spectrum-Body--sizeS">available_entitlement.quota</inlineCode> value instead. Array.
+            subtracted; best practice is to use the main <inlineCode>available_entitlement.quota</inlineCode> value instead. Array.
         </td>
     </tr>
     <tr>
         <td>contents&#123;...&#125;</td>
-        <td>Licensing information for this asset for this user. Structure.<br />The number directly inside contents is the same asset ID number that is returned in <inlineCode class="spectrum-Body--sizeS">content_id</inlineCode>:
+        <td>Licensing information for this asset for this user. Structure.<br />The number directly inside contents is the same asset ID number that is returned in <inlineCode>content_id</inlineCode>:
             <pre>
     "contents": &#123;
         "12345": &#123;
@@ -360,7 +363,7 @@ Calls return information in JSON structures.
         </td>
     </tr>
     <tr>
-        <td><p class="spectrum-Body--sizeS"><em>contents:</em><br />
+        <td><p><em>contents:</em><br />
               &nbsp;&nbsp;&nbsp;&nbsp;content_id</p>
         </td>
         <td>Asset's unique identifier. String.
@@ -380,13 +383,13 @@ Calls return information in JSON structures.
         </td>
         <td>User's purchase relationship to an asset.
             Possible values and meanings:<ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">not_purchased</inlineCode>: User has not at any time in the past purchased the asset.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">purchased</inlineCode> : User has at some time in the past purchased the asset.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">cancelled</inlineCode>: User attempted to buy the asset and for some reason the order did not go
+                <li><inlineCode>not_purchased</inlineCode>: User has not at any time in the past purchased the asset.</li>
+                <li><inlineCode>purchased</inlineCode> : User has at some time in the past purchased the asset.</li>
+                <li><inlineCode>cancelled</inlineCode>: User attempted to buy the asset and for some reason the order did not go
                     through.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">not_possible</inlineCode>: User must go to the Adobe Stock site to buy plan or asset.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">just_purchased</inlineCode>: User bought asset within the current session.</li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">overage</inlineCode>: Adobe Stock has a payment instrument on file for the user and can bill the
+                <li><inlineCode>not_possible</inlineCode>: User must go to the Adobe Stock site to buy plan or asset.</li>
+                <li><inlineCode>just_purchased</inlineCode>: User bought asset within the current session.</li>
+                <li><inlineCode>overage</inlineCode>: Adobe Stock has a payment instrument on file for the user and can bill the
                     user for additional purchases. Does not apply to enterprise as it is always possible to add
                     additional licenses.</li>
             </ul>
@@ -440,8 +443,8 @@ Calls return information in JSON structures.
         <td>The size of the asset, indicating whether it is the free complementary size or the original full-sized
             asset. String.
             Possible values:<ul>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Comp</inlineCode></li>
-                <li class="spectrum-Body--sizeS"><inlineCode class="spectrum-Body--sizeS">Original</inlineCode></li>
+                <li><inlineCode>Comp</inlineCode></li>
+                <li><inlineCode>Original</inlineCode></li>
             </ul>
         </td>
     </tr>
@@ -478,7 +481,7 @@ Calls return information in JSON structures.
         <td><em>purchase_options:</em><br />
             &nbsp;&nbsp;&nbsp;&nbsp;state
         </td>
-        <td>User's purchase relationship to an asset. See <inlineCode class="spectrum-Body--sizeS">contents.purchase_details.state</inlineCode> above. String.
+        <td>User's purchase relationship to an asset. See <inlineCode>contents.purchase_details.state</inlineCode> above. String.
         </td>
     </tr>
     <tr>
@@ -505,16 +508,16 @@ Calls return information in JSON structures.
         <td><em>possible_licenses:</em><br />
             &nbsp;&nbsp;&nbsp;&nbsp;license_label
         </td>
-        <td>Name of license to display to user (text localized by <inlineCode class="spectrum-Body--sizeS">locale</inlineCode> command). String.</td>
+        <td>Name of license to display to user (text localized by <inlineCode>locale</inlineCode> command). String.</td>
     </tr>
     <tr>
         <td><em>possible_licenses:</em><br />
             &nbsp;&nbsp;&nbsp;&nbsp;price_with_unit
         </td>
-        <td>Cost in credits for user (text localized by <inlineCode class="spectrum-Body--sizeS">locale</inlineCode> command). String.</td>
+        <td>Cost in credits for user (text localized by <inlineCode>locale</inlineCode> command). String.</td>
     </tr>
+    </tbody>
 </table>
-
 
 ## Examples
 
@@ -671,7 +674,7 @@ curl --location --request GET 'https://stock.adobe.io/Rest/Libraries/1/Member/Pr
     "is_cce": false,
     "full_entitlement_quota": {
       "image_quota": 0
-    }    
+    }
   },
   "purchase_options": {
     "state": "overage",
@@ -696,13 +699,13 @@ curl --location --request GET 'https://stock.adobe.io/Rest/Libraries/1/Member/Pr
     "quota": 0,
     "full_entitlement_quota": {
       "image_quota": 0
-    } 
+    }
   },
   "purchase_options": {
-  "state": "not_possible",
-  "requires_checkout": true,
-  "message": "Would you like to see purchase options?",
-  "url": "http://stock.adobe.io/plans?image_id=64285595"
+    "state": "not_possible",
+    "requires_checkout": true,
+    "message": "Would you like to see purchase options?",
+    "url": "http://stock.adobe.io/plans?image_id=64285595"
   }
 }
 ```
@@ -711,13 +714,13 @@ curl --location --request GET 'https://stock.adobe.io/Rest/Libraries/1/Member/Pr
 
 Each error generates a JSON array that contains the following keys and values. If your application receives this array and you need assistance, send the array to Adobe.
 
-*   An **`error`** key.
-*   Optionally, a **`code`** key. Specifies an integer designating the category of error. Code values:
-    *   `10`: Invalid access token. The access token that you passed is invalid or expired.
-    *   `11`: Invalid API Key. The API key that you passed is not valid or has expired.
-    *   `20`: Invalid parameters. The URL parameters that you passed are not supported.
-    *   `31`: Invalid Method. The method that you specified does not exist in the method list.
-    *   `100`: Invalid data. Data that you specified as arguments are not supported.
+- An **`error`** key.
+- Optionally, a **`code`** key. Specifies an integer designating the category of error. Code values:
+  - `10`: Invalid access token. The access token that you passed is invalid or expired.
+  - `11`: Invalid API Key. The API key that you passed is not valid or has expired.
+  - `20`: Invalid parameters. The URL parameters that you passed are not supported.
+  - `31`: Invalid Method. The method that you specified does not exist in the method list.
+  - `100`: Invalid data. Data that you specified as arguments are not supported.
 
 ## Downloading licensed files
 
@@ -727,11 +730,11 @@ The **Content/License** method returns a download URL, which uses the **Librarie
 | -------------------------------------------------------------- | ------ |
 | https://stock.adobe.com/Rest/Libraries/Download/{id}/{license} | GET    |
 
-In the URL above, the `{id}` value must be substituted with the Adobe Stock ID attribute, while `{license}` is an integer returned by Adobe Stock in the download URL. Because this integer value can change without notice, it is recommended not to *predict* this value, but to get it by calling the `Content/License` method to first obtain the download URL.
+In the URL above, the `{id}` value must be substituted with the Adobe Stock ID attribute, while `{license}` is an integer returned by Adobe Stock in the download URL. Because this integer value can change without notice, it is recommended not to _predict_ this value, but to get it by calling the `Content/License` method to first obtain the download URL.
 
 ### Authentication
 
-Unlike other Stock API license methods, Download does not use request headers for authentication; using an authentication header can *break* the download URL. Instead, the access token needs to be sent via a URL parameter--see below.
+Unlike other Stock API license methods, Download does not use request headers for authentication; using an authentication header can _break_ the download URL. Instead, the access token needs to be sent via a URL parameter--see below.
 
 ### Request headers
 
@@ -739,10 +742,10 @@ Unlike other Stock API license methods, Download does not use request headers fo
 
 ### URL parameters
 
-| Parameter | Description |
-| ------------ | ------------- |
-| token | Valid access token. String. Required, used in place of the `Authorization: Bearer {token}` authentication header. <p class="spectrum-Body--sizeS">The token does not need to be the same one used to license the asset as long as it is from the same user or enterprise entitlement.</p> |
-| size | Optional, requested image size. Integer. Only valid for bitmap/image assets and videos only (e.g., does not apply to template, vector, or 3D assets.)<p class="spectrum-Body--sizeS">If command is not present, file returned will be full/original size. Valid values:</p> <p class="spectrum-Body--sizeS">`5000`: 5000px or original size image<br />`3100`: 3100-4999px image<br />`2400`: 2400-3099px image<br />`1600`: 1600-2399px image<br />`800`: 800-1599px image<br />`400`: 799px or smaller image<br />`2160`: Full/original 4K video<br />`1080`: HD 1080 video</p> |
+| Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| token     | Valid access token. String. Required, used in place of the `Authorization: Bearer {token}` authentication header. <p>The token does not need to be the same one used to license the asset as long as it is from the same user or enterprise entitlement.</p>                                                                                                                                                                                                                                                            |
+| size      | Optional, requested image size. Integer. Only valid for bitmap/image assets and videos only (e.g., does not apply to template, vector, or 3D assets.)<p>If command is not present, file returned will be full/original size. Valid values:</p> <p>`5000`: 5000px or original size image<br />`3100`: 3100-4999px image<br />`2400`: 2400-3099px image<br />`1600`: 1600-2399px image<br />`800`: 800-1599px image<br />`400`: 799px or smaller image<br />`2160`: Full/original 4K video<br />`1080`: HD 1080 video</p> |
 
 ### Response
 
@@ -772,11 +775,11 @@ curl -L "https://stock.adobe.com/Rest/Libraries/Download/99872034/1?token=MyAcce
 
 ### Download errors
 
-*   `This download cannot be processed, invalid size`: Size command must be one of the values listed above, and file must be an image or video asset.
-*   `This download is expired`: Token has expired
-*   `Cannot find a download for this file and license on this organization`: Invalid access token, or generated for wrong user/account, or asset is not actually licensed. Use Content/Info or Member/Profile for more information.
+- `This download cannot be processed, invalid size`: Size command must be one of the values listed above, and file must be an image or video asset.
+- `This download is expired`: Token has expired
+- `Cannot find a download for this file and license on this organization`: Invalid access token, or generated for wrong user/account, or asset is not actually licensed. Use Content/Info or Member/Profile for more information.
 
 ## More information
 
-*   See [Licensing Stock assets](../getting-started/apps/06-licensing-assets.md).
-*   For guides to licensing assets for the enterprise or individual users, see the [Workflow guides](../getting-started/07-workflow-guides.md).
+- See [Licensing Stock assets](../getting-started/apps/06-licensing-assets.md).
+- For guides to licensing assets for the enterprise or individual users, see the [Workflow guides](../getting-started/07-workflow-guides.md).
