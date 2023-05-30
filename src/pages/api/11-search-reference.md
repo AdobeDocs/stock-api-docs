@@ -411,7 +411,7 @@ Pass the following URL parameters with the GET request.
         <td>Return found assets only if they are flagged as including Explicit/Nudity/Violence. Integer.
             <ul>
                 <li><inlineCode>0</inlineCode>: Default. Omit assets in this group.</li>
-                <li><inlineCode>1</inlineCode>: Return assets only if they are in this group.</li>
+                <li><inlineCode>1</inlineCode>: Include both safe and offensive assets in search result.</li>
             </ul>
         </td>
     </tr>
@@ -509,6 +509,17 @@ Pass the following URL parameters with the GET request.
         </td>
     </tr>
     <tr>
+            <td>search_parameters[filters][gentech]
+        </td>
+        <td>Filter AI generated (gentech) and non-gentech assets. <inlineCode>true</inlineCode> would return all gentech assets, <inlineCode>false</inlineCode> would return all non-gentech assets, <inlineCode>all</inlineCode> would return both gentech and non-gentech assets (equivalent of not having the filter)
+            <ul>
+                <li><inlineCode>all</inlineCode></li>
+                <li><inlineCode>true</inlineCode></li>
+                <li><inlineCode>false</inlineCode></li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td>result_columns[]
         </td>
         <td>
@@ -518,31 +529,31 @@ Pass the following URL parameters with the GET request.
             <p><strong>Tip:</strong> To combine result columns, use this syntax:
                 <inlineCode>result_columns[]=is_licensed&result_columns[]=creation_date</inlineCode>
             </p>
-            <p><strong>Note 1:</strong> Fields marked with <strong>\*</strong> are returned by default, but if the
+            <p><strong>Note 1:</strong> Fields marked with <strong>*</strong> are returned by default, but if the
                 <inlineCode>result_columns[]</inlineCode> command is present, the default fields will not be returned unless
                 explicitly
                 included. <br /> <strong>Note 2:</strong> <inlineCode>is_licensed</inlineCode> requires an authentication
                 header.
             </p>
             <p>
-                <inlineCode>\*nb_results</inlineCode>&nbsp;|&nbsp;<inlineCode>\*id</inlineCode>&nbsp;|&nbsp;<inlineCode>\*title</inlineCode>&nbsp;|&nbsp;<inlineCode>\*creator_name</inlineCode>
-                <inlineCode>\*creator_id</inlineCode>&nbsp;|&nbsp;<inlineCode>country_name</inlineCode>&nbsp;|&nbsp;<inlineCode>\*width</inlineCode>&nbsp;|&nbsp;<inlineCode>\*height</inlineCode>
-                <inlineCode>\*thumbnail_url</inlineCode>&nbsp;|&nbsp;<inlineCode>\*thumbnail_html_tag</inlineCode>&nbsp;|&nbsp;<inlineCode>\*thumbnail_width</inlineCode>
-                <inlineCode>\*thumbnail_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_110_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_110_width</inlineCode>
+                <inlineCode>*nb_results</inlineCode>&nbsp;|&nbsp;<inlineCode>*id</inlineCode>&nbsp;|&nbsp;<inlineCode>*title</inlineCode>&nbsp;|&nbsp;<inlineCode>*creator_name</inlineCode>
+                <inlineCode>*creator_id</inlineCode>&nbsp;|&nbsp;<inlineCode>country_name</inlineCode>&nbsp;|&nbsp;<inlineCode>*width</inlineCode>&nbsp;|&nbsp;<inlineCode>*height</inlineCode>
+                <inlineCode>*thumbnail_url</inlineCode>&nbsp;|&nbsp;<inlineCode>*thumbnail_html_tag</inlineCode>&nbsp;|&nbsp;<inlineCode>*thumbnail_width</inlineCode>
+                <inlineCode>*thumbnail_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_110_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_110_width</inlineCode>
                 <inlineCode>thumbnail_110_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_160_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_160_width</inlineCode>
                 <inlineCode>thumbnail_160_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_220_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_220_width</inlineCode>
                 <inlineCode>thumbnail_220_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_240_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_240_width</inlineCode>
                 <inlineCode>thumbnail_240_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_500_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_500_width</inlineCode>
                 <inlineCode>thumbnail_500_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_1000_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_1000_width</inlineCode>
-                <inlineCode>thumbnail_1000_height</inlineCode>&nbsp;|&nbsp;<inlineCode>\*media_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode>\*category</inlineCode>
-                <inlineCode>\*category_hierarchy</inlineCode>&nbsp;|&nbsp;<inlineCode>nb_views</inlineCode>&nbsp;|&nbsp;<inlineCode>nb_downloads</inlineCode>
+                <inlineCode>thumbnail_1000_height</inlineCode>&nbsp;|&nbsp;<inlineCode>*media_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode>*category</inlineCode>
+                <inlineCode>*category_hierarchy</inlineCode>&nbsp;|&nbsp;<inlineCode>nb_views</inlineCode>&nbsp;|&nbsp;<inlineCode>nb_downloads</inlineCode>
                 <inlineCode>creation_date</inlineCode>
                 <inlineCode>keywords</inlineCode>&nbsp;|&nbsp;<inlineCode>has_releases</inlineCode>&nbsp;|&nbsp;<inlineCode>comp_url</inlineCode>&nbsp;|&nbsp;<inlineCode>comp_width</inlineCode>
-                <inlineCode>comp_height</inlineCode>&nbsp;|&nbsp;<inlineCode>is_licensed</inlineCode>&nbsp;|&nbsp;<inlineCode>\*vector_type</inlineCode>
-                <inlineCode>\*content_type</inlineCode>
+                <inlineCode>comp_height</inlineCode>&nbsp;|&nbsp;<inlineCode>is_licensed</inlineCode>&nbsp;|&nbsp;<inlineCode>*vector_type</inlineCode>
+                <inlineCode>*content_type</inlineCode>
                 <inlineCode>framerate</inlineCode>&nbsp;|&nbsp;<inlineCode>duration</inlineCode>&nbsp;|&nbsp;<inlineCode>comps</inlineCode>&nbsp;|&nbsp;<inlineCode>details_url</inlineCode>
                 <inlineCode>template_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode>template_category_ids</inlineCode>&nbsp;|&nbsp;<inlineCode>marketing_text</inlineCode>
-                <inlineCode>description</inlineCode>&nbsp;|&nbsp;<inlineCode>size_bytes</inlineCode>&nbsp;|&nbsp;<inlineCode>\*premium_level_id</inlineCode>
+                <inlineCode>description</inlineCode>&nbsp;|&nbsp;<inlineCode>size_bytes</inlineCode>&nbsp;|&nbsp;<inlineCode>*premium_level_id</inlineCode>
                 <inlineCode>is_premium</inlineCode>
                 <inlineCode>is_loop</inlineCode>
                 <inlineCode>is_transparent</inlineCode>
@@ -550,7 +561,8 @@ Pass the following URL parameters with the GET request.
                 <inlineCode>video_preview_height</inlineCode>&nbsp;|&nbsp;<inlineCode>video_preview_content_length</inlineCode>
                 <inlineCode>video_preview_content_type</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_url</inlineCode>
                 <inlineCode>video_small_preview_width</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_height</inlineCode>
-                <inlineCode>video_small_preview_content_length</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_content_type</inlineCode>
+                <inlineCode>video_small_preview_content_length</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_content_type</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>is_gentech</inlineCode>
             </p>
         </td>
     </tr>
@@ -902,6 +914,12 @@ These are the fields returned either by default or by explicit use by the `resul
         <td>is_transparent
         </td>
         <td>True for PNG assets that have transparency. Boolean.
+        </td>
+    </tr>
+    <tr>
+        <td>is_gentech
+        </td>
+        <td>True if asset was generated by AI. Boolean.
         </td>
     </tr>
     </tbody>
