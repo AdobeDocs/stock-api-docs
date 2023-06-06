@@ -527,7 +527,7 @@ Pass the following URL parameters with the GET request.
                 detailed
                 description of each field, see <a href="#responses">Responses</a>, below.
             <p><strong>Tip:</strong> To combine result columns, use this syntax:
-                <inlineCode>result_columns[]=is_licensed&result_columns[]=creation_date</inlineCode>
+                <inlineCode>result_columns[]=title&result_columns[]=keywords</inlineCode>
             </p>
             <p><strong>Note 1:</strong> Fields marked with <strong>*</strong> are returned by default, but if the
                 <inlineCode>result_columns[]</inlineCode> command is present, the default fields will not be returned unless
@@ -536,33 +536,72 @@ Pass the following URL parameters with the GET request.
                 header.
             </p>
             <p>
-                <inlineCode>*nb_results</inlineCode>&nbsp;|&nbsp;<inlineCode>*id</inlineCode>&nbsp;|&nbsp;<inlineCode>*title</inlineCode>&nbsp;|&nbsp;<inlineCode>*creator_name</inlineCode>
-                <inlineCode>*creator_id</inlineCode>&nbsp;|&nbsp;<inlineCode>country_name</inlineCode>&nbsp;|&nbsp;<inlineCode>*width</inlineCode>&nbsp;|&nbsp;<inlineCode>*height</inlineCode>
-                <inlineCode>*thumbnail_url</inlineCode>&nbsp;|&nbsp;<inlineCode>*thumbnail_html_tag</inlineCode>&nbsp;|&nbsp;<inlineCode>*thumbnail_width</inlineCode>
-                <inlineCode>*thumbnail_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_110_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_110_width</inlineCode>
-                <inlineCode>thumbnail_110_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_160_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_160_width</inlineCode>
-                <inlineCode>thumbnail_160_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_220_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_220_width</inlineCode>
-                <inlineCode>thumbnail_220_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_240_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_240_width</inlineCode>
-                <inlineCode>thumbnail_240_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_500_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_500_width</inlineCode>
-                <inlineCode>thumbnail_500_height</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_1000_url</inlineCode>&nbsp;|&nbsp;<inlineCode>thumbnail_1000_width</inlineCode>
-                <inlineCode>thumbnail_1000_height</inlineCode>&nbsp;|&nbsp;<inlineCode>*media_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode>*category</inlineCode>
-                <inlineCode>*category_hierarchy</inlineCode>&nbsp;|&nbsp;<inlineCode>nb_views</inlineCode>&nbsp;|&nbsp;<inlineCode>nb_downloads</inlineCode>
-                <inlineCode>creation_date</inlineCode>
-                <inlineCode>keywords</inlineCode>&nbsp;|&nbsp;<inlineCode>has_releases</inlineCode>&nbsp;|&nbsp;<inlineCode>comp_url</inlineCode>&nbsp;|&nbsp;<inlineCode>comp_width</inlineCode>
-                <inlineCode>comp_height</inlineCode>&nbsp;|&nbsp;<inlineCode>is_licensed</inlineCode>&nbsp;|&nbsp;<inlineCode>*vector_type</inlineCode>
-                <inlineCode>*content_type</inlineCode>
-                <inlineCode>framerate</inlineCode>&nbsp;|&nbsp;<inlineCode>duration</inlineCode>&nbsp;|&nbsp;<inlineCode>comps</inlineCode>&nbsp;|&nbsp;<inlineCode>details_url</inlineCode>
-                <inlineCode>template_type_id</inlineCode>&nbsp;|&nbsp;<inlineCode>template_category_ids</inlineCode>&nbsp;|&nbsp;<inlineCode>marketing_text</inlineCode>
-                <inlineCode>description</inlineCode>&nbsp;|&nbsp;<inlineCode>size_bytes</inlineCode>&nbsp;|&nbsp;<inlineCode>*premium_level_id</inlineCode>
-                <inlineCode>is_premium</inlineCode>
-                <inlineCode>is_loop</inlineCode>
-                <inlineCode>is_transparent</inlineCode>
-                <inlineCode>licenses</inlineCode>&nbsp;|&nbsp;<inlineCode>video_preview_url</inlineCode>&nbsp;|&nbsp;<inlineCode>video_preview_width</inlineCode>
-                <inlineCode>video_preview_height</inlineCode>&nbsp;|&nbsp;<inlineCode>video_preview_content_length</inlineCode>
-                <inlineCode>video_preview_content_type</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_url</inlineCode>
-                <inlineCode>video_small_preview_width</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_height</inlineCode>
-                <inlineCode>video_small_preview_content_length</inlineCode>&nbsp;|&nbsp;<inlineCode>video_small_preview_content_type</inlineCode>&nbsp;|&nbsp;
-                <inlineCode>is_gentech</inlineCode>
+                <inlineCode>*nb_results</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*id</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*title</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*creator_name</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*creator_id</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>country_name</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*thumbnail_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*thumbnail_html_tag</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*thumbnail_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*thumbnail_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_110_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_110_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_110_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_160_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_160_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_160_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_220_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_220_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_220_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_240_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_240_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_240_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_500_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_500_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_500_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_1000_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_1000_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>thumbnail_1000_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*media_type_id</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*category</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*category_hierarchy</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>keywords</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>has_releases</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>comp_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>comp_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>comp_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>is_licensed</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*vector_type</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*content_type</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>framerate</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>duration</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>comps</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>details_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>template_type_id</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>template_category_ids</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>marketing_text</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>description</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>size_bytes</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>*premium_level_id</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>is_premium</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>is_loop</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>is_transparent</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>licenses</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_preview_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_preview_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_preview_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_preview_content_length</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_preview_content_type</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_small_preview_url</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_small_preview_width</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_small_preview_height</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_small_preview_content_length</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>video_small_preview_content_type</inlineCode>&nbsp;|&nbsp;
+                <inlineCode>is_gentech</inlineCode>&nbsp;|&nbsp;
             </p>
         </td>
     </tr>
@@ -637,12 +676,6 @@ These are the fields returned either by default or by explicit use by the `resul
         <td>creator_name
         </td>
         <td>Asset creator's name. String.
-        </td>
-    </tr>
-    <tr>
-        <td>creation_date
-        </td>
-        <td>Date on which the asset was created. Date.
         </td>
     </tr>
     <tr>
@@ -749,18 +782,6 @@ These are the fields returned either by default or by explicit use by the `resul
         <td>comp_height
         </td>
         <td>Height in pixels of the asset's complementary (unlicensed) image. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>nb_views
-        </td>
-        <td>Total views of the asset by all users. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>nb_downloads
-        </td>
-        <td>Total downloads of the asset by all users. Integer.
         </td>
     </tr>
     <tr>
