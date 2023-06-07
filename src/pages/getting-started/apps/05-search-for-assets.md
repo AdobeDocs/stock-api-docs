@@ -172,7 +172,7 @@ Since the Adobe Stock collection is constantly evolving, the result you get may 
 
 ### Paginating results
 
-Although a search request might find thousands of matching assets, search results include only a maximum of 64 for each call (and 32 results by default). If your results page layout displays a certain quantity of assets, you can limit each call to returning that quantity, and then call Search again to get the next set.
+Although a search request might find thousands of matching assets, search results include only a maximum of 100 for each call (and 32 results by default). If your results page layout displays a certain quantity of assets, you can limit each call to returning that quantity, and then call Search again to get the next set.
 
 To do this:
 

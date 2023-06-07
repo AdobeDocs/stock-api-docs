@@ -19,7 +19,7 @@ You can query Adobe Stock for assets that meet your specified search criteria. Y
 
 ## Search requests
 
-A request using the Stock Search API retrieves a list of assets from Adobe Stock that matches a set of search and filter values. A maximum of 64 assets can be returned from one request. This is a paginated interface that you can call multiple times to retrieve the full list.
+A request using the Stock Search API retrieves a list of assets from Adobe Stock that matches a set of search and filter values. A maximum of 100 assets can be returned from one request. This is a paginated interface that you can call multiple times to retrieve the full list.
 
 For a guide to usage and additional examples, see [Creating Adobe Stock applications](../getting-started/04-creating-apps.md).
 
@@ -139,10 +139,10 @@ Pass the following URL parameters with the GET request.
     <tr>
         <td>search_parameters[limit]
         </td>
-        <td>Maximum number of assets to return in the call. Valid values are 1 through 64. Default is 32. String.
+        <td>Maximum number of assets to return in the call. Valid values are 1 through 100. Default is 32. String.
             Call repeatedly with different [offset] values to page through the found assets. <strong>Tip:</strong>
             The
-            number of images returned in each call can vary, but never exceeds 64 entries.
+            number of images returned in each call can vary, but never exceeds 100 entries.
             See the note below for <inlineCode>search_parameters[filters][premium]</inlineCode> and refer to the FAQ question, <a href="/faq/?#why-are-there-more-search-results-returned-than-the-limit-value">Why are there more search results returned than the 'limit' value?</a>
         </td>
     </tr>
@@ -1081,10 +1081,10 @@ Here are simple examples of common searches.
   https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=purple+clouds&locale=en_US
 ```
 
-- Using pagination, get the 3rd page of results (rows 64-95) for the word "dogs":
+- Using pagination, get the 3rd page of results (rows 200-300) for the word "dogs":
 
 ```curl
-  https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=dogs&search_parameters[limit]=32&search_parameters[offset]=64&locale=en_US
+  https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=dogs&search_parameters[limit]=100&search_parameters[offset]=200&locale=en_US
 ```
 
 - Search for assets similar in appearance to the specified asset ID:
