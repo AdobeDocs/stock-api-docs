@@ -67,12 +67,12 @@ For example, your user wants to license an image of a cute, fluffy kitten (and w
 
 It's best practice to check if the item is licensed already. There are two methods for this:
 
-*   **As part of the search.**  When you are performing the search in step #2, a convenience method is to add the `is_licensed` field, which will be set to the license name if that user or organization has licensed this asset.
+*   **As part of the search.**  The [Files API](../../api/19-bulk-metadata-files-reference.md) is designed to get metadata and asset info. In addition, it has a property called the `is_licensed` field, which will be set to the license name if that user or organization has licensed this asset.
 
-The main difference between this search request and the ones discussed in the previous section is that this one must be authenticated with an access token. Note the headers used in this request are the same as the ones used for search, with the addition of the `Authorization` header. You will use these same headers for all remaining licensing requests.
+The Files API looks is constructed similarly to the Search API request, however this one must be authenticated with an access token. Note the headers used in this request are the same as the ones used for search, with the addition of the `Authorization` header. You will use these same headers for all remaining licensing requests. Also note that the `ids` query parameter can accept up to 100 assets at a time, so it can be used to retrieve metadata and license state in bulk.
 
 ```shell
-curl "https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US&search_parameters%5Bmedia_id%5D=62305369&result_columns%5B%5D=id&result_columns%5B%5D=is_licensed" \
+curl "https://stock.adobe.io/Rest/Media/1/Files?locale=en_US&ids=112670342&result_columns[]=id&result_columns[]=is_licensed" \
   -H "x-api-key: YourApiKeyHere" \
   -H "x-product: MySampleApp/1.0" \
   -H "authorization: Bearer AccessTokenHere"
@@ -171,7 +171,7 @@ In the example, you can see that the `purchase_options.state` is "possible," whi
 
 ### 5. License the asset
 
-Now you will perform the license purchase request using the **Content/License** API, which will deduct credits from the user or organizational account.
+Now you will perform the license purchase request using the **Content/License** API, which will deduct credits from the user or organizational account. If you don't have the specified license for the asset, this API will create a new license and return a download URL. However, if the asset is already licensed, then it will only return a URL. It will not deduct credits or create a new license.
 
 Use the same parameters and headers that you used in the Member/Profile request.
 
@@ -223,7 +223,7 @@ The response returns several fields, but the most important for your user is in 
 
 ### 6. Download the file
 
-Finally, you can download the full asset. Here you will call directly to the URL of the licensed asset that you obtained in the previous step:
+Finally, you can download the full asset. Here you will call directly to the URL of the licensed asset that you obtained in the previous step with the same authorization headers:
 
 ```json
 {
@@ -237,10 +237,14 @@ Finally, you can download the full asset. Here you will call directly to the URL
 }
 ```
 
-Note that unlike the other requests, you do *not* include the `Authorization` header, because that can cause the request to fail. Instead, you pass the access token using the **`token`** parameter. The download also requires that your application has the ability to follow a redirect--make sure this option is enabled on your download client.
+The download also requires that your application has the ability to follow a redirect. Make sure this option is enabled on your download client.
 
 ```http
-https://stock.adobe.com/Rest/Libraries/Download/112670342/1?token=AccessTokenHere
+GET /Rest/Libraries/Download/112670342/1 HTTP/1.1
+Host: stock.adobe.com
+X-Product: MySampleApp/1.0
+x-api-key: YourApiKeyHere
+Authorization: Bearer AccessTokenHere
 ```
 
 Response:
@@ -258,7 +262,7 @@ Date: Mon, 06 Nov 2017 03:18:50 GMT
 
 #### Follow the redirects...
 
-The download URL provided by the Stock API is an alias that may redirect you to the actual location of the file on a cloud-based server. Therefore, your request must follow any redirect from the Stock API server, and output the result to a file.
+The download URL provided by the Stock API is an alias that will redirect you to the actual location of the file on a cloud-based server. Therefore, your request must follow any redirect from the Stock API server, and output the result to a file.
 
 Curl command line example (`-L`: Follow redirects)
 
