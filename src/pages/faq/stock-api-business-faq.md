@@ -19,7 +19,7 @@ A list of questions and answers for customers and partners looking to use Stock 
 <!-- MarkdownTOC -->
 
 - [General FAQ](#general-faq)
-  - [How can I contact Adobe Stock to discuss a partnership or get technical assistance?](#how-can-i-contact-adobe-stock-to-discuss-a-partnership-or-get-technical-assistance)
+  - [How can I contact Adobe Stock to discuss a business proposal or get technical assistance?](#how-can-i-contact-adobe-stock-to-discuss-a-business-proposal-or-get-technical-assistance)
   - [How much does it cost to access Adobe Stock API?](#how-much-does-it-cost-to-access-adobe-stock-api)
   - [What are the API calls limits?](#what-are-the-api-calls-limits)
   - [How long does it take to validate my API key request?](#how-long-does-it-take-to-validate-my-api-key-request)
@@ -28,7 +28,6 @@ A list of questions and answers for customers and partners looking to use Stock 
   - [How can I test the Search API?](#how-can-i-test-the-search-api)
   - [How can I test the Licensing API?](#how-can-i-test-the-licensing-api)
   - [Where I can find a technical reference?](#where-i-can-find-a-technical-reference)
-  - [Is there any SDK which can facilitate building the Adobe Stock API integration?](#is-there-any-sdk-which-can-facilitate-building-the-adobe-stock-api-integration)
   - [What standard size previews are available via the API?](#what-standard-size-previews-are-available-via-the-api)
   - [How I can get access to unwatermarked previews medium or high resolution size?](#how-i-can-get-access-to-unwatermarked-previews-medium-or-high-resolution-size)
   - [I am using Fotolia API. How can I migrate to Adobe Stock?](#i-am-using-fotolia-api-how-can-i-migrate-to-adobe-stock)
@@ -58,7 +57,6 @@ A list of questions and answers for customers and partners looking to use Stock 
   - [How can I earn affiliate commissions by promoting Adobe Stock?](#how-can-i-earn-affiliate-commissions-by-promoting-adobe-stock)
   - [How can the Adobe Stock API help me earn by promoting Adobe Stock?](#how-can-the-adobe-stock-api-help-me-earn-by-promoting-adobe-stock)
   - [What are benefits of Adobe Affiliate Program?](#what-are-benefits-of-adobe-affiliate-program)
-  - [Are there any example scripts to get started?](#are-there-any-example-scripts-to-get-started)
   - [Are there any examples of Adobe Stock API Affiliates use cases available online?](#are-there-any-examples-of-adobe-stock-api-affiliates-use-cases-available-online)
 
 <!-- /MarkdownTOC -->
@@ -67,11 +65,11 @@ A list of questions and answers for customers and partners looking to use Stock 
 
 ## General FAQ
 
-<a id="how-can-i-contact-adobe-stock-to-discuss-a-partnership-or-get-technical-assistance"></a>
+<a id="how-can-i-contact-adobe-stock-to-discuss-a-business-proposal-or-get-technical-assistance"></a>
 
-### How can I contact Adobe Stock to discuss a partnership or get technical assistance?
+### How can I contact Adobe Stock to discuss a business proposal or get technical assistance?
 
-If you want to partner with Adobe Stock or have questions about the business aspects of Stock integrations, please email <Grp-AdobeStockPartnerships@adobe.com>. You can also find out more about the Stock partnership program at <https://developer.adobe.com/stock/>.
+If you want to discuss a partnership with Adobe Stock please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
 
 If you need technical help with your Stock API integration, please email <stockapis@adobe.com>. Please visit <https://developer.adobe.com/stock/docs/> for help resources, technical documentation and sample code.
 
@@ -115,21 +113,13 @@ Create an Adobe Stock API key for free at <https://developer.adobe.com/console>.
 
 ### How can I test the Licensing API?
 
-Apply for a demo account. If you are going to use [OAuth authentication](#definitions-and-terms) please follow [this guide](/Partner-instructions-for-Stock-OAuth-demo-account.pdf). If you need a [Service Account](#definitions-and-terms) integration please see [this guide](/Partner-instructions-for-Stock-Enterprise-demo-account.pdf). Note that Service Accounts are only available to Adobe Enterprise customers.
-
-If you are not sure which type of authentication you need for your integration, please [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=Adobe%20Stock%20API%20FAQ%20-%20which%20demo%20account).
+Please contact your Adobe account representative or [request a callback from the Enterprise team](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
 
 <a id="where-i-can-find-a-technical-reference"></a>
 
 ### Where I can find a technical reference?
 
 <https://developer.adobe.com/stock/docs/>
-
-<a id="is-there-any-sdk-which-can-facilitate-building-the-adobe-stock-api-integration"></a>
-
-### Is there any SDK which can facilitate building the Adobe Stock API integration?
-
-Yes. At <https://github.com/adobedocs/stock-api-sdk> you can access SDKs for PHP and Java.
 
 <a id="what-standard-size-previews-are-available-via-the-api"></a>
 
@@ -151,7 +141,7 @@ All previews above are served from a content delivery network (CDN) for best per
 
 ### How I can get access to unwatermarked previews medium or high resolution size?
 
-This requires an Adobe Stock Enterprise contract. Please [contact the Stock for Enterprise team](https://stockenterprise.adobe.com/) to learn more.
+This requires an Adobe Stock Enterprise contract. Please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) to learn more.
 
 <a id="i-am-using-fotolia-api-how-can-i-migrate-to-adobe-stock"></a>
 
@@ -190,15 +180,15 @@ Here are the definitions of some standard acronyms and terms used throughout thi
 
 **API.** Application Programming Interface
 
-**Standard content.** For the purposes of this document, Standard content is a group of images (photos, vectors and illustrations) which consist of Adobe Stock's micro-stock collection, [hosted here](https://stock.adobe.com/images). All assets in this class can be licensed for one credit with a Standard license (see below), and this license allows downloading the asset at full resolution. 
+**Standard content.** For the purposes of this document, Standard content is a group of images (photos, vectors and illustrations) which consist of Adobe Stock's micro-stock collection. All assets in this class can be licensed for one credit with a Standard license (see below), and this license allows downloading the asset at full resolution. 
 
-__Standard license.__ This is a limited type of license offered on most Stock assets, including all Standard content (see above). Under the Print on Demand model, a Standard license may be used to print one good. This is different from Extended licenses, which may be used for unlimited prints, but at a much higher cost. For more details see [Adobe Stock License Information](https://stock.adobe.com/license-terms).
+__Standard license.__ This is a limited type of license offered on most Stock assets, including all Standard content (see above). With a Print on Demand contract, a Standard license may be used to print one good. This is different from Extended licenses, which may be used for unlimited prints, but at a much higher cost. For more details see [Adobe Stock License Information](https://stock.adobe.com/license-terms).
 
 **Enterprise account model.** Offers advanced options and volume pricing for Print-on-demand. Requires an Adobe Enterprise contract.
 
 **OAuth integration.** A technical workflow in which users must login to Adobe Stock to authorize their licenses.
 
-**Service Account integration**. A technical workflow where the application can authenticate to Adobe Stock without any human user interaction. This method is only available for Enterprise accounts.
+**Server to Server integration**. A technical workflow where the application can authenticate to Adobe Stock without any human user interaction. This method is only available for Enterprise accounts.
 
 <a id="print-on-demand-faq"></a>
 
@@ -212,7 +202,7 @@ You can implement the Search API and display search results from the Adobe Stock
 
 \* Licenses must be from Enterprise licenses under _the Enterprise account model_.
 
-Consumer image subscriptions (subscription plans available at: <https://stock.adobe.com/plans> and https://stock.adobe.com/teams) **cannot be used** for print on demand. .
+Consumer image subscriptions (subscription plans available at: <https://stock.adobe.com/plans> and https://stock.adobe.com/teams) **cannot be used** for print on demand, nor can "unlimited" Stock subscriptions included in Creative Cloud Pro/Plus agreements.
 
 <a id="what-type-of-assets-can-i-access-by-using-adobe-stock-api-for-print-on-demand"></a>
 
@@ -220,13 +210,7 @@ Consumer image subscriptions (subscription plans available at: <https://stock.ad
 
 Technically, the API will give access to any kind of asset, including Premium, Video, 3D, Templates, etc.
 
-However, from a Legal standpoint, Print on Demand customers may access __only Standard assets__ and must therefore *filter out* Premium content and other non-Standard asset types. If you need access to other types of content in your application, please [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=Adobe%20Stock%20API%20FAQ%20-%20non%20standard%20assets).
-
-**Standard assets**. All Standard photos, vectors and illustrations are found here: <https://stock.adobe.com/images>
-
-**Premium assets**. Premium content is anything found here: <https://stock.adobe.com/premium>. In addition, Premium content will have a “Premium” banner on them on the Adobe Stock website. The API has other signifiers and data indicating that an asset is Premium.
-
-![Premium banner](premium_assets_banner.png)
+However, from a legal standpoint, Print on Demand customers may access __only Standard assets__ and must therefore *filter out* Premium content and other non-Standard asset types. If you need access to other types of content in your application, please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
 
 To filter out Premium content from Stock API search results, see the [Stock API FAQ](/faq/).
 
@@ -242,20 +226,22 @@ To filter out Premium content from Stock API search results, see the [Stock API 
 
 ### What is the Print on demand pricing model?
 
-Pricing is based on volume and assumes a minimum purchase up front. If you need more than 1000 images a year, please [contact the Stock for Enterprise team](https://stockenterprise.adobe.com/) to receive an Enterprise offer.
+Pricing is based on volume and assumes a minimum purchase up front. Please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) for pricing information.
 
 <a id="do-i-need-a-contract-to-start-my-api-print-on-demand-business"></a>
 
 ### Do I need a contract to start my API Print on demand business?
 
-Yes. Please [contact the Stock for Enterprise team](https://stockenterprise.adobe.com/) to get a contract.
+Yes. Please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) to get a contract.
 
 <a id="is-there-any-software-with-build-in-support-or-software-developers-specialized-in-integrating-adobe-stock-api-for-print-on-demand"></a>
 
 ### Is there any software with build-in support or software developers specialized in integrating Adobe Stock API for Print-on-demand?
 
 * ResetPro: [https://reset.pro/](https://reset.pro/?lang=8) 
+<!--
   * Learn more at: ["How the Adobe Stock API is Helping Nikkel Art Thrive in the Print-on-Demand Industry"](https://medium.com/adobetech/how-the-adobe-stock-api-is-helping-nikkel-art-thrive-in-the-print-on-demand-industry-c4793e8cd5cd)
+-->
 * Durst Smart Shop: https://durst-professional-services.com/en/smart-shop
 * OnPrintShop: https://www.onprintshop.com/
 
@@ -269,7 +255,7 @@ Yes. Please [contact the Stock for Enterprise team](https://stockenterprise.adob
 
 If you are an existing Enterprise customer, typically your use of the API is included in the terms of your contract. Please contact your sales representative if you have any doubts.
 
-If you are not an Adobe Stock Enterprise customer, [contact the Stock for Enterprise team](https://stockenterprise.adobe.com/).
+If you are not an Adobe Stock Enterprise customer, please [request a callback from the Enterprise team](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
 
 <a id="is-there-a-separate-cost-to-use-the-stock-api"></a>
 
@@ -281,7 +267,7 @@ No. Usage of the Stock API is free for all users.
 
 ### How can I automate my Stock workflows?
 
-All Adobe Enterprise customers have access to a Service Account integration. The Service Account uses special credentials to authorize and access its Adobe licenses which do not require a user to sign in. Subsequently, this application can perform tasks on an automated scheduled with no user interaction.
+All Adobe Enterprise customers have access to a Server to Server integration. This method uses special credentials to authorize and access its Adobe licenses which do not require a user to sign in. Subsequently, this application can perform tasks on an automated scheduled with no user interaction.
 
 Any Stock API may be used in an automated method. Examples include downloading new assets from a group’s license history, licensing assets in bulk (e.g., from a list of IDs), or integrating controls inside a corporate application which allow a non-Adobe user to download assets which have been previously licensed by a different user.
 
@@ -298,7 +284,7 @@ CC Pro and Pro Plus plans allow unlimited download of Adobe stock assets, withou
 
 For more information, please see the [Adobe Stock Additional Terms](http://www.adobe.com/go/stockterms) or the PSLT that governs your use of Adobe Stock.  
 
-Despite the concerns stated above, it is technically possible to use a service account with CC Pro plans for internal automation tasks but requires Adobe business approval of the use case and help from the Stock product team. Please contact us only if you understand the use restrictions and have a legitimate business requirement.
+Despite the concerns stated above, it is technically possible to use a Server to Server integration with CC Pro plans for internal automation tasks but requires Adobe business approval of the use case and help from the Stock product team. Please contact us only if you understand the use restrictions and have a legitimate business requirement.
 
 
 <a id="marketing-platforms-faq"></a>
@@ -323,7 +309,7 @@ Customers can benefit from a seamless experience of searching and licensing Adob
 
 That depends on your desired workflow. If you want allow your customers to login to Adobe Stock by using their Adobe ID, that typically does not require a contract.
 
-If you want to use your company’s own Adobe account to license assets which may be used by your customers on your platform, then you need to [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=Adobe%20Stock%20API%20FAQ%20-%20marketing%20platform%20integration) to work on a contract.
+If you want to use your company’s own Adobe account to license assets which may be used by your customers on your platform, please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) to work on a contract.
 
 <a id="dams-faq"></a>
 
@@ -343,9 +329,9 @@ If the DAM provider needs to create an integration for an Adobe Enterprise custo
 
 ### Does Adobe Stock have a pre-built integration with the my DAM platform? (or) Can Adobe Stock build an integration with my platform?
 
-Adobe Stock is working with multiple DAM partners to create new integrations, but currently the only available integration with the [Adobe Experience Manager](https://www.adobe.com/marketing/experience-manager.html) (AEM) Assets platform. If you are an AEM user, see [more information here](https://experienceleague.adobe.com/docs/experience-manager-65/assets/using/aem-assets-adobe-stock.html?lang=en).
+Adobe Stock has a pre-built integration with with the [Adobe Experience Manager](https://www.adobe.com/marketing/experience-manager.html) (AEM) Assets platform. If you are an AEM user, see [more information here](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/manage/aem-assets-adobe-stock).
 
-Adobe will be happy to work with any platform provider or customer who wishes to create a new integration, and can provide technical support, sample code and architecture guidance, but does not have the resources to perform the integration work. If necessary, Adobe can recommend some third-party firms who can be engaged to create the integration.
+Adobe will be happy to work with any platform provider or customer who wishes to create a new integration, and can provide technical support, sample code and architecture guidance, but does not have the resources to perform the integration work. 
 
 <a id="affiliates-faq"></a>
 
@@ -371,11 +357,13 @@ High commission: $72 when referred user subscribe to a plan with minimum 10 imag
 
 Cross marketing opportunity. Earn when your referred users purchase one of other Adobe products: Creative Cloud and Document Cloud.
 
+<!--
 <a id="are-there-any-example-scripts-to-get-started"></a>
 
 ### Are there any example scripts to get started?
 
 See the Medium article, “[Get Paid to Search Adobe Stock](https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312).”
+-->
 
 <a id="are-there-any-examples-of-adobe-stock-api-affiliates-use-cases-available-online"></a>
 
