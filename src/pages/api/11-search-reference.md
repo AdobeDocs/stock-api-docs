@@ -839,6 +839,8 @@ These are the fields returned either by default or by explicit use by the `resul
                 <li><inlineCode>4</inlineCode>: Videos</li>
                 <li><inlineCode>6</inlineCode>: 3D</li>
                 <li><inlineCode>7</inlineCode>: Templates</li>
+                <li><inlineCode>8</inlineCode>: Premium</li>
+                <li><inlineCode>9</inlineCode>: Audio</li>
             </ul>
         </td>
     </tr>
