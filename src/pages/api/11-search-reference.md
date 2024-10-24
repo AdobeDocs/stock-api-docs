@@ -947,7 +947,7 @@ These are the fields returned either by default or by explicit use by the `resul
     <tr>
         <td>is_loop
         </td>
-        <td>True is the asset is a looping video or audio clip. Boolean.
+        <td>True if the asset is a looping video or audio clip. Boolean.
         </td>
     </tr>
     <tr>
