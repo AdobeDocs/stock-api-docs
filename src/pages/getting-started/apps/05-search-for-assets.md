@@ -199,7 +199,6 @@ Valid orders and their meanings:
 
 *   `relevance`: How closely it matches your search request, closest matches first (default).
 *   `creation`: Creation date in descending order (newest first).
-*   `featured`: Attempts to display the highest quality content first, as scored by Adobe Sensei's machine learning algorithms. In practice, it performs best on lifestyle imagery.
 *   `nb_downloads`: In descending order by the number of downloads by all users since the asset was added to Adobe Stock.
 *   `undiscovered`: Starting with assets that have not commonly been viewed or downloaded.
 
