@@ -52,7 +52,7 @@ Here is a list of existing Fotolia API endpoints and their new Stock API equival
 | [refreshToken](https://us.fotolia.com/Services/API/Rest/Method/refreshToken)     | /ims/token (IMS)     | Renew authentication token                     | See [Authentication](#authentication) |
 | [getUserData](https://us.fotolia.com/Services/API/Rest/Method/getUserData) | Member/Profile | Return information about the logged user and get available credits | To get license quota, use Member/Profile. Stock does not store information about the user, only about entitlements available |
 
-If you have a business requirement to access Stock Contributor APIs, please please [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question).
+Please note that [Adobe Stock Contributor](https://contributor.stock.adobe.com/) does not have a public API.
 
 <a id="search-filters-and-parameters"></a>
 
@@ -94,7 +94,6 @@ Nearly all the Fotolia search parameters and filters are also available in Adobe
 
 The following API endpoints and methods will be deprecated in Adobe Stock API as they are either not currently being used, no longer supported, or no longer necessary. These APIs either receive no traffic, or have such low usage that they are candidates for removal.
 
-If you have a business requirement for any of the APIs below, please [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question).
 
 | Fotolia                              | Adobe Stock | Description                                                               |
 |--------------------------------------|-------------|---------------------------------------------------------------------------|
@@ -136,7 +135,7 @@ Unlike Fotolia, all Standard assets require one license or credit to purchase, r
 
 > **Note for Print on Demand (POD) customers:** If you license assets for use with printed goods that you sell, there are special rules you must follow. For example, you must use universal credits instead of subscription plans when licensing. Also, you will need to license the asset again in most cases, especially if used for different customer orders or for multiple products. And lastly, you will need to accept special terms and conditions before you can begin selling Stock images on your printed goods.
 >
-> Note that if you purchase Extended licenses, these precautions are not necessary, but the cost per asset is much higher. To discuss your use case and expected volume, please [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question) for additional terms and instructions.
+> Note that if you purchase Extended licenses, these precautions are not necessary, but the cost per asset is much higher. To discuss your use case and expected volume, please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) for additional terms and instructions.
 
 In terms of technical workflow, continue reading for an overview. Please refer to [Licensing assets and stuff](/getting-started/apps/06-licensing-assets.md) for full details.
 
@@ -183,15 +182,15 @@ You may start testing the Search APIs at any time; all that is required is a fre
 
 ### Get a Stock account
 
-If you are an individual customer, go to the [Plans and Pricing](https://stock.adobe.com/plans) page to sign up for an account. Note that if you plan to sell images for print use (e.g., you have a Print on Demand business), you will need to [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question) for additional terms and instructions, and to discuss your volume and use case. If you plan to use assets only for internal use (such as for general marketing and design), then you can choose your plan accordingly.
+If you are an individual customer, go to the [Plans and Pricing](https://stock.adobe.com/plans) page to sign up for an account. Note that if you plan to sell images for print use (e.g., you have a Print on Demand business), please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) to get a quote for a Stock for Enterprise contract. If you plan to use assets only for internal use (such as for general marketing and design), then you can choose your plan accordingly.
 
-If you do not need your own account but need to sign in others using the OAuth model, refer to the [Authorization code workflow](/Stock-Authorization-Code-Workflow.pdf) guide. If you have a business need, you may [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question) if you need access to a demo account with dummy credits to test licensing.
+If you do not need your own account but need to sign in others using the OAuth model, refer to the [Authorization code workflow](/Stock-Authorization-Code-Workflow.pdf) guide. 
 
 <a id="sign-a-contract"></a>
 
 ### Sign a contract
 
-As discussed earlier, if you plan to use Adobe Stock for commercial purposes--especially for selling printed goods--you will need to [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BFotolia%5D%20Stock%20API%20question). In many cases, you may need only accept our terms and conditions, and will be ready to begin.
+As discussed earlier, if you plan to use Adobe Stock for commercial purposes--especially for selling printed goods--please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
 
 <a id="build-an-app"></a>
 
