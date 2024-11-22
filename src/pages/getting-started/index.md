@@ -14,15 +14,20 @@ description: Getting started with the Adobe Stock API. Build an API application 
 <!-- 01-getting-started.md -->
 <!-- omit in toc -->
 
-# Please read me first!
+# Getting started with the Adobe Stock API
+
+<InlineAlert variant="warning" slots="header, text1, text2, text3, text4" />
+
+Please read me!
 
 Beginning in November, 2024, the Stock API will only be available to Stock for Enterprise customers. If you don't know if you have Stock for Enterprise, see [Do I have Stock for Enterprise?](#do-i-have-stock-for-enterprise) To create an integration, you must either be a System Administrator or a [member of the Developers group](https://helpx.adobe.com/enterprise/using/manage-developers.html) for the Stock product. *Hint: If you do not see an option to add Developers or API credentials, then you **do not** have Stock for Enterprise.* If you want to get a quote for Stock for Enterprise, please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi). 
 
-If you are a Stock for Enterprise customer, then you can create a [Server to Server integration](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/), which does not require a login. Go to [Getting Started](./getting-started/index.md) to begin.
+If you are a Stock for Enterprise customer, then you can create a [Server to Server integration](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/), which does not require a login. Go to [Overview](#overview) to begin.
 
 If you do not have Stock for Enterprise, then you will not be able to create an integration at this time without being accepted into a program unless you have a compelling business reason or have an Adobe business sponsor. Adobe affiliates who are approved to join the Adobe campaign may be pre-approved.
 
-The approval process is still being rolled out. You may email [the Stock API team](stockapis@adobe.com) with questions.
+The approval process is still being rolled out. You may email [the Stock API team](mailto:stockapis@adobe.com) with questions.
+
 <!--
 To request approval: Go to https://www.adobeprerelease.com and join the "Adobe Stock API" program. As noted, if you have been approved to join the Adobe Affiliate program, then you should be approved to use the Stock API. 
 -->
@@ -32,7 +37,7 @@ To request approval: Go to https://www.adobeprerelease.com and join the "Adobe S
 1. First, do you have access to the [Adobe Admin Console](https://adminconsole.adobe.com/)?
 2. Second, when you click on Products, do you see an Adobe Stock product or a Creative Cloud (CC) product? In the screenshot below, this customer has an Adobe Stock Credits product, as well as a CC All Apps product. They can use the Stock API, but only with their Stock credits product. They cannot create an integration for CC All Apps because it is not a Stock product.
 
-![Stock product](./getting-started/stock-api-available.png)
+![Stock product](./stock-api-available.png)
 
 For more information on why Creative Cloud does not have API access, see the FAQ [May I use my Creative Cloud Professional or Professional Plus plan with the Stock API?](https://developer.adobe.com/stock/docs/faq/stock-api-business-faq/#may-i-use-my-creative-cloud-professional-or-professional-plus-plan-with-the-stock-api).
 
@@ -50,20 +55,8 @@ See the [Affiliates FAQ](faq/stock-api-business-faq.md#affiliates-faq) for more 
 Note that you will still need to join the [Stock API Prerelease program](https://www.adobeprerelease.com) as well as join the Adobe Affiliate program.
 
 <InlineAlert slots="text" />
-
 Continue here once you have access to the API!
 
-# Getting started with the Adobe Stock API
-
-<InlineAlert variant="success" slots="text"/>
-TL;DR: (1) register for an Adobe Stock API key at the Adobe Developer Console*, (2) Add your API key in the following curl** command and make your first search query, then (3) return here to learn more!
-
-```shell
-curl -H 'x-api-key:myAPIKey' -H 'x-product:myTestApp1.0' https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US%26search_parameters%5Bwords%5D=kittens
-```
-
-  > \*   **Adobe Developer Console**: [https://developer.adobe.com/console/](https://developer.adobe.com/console/)<br />
-  > \*\* **curl**: [https://curl.haxx.se/](https://curl.haxx.se/)
 
 ## Overview
 
