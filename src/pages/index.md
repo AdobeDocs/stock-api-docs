@@ -29,7 +29,10 @@ If you are a Stock for Enterprise customer, then you can create a [Server to Ser
 
 If you do not have Stock for Enterprise, then you will not be able to create an integration at this time without being accepted into a program unless you have a compelling business reason or have an Adobe business sponsor. Adobe affiliates who are approved to join the Adobe campaign may be pre-approved.
 
+The approval process is still being rolled out. You may email [the Stock API team](stockapis@adobe.com) with questions.
+<!--
 To request approval: Go to https://www.adobeprerelease.com and join the "Adobe Stock API" program. As noted, if you have been approved to join the Adobe Affiliate program, then you should be approved to use the Stock API. 
+-->
 
 ## Do I have Stock for Enterprise?
 
@@ -37,6 +40,8 @@ To request approval: Go to https://www.adobeprerelease.com and join the "Adobe S
 2. Second, when you click on Products, do you see an Adobe Stock product or a Creative Cloud (CC) product? In the screenshot below, this customer has an Adobe Stock Credits product, as well as a CC All Apps product. They can use the Stock API, but only with their Stock credits product. They cannot create an integration for CC All Apps because it is not a Stock product.
 
 ![Stock product](./getting-started/stock-api-available.png)
+
+For more information on why Creative Cloud does not have API access, see the FAQ [May I use my Creative Cloud Professional or Professional Plus plan with the Stock API?](https://developer.adobe.com/stock/docs/faq/stock-api-business-faq/#may-i-use-my-creative-cloud-professional-or-professional-plus-plan-with-the-stock-api).
 
 ## Adobe Affiliates
 
