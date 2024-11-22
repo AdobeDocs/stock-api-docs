@@ -17,7 +17,6 @@ description: Stock API Frequently Asked Questions.
 A list of questions and answers for customers and partners looking to use Stock APIs, from a business perspective. For technical questions on the Stock APIs, see the [Technical FAQ](/faq/).
 
 <!-- MarkdownTOC -->
-
 - [General FAQ](#general-faq)
   - [How can I contact Adobe Stock to discuss a business proposal or get technical assistance?](#how-can-i-contact-adobe-stock-to-discuss-a-business-proposal-or-get-technical-assistance)
   - [How much does it cost to access Adobe Stock API?](#how-much-does-it-cost-to-access-adobe-stock-api)

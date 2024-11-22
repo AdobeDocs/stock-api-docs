@@ -16,11 +16,6 @@ import GettingStarted from './getting-started/index.md'
 <GettingStarted />
 -->
 
-- [Please read me first!](#please-read-me-first)
-  - [Do I have Stock for Enterprise?](#do-i-have-stock-for-enterprise)
-  - [Adobe Affiliates](#adobe-affiliates)
-
-
 # Please read me first!
 
 Beginning in November, 2024, the Stock API will only be available to Stock for Enterprise customers. If you don't know if you have Stock for Enterprise, see [Do I have Stock for Enterprise?](#do-i-have-stock-for-enterprise) To create an integration, you must either be a System Administrator or a [member of the Developers group](https://helpx.adobe.com/enterprise/using/manage-developers.html) for the Stock product. *Hint: If you do not see an option to add Developers or API credentials, then you **do not** have Stock for Enterprise.* If you want to get a quote for Stock for Enterprise, please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi). 
@@ -55,3 +50,7 @@ While most Adobe Affiliates display banner advertising on their websites, affili
 See the [Affiliates FAQ](faq/stock-api-business-faq.md#affiliates-faq) for more information.
 
 Note that you will still need to join the [Stock API Prerelease program](https://www.adobeprerelease.com) as well as join the Adobe Affiliate program.
+
+## Next steps
+
+Once you have been accepted into the program or to access Stock API documentation, go to [Getting Started](./getting-started/01-getting-started.md).
