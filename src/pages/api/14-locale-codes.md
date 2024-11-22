@@ -89,4 +89,5 @@ Several API methods allow the use of locale codes so that you can retrieve asset
 | en_TT | English - Trinidad and Tobago |
 | en_TM | English - Turkmenistan |
 | es_UY | Spanish - Uruguay |
+| zh_CN | Simplified Chinese - China |
 | zh_MO | Chinese - Macao |

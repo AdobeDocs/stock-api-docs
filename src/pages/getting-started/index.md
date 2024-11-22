@@ -34,10 +34,6 @@ Before you begin, be sure to review the [Developer Terms of Use](/faq/terms-for-
 
 The Adobe Stock API provides programmatic access to [Adobe Stock](https://stock.adobe.com/) content. You can integrate this API into your organization's applications and processes. You can use the API in scripts or programs to search for and retrieve Adobe Stock assets such as photos, videos, and vector files, and to license assets for your users.
 
-  > **Not a developer, but interested in partnering?** Please take a look at the [Stock API Business FAQ](/faq/stock-api-business-faq.md), and then [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BAdobe%20I%2FO%5D%20Stock%20partnership%20inquiry). Please note that it is not required to register as a partner to use the Adobe Stock API, as all usage of the API is governed by the [Adobe Developer Terms of Use](https://www.adobe.com/go/developer-terms) and the [Adobe Stock Terms of Use](https://www.adobe.com/go/stockterms).
-
-  > *Are you a Fotolia customer and want to convert to Adobe Stock?* Please visit the [Fotolia API migration resources](/faq/18-fotolia-migration-resources.md).
-
 You interact with the Adobe Stock API via HTTP requests instead of a user interface. You can create applications that perform these actions:
 
 *   **Search for and retrieve Adobe Stock assets.** Your applications can search by keywords, models, contributor, series, and categories, and can also request assets that are similar to other assets or images. You can sort, filter, and page through any results from your searches. Search results contain URLs for thumbnails of the found assets, which you can use to display the thumbnails to your users. Results also can contain metadata about the assets, including information that your applications can use to retrieve the original asset.

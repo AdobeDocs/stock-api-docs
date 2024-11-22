@@ -626,9 +626,7 @@ Two things to note about this command:
 
 #### How can I test licensing assets if I do not have an Adobe Stock plan or contract?
 
-If you are an independent developer or student, you can follow the [Affiliate workflow](../07-workflow-guides.md) and sign up for an API key. If you want to also test licensing an asset, you can test it on a free asset like one of our great [Creative Cloud Stock templates](https://stock.adobe.com/templates) (not all templates are free, but many are).
-
-However, if you are interested in partnering with Adobe Stock and have a legitimate reason for a demo account, [contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=%5BAdobe%20I%2FO%5D%20Stock%20demo%20account%20access).
+If you are an independent developer or student, you can follow the [Affiliate workflow](../07-workflow-guides.md) and sign up for an API key. If you want to also test licensing an asset, you can test it on a free asset like one of our great [Free assets](https://stock.adobe.com/free).
 
 <a id="how-do-i-license-assets-more-than-once"></a>
 
