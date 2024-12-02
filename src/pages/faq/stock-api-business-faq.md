@@ -280,4 +280,6 @@ See the Medium article, “[Get Paid to Search Adobe Stock](https://medium.com/a
 
 ### Are there any examples of Adobe Stock API Affiliates use cases available online?
 
-Freepik is a partner of Adobe Stock, and it has banners and custom search result widgets for Stock available on most search pages: https://www.freepik.com/search?format=search&query=dogs
+Eezy is a partner of Adobe Stock, and it has banners and custom search result widgets for Stock available on its video search pages. 
+
+Example: https://www.vecteezy.com/search?content_type=video&qterm=planet-saturn
