@@ -16,14 +16,15 @@ description: Stock API Frequently Asked Questions.
 
 A list of questions and answers for customers and partners looking to use Stock APIs, from a business perspective. For technical questions on the Stock APIs, see the [Technical FAQ](/faq/).
 
-<!-- MarkdownTOC -->
+<InlineAlert variant="warning">
+
+Please note that the Stock API is only open to Stock for Enterprise customers and Adobe Affiliates at this time. See [Getting started](./../getting-started/index.md) for more details. 
+
 - [General FAQ](#general-faq)
+  - [What are the criteria for applying for the Adobe Stock API?](#what-are-the-criteria-for-applying-for-the-adobe-stock-api)
   - [How can I contact Adobe Stock to discuss a business proposal or get technical assistance?](#how-can-i-contact-adobe-stock-to-discuss-a-business-proposal-or-get-technical-assistance)
   - [How much does it cost to access Adobe Stock API?](#how-much-does-it-cost-to-access-adobe-stock-api)
   - [What are the API calls limits?](#what-are-the-api-calls-limits)
-  - [How long does it take to validate my API key request?](#how-long-does-it-take-to-validate-my-api-key-request)
-  - [Can anyone apply for an API key?](#can-anyone-apply-for-an-api-key)
-  - [What are the criteria for applying for the Adobe Stock API?](#what-are-the-criteria-for-applying-for-the-adobe-stock-api)
   - [How can I test the Search API?](#how-can-i-test-the-search-api)
   - [How can I test the Licensing API?](#how-can-i-test-the-licensing-api)
   - [Where I can find a technical reference?](#where-i-can-find-a-technical-reference)
@@ -58,13 +59,12 @@ A list of questions and answers for customers and partners looking to use Stock 
   - [What are benefits of Adobe Affiliate Program?](#what-are-benefits-of-adobe-affiliate-program)
   - [Are there any examples of Adobe Stock API Affiliates use cases available online?](#are-there-any-examples-of-adobe-stock-api-affiliates-use-cases-available-online)
 
-<!-- /MarkdownTOC -->
-
-<a id="general-faq"></a>
 
 ## General FAQ
 
-<a id="how-can-i-contact-adobe-stock-to-discuss-a-business-proposal-or-get-technical-assistance"></a>
+### What are the criteria for applying for the Adobe Stock API?
+
+Because of recent changes to our APIs, if you are not a Stock for Enterprise customer you must apply for access. Please see [Getting started](./../getting-started/index.md) for more details.
 
 ### How can I contact Adobe Stock to discuss a business proposal or get technical assistance?
 
@@ -72,55 +72,25 @@ If you want to discuss a partnership with Adobe Stock please contact your Adobe 
 
 If you need technical help with your Stock API integration, please email <stockapis@adobe.com>. Please visit <https://developer.adobe.com/stock/docs/> for help resources, technical documentation and sample code.
 
-<a id="how-much-does-it-cost-to-access-adobe-stock-api"></a>
-
 ### How much does it cost to access Adobe Stock API?
 
 Use of the Adobe Stock API is free of charge. Charges may apply when you license images via the API.
-
-<a id="what-are-the-api-calls-limits"></a>
 
 ### What are the API calls limits?
 
 Currently we do not limit number of API requests, however we are monitoring usage and reserve the right to limit API calls or refuse API access for API keys which generate an unreasonable number of API calls.
 
-<a id="how-long-does-it-take-to-validate-my-api-key-request"></a>
-
-### How long does it take to validate my API key request?
-
-An individual integration doesn’t require validation. If you create an integration for your own use, your integration can work without being approved for production use.
-
-<a id="can-anyone-apply-for-an-api-key"></a>
-
-### Can anyone apply for an API key?
-
-Yes.
-
-<a id="what-are-the-criteria-for-applying-for-the-adobe-stock-api"></a>
-
-### What are the criteria for applying for the Adobe Stock API?
-
-Anyone can create an Adobe Stock API key at no cost by signing up for a free [Adobe ID account](https://developer.adobe.com/console).
-
-<a id="how-can-i-test-the-search-api"></a>
-
 ### How can I test the Search API?
 
 Create an Adobe Stock API key for free at <https://developer.adobe.com/console>.
-
-<a id="how-can-i-test-the-licensing-api"></a>
 
 ### How can I test the Licensing API?
 
 Please contact your Adobe account representative or [request a callback from the Enterprise team](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
 
-<a id="where-i-can-find-a-technical-reference"></a>
-
 ### Where I can find a technical reference?
 
 <https://developer.adobe.com/stock/docs/>
-
-<a id="what-standard-size-previews-are-available-via-the-api"></a>
 
 ### What standard size previews are available via the API?
 
@@ -136,19 +106,13 @@ Please contact your Adobe account representative or [request a callback from the
 
 All previews above are served from a content delivery network (CDN) for best performance.
 
-<a id="how-i-can-get-access-to-unwatermarked-previews-medium-or-high-resolution-size"></a>
-
 ### How I can get access to unwatermarked previews medium or high resolution size?
 
 This requires an Adobe Stock Enterprise contract. Please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) to learn more.
 
-<a id="i-am-using-fotolia-api-how-can-i-migrate-to-adobe-stock"></a>
-
 ### I am using Fotolia API. How can I migrate to Adobe Stock?
 
 You can find technical resources [here](/faq/18-fotolia-migration-resources.md).
-
-<a id="are-there-any-framework-agreements-which-govern-all-adobe-stock-api-partnerships"></a>
 
 ### Are there any framework agreements which govern all Adobe Stock API partnerships?
 
@@ -160,14 +124,10 @@ There are two essential documents:
 
 Please note that depending on your use case (see sections below), an additional contract may be required.
 
-<a id="stock-integration-with-magento"></a>
-
 ### Where can I learn about the Adobe Stock integration with Magento?
 
 Users of Magento Commerce 2.3.4 and newer have access to a pre-built integration with Adobe Stock inside the Page Builder. This allows users to search, license, and download Stock assets without leaving the Magento platform. Learn more about the [Adobe Stock Integration](https://docs.magento.com/user-guide/cms/adobe-stock.html) in the Magento documentation.
 
-
-<a id="definitions-and-terms"></a>
 
 ## Definitions and terms
 
@@ -189,11 +149,7 @@ __Standard license.__ This is a limited type of license offered on most Stock as
 
 **Server to Server integration**. A technical workflow where the application can authenticate to Adobe Stock without any human user interaction. This method is only available for Enterprise accounts.
 
-<a id="print-on-demand-faq"></a>
-
 ## Print on demand FAQ
-
-<a id="what-are-the-main-objectives-of-the-print-on-demand-use-case"></a>
 
 ### What are the main objectives of the print on demand use case?
 
@@ -203,8 +159,6 @@ You can implement the Search API and display search results from the Adobe Stock
 
 Consumer image subscriptions (subscription plans available at: <https://stock.adobe.com/plans> and https://stock.adobe.com/teams) **cannot be used** for print on demand, nor can "unlimited" Stock subscriptions included in Creative Cloud Pro/Plus agreements.
 
-<a id="what-type-of-assets-can-i-access-by-using-adobe-stock-api-for-print-on-demand"></a>
-
 ### What type of assets can I access by using Adobe Stock API for print on demand?
 
 Technically, the API will give access to any kind of asset, including Premium, Video, 3D, Templates, etc.
@@ -213,27 +167,19 @@ However, from a legal standpoint, Print on Demand customers may access __only St
 
 To filter out Premium content from Stock API search results, see the [Stock API FAQ](/faq/).
 
-<a id="what-is-an-online-example-of-the-adobe-stock-api-print-on-demand-use-case"></a>
-
 ### What are online examples of the Adobe Stock API Print on Demand use case?
 
 * https://nikkel-art.com
 * https://www.wallsauce.com/
 
 
-<a id="what-is-the-print-on-demand-pricing-model"></a>
-
 ### What is the Print on demand pricing model?
 
 Pricing is based on volume and assumes a minimum purchase up front. Please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) for pricing information.
 
-<a id="do-i-need-a-contract-to-start-my-api-print-on-demand-business"></a>
-
 ### Do I need a contract to start my API Print on demand business?
 
 Yes. Please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) to get a contract.
-
-<a id="is-there-any-software-with-build-in-support-or-software-developers-specialized-in-integrating-adobe-stock-api-for-print-on-demand"></a>
 
 ### Is there any software with build-in support or software developers specialized in integrating Adobe Stock API for Print-on-demand?
 
@@ -244,11 +190,7 @@ Yes. Please contact your Adobe account representative or [request a callback](ht
 * Durst Smart Shop: https://durst-professional-services.com/en/smart-shop
 * OnPrintShop: https://www.onprintshop.com/
 
-<a id="enterprise-faq"></a>
-
 ## Enterprise FAQ
-
-<a id="do-i-need-to-sign-a-contract-to-build-my-enterprise-integration"></a>
 
 ### Do I need to sign a contract to build my Enterprise integration?
 
@@ -256,13 +198,9 @@ If you are an existing Enterprise customer, typically your use of the API is inc
 
 If you are not an Adobe Stock Enterprise customer, please [request a callback from the Enterprise team](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
 
-<a id="is-there-a-separate-cost-to-use-the-stock-api"></a>
-
 ### Is there a separate cost to use the Stock API?
 
 No. Usage of the Stock API is free for all users.
-
-<a id="how-can-i-automate-my-stock-workflows"></a>
 
 ### How can I automate my Stock workflows?
 
@@ -286,23 +224,15 @@ For more information, please see the [Adobe Stock Additional Terms](http://www.a
 Despite the concerns stated above, it is technically possible to use a Server to Server integration with CC Pro plans for internal automation tasks but requires Adobe business approval of the use case and help from the Stock product team. Please contact us only if you understand the use restrictions and have a legitimate business requirement.
 
 
-<a id="marketing-platforms-faq"></a>
-
 ## Marketing Platforms FAQ
-
-<a id="what-are-the-common-use-cases-of-marketing-platform-integrations"></a>
 
 ### What are the common use cases of Marketing Platform integrations?
 
 You can integrate Adobe Stock with your e-mail platform, Content Management System (CMS), advertisement builder tool or social media marketing and management tool.
 
-<a id="what-are-the-benefits-of-integrating-adobe-stock-into-a-marketing-platform"></a>
-
 ### What are the benefits of integrating Adobe Stock into a Marketing Platform?
 
 Customers can benefit from a seamless experience of searching and licensing Adobe Stock assets from within their own application.
-
-<a id="do-i-need-sign-a-contract-to-build-my-marketing-platform-integration"></a>
 
 ### Do I need sign a contract to build my marketing platform integration?
 
@@ -310,11 +240,7 @@ That depends on your desired workflow. If you want allow your customers to login
 
 If you want to use your company’s own Adobe account to license assets which may be used by your customers on your platform, please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) to work on a contract.
 
-<a id="dams-faq"></a>
-
 ## DAMs FAQ
-
-<a id="do-i-need-to-sign-a-contract-to-build-my-dammam-platform-integration"></a>
 
 ### Do I need to sign a contract to build my DAM/MAM platform integration?
 
@@ -324,31 +250,21 @@ Further, the developer can create an Adobe OAuth integration, which will allow e
 
 If the DAM provider needs to create an integration for an Adobe Enterprise customer, some additional steps will be required. Please contact us for more information on this use case.
 
-<a id="does-adobe-stock-have-a-pre-built-integration-with-the-_____-dam-platform-or-can-adobe-stock-build-an-integration-with-____-platform"></a>
-
 ### Does Adobe Stock have a pre-built integration with the my DAM platform? (or) Can Adobe Stock build an integration with my platform?
 
 Adobe Stock has a pre-built integration with with the [Adobe Experience Manager](https://www.adobe.com/marketing/experience-manager.html) (AEM) Assets platform. If you are an AEM user, see [more information here](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/manage/aem-assets-adobe-stock).
 
 Adobe will be happy to work with any platform provider or customer who wishes to create a new integration, and can provide technical support, sample code and architecture guidance, but does not have the resources to perform the integration work. 
 
-<a id="affiliates-faq"></a>
-
 ## Affiliates FAQ
-
-<a id="how-can-i-earn-affiliate-commissions-by-promoting-adobe-stock"></a>
 
 ### How can I earn affiliate commissions by promoting Adobe Stock?
 
 You can connect your API integration with [the Adobe Affiliate Program](https://www.adobe.com/affiliates.html).
 
-<a id="how-can-the-adobe-stock-api-help-me-earn-by-promoting-adobe-stock"></a>
-
 ### How can the Adobe Stock API help me earn by promoting Adobe Stock?
 
 Instead of displaying static banners, text links, you can use the Adobe Stock Search API to engage your visitors, which increases the chance they purchase from stock.adobe.com. This will increase your commissions.
-
-<a id="what-are-benefits-of-adobe-affiliate-program"></a>
 
 ### What are benefits of Adobe Affiliate Program?
 
@@ -357,14 +273,10 @@ High commission: $72 when referred user subscribe to a plan with minimum 10 imag
 Cross marketing opportunity. Earn when your referred users purchase one of other Adobe products: Creative Cloud and Document Cloud.
 
 <!--
-<a id="are-there-any-example-scripts-to-get-started"></a>
-
 ### Are there any example scripts to get started?
 
 See the Medium article, “[Get Paid to Search Adobe Stock](https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312).”
 -->
-
-<a id="are-there-any-examples-of-adobe-stock-api-affiliates-use-cases-available-online"></a>
 
 ### Are there any examples of Adobe Stock API Affiliates use cases available online?
 

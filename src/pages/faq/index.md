@@ -15,6 +15,7 @@ description: Stock API Frequently Asked Questions.
 
 A list of technical frequently asked questions. Don't see your question answered here? Email us at stockapis@adobe.com. If you are looking for the Stock API Business FAQ, it is [located here](/faq/stock-api-business-faq.md).
 - [General](#general)
+  - [Why is my project in a "read-only" state? Why can't I create a new Stock API integration?](#why-is-my-project-in-a-read-only-state-why-cant-i-create-a-new-stock-api-integration)
   - [What thumbnail preview sizes are available?](#what-thumbnail-preview-sizes-are-available)
   - [Why don't all assets show up in Search API results?](#why-dont-all-assets-show-up-in-search-api-results)
   - [Why am I getting 429 errors from the API?](#why-am-i-getting-429-errors-from-the-api)
@@ -40,6 +41,12 @@ A list of technical frequently asked questions. Don't see your question answered
 <a id="general"></a>
 
 ## General
+
+### Why is my project in a "read-only" state? Why can't I create a new Stock API integration?
+
+This is due to a recent change by the Adobe Stock business to restrict access to the Stock APIs to only Stock for Enterprise customers and Adobe Affiliates. This applies to new and existing integrations. Existing API keys will continue to work, but to make changes to your project, you will need to request access.
+
+Please see [Getting started](./../getting-started/index.md) for more details.
 
 <a id="what-thumbnail-preview-sizes-are-available"></a>
 
