@@ -16,7 +16,7 @@ description: Stock API Frequently Asked Questions.
 
 A list of questions and answers for customers and partners looking to use Stock APIs, from a business perspective. For technical questions on the Stock APIs, see the [Technical FAQ](/faq/).
 
-<InlineAlert variant="warning">
+<InlineAlert variant="warning" />
 
 Please note that the Stock API is only open to Stock for Enterprise customers and Adobe Affiliates at this time. See [Getting started](./../getting-started/index.md) for more details. 
 
@@ -280,4 +280,6 @@ See the Medium article, “[Get Paid to Search Adobe Stock](https://medium.com/a
 
 ### Are there any examples of Adobe Stock API Affiliates use cases available online?
 
-Freepik is a partner of Adobe Stock, and it has banners and custom search result widgets for Stock available on most search pages: https://www.freepik.com/search?format=search&query=dogs
+Eezy is a partner of Adobe Stock, and it has banners and custom search result widgets for Stock available on its video search pages. 
+
+Example: https://www.vecteezy.com/search?content_type=video&qterm=planet-saturn
