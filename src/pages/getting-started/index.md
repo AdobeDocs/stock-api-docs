@@ -24,9 +24,21 @@ Beginning in November, 2024, the Stock API will only be available to Stock for E
 
 If you are a Stock for Enterprise customer, then you can create a [Server to Server integration](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/), which does not require a login. Go to [Overview](#overview) to begin.
 
-If you do not have Stock for Enterprise, then you will not be able to create an integration at this time without being accepted into a program unless you have a compelling business reason or have an Adobe business sponsor. Adobe affiliates who are approved to join the Adobe campaign may be pre-approved.
+If you do not have Stock for Enterprise or in the [Adobe Affiliate program](#adobe-affiliates), then you will not be able to create an integration at this time without being accepted into a program unless you have a compelling business reason or have an Adobe business sponsor. Adobe affiliates who are approved to join the Adobe campaign may be pre-approved.
 
-The approval process is still being rolled out. You may email [the Stock API team](mailto:stockapis@adobe.com) with questions.
+**Please note that existing integrations with OAuth User authentication credentials will be in a "read-only" mode until you request approval. You will not be able to make changes to your existing integrations without approval.**
+
+## Approval process
+
+If you are not a Stock for Enterprise customer, the easiest approval method is to join the [Adobe Affiliate](#adobe-affiliates) program.
+
+1.  All users: Apply [here to the Adobe Prerelease program for the Stock API](https://www.adobeprerelease.com/beta/79B872A3-CA32-4674-F795-AFABA6AE25DC).
+
+2.  If you are not an Adobe Affiliate, [fill out this survey](https://survey.adobe.com/jfe/form/SV_9mMgSGa8OfhDTSe) to give us details about your application and intended use of the Stock API. Some questions are optional, but the more details you give, the better your chances for being accepted.
+
+Approval is not required for Stock for Enteprise customers unless you need to create an [OAuth User authentication](https://developer.adobe.com/developer-console/docs/guides/authentication/UserAuthentication/) credential. Enterprise customers can create Server-to-server authentication credentials without an issue. For User authentication, you must apply to the Prerelease program.
+
+You may email [the Stock API team](mailto:stockapis@adobe.com) with questions.
 
 <!--
 To request approval: Go to https://www.adobeprerelease.com and join the "Adobe Stock API" program. As noted, if you have been approved to join the Adobe Affiliate program, then you should be approved to use the Stock API. 
