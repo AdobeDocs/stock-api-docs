@@ -1,0 +1,63 @@
+type: navigation
+order: 1
+title: Adobe Stock API documentation
+pages:
+  - title: Getting started with the Adobe Stock API
+    url: /src/pages/getting-started/index.md
+
+  - title: Register your application
+    url: /src/pages/getting-started/02-register-app.md
+
+  - title: API authentication headers
+    url: /src/pages/getting-started/03-api-authentication.md
+
+  - title: Creating Adobe Stock applications
+    url: /src/pages/getting-started/04-creating-apps.md
+
+  - title: Searching for assets
+    url: /src/pages/getting-started/apps/05-search-for-assets.md
+
+  - title: Licensing assets and stuff
+    url: /src/pages/getting-started/apps/06-licensing-assets.md
+
+  - title: Stock workflow guides
+    url: /src/pages/getting-started/07-workflow-guides.md
+
+  - title: Sample code and SDKs
+    url: /src/pages/getting-started/08-sample-code-sdks.md
+
+  - title: Adobe Stock API reference
+    url: /src/pages/api/index.md
+
+  - title: Headers for Stock API calls
+    url: /src/pages/api/10-headers-for-api-calls.md
+
+  - title: Search API reference
+    url: /src/pages/api/11-search-reference.md
+
+  - title: Files API for bulk metadata
+    url: /src/pages/api/19-bulk-metadata-files-reference.md
+
+  - title: Licensing reference
+    url: /src/pages/api/12-licensing-reference.md
+
+  - title: License history reference
+    url: /src/pages/api/13-license-history.md
+
+  - title: Category tree reference
+    url: /src/pages/api/17-categorytree.md
+
+  - title: Locale codes
+    url: /src/pages/api/14-locale-codes.md
+
+  - title: Stock API technical FAQ
+    url: /src/pages/faq/index.md
+
+  - title: Stock API business FAQ
+    url: /src/pages/faq/stock-api-business-faq.md
+
+  - title: Adobe Stock developer terms
+    url: /src/pages/faq/terms-for-adobe-stock-developers.md
+
+  - title: Fotolia migration resources
+    url: /src/pages/faq/18-fotolia-migration-resources.md
