@@ -56,7 +56,10 @@ See [Headers for Stock API Calls](/api/10-headers-for-api-calls.md) for details 
 
 The response for any given request is dependent on the value of the `result_columns` argument. As mentioned, the only field returned by default is `id` (Stock asset ID, integer).
 
-For a complete list of return fields, see the [Search API reference](/api/11-search-reference.md#url-parameters).
+<!-- Start include -->
+import Responses from './search-files-responses.md'
+<Responses />
+<!-- End include -->
 
 <a id="example-requests-and-responses"></a>
 

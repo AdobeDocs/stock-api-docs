@@ -93,7 +93,7 @@ In the table below, fields marked with **\*** are returned by default.
 |---------------|-----------------|
 | \*nb_results| Total number of found assets in the search result. Integer. |
 | \*license| License type (`Standard`, `Standard_M`, `Extended`, `Video_HD`, `Video_4K`). String. |
-| \*license_date| Date asset was licensed, formatted for the provided locale. This format is not intended for machine parsing and subject to change. String. |
+| \*license_date| Date asset was licensed. String. |
 | \*download_url| URL to download the licensed asset (requires authentication). String. |
 | \*id| Item ID. Integer. |
 | \*title| Item title. String. |
