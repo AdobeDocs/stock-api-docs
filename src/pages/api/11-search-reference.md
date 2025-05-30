@@ -634,8 +634,11 @@ The Adobe Stock Search service returns information about all found assets that a
 **Tip:** Assets on Adobe Stock can be added, changed, or removed by other parties between your API calls. Therefore, the total number of matching assets and the selection of assets can change between successive calls to Search.
 
 <!-- Start include -->
+
 import Responses from './search-files-responses.md'
+
 <Responses />
+
 <!-- End include -->
 
 <a id="example-queries-and-responses"></a>
