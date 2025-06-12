@@ -17,7 +17,7 @@ These guides are meant to supplement the API documentation with detailed instruc
 
 *   **[Integrating Adobe Stock with an Enterprise DAM](/Stock-DAM-integrations.pdf).** Describes a generic workflow for creating an integration between Adobe Stock and a Digital Asset Management (DAM) system.
 *   **[Enterprise Server-to-server integration](https://developer.adobe.com/developer-console/docs/guides/authentication/ServiceAccountIntegration/).** This is for customers with Adobe Stock enterprise entitlements who want to create an integration between their application and their Stock account without requiring users to sign in. This can be used for automated flows.
-    *  [Guide specific to Adobe Stock customers](/Service-Account-API-workflow.pdf). 
+    *  [Detailed workflow guide specific to Adobe Stock Enterprise customers](/Service-Account-API-workflow.pdf). 
 *   **[OAuth (auth code) integration](https://developer.adobe.com/developer-console/docs/guides/authentication/OAuthIntegration/).** This can be used for authenticating any type of user who has an Adobe Stock account so they can access protected resources such as the License API.
     *  Note that if your application is being created for an Adobe Enterprise customer (including most Print on Demand customers), OAuth is *not* the correct workflow for you. Instead, choose Service Account (above.) OAuth integrations always require an interactive user login--it cannot be fully automated.
 *   **[Affiliate workflow (search only)](/Affiliate-API-workflow.pdf).** This guide covers how to integrate with the Search API and redirect users to the Adobe Stock website to complete the transaction.
