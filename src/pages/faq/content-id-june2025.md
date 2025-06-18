@@ -1,6 +1,6 @@
 # Adobe Stock Content ID changes ⚠️
 
-<InlineAlert variant="warning" />
+<InlineAlert variant="warning" slots="text" />
 
 **Are you affected by this change?**
 
