@@ -16,6 +16,7 @@ description: Stock API Frequently Asked Questions.
 A list of technical frequently asked questions. Don't see your question answered here? Email us at stockapis@adobe.com. If you are looking for the Stock API Business FAQ, it is [located here](/faq/stock-api-business-faq.md).
 - [General](#general)
   - [Why is my project in a "read-only" state? Why can't I create a new Stock API integration?](#why-is-my-project-in-a-read-only-state-why-cant-i-create-a-new-stock-api-integration)
+  - [Will I be affected by changes to the Stock Content ID system?](#will-i-be-affected-by-changes-to-the-stock-content-id-system)
   - [What thumbnail preview sizes are available?](#what-thumbnail-preview-sizes-are-available)
   - [Why don't all assets show up in Search API results?](#why-dont-all-assets-show-up-in-search-api-results)
   - [Why am I getting 429 errors from the API?](#why-am-i-getting-429-errors-from-the-api)
@@ -47,6 +48,12 @@ A list of technical frequently asked questions. Don't see your question answered
 This is due to a recent change by the Adobe Stock business to restrict access to the Stock APIs to only Stock for Enterprise customers and Adobe Affiliates. This applies to new and existing integrations. Existing API keys will continue to work, but to make changes to your project, you will need to request access.
 
 Please see [Getting started](./../getting-started/index.md) for more details.
+
+### Will I be affected by changes to the Stock Content ID system?
+
+Adobe Stock uses a sequential numbering system for its assets, and currently the number type is not large enough to handle the pace of incoming new content. As a result, Stock will "run out" of numbers by the end of 2025 unless it changes to a number type that accomodates longer numbers. The current limit supported by the Stock API is 2,147,483,647 ([32-bit signed integer](https://en.wikipedia.org/wiki/2,147,483,647)), and the new limit will be 9,007,199,254,740,991 ([2<sup>53</sup> - 1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)).
+
+If your programming language or database has similar limits, you will need to update your infrastructure to accept the new limit. Otherwise, your integration could break in the future. For more information, see [Adobe Stock Content ID changes](./content-id-june2025.md).
 
 <a id="what-thumbnail-preview-sizes-are-available"></a>
 
