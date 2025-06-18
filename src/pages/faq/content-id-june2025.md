@@ -16,12 +16,12 @@ This is a short list of programming languages (not a comprehensive list, and if 
 | Name | Migration | Implementation | Limit |
 | --- | --- | --- | --- |
 | JavaScript and TypeScript | No work needed | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER | 9,007,199,254,740,991 (2<sup>53</sup> - 1) |
-| PostgreSQL | Migrate to bigint | https://www.postgresql.org/docs/current/datatype-numeric.html | INT limit: 2,147,483,647<br>BIGINT limit: 2<sup>63</sup> - 1 |
-| MySQL | Migrate to BIGINT | https://dev.mysql.com/doc/refman/8.4/en/integer-types.html | INT limit: 2,147,483,647<br>BIGINT limit: 2<sup>63</sup> - 1 |
-| Python | No work if using Python 3 or 64-bit version of Python 2 | https://docs.python.org/3/library/functions.html#int | No limit in Python 3: based on available memory<br>Limit for Python 2: 2<sup>63</sup> - 1 for 64 bit systems |
-| PHP | If using 64-bit version, no work needed | https://www.php.net/manual/en/reserved.constants.php#constant.php-int-max |  2,147,483,647 in 32-bit systems<br>2<sup>63</sup> - 1 for 64-bit  |
-| Java | Migrate from Integer to Long | https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html | int limit: 2,147,483,647<br>long limit: 2<sup>63</sup> - 1 |
-| .NET | Migrate to System.Int64 | https://learn.microsoft.com/en-us/dotnet/standard/numerics | System.Int32:  2,147,483,647<br>System.Int64: 2<sup>63</sup> - 1 |
+| PostgreSQL | Migrate to bigint | https://www.postgresql.org/docs/current/datatype-numeric.html | INT limit: 2,147,483,647<br/>BIGINT limit: 2<sup>63</sup> - 1 |
+| MySQL | Migrate to BIGINT | https://dev.mysql.com/doc/refman/8.4/en/integer-types.html | INT limit: 2,147,483,647<br/>BIGINT limit: 2<sup>63</sup> - 1 |
+| Python | No work if using Python 3 or 64-bit version of Python 2 | https://docs.python.org/3/library/functions.html#int | No limit in Python 3: based on available memory<br/>Limit for Python 2: 2<sup>63</sup> - 1 for 64 bit systems |
+| PHP | If using 64-bit version, no work needed | https://www.php.net/manual/en/reserved.constants.php#constant.php-int-max |  2,147,483,647 in 32-bit systems<br/>2<sup>63</sup> - 1 for 64-bit  |
+| Java | Migrate from Integer to Long | https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html | int limit: 2,147,483,647<br/>long limit: 2<sup>63</sup> - 1 |
+| .NET | Migrate to System.Int64 | https://learn.microsoft.com/en-us/dotnet/standard/numerics | System.Int32:  2,147,483,647<br/>System.Int64: 2<sup>63</sup> - 1 |
 | Swift | No work if using 64-bit system | https://developer.apple.com/documentation/swift/int | On 32-bit platforms, Int is the same size as Int32, and on 64-bit platforms, Int is the same size as Int64. |
 
 Please understand that we must make these changes to our system to continue accepting content and running the Stock business.
