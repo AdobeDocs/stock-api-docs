@@ -56,6 +56,9 @@ pages:
   - title: Stock API business FAQ
     url: /src/pages/faq/stock-api-business-faq.md
 
+  - title: ⚠️ Stock Content ID changes
+    url: /src/pages/faq/content-id-june2025.md
+
   - title: Adobe Stock developer terms
     url: /src/pages/faq/terms-for-adobe-stock-developers.md
 

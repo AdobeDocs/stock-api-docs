@@ -100,6 +100,10 @@ module.exports = {
         path: '/faq/stock-api-business-faq.md',
       },
       {
+        path: '/faq/content-id-june2025.md',
+        title: '⚠️ Stock Content ID changes',
+      },
+      {
         path: '/faq/terms-for-adobe-stock-developers.md',
         title: 'Adobe Stock developer terms',
       },
