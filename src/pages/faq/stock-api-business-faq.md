@@ -16,7 +16,7 @@ description: Stock API Frequently Asked Questions.
 
 A list of questions and answers for customers and partners looking to use Stock APIs, from a business perspective. For technical questions on the Stock APIs, see the [Technical FAQ](/faq/).
 
-<InlineAlert variant="warning" />
+<InlineAlert variant="warning"  slots="text" />
 
 Please note that the Stock API is only open to Stock for Enterprise customers and Adobe Affiliates at this time. See [Getting started](./../getting-started/index.md) for more details. 
 
