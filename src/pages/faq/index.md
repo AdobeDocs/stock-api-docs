@@ -17,6 +17,7 @@ A list of technical frequently asked questions. Don't see your question answered
 - [General](#general)
   - [Why is my project in a "read-only" state? Why can't I create a new Stock API integration?](#why-is-my-project-in-a-read-only-state-why-cant-i-create-a-new-stock-api-integration)
   - [Will I be affected by changes to the Stock Content ID system?](#will-i-be-affected-by-changes-to-the-stock-content-id-system)
+  - [Is there a Stock Contributors API?](#is-there-a-stock-contributors-api)
   - [What thumbnail preview sizes are available?](#what-thumbnail-preview-sizes-are-available)
   - [Why don't all assets show up in Search API results?](#why-dont-all-assets-show-up-in-search-api-results)
   - [Why am I getting 429 errors from the API?](#why-am-i-getting-429-errors-from-the-api)
@@ -56,6 +57,12 @@ Adobe Stock uses a sequential numbering system for its assets, and currently the
 If your programming language or database has similar limits, you will need to update your infrastructure to accept the new limit. Otherwise, your integration could break in the future. For more information, see [Adobe Stock Content ID changes](./content-id-june2025.md).
 
 <a id="what-thumbnail-preview-sizes-are-available"></a>
+
+### Is there a Stock Contributors API?
+
+No, there is currently no Stock Contributors API available. There is no public API to get sales data, see top sellers, see creation dates or upload new Stock content. Integrators requesting API access for this purpose will be rejected. If you look at the documentation, you will see that the Stock APIs can only be used to search, get metadata, get license history and license and download content.
+
+Contributors must use the [Stock Contributors portal](https://contributor.stock.adobe.com/) to manage their content.
 
 ### What thumbnail preview sizes are available?
 

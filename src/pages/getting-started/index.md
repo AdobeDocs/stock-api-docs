@@ -30,7 +30,9 @@ If you do not have Stock for Enterprise or in the [Adobe Affiliate program](#ado
 
 ## Approval process
 
-If you are not a Stock for Enterprise customer, the easiest approval method is to join the [Adobe Affiliate](#adobe-affiliates) program.
+If you are not a Stock for Enterprise customer, the easiest approval method is to join the [Adobe Affiliate](#adobe-affiliates) program. If you are not a Stock for Enterprise customer or an Adobe Affiliate, you must apply for access and fill out the survey.
+
+Please understand that approvals will first be given to Adobe Stock customers with active (non-trial) plans. **Approvals will NOT be given to Contributor use cases because there is no API for Stock Contributors. There is no API to get sales data, see top sellers, see creation dates or upload new Stock content.** Those actions must be performed in the [Stock Contributors portal](https://contributor.stock.adobe.com/). 
 
 1.  All users: Apply [here to the Adobe Prerelease program for the Stock API](https://www.adobeprerelease.com/beta/79B872A3-CA32-4674-F795-AFABA6AE25DC).
 
