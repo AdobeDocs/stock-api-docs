@@ -167,15 +167,13 @@ Pass the following URL parameters with the GET request.
                     How closely it matches your search request, closest matches first.</li>
                 <li><inlineCode>creation</inlineCode><br />
                     Creation date in descending order (newest first).</li>
-                <li><inlineCode>featured</inlineCode><br />
-                    Attempts to display the highest quality content first, as scored by Adobe Sensei's machine
-                    learning
-                    algorithms. In practice, it performs best on lifestyle imagery.</li>
                 <li><inlineCode>nb_downloads</inlineCode><br />
                     In descending order by the number of downloads by all users since the asset was added to Adobe
                     Stock.</li>
                 <li><inlineCode>undiscovered</inlineCode><br />
                     Starting with assets that have not commonly been viewed or downloaded.</li>
+                <li><inlineCode><s>featured</s></inlineCode><br />
+                    This feature will be deprecated and revert to a <inlineCode>relevance</inlineCode> sort.</li>
             </ul>
         </td>
     </tr>
