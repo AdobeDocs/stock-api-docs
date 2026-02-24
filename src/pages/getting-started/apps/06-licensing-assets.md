@@ -15,7 +15,7 @@ description: Getting started with the Adobe Stock API. Build an API application 
 
 \* Not a very catchy title, but there's more to this topic than how to get a license! Use the Member/Profile API to check the status of an asset you want to purchase and your current quota, use Content/License to get a license, and download your asset. Also, use the Member/LicenseHistory API to get a list of past purchases.
 
-<a id="licensing-workflow"></a>
+\<a id="licensing-workflow"\>\</a\>
 
 ## Licensing workflow
 
@@ -27,7 +27,7 @@ Before you can purchase an asset using the API, there are a few tasks you will w
 
 ![Create access token](./Licensing-assets1.png)
 
-<a id="1-get-a-token"></a>
+\<a id="1-get-a-token"\>\</a\>
 
 ### 1. Get a token
 
@@ -35,7 +35,7 @@ To do any activity involving licensing, you will first need to generate an acces
 
 ![Find asset](./Licensing-assets2.png)
 
-<a id="2-get-stock-asset-id"></a>
+\<a id="2-get-stock-asset-id"\>\</a\>
 
 ### 2. Get Stock asset ID
 
@@ -61,7 +61,7 @@ For example, your user wants to license an image of a cute, fluffy kitten (and w
 
 ![Check if licensed](./Licensing-assets4.png)
 
-<a id="3-check-if-licensed"></a>
+\<a id="3-check-if-licensed"\>\</a\>
 
 ### 3. Check if licensed
 
@@ -124,7 +124,7 @@ In both cases, if the asset *is* licensed, then there is nothing else to do but 
 
 ![Is licensing possible](./Licensing-assets5.png)
 
-<a id="4-check-if-licensing-is-possible"></a>
+\<a id="4-check-if-licensing-is-possible"\>\</a\>
 
 ### 4. Check if licensing is possible
 
@@ -132,7 +132,7 @@ Assuming the asset is not already licensed, then you will check to see if it's p
 
 For this step, you will use the **Member/Profile** API. In addition to checking if the asset can be licensed, this will return the user's quota and also return a localized message about how many credits the license will cost. Getting the quota is useful as you can show that the user has "X" number of credits in your application's UI.
 
-For the query string, you will need to provide the Stock ID with the `content_id` parameter. Ideally, also provide the license type if it is known (because some assets can have multiple license types); for images the normal default is "Standard." Refer to the [Licensing API reference](/api/12-licensing-reference/) for more details. Also, if you want a localized message, also provide the language code.
+For the query string, you will need to provide the Stock ID with the `content_id` parameter. Ideally, also provide the license type if it is known (because some assets can have multiple license types); for images the normal default is "Standard." Refer to the [Licensing API reference](/api/12-licensing-reference.md) for more details. Also, if you want a localized message, also provide the language code.
 
 ```shell
 curl "https://stock.adobe.io/Rest/Libraries/1/Member/Profile?content_id=112670342&license=Standard&locale=en_US" \
@@ -167,7 +167,7 @@ In the example, you can see that the `purchase_options.state` is "possible," whi
 
 ![Get a license](./Licensing-assets6.png)
 
-<a id="5-license-the-asset"></a>
+\<a id="5-license-the-asset"\>\</a\>
 
 ### 5. License the asset
 
@@ -216,10 +216,10 @@ Response:
 
 The response returns several fields, but the most important for your user is in the `contents.XXXX.purchase_details` object (where "XXXX" is the Stock ID). Here you will find the URL you will need to download the asset. In addition, if you want to update your UI, you can get the updated quota value from the response field `available_entitlement.quota`.
 
-<br/><br/>
+\<br/\>\<br/\>
 ![Download asset](./Licensing-assets7.png)
 
-<a id="6-download-the-file"></a>
+\<a id="6-download-the-file"\>\</a\>
 
 ### 6. Download the file
 
@@ -258,7 +258,7 @@ Content-Type: image/jpeg
 Date: Mon, 06 Nov 2017 03:18:50 GMT
 ```
 
-<a id="follow-the-redirects"></a>
+\<a id="follow-the-redirects"\>\</a\>
 
 #### Follow the redirects...
 
@@ -293,7 +293,7 @@ And you are done!
 
 ...assuming nothing went wrong. If it did, then continue reading. Also, check out common questions and answers about licensing assets.
 
-<a id="getting-license-history"></a>
+\<a id="getting-license-history"\>\</a\>
 
 ## Getting license history
 
@@ -340,7 +340,7 @@ Notice that one of the fields returned is the download URL, making this a conven
 https://stock.adobe.com/Download/DownloadFileDirectly/ikMRKBPqHDrtTifHkbbxGfKhIGVQPw6y?token=AccessTokenHere
 ```
 
-Note that *by default* the License History API does not return *all* history for the organization, but only for the current user and/or Stock profile. For example, if your Enterprise organization has 30 profiles (i.e., Product License Configurations, or PLCs) and you call this API, you will only get back the license history for one of the 30 profiles. The current profile is either determined by which profile you have selected in the Adobe Stock website, or by which Enterprise service account is associated with that profile--see the [Enterprise service account](/Service-Account-API-workflow.pdf) workflow guide for more information.
+Note that *by default* the License History API does not return *all* history for the organization, but only for the current user and/or Stock profile. For example, if your Enterprise organization has 30 profiles (i.e., Product License Configurations, or PLCs) and you call this API, you will only get back the license history for one of the 30 profiles. The current profile is either determined by which profile you have selected in the Adobe Stock website, or by which Enterprise service account is associated with that profile--see the [Enterprise service account](/stock/docs/Service-Account-API-workflow.pdf) workflow guide for more information.
 
 To retrieve all the license history across all profiles, use the command `all=true`. Example:
 
@@ -353,22 +353,22 @@ curl "https://stock.adobe.io/Rest/Libraries/1/Member/LicenseHistory?all=true" \
 
 Visit the [License history API reference](/api/13-license-history.md) for more information.
 
-<a id="next-steps"></a>
+\<a id="next-steps"\>\</a\>
 
 ## Next steps
 
 You have completed the Adobe Stock API getting started guide.
 
-*   If you want more detail on anything you have read thus far, explore the [API reference documentation](/api/).
+*   If you want more detail on anything you have read thus far, explore the [API reference documentation](/api/index.md).
 *   If you are ready to get started in earnest, browse our [sample code and SDKs](/getting-started/08-sample-code-sdks.md).
 
-<a id="troubleshooting-licensing-requests"></a>
+\<a id="troubleshooting-licensing-requests"\>\</a\>
 
 ## Troubleshooting licensing requests
 
 In most cases, everything should happen as outlined above. But if it doesn't, you need to know how to diagnose the issue and correct it.
 
-<a id="memberprofile-issues"></a>
+\<a id="memberprofile-issues"\>\</a\>
 
 ### Member/Profile issues
 
@@ -386,7 +386,7 @@ If this happens, you can build some checks into your application.
 
 ![Premium or Video asset](./Licensing-assets8.png)
 
-<a id="problem-asset-type-cant-be-licensed"></a>
+\<a id="problem-asset-type-cant-be-licensed"\>\</a\>
 
 #### Problem: Asset type can't be licensed
 
@@ -443,7 +443,7 @@ Video assets could have a premium_level of 0, but simply because the content typ
 
 ![Purchase credits](./Licensing-assets9.png)
 
-<a id="solution-purchase-universal-credits-or-upgrade-your-plan"></a>
+\<a id="solution-purchase-universal-credits-or-upgrade-your-plan"\>\</a\>
 
 #### Solution: Purchase universal credits or upgrade your plan
 
@@ -453,7 +453,7 @@ If you *do* belong to an enterprise organization, you will need to contact your 
 
 ![alt_text](./Licensing-assets10.png)
 
-<a id="problem-no-credits-or-not-enough-credits"></a>
+\<a id="problem-no-credits-or-not-enough-credits"\>\</a\>
 
 #### Problem: No credits or not enough credits
 
@@ -482,7 +482,7 @@ In both cases, if `purchase_options.requires_checkout` is `true` but licensing i
 
 ![Add credits to PLC](./Licensing-assets11.png)
 
-<a id="solution-enterprise-add-quota-to-your-plc"></a>
+\<a id="solution-enterprise-add-quota-to-your-plc"\>\</a\>
 
 #### Solution (enterprise): Add quota to your PLC
 
@@ -494,7 +494,7 @@ Note that admins can only add more credits for the type of assets they have agre
 
 ![Purchase credits](./Licensing-assets9.png)
 
-<a id="solution-non-enterprise-buy-credits-or-save-payment-info"></a>
+\<a id="solution-non-enterprise-buy-credits-or-save-payment-info"\>\</a\>
 
 #### Solution (non-enterprise): Buy credits or save payment info
 
@@ -504,7 +504,7 @@ Note that some assets (such as some Creative Cloud templates) are free, and do n
 
 ![Contact Support](./Licensing-assets13.png)
 
-<a id="solution-look-further-or-get-help"></a>
+\<a id="solution-look-further-or-get-help"\>\</a\>
 
 #### Solution: Look further or get help
 
@@ -512,13 +512,13 @@ In the unlikely case where you do have credits *and* licensing is possible, then
 
 If none of those things are happening, then contact [Adobe Stock Support](https://helpx.adobe.com/support.html#/product/stock). Note that this support channel is for Stock customers. If you are a developer working on an application, contact the [Stock API team](mailto:stockapis@adobe.com?subject=%5BAdobe%20I%2FO%5D%20Stock%20API%20help) for further direction.
 
-<a id="other-problems"></a>
+\<a id="other-problems"\>\</a\>
 
 ### Other problems
 
-In the previous cases, Member/Profile and the other APIs will return a valid 200 response. But in the cases below, you will get a 400 error. Here are a couple common reasons, but see more in the [Stock API reference](../../01-getting-started.md) section.
+In the previous cases, Member/Profile and the other APIs will return a valid 200 response. But in the cases below, you will get a 400 error. Here are a couple common reasons, but see more in the [Stock API reference](../01-getting-started.md) section.
 
-<a id="wrong-license-type"></a>
+\<a id="wrong-license-type"\>\</a\>
 
 #### Wrong license type
 
@@ -532,7 +532,7 @@ You can get this error if you try to license an asset with a mismatched license 
 }
 ```
 
-<a id="expired-or-invalid-token"></a>
+\<a id="expired-or-invalid-token"\>\</a\>
 
 #### Expired or invalid token
 
@@ -545,11 +545,11 @@ As a best practice, your user should have to sign in for each session, or if you
 }
 ```
 
-<a id="qa"></a>
+\<a id="qa"\>\</a\>
 
 ## Q&A
 
-<a id="can-i-find-out-how-many-credits-are-remaining"></a>
+\<a id="can-i-find-out-how-many-credits-are-remaining"\>\</a\>
 
 #### Can I find out how many credits are remaining?
 
@@ -589,7 +589,7 @@ Response:
 }
 ```
 
-<a id="how-can-i-tell-if-the-user-has-an-enterprise-entitlement"></a>
+\<a id="how-can-i-tell-if-the-user-has-an-enterprise-entitlement"\>\</a\>
 
 #### How can I tell if the user has an enterprise entitlement?
 
@@ -603,7 +603,7 @@ This can also be done using the **Member/Profile** API. In the previous example,
 
 One thing to note is that Adobe Stock does not have enterprise "accounts" but rather enterprise "entitlements." The point is that a user may be signed in with a free Creative Cloud account, but still be assigned to an account which has enterprise Stock entitlements. That same user may also have a personal (non-enterprise) subscription to Creative Cloud applications. It is best to use the term "entitlement" rather than "account" when dealing with enterprises at Adobe.
 
-<a id="is-it-possible-to-get-an-image-in-different-size"></a>
+\<a id="is-it-possible-to-get-an-image-in-different-size"\>\</a\>
 
 #### Is it possible to get an image in different size?
 
@@ -622,13 +622,13 @@ Two things to note about this command:
 *   You cannot request any arbitrary size. Currently, the supported sizes are **400, 800, 1600, 2400, 3100, and 5000**.
 *   If the asset doesn't have the requested size because the original was not high enough resolution, Stock API will return the max available size.
 
-<a id="how-can-i-test-licensing-assets-if-i-do-not-have-an-adobe-stock-plan-or-contract"></a>
+\<a id="how-can-i-test-licensing-assets-if-i-do-not-have-an-adobe-stock-plan-or-contract"\>\</a\>
 
 #### How can I test licensing assets if I do not have an Adobe Stock plan or contract?
 
 If you are an independent developer or student, you can follow the [Affiliate workflow](../07-workflow-guides.md) and sign up for an API key. If you want to also test licensing an asset, you can test it on a free asset like one of our great [Free assets](https://stock.adobe.com/free).
 
-<a id="how-do-i-license-assets-more-than-once"></a>
+\<a id="how-do-i-license-assets-more-than-once"\>\</a\>
 
 #### How do I license assets more than once?
 

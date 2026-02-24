@@ -1,6 +1,6 @@
 # License History Reference
 
-<!-- MarkdownTOC -->
+\<!-- MarkdownTOC --\>
 
 *   [License History calls](#license-history-calls)
     *   [Authentication](#authentication)
@@ -11,11 +11,11 @@
     *   [Simple example](#simple-example)
     *   [Example fetching all history and using pagination](#example-fetching-all-history-and-using-pagination)
 
-<!-- /MarkdownTOC -->
+\<!-- /MarkdownTOC --\>
 
 The License History API is used to retrieve past license history. For information on licensing Adobe Stock content, see [Licensing Stock assets](../getting-started/apps/06-licensing-assets.md).
 
-<a id="license-history-calls"></a>
+\<a id="license-history-calls"\>\</a\>
 
 ## License History calls
 
@@ -25,37 +25,37 @@ The License History API returns a list of assets licensed for a given user or or
 | ------------ | ------------- |
 | https://stock.adobe.io/Rest/Libraries/1/Member/LicenseHistory | GET |
 
-<a id="authentication"></a>
+\<a id="authentication"\>\</a\>
 
 ### Authentication
 
 The Authorization header is required for any of the licensing calls. The API uses the header to determine the user's member number, licensing status, and default locale. See [API authentication](../getting-started/03-api-authentication.md) for more information.
 
-<a id="request-headers"></a>
+\<a id="request-headers"\>\</a\>
 
 ### Request headers
 
-See [Headers for Stock API calls](./10-headers-for-api-calls.md) for details about header content.
+See [Headers for Stock API calls](10-headers-for-api-calls.md) for details about header content.
 
 *   Required headers: `x-Product`, `x-api-key`, `Authorization`
 *   Optional headers: `X-Request-Id`
 
-<a id="url-parameters"></a>
+\<a id="url-parameters"\>\</a\>
 
 ### URL parameters
 
 Pass the following URL parameters with the GET request.
 
-| Parameter | Description |
-|---------------|-----------------|
-| locale | Location language code. String. Default is `en_US`. See the full list of <a href="./14-locale-codes.md">Locales</a>. |
-| search_parameters[limit] | Optional, for pagination. Maximum number of assets to return in the call. Call repeatedly with different `[offset]` values to page through the found assets. Valid values are 1 through 100. Integer. Default is 100. |
-| search_parameters[offset] | Optional, start position in query. Valid values are 0 (the first found asset) or higher integers. Integer. Default is 0. <br/><br/> With each successive call for your search, increment this by the `[limit]` value to get the next page of assets. For example, by default your first call uses a 0 offset and limit of 100 to return the first 100 found assets. Call this API again with an offset of 100 to retrieve the next page. |
-| search_parameters[thumbnail_size] | Optional, thumbnail size in pixels. Specify the size of thumbnail to return for each found asset. Integer. <br/><br/>Valid values and meanings:<br/> `110`: Small (110px)<br/> `160`: Medium (160px)<br/> `240`: Large (240px)<br/> `500`: Extra large (500px). Returned with watermark.<br/> `1000`: Extra-extra large (1000px). Returned with watermark. |
-| all | Optional, set to true or false to indicate whether all license history for the organization should be returned, or only the license history for the currently selected user or profile (PLC). Boolean.<br/><br/>Valid values and meanings:<br/>`true`: Show all license history for the entire organization.<br/>`false` (or remove parameter): Show only history for the current user or Stock profile. Default. |
-| result_columns[] | Allowable fields to include in the history results. For more information, see [Search API reference](./11-search-reference.md).<br/><br/> `thumbnail_110_url` `thumbnail_110_height` `thumbnail_110_width` `thumbnail_160_url` `thumbnail_160_height` `thumbnail_160_width` `thumbnail_220_url` `thumbnail_220_height` `thumbnail_220_width` `thumbnail_240_url` `thumbnail_240_height` `thumbnail_240_width` `thumbnail_500_url` `thumbnail_500_height` `thumbnail_500_width` `thumbnail_1000_url` `thumbnail_1000_height` `thumbnail_1000_width` |
+| Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| locale | Location language code. String. Default is `en_US`. See the full list of [Locales](./14-locale-codes.md).                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| search_parameters[limit] | Optional, for pagination. Maximum number of assets to return in the call. Call repeatedly with different `[offset]` values to page through the found assets. Valid values are 1 through 100. Integer. Default is 100.                                                                                                                                                                                                                                                                                                                                |
+| search_parameters[offset] | Optional, start position in query. Valid values are 0 (the first found asset) or higher integers. Integer. Default is 0. \<br/\>\<br/\> With each successive call for your search, increment this by the `[limit]` value to get the next page of assets. For example, by default your first call uses a 0 offset and limit of 100 to return the first 100 found assets. Call this API again with an offset of 100 to retrieve the next page.                                                                                                         |
+| search_parameters[thumbnail_size] | Optional, thumbnail size in pixels. Specify the size of thumbnail to return for each found asset. Integer. \<br/\>\<br/\>Valid values and meanings:\<br/\> `110`: Small (110px)\<br/\> `160`: Medium (160px)\<br/\> `240`: Large (240px)\<br/\> `500`: Extra large (500px). Returned with watermark.\<br/\> `1000`: Extra-extra large (1000px). Returned with watermark.                                                                                                                                                                             |
+| all | Optional, set to true or false to indicate whether all license history for the organization should be returned, or only the license history for the currently selected user or profile (PLC). Boolean.\<br/\>\<br/\>Valid values and meanings:\<br/\>`true`: Show all license history for the entire organization.\<br/\>`false` (or remove parameter): Show only history for the current user or Stock profile. Default.                                                                                                                            |
+| result_columns[] | Allowable fields to include in the history results. For more information, see [Search API reference](11-search-reference.md).\<br/\>\<br/\> `thumbnail_110_url` `thumbnail_110_height` `thumbnail_110_width` `thumbnail_160_url` `thumbnail_160_height` `thumbnail_160_width` `thumbnail_220_url` `thumbnail_220_height` `thumbnail_220_width` `thumbnail_240_url` `thumbnail_240_height` `thumbnail_240_width` `thumbnail_500_url` `thumbnail_500_height` `thumbnail_500_width` `thumbnail_1000_url` `thumbnail_1000_height` `thumbnail_1000_width` |
 
-<a id="responses"></a>
+\<a id="responses"\>\</a\>
 
 ## Responses
 
@@ -112,11 +112,11 @@ In the table below, fields marked with **\*** are returned by default.
 
 ***Note:** Allowable values for `thumbnail_*_url`, `thumbnail_*_width` and `thumbnail_*_height` fields: `110`, `160`, `220`, `240`, `500`, `1000`.*
 
-<a id="example-requests-and-responses"></a>
+\<a id="example-requests-and-responses"\>\</a\>
 
 ## Example requests and responses
 
-<a id="simple-example"></a>
+\<a id="simple-example"\>\</a\>
 
 ### Simple example
 
@@ -148,7 +148,7 @@ curl --location --request GET 'https://stock.adobe.io/Rest/Libraries/1/Member/Li
 }
 ```
 
-<a id="example-fetching-all-history-and-using-pagination"></a>
+\<a id="example-fetching-all-history-and-using-pagination"\>\</a\>
 
 ### Example fetching all history and using pagination
 

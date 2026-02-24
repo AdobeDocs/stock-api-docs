@@ -1,0 +1,30 @@
+- pathPrefix:
+    - /stock/docs/
+
+- pages:
+    - [Adobe Stock API](/getting-started/index.md)
+    - [API reference](/api/index.md)
+    - [FAQs](/faq/index.md)
+
+- subPages:
+    - [Getting started with the Stock API](/getting-started/index.md)
+    - [Register your application](/getting-started/02-register-app.md)
+    - [API authentication headers](/getting-started/03-api-authentication.md)
+    - [Creating Adobe Stock applications](/getting-started/04-creating-apps.md)
+    - [Searching for assets](/getting-started/apps/05-search-for-assets.md)
+    - [Licensing assets and stuff](/getting-started/apps/06-licensing-assets.md)
+    - [Stock workflow guides](/getting-started/07-workflow-guides.md)
+    - [Sample code and SDKs](/getting-started/08-sample-code-sdks.md)
+    - [Adobe Stock API reference](/api/index.md)
+    - [Headers for Stock API calls](/api/10-headers-for-api-calls.md)
+    - [Search API reference](/api/11-search-reference.md)
+    - [Files API for bulk metadata](/api/19-bulk-metadata-files-reference.md)
+    - [Licensing reference](/api/12-licensing-reference.md)
+    - [License history reference](/api/13-license-history.md)
+    - [Category tree reference](/api/17-categorytree.md)
+    - [Locale codes](/api/14-locale-codes.md)
+    - [Stock API technical FAQ](/faq/index.md)
+    - [Stock API business FAQ](/faq/stock-api-business-faq.md)
+    - [⚠️ Stock Content ID changes](/faq/content-id-june2025.md)
+    - [Adobe Stock developer terms](/faq/terms-for-adobe-stock-developers.md)
+    - [Fotolia migration resources](/faq/18-fotolia-migration-resources.md)

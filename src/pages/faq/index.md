@@ -10,7 +10,7 @@ keywords:
 title: Stock API FAQs and supplemental info
 description: Stock API Frequently Asked Questions.
 ---
-<!-- omit in toc -->
+\<!-- omit in toc --\>
 # Stock API: Technical frequently asked questions
 
 A list of technical frequently asked questions. Don't see your question answered here? Email us at stockapis@adobe.com. If you are looking for the Stock API Business FAQ, it is [located here](/faq/stock-api-business-faq.md).
@@ -40,7 +40,7 @@ A list of technical frequently asked questions. Don't see your question answered
   - [How do I check if the images I am selling are still available on Stock?](#how-do-i-check-if-the-images-i-am-selling-are-still-available-on-stock)
   - [How do I filter out Free content?](#how-do-i-filter-out-free-content)
 
-<a id="general"></a>
+\<a id="general"\>\</a\>
 
 ## General
 
@@ -48,15 +48,15 @@ A list of technical frequently asked questions. Don't see your question answered
 
 This is due to a recent change by the Adobe Stock business to restrict access to the Stock APIs to only Stock for Enterprise customers and Adobe Affiliates. This applies to new and existing integrations. Existing API keys will continue to work, but to make changes to your project, you will need to request access.
 
-Please see [Getting started](./../getting-started/index.md) for more details.
+Please see [Getting started](../getting-started/index.md) for more details.
 
 ### Will I be affected by changes to the Stock Content ID system?
 
-Adobe Stock uses a sequential numbering system for its assets, and currently the number type is not large enough to handle the pace of incoming new content. As a result, Stock will "run out" of numbers by the end of 2025 unless it changes to a number type that accomodates longer numbers. The current limit supported by the Stock API is 2,147,483,647 ([32-bit signed integer](https://en.wikipedia.org/wiki/2,147,483,647)), and the new limit will be 9,007,199,254,740,991 ([2<sup>53</sup> - 1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)).
+Adobe Stock uses a sequential numbering system for its assets, and currently the number type is not large enough to handle the pace of incoming new content. As a result, Stock will "run out" of numbers by the end of 2025 unless it changes to a number type that accomodates longer numbers. The current limit supported by the Stock API is 2,147,483,647 ([32-bit signed integer](https://en.wikipedia.org/wiki/2,147,483,647)), and the new limit will be 9,007,199,254,740,991 ([2⁵³ - 1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)).
 
-If your programming language or database has similar limits, you will need to update your infrastructure to accept the new limit. Otherwise, your integration could break in the future. For more information, see [Adobe Stock Content ID changes](./content-id-june2025.md).
+If your programming language or database has similar limits, you will need to update your infrastructure to accept the new limit. Otherwise, your integration could break in the future. For more information, see [Adobe Stock Content ID changes](content-id-june2025.md).
 
-<a id="what-thumbnail-preview-sizes-are-available"></a>
+\<a id="what-thumbnail-preview-sizes-are-available"\>\</a\>
 
 ### Is there a Stock Contributors API?
 
@@ -74,7 +74,7 @@ Contributors must use the [Stock Contributors portal](https://contributor.stock.
 
 See the [Search API reference](/api/11-search-reference.md).
 
-<a id="why-are-there-more-search-results-returned-than-the-limit-value"></a>
+\<a id="why-are-there-more-search-results-returned-than-the-limit-value"\>\</a\>
 
 ### Why don't all assets show up in Search API results?
 Because of because decisions, it is expected behavior that some assets will be hidden from search results. This can include:
@@ -192,16 +192,16 @@ https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=Flower
     ]
 ```
 
-<a id="downloading"></a>
+\<a id="downloading"\>\</a\>
 
 ## Downloading
 
-<a id="how-do-i-download-a-comp-image"></a>
+\<a id="how-do-i-download-a-comp-image"\>\</a\>
 
 ### How do I download a comp image?
 
 There are two kinds of preview images available: cached thumbnail images from the CDN, and non-cached comp images which need to be downloaded from the API. The first type of images are most common, and recommended for most applications. This is a sample URL:
-<https://t4.ftcdn.net/jpg/00/84/66/63/240_F_84666330_LoeYCZ5LCobNwWePKbykqEfdQOZ6fipq.jpg>
+[https://t4.ftcdn.net/jpg/00/84/66/63/240_F_84666330_LoeYCZ5LCobNwWePKbykqEfdQOZ6fipq.jpg](https://t4.ftcdn.net/jpg/00/84/66/63/240_F_84666330_LoeYCZ5LCobNwWePKbykqEfdQOZ6fipq.jpg)
 
 For best performance, use this type of image when possible. In some circumstances, however, you may need the "comp" image version instead. This image requires a different workflow. First you must get the URL from the API, and then download it using the *same method to download licensed files*. For documentation on downloading files, see [Downloading licensed files](/api/12-licensing-reference.md#downloading-licensed-files).
 
@@ -232,7 +232,7 @@ Host: stock.adobe.com
 
 When downloading files from Adobe Stock, be sure to *follow redirects*.
 
-<a id="how-do-i-bulk-download-all-of-my-license-history"></a>
+\<a id="how-do-i-bulk-download-all-of-my-license-history"\>\</a\>
 
 ### How do I bulk download all of my license history?
 
@@ -262,7 +262,7 @@ Here is an example download command using `curl`. Be sure to follow redirects (w
   curl -L 'https://stock.adobe.com/Download/DownloadFileDirectly/ikMRKBPqHDrtTifHkbbxGfKhIGVQPw6y?token=AccessTokenHere' -o myFile.jpeg
 ```
 
-<a id="why-cant-i-download-an-asset-from-license-history"></a>
+\<a id="why-cant-i-download-an-asset-from-license-history"\>\</a\>
 
 ### Why can't I download an asset from license history?
 
@@ -301,19 +301,19 @@ https://stock.adobe.io/Rest/Media/1/Files?locale=en-US&ids=490764909,563988182&r
     ]
 ```
 
-<a id="enterprise-licensing"></a>
+\<a id="enterprise-licensing"\>\</a\>
 
 ## Enterprise
 
 ### Why can’t I create a JWT Service Account for my CC Pro subscription?
-Creative Cloud Professional (CC Pro) and Pro Plus plans allow unlimited download of Adobe Stock assets, without quota. API integrations with Stock are disabled by design but can be enabled with Adobe business approval and product team assistance. See [May I use my Creative Cloud Professional or Professional Plus plan with the Stock API?](/faq/stock-api-business-faq/#may-i-use-my-creative-cloud-professional-or-professional-plus-plan-with-the-stock-api) 
+Creative Cloud Professional (CC Pro) and Pro Plus plans allow unlimited download of Adobe Stock assets, without quota. API integrations with Stock are disabled by design but can be enabled with Adobe business approval and product team assistance. See [May I use my Creative Cloud Professional or Professional Plus plan with the Stock API?](/faq/stock-api-business-faq.md#may-i-use-my-creative-cloud-professional-or-professional-plus-plan-with-the-stock-api) 
 
 Be aware that if you do enable the integration and you download CC Pro assets to your servers, you will need to track these downloads, because if the customer unsubscribes from a CC Pro plan, those assets may not be used for new projects and must be deleted, by the terms of use. Please contact us if you understand the legal risks and have a business requirement.
 
 ### How can I detect assets from the CC Pro plan in my license history?
-The current version of the License History API cannot differentiate between CC Pro Extended licenses and perpetual Extended licenses. This makes tracking of Stock Pro assets more difficult and creates compliance risk discussed in the question above, [Why can’t I create a JWT Service Account for my CC Pro subscription?](/faq/#why-cant-i-create-a-jwt-service-account-for-my-cc-pro-subscription)
+The current version of the License History API cannot differentiate between CC Pro Extended licenses and perpetual Extended licenses. This makes tracking of Stock Pro assets more difficult and creates compliance risk discussed in the question above, [Why can’t I create a JWT Service Account for my CC Pro subscription?](/faq/index.md#why-cant-i-create-a-jwt-service-account-for-my-cc-pro-subscription)
 
-<a id="how-do-i-add-license-references"></a>
+\<a id="how-do-i-add-license-references"\>\</a\>
 
 ### How do I add license references?
 
@@ -371,13 +371,13 @@ Instead of calling `GET` Content/License, your application will `POST` Content/L
 
 To learn how to add or edit license reference fields, see [Edit a product profile for Adobe Stock](https://helpx.adobe.com/enterprise/using/adobe-stock-enterprise.html#CreateeditaproductprofileforAdobeStock).
 
-<a id="why-do-i-get-an-error-when-sending-the-jwt"></a>
+\<a id="why-do-i-get-an-error-when-sending-the-jwt"\>\</a\>
 
 ### Why do I get an error when sending the JWT?
 
 Enterprise service accounts use JWT files instead of OAuth logins to retrieve access tokens. Occasionally, there will be errors in the workflow, often because the fields in the JWT do not match the fields in Adobe I/O. For a list of error codes, see [JWT authentication](https://developer.adobe.com/developer-console/docs/guides/authentication/JWT/).
 
-However, if your JWT is working one day and suddenly fails the next, the most likely cause is that your public key certificate *has expired*. If it has, all you need to do is create a new one and upload to Adobe I/O on the same integration page. Nothing will need to change in your configuration, except make sure you are pointing to the correct private key file. See page 4 of the [Enterprise service account](/Service-Account-API-workflow.pdf) workflow guide.
+However, if your JWT is working one day and suddenly fails the next, the most likely cause is that your public key certificate *has expired*. If it has, all you need to do is create a new one and upload to Adobe I/O on the same integration page. Nothing will need to change in your configuration, except make sure you are pointing to the correct private key file. See page 4 of the [Enterprise service account](/stock/docs/Service-Account-API-workflow.pdf) workflow guide.
 
 Note that the sample command in the documentation sets the expiration to 365 days (1 year):
 
@@ -385,11 +385,11 @@ Note that the sample command in the documentation sets the expiration to 365 day
 
 You can set the value `-days` to whatever you want.
 
-<a id="print-on-demand"></a>
+\<a id="print-on-demand"\>\</a\>
 
 ## Print on Demand (POD)
 
-<a id="how-do-you-license-assets-more-than-once"></a>
+\<a id="how-do-you-license-assets-more-than-once"\>\</a\>
 
 ### How do you license assets more than once?
 
@@ -415,13 +415,13 @@ If using the Stock SDK for PHP, add `license_again` to the request object.
     $license_response = $adobe_stock_client->getContentLicense($license_request, $access_token);
 ```
 
-<a id="why-do-i-see-premium-and-video-in-my-search-results-if-i-dont-have-credits"></a>
+\<a id="why-do-i-see-premium-and-video-in-my-search-results-if-i-dont-have-credits"\>\</a\>
 
 ### Why do I see Premium and Video in my search results if I don't have credits?
 
 Premium assets are included in search results by default. In fact, the default API search includes *all asset types* (except Editorial--see below). Further, to increase performance, search requests are designed to be anonymous, not requiring authentication. Therefore it is not possible for the Search API to know all your contract details and entitlements when you perform a search--this would slow down the search. Therefore, if you don't have rights to these assets and don't want to see them in search results, you will need to filter them out. See next question, below.
 
-<a id="how-do-i-filter-out-premium-content"></a>
+\<a id="how-do-i-filter-out-premium-content"\>\</a\>
 
 ### How do I filter out Premium content?
 
@@ -439,7 +439,7 @@ X-API-Key: YourApiKeyHere
 
 See [Search API reference](/api/11-search-reference.md).
 
-<a id="how-do-i-filter-for-high-resolution-images-only"></a>
+\<a id="how-do-i-filter-for-high-resolution-images-only"\>\</a\>
 
 ### How do I filter for high-resolution images only?
 
@@ -485,7 +485,7 @@ X-API-Key: YourApiKeyHere
 
 For more details, see [Search API reference](/api/11-search-reference.md).
 
-<a id="how-do-i-check-if-the-images-i-am-selling-are-still-available-on-stock"></a>
+\<a id="how-do-i-check-if-the-images-i-am-selling-are-still-available-on-stock"\>\</a\>
 
 ### How do I check if the images I am selling are still available on Stock?
 
@@ -550,14 +550,14 @@ Please also note that the Free collection can change. An image which is availabl
 
 1.  POD customers who do *offline* curation of Stock assets must use other methods to filter out free assets. For example, any images that are hand curated and saved in the customers database should be reviewed periodically for free content using the [**Files API**](/api/19-bulk-metadata-files-reference.md).
 
-<!-- omit from toc -->
+\<!-- omit from toc --\>
 #### Filtering free assets with the Files API
 
 Free assets can be identified by their metadata, specifically by the `premium_level_id` field. **A value of '1' indicates a Free asset.**
 
-| Name | Description |
-|---------------|-----------------|
-| premium_level_id | Asset's premium (pricing) level. Integer.<br /> <ul><li class="spectrum-Body--sizeS"><inlineCode>0</inlineCode>: Core/standard</li><li class="spectrum-Body--sizeS"><inlineCode>1</inlineCode>: Free &nbsp;&nbsp;<strong>&lt;== Filter on this value</strong></li><li class="spectrum-Body--sizeS"><inlineCode>2</inlineCode>: Premium level 1</li><li class="spectrum-Body--sizeS"><inlineCode>3</inlineCode>: Premium level 2</li><li class="spectrum-Body--sizeS"><inlineCode>4</inlineCode>: Premium level 3</li></ul> |
+| Name | Description                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| premium_level_id | Asset's premium (pricing) level. Integer.\<br /\> \<ul\>\<li class="spectrum-Body--sizeS"\>`0`: Core/standard\</li\>\<li class="spectrum-Body--sizeS"\>`1`: Free &nbsp;&nbsp;\<strong\>&lt;== Filter on this value\</strong\>\</li\>\<li class="spectrum-Body--sizeS"\>`2`: Premium level 1\</li\>\<li class="spectrum-Body--sizeS"\>`3`: Premium level 2\</li\>\<li class="spectrum-Body--sizeS"\>`4`: Premium level 3\</li\>\</ul\> |
 
 In this workflow, a scheduled script would periodically check to see if curated assets are still available and whether their price status has changed.
 

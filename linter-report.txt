@@ -1,0 +1,650 @@
+═══════════════════════════════════════════════════════════════
+                     LINTER REPORT
+═══════════════════════════════════════════════════════════════
+
+Generated: 2026-02-24T19:45:51.272Z
+Mode: Full Linting (all rules + dead links check)
+Target Directory: /Users/louisa/adobe-dev-site/stock-api-docs
+
+───────────────────────────────────────────────────────────────
+
+Files to process: 27
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/api/11-search-reference.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 28:3
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Media/1/Search/Files`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/api/12-licensing-reference.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 44:3
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Libraries/1/Content/Info`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 451:3
+    Message: Unexpected dead URL `https://stock.adobe.com/Rest/Libraries/Download//%7Bid/%7D//%7Blicense/%7D`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 45:3
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Libraries/1/Content/License`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 47:3
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Libraries/1/Member/LicenseHistory`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 46:3
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Libraries/1/Member/Profile`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/api/13-license-history.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 26:3
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Libraries/1/Member/LicenseHistory`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/api/14-locale-codes.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/api/17-categorytree.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 28:3
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Media/1/Search/CategoryTree`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/api/19-bulk-metadata-files-reference.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 26:3
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Media/1/Files`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/api/search-files-responses.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 62:61
+    Message: Unexpected redirecting URL `http://daringfireball.net/projects/markdown/`, expected final URL `https://daringfireball.net/projects/markdown/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 63:63
+    Message: Unexpected redirecting URL `http://daringfireball.net/projects/markdown/`, expected final URL `https://daringfireball.net/projects/markdown/`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/faq/16-app-approval.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 16:9
+    Message: Unexpected redirecting URL `http://www.adobe.com/go/developer-terms`, expected final URL `https://wwwimages2.adobe.com/content/dam/cc/en/legal/servicetou/Developer-Terms-en_US-20240618.pdf`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/faq/18-fotolia-migration-resources.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 187:100
+    Message: Cannot find file `../Stock-Authorization-Code-Workflow.pdf`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 22:71
+    Message: Unexpected redirecting URL `https://developer.adobe.com/stock/docs/`, expected final URL `https://developer.adobe.com/stock/docs/getting-started/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 199:27
+    Message: Unexpected redirecting URL `https://developer.adobe.com/stock/docs/`, expected final URL `https://developer.adobe.com/stock/docs/getting-started/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 199:238
+    Message: Unexpected dead URL `mailto:stockapis@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 132:182
+    Message: Unexpected dead URL `https://landing.adobe.com/en/na/products/creative-cloud/ctir-4625-stock-for-enterprise/index.html`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 138:222
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 138:222
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 185:277
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 185:277
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 193:169
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 193:169
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/faq/content-id-june2025.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 30:201
+    Message: Unexpected dead URL `mailto:stockapis@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 23:11
+    Message: Unexpected dead URL `https://dev.mysql.com/doc/refman/8.4/en/integer-types.html`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 22:16
+    Message: Unexpected dead URL `https://www.postgresql.org/docs/current/datatype-numeric.html`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/faq/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 380:383
+    Message: Cannot find file `../Service-Account-API-workflow.pdf`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 16:100
+    Message: Unexpected dead URL `mailto:stockapis@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 498:176
+    Message: Unexpected dead URL `mailto:stockapis@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 82:16
+    Message: Unexpected dead URL `https://stock.adobe.com/editorial`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 138:5
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=Flowers&search_parameters[limit]=2&result_columns[]=id`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 155:5
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=Flowers&search_parameters[limit]=25&result_columns[]=id`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 182:1
+    Message: Unexpected dead URL `https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=Flowers&search_parameters[limit]=2&search_parameters[filters`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 129:3
+    Message: Unexpected redirecting URL `https://docs.aws.amazon.com/general/latest/gr/api-retries.html`, expected final URL `https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 128:3
+    Message: Unexpected redirecting URL `https://cloud.google.com/iot/docs/how-tos/exponential-backoff`, expected final URL `https://docs.cloud.google.com/architecture/connected-devices/iot-platform-product-architecture`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 446:90
+    Message: Unexpected dead URL `https://helpx.adobe.com/stock/contributor/help/photography-illustrations.html`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/faq/stock-api-business-faq.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 73:74
+    Message: Cannot find file `stockapis@adobe.com`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 73:131
+    Message: Unexpected redirecting URL `https://developer.adobe.com/stock/docs/`, expected final URL `https://developer.adobe.com/stock/docs/getting-started/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 93:1
+    Message: Unexpected redirecting URL `https://developer.adobe.com/stock/docs/`, expected final URL `https://developer.adobe.com/stock/docs/getting-started/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 123:24
+    Message: Unexpected redirecting URL `http://www.adobe.com/go/stockterms`, expected final URL `https://www.adobe.com/cc-shared/assets/pdf/legal/servicetou/stock-product-specific-terms-en-us-20260116.pdf`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 222:38
+    Message: Unexpected redirecting URL `http://www.adobe.com/go/stockterms`, expected final URL `https://www.adobe.com/cc-shared/assets/pdf/legal/servicetou/stock-product-specific-terms-en-us-20260116.pdf`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 71:107
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 71:107
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 89:53
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 89:53
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 111:103
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 111:103
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 166:299
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 166:299
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 178:121
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 178:121
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 182:58
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 182:58
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 199:59
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 199:59
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 241:177
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 241:177
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 255:55
+    Message: Unexpected redirecting URL `https://www.adobe.com/marketing/experience-manager.html`, expected final URL `https://business.adobe.com/products/experience-manager/adobe-experience-manager.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 172:3
+    Message: Unexpected dead URL `https://nikkel-art.com/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 186:13
+    Message: Unexpected dead URL `https://reset.pro/?lang=8`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 121:27
+    Message: Unexpected dead URL `http://www.adobe.com/go/developer-terms`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 129:247
+    Message: Unexpected dead URL `https://docs.magento.com/user-guide/cms/adobe-stock.html`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 188:20
+    Message: Unexpected dead URL `https://medium.com/adobetech/how-the-adobe-stock-api-is-helping-nikkel-art-thrive-in-the-print-on-demand-industry-c4793e8cd5cd`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 190:21
+    Message: Unexpected dead URL `https://durst-professional-services.com/en/smart-shop`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 191:16
+    Message: Unexpected dead URL `https://www.onprintshop.com/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 255:190
+    Message: Unexpected dead URL `https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/assets/manage/aem-assets-adobe-stock`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 278:26
+    Message: Unexpected dead URL `https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 285:10
+    Message: Unexpected redirecting URL `https://www.vecteezy.com/search?content_type=video&qterm=planet-saturn`, expected final URL `https://www.vecteezy.com/free-videos/saturn-planet`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/faq/terms-for-adobe-stock-developers.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 16:5
+    Message: Unexpected redirecting URL `http://www.adobe.com/go/developer-terms`, expected final URL `https://wwwimages2.adobe.com/content/dam/cc/en/legal/servicetou/Developer-Terms-en_US-20240618.pdf`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/getting-started/01-getting-started.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/getting-started/02-register-app.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 53:26
+    Message: Cannot find heading for `#note-1`
+    Rule: missing-heading
+
+  ⚠️  WARNING
+    Location: Line 54:19
+    Message: Cannot find heading for `#note-1`
+    Rule: missing-heading
+
+  ⚠️  WARNING
+    Location: Line 55:31
+    Message: Cannot find heading for `#note-2`
+    Rule: missing-heading
+
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 41:18
+    Message: Unexpected dead URL `https://adobeioruntime.net/api/v1/web/io-solutions/adobe-oauth-playground/oauth.html`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/getting-started/03-api-authentication.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 61:28
+    Message: Unexpected dead URL `https://curl.haxx.se/`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/getting-started/04-creating-apps.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/getting-started/07-workflow-guides.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 18:7
+    Message: Cannot find file `../stock/docs/Stock-DAM-integrations.pdf`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 20:8
+    Message: Cannot find file `../stock/docs/Service-Account-API-workflow.pdf`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 23:7
+    Message: Cannot find file `../stock/docs/Affiliate-API-workflow.pdf`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 19:7
+    Message: Unexpected dead URL `https://developer.adobe.com/developer-console/docs/guides/authentication/ServiceAccountIntegration/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 21:7
+    Message: Unexpected dead URL `https://developer.adobe.com/developer-console/docs/guides/authentication/OAuthIntegration/`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/getting-started/08-sample-code-sdks.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/getting-started/apps/05-search-for-assets.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 48:25
+    Message: Unexpected redirecting URL `https://curl.haxx.se/`, expected final URL `https://curl.se/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 230:249
+    Message: Unexpected redirecting URL `http://www.adobe.com/sensei.html`, expected final URL `https://business.adobe.com/ai/adobe-genai.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 90:350
+    Message: Unexpected redirecting URL `https://www.getpostman.com/`, expected final URL `https://www.postman.com/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 90:216
+    Message: Unexpected redirecting URL `http://jsbeautifier.org/`, expected final URL `https://beautifier.io/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 172:234
+    Message: Unexpected dead URL `https://cfsdemos.worldsecuresystems.com/stock/api/simple_app_result.html`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/getting-started/apps/06-licensing-assets.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 343:539
+    Message: Cannot find file `../../stock/docs/Service-Account-API-workflow.pdf`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 513:246
+    Message: Unexpected dead URL `mailto:stockapis@adobe.com?subject=%5BAdobe%20I%2FO%5D%20Stock%20API%20help`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 511:165
+    Message: Unexpected redirecting URL `https://curl.haxx.se/`, expected final URL `https://curl.se/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 513:53
+    Message: Unexpected dead URL `https://helpx.adobe.com/support.html#/product/stock`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 511:123
+    Message: Unexpected redirecting URL `https://www.getpostman.com/`, expected final URL `https://www.postman.com/`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 489:304
+    Message: Unexpected dead URL `https://helpx.adobe.com/enterprise/help/adobe-stock-enterprise.html#Updateaproductconfigurationsdownloadlimit`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 489:304
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/enterprise/help/adobe-stock-enterprise.html#Updateaproductconfigurationsdownloadlimit`, expected final URL `https://helpx.adobe.com/enterprise/using/adobe-stock-enterprise.html`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 393:351
+    Message: Unexpected dead URL `https://stock.adobe.com/plans#get-credits`, expected live URL
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/getting-started/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 43:15
+    Message: Unexpected dead URL `mailto:stockapis@adobe.com`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 23:645
+    Message: Unexpected dead URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 23:645
+    Message: Unexpected redirecting URL `https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi`, expected final URL `https://business.adobe.com/solutions/content-supply-chain/creation-production.html`
+    Rule: no-dead-urls
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 11:1
+    Message: Description is too long (245 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
+
+
+═══════════════════════════════════════════════════════════════
+                        SUMMARY
+═══════════════════════════════════════════════════════════════
+
+  📁 Files processed:    27
+  📄 Files with issues:  23
+  ❌ Total errors:       0
+  ⚠️  Total warnings:     111
+  📋 Total issues:       111
+
+Result: ⚠️  PASSED WITH WARNINGS - No fatal errors
+
+═══════════════════════════════════════════════════════════════

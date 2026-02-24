@@ -75,7 +75,7 @@ The creation of tokens is beyond the scope of this article, however it is covere
 
 For complete information about creating access tokens, see the Adobe I/O [API Authentication Guide](https://developer.adobe.com/developer-console/docs/guides/authentication/). Here you will also find examples of creating JWTs using Java and Node.js.
 
-<a id="important-use-the-correct-scope-in-your-jwt"></a>
+\<a id="important-use-the-correct-scope-in-your-jwt"\>\</a\>
 
 ### Important: Use the correct scope in your JWT
 
@@ -87,7 +87,9 @@ Please note that if you are following the Service Account workflow, the Adobe I/
 
 Once your token is generated, add it to your authenticated request using this syntax:
 
+        ```
         Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+        ```
 
 The sample token above comes from [jwt.io](https://jwt.io/), an excellent resource for learning about and troubleshooting tokens.
 
@@ -128,4 +130,4 @@ If you correctly generated an access token, you should see something like this (
 
 Even if your image quota is 0, congratulations for getting this far! Generating the token is the most difficult part of the Stock API process.
 
-**&gt;&gt;&gt; NEXT:** Learn the Stock API command structure and  [start building your app](./04-creating-apps.md)!
+**&gt;&gt;&gt; NEXT:** Learn the Stock API command structure and  [start building your app](04-creating-apps.md)!

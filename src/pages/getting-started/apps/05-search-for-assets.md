@@ -31,7 +31,9 @@ You have been asked to create a simple web page that lets a user enter a word an
 
 This example searches for the keyword "dogs" and limits the results to 1.
 
+    ```
     https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US&search_parameters[words]=dogs&search_parameters[limit]=1
+    ```
 
 This URL won't work as is, because it lacks the headers we created earlier. When complete, it would look like this in HTTP format:
 
@@ -98,35 +100,45 @@ After consulting the Search API reference, let's break down these extra requirem
 
 *   Only show photos
 
-<!---->
+\<!----\>
 
+        ```
         search_parameters[filters][content_type:photo]=1
+        ```
 
 *   Sort by most-downloaded
 
-<!---->
+\<!----\>
 
+        ```
         search_parameters[order]=nb_downloads
+        ```
 
 And we'll use the third ability of the Search API to choose only the result fields (`result_columns`) we want for our app. If you look at the documentation for result_columns, you'll see that only one of the fields is returned by default (`title`). You can add as many result_columns to your URL as you need:
 
 *   Get the title
 
-<!---->
+\<!----\>
 
+        ```
         result_columns[]=title
+        ```
 
 *   Get a link that goes to the Adobe Stock page for that image
 
-<!---->
+\<!----\>
 
+        ```
         result_columns[]=details_url
+        ```
 
 *   Because the default image result is 500, we need a larger size for our 800px requirement. So we'll get the 1000px thumbnail instead:
 
-<!---->
+\<!----\>
 
+        ```
         result_columns[]=thumbnail_1000_url
+        ```
 
 Here is the final URL before encoding and adding headers:
 
@@ -157,7 +169,7 @@ And get back our filtered results:
 }
 ```
 
-Since the Adobe Stock collection is constantly evolving, the result you get may be very different, but you will get back something. Now let's create a simple HTML snippet for our "application" and we're done. See the awesome results <a href="https://cfsdemos.worldsecuresystems.com/stock/api/simple_app_result.html" target="_blank">here</a>!
+Since the Adobe Stock collection is constantly evolving, the result you get may be very different, but you will get back something. Now let's create a simple HTML snippet for our "application" and we're done. See the awesome results [here](https://cfsdemos.worldsecuresystems.com/stock/api/simple_app_result.html)!
 
 ```html
 <h1>Young puppy listening to music on a head set.</h1>
@@ -166,7 +178,7 @@ Since the Adobe Stock collection is constantly evolving, the result you get may 
 </a>
 ```
 
-**&gt;&gt;&gt; NEXT:** Review the [tips and techniques](#tips-and-techniques) below, or continue ahead to learn how to use the [Licensing API](./06-licensing-assets.md)!
+**&gt;&gt;&gt; NEXT:** Review the [tips and techniques](#tips-and-techniques) below, or continue ahead to learn how to use the [Licensing API](06-licensing-assets.md)!
 
 ## Tips and techniques
 
@@ -185,11 +197,15 @@ To do this:
 
 Request first 16 results
 
+    ```
     https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US&search_parameters[words]=dogs&search_parameters[limit]=16&search_parameters[offset]=0
+    ```
 
 Get next 16 results
 
+    ```
     https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US&search_parameters[words]=dogs&search_parameters[limit]=16&search_parameters[offset]=16
+    ```
 
 ### Change the order of your results
 
@@ -205,7 +221,9 @@ Valid orders and their meanings:
 
 Example:
 
+    ```
     https://stock.adobe.io/Rest/Media/1/Search/Files?locale=en_US&search_parameters[words]=dogs&search_parameters[order]=undiscovered
+    ```
 
 ### Similarity (visual) search
 
@@ -215,27 +233,34 @@ The Search API supports three types of visual search:
 
 *   Similar to the image being uploaded.
 
-<!---->
+\<!----\>
 
+        ```
         search_parameters[similar_image]=1&similar_image=<FILE>
+        ```
 
 *   Similar to an image URL.
 
-<!---->
+\<!----\>
 
+        ```
         search_parameters[similar_url]=<URL>
+        ```
 
 *   Similar to an existing Stock ID.
 
-<!---->
+\<!----\>
 
+        ```
         search_parameters[similar]=<ID>
+        ```
 
 #### Image similarity POST example
 
 Searching on a similar URL or Stock ID works exactly like the previous search examples that use an HTTP GET, while comparing to an uploaded image requires a multipart form POST, and accepts JPG, PNG, or GIF files.
 
-    POST /Rest/Media/1/Search/Files?locale=en_US&search_parameters[similar_image]=1&search_parameters[filters][content_type:photo]=1 HTTP/1.1
+   ```
+   POST /Rest/Media/1/Search/Files?locale=en_US&search_parameters[similar_image]=1&search_parameters[filters][content_type:photo]=1 HTTP/1.1
     Host: stock.adobe.io
     X-Product: MySampleApp/1.0
     X-API-Key: YourApiKeyHere
@@ -246,7 +271,7 @@ Searching on a similar URL or Stock ID works exactly like the previous search ex
     Content-Type: image/jpeg
 
     ------WebKitFormBoundary7MA4YWxkTrZu0gW--
-
+ ```
 Stock API will return JSON results exactly as if you had searched on text or some other type.
 
 #### Combining visual search with other filters
@@ -270,7 +295,9 @@ The Adobe Stock Search API allows a client (desktop, web, or mobile) to launch t
 
 Use the `k` parameter. Example:
 
+    ```
     https://stock.adobe.com/search?k=kittens
+    ```
 
 #### Filter by photos, vectors, video, etc.
 
@@ -290,7 +317,9 @@ Use these parameters:
 
 Example: Search for vector artwork of cats.
 
+    ```
     https://stock.adobe.com/search?k=cats&filters[content_type:zip_vector]=1
+    ```
 
 #### Search on standard or Premium content
 
@@ -305,7 +334,9 @@ Use the `price[_$_]` parameter:
 
 Example: Find Premium assets about stars
 
+    ```
     https://stock.adobe.com/search?k=stars&price[$$]=1&price[$$$]=1
+    ```
 
 #### Important: Get tracking credit
 
@@ -313,5 +344,7 @@ If you want your application to get referral credit for the search, meaning that
 
 Example:
 
+    ```
     https://stock.adobe.com/search?k=kittens&as_channel=affiliate&as_source=api
     &as_content=cfc3d3bd68784b8cbeec1ad707c2aecb
+    ```

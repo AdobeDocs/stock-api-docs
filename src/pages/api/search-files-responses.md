@@ -1,6 +1,6 @@
-<!--
+\<!--
 Include file with API responses for Search and Files API
--->
+--\>
 
 All responses are in a JSON array with this general structure:
 
@@ -24,323 +24,51 @@ All responses are in a JSON array with this general structure:
 
 These are the fields returned either by default or by explicit use by the `result_columns[]` parameter.
 
-<table columnWidths="30,70">
-    <thead>
-        <tr>
-            <th><strong>Parameter</strong>
-            </th>
-            <th><strong>Description</strong>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>nb_results
-        </td>
-        <td>Total number of found assets in the search result. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>id
-        </td>
-        <td>Asset's unique identifier. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>title
-        </td>
-        <td>Asset's title. String.
-        </td>
-    </tr>
-    <tr>
-        <td>creator_id
-        </td>
-        <td>Unique identifier for the asset's creator. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>creator_name
-        </td>
-        <td>Asset creator's name. String.
-        </td>
-    </tr>
-    <tr>
-        <td>country_name
-        </td>
-        <td>Country in which the asset's creator lives. String.
-        </td>
-    </tr>
-    <tr>
-        <td>thumbnail_url
-        </td>
-        <td>URL for the default-sized asset thumbnail. You can use this to display the thumbnail on your page using
-            your preferred display method. Alternatively, use <inlineCode>thumbnail_html_tag</inlineCode>. String.
-        </td>
-    </tr>
-    <tr>
-        <td>thumbnail_html_tag
-        </td>
-        <td>HTML &lt;img&gt; tag that you can use to display the default asset thumbnail. This is a convenience for displaying the thumbnail and references the <inlineCode>thumbnail_url</inlineCode>. String.
-            Example:
-            <inlineCode>"thumbnail_html_tag": "&lt;img src='https://thumbnail-url' alt='German Shepherd Dog Sticking Head Out Driving Car Window' /&gt;"</inlineCode>
-        </td>
-    </tr>
-    <tr>
-        <td>thumbnail_width
-        </td>
-        <td>Thumbnail's width in pixels. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>thumbnail_height
-        </td>
-        <td>Thumbnail's height in pixels. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>thumbnail_*_width
-        </td>
-        <td>Width for the thumbnail of the requested size, where * is the thumbnail size in pixels. Float.
-            For example:<br />
-            <inlineCode>"thumbnail_160_width": 200</inlineCode>
-        </td>
-    </tr>
-    <tr>
-        <td>thumbnail_*_height
-        </td>
-        <td>Height for the thumbnail of the requested size, where * is the thumbnail size in pixels. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>thumbnail_*_url
-        </td>
-        <td>URL for the requested thumbnail size, where * is the thumbnail size in pixels. You can use this to
-            display the thumbnail on your page using your preferred display method. Alternatively, use
-            <inlineCode>thumbnail_*_html_tag</inlineCode>. String.
-        </td>
-    </tr>
-    <tr>
-        <td>thumbnail_*_html_tag
-        </td>
-        <td>HTML &lt;img&gt; tag that you can use to display the thumbnail of the requested size, where where * is
-            the thumbnail size in pixels. This is a convenience for displaying the thumbnail and references the
-            <inlineCode>thumbnail_*_url</inlineCode>. String.
-        </td>
-    </tr>
-    <tr>
-        <td>width
-        </td>
-        <td>Width in pixels of the full-sized original asset. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>height
-        </td>
-        <td>Height in pixels of the full-sized original asset. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>is_licensed
-        </td>
-        <td>The Adobe Stock licensing state for the asset. String. Values and meaning:<ul>
-                <li><inlineCode>Standard</inlineCode>: License for the full-resolution asset</li>
-                <li><inlineCode>Extended</inlineCode>: Extended license</li>
-                <li><inlineCode>Video_HD</inlineCode>: Video HD license</li>
-                <li><inlineCode>Video_4K</inlineCode>: Video 4K license</li>
-                <li><inlineCode>Standard_M</inlineCode>: License for a medium-size asset approximately 1600x1200 pixels</li>
-                <li><inlineCode>""</inlineCode> <em>(empty string)</em>: No license applies</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>comp_url
-        </td>
-        <td>URL to the watermarked version of the asset. String.
-        </td>
-    </tr>
-    <tr>
-        <td>comp_width
-        </td>
-        <td>Width in pixels of the asset's complementary (unlicensed) image. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>comp_height
-        </td>
-        <td>Height in pixels of the asset's complementary (unlicensed) image. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>category
-        </td>
-        <td>JSON structure with information about the category assigned to the asset.
-            <inlineCode>&#34;category&#34;: &#123; &#34;id&#34;: 0000,&#34;name&#34;:&#34;...&#34; &#125;</inlineCode>
-            <p>For example:</p>
-            <inlineCode>&#34;category&#34;: &#123; &#34;id&#34;: 47, &#34;name&#34;: &#34;Dogs&#34;&#125;</inlineCode>
-        </td>
-    </tr>
-    <tr>
-        <td>category{<em>id</em>}
-        </td>
-        <td>Identifier for the category assigned to the asset. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>category{<em>name</em>}
-        </td>
-        <td>Localized name of the asset's category. String.
-        </td>
-    </tr>
-    <tr>
-        <td>keywords
-        </td>
-        <td>List of localized keywords for the asset. Array.
-        </td>
-    </tr>
-    <tr>
-        <td>media_type_id
-        </td>
-        <td>Type of the asset. Integer.
-            <ul>
-                <li><inlineCode>1</inlineCode>: Photos</li>
-                <li><inlineCode>2</inlineCode>: Illustrations</li>
-                <li><inlineCode>3</inlineCode>: Vectors</li>
-                <li><inlineCode>4</inlineCode>: Videos</li>
-                <li><inlineCode>6</inlineCode>: 3D</li>
-                <li><inlineCode>7</inlineCode>: Templates</li>
-                <li><inlineCode>8</inlineCode>: Premium</li>
-                <li><inlineCode>9</inlineCode>: Audio</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>vector_type
-        </td>
-        <td>If the asset is a vector, this indicates whether it is an SVG or an AI/EPS asset. String.
-            Values and meanings:
-            <ul>
-                <li><inlineCode>svg</inlineCode>: SVG file</li>
-                <li><inlineCode>zip</inlineCode>: AI/EPS file</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>content-type
-        </td>
-        <td>Mime type of the asset's content. String. For example: 
-            <inlineCode>"content_type": "image/jpeg"</inlineCode>
-        </td>
-    </tr>
-    <tr>
-        <td>framerate
-        </td>
-        <td>Frame rate for the asset if it is a video. Float.
-        </td>
-    </tr>
-    <tr>
-        <td>duration
-        </td>
-        <td>Duration in milliseconds of the asset if it is a video. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>comps
-        </td>
-        <td>JSON object that contains one or more of the following properties for complementary assets if
-            applicable: Standard, Video_HD, or Video_4K. The properties contain width, height, comp URL. See
-            <a href="#example-returned-comps-values"> Example returned comps values</a>.
-        </td>
-    </tr>
-    <tr>
-        <td>details_url
-        </td>
-        <td>URL to the Adobe Stock details page for the asset. If you pass the Authorization header with the call,
-            Adobe Stock generates an SSO jump URL. String.
-        </td>
-    </tr>
-    <tr>
-        <td>3d_type_id
-        </td>
-        <td>The ID of the 3D type, if the return asset is 3D. Values and meanings:
-            <ul>
-                <li>1 - Models</li>
-                <li>2 - Lights</li>
-                <li>3 - Materials</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>template_type_id
-        </td>
-        <td>The ID of the template type, if the returned asset is a template. Integer. Values and meanings:
-            <ul>
-                <li><inlineCode>1</inlineCode>: PSDT</li>
-                <li><inlineCode>2</inlineCode>: AIT</li>
-                <li><inlineCode>3</inlineCode>: INDT</li>
-                <li><inlineCode>4</inlineCode>: PPRO Motion Graphics Template</li>
-                <li><inlineCode>5</inlineCode>: AE Motion Graphics Template</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>marketing_text
-        </td>
-        <td>Marketing text for the template in <a href="http://daringfireball.net/projects/markdown/">Markdown format</a>, if the found asset is a template. String.
-        </td>
-    </tr>
-    <tr>
-        <td>description
-        </td>
-        <td>Description text for the template in <a href="http://daringfireball.net/projects/markdown/">Markdown format</a>, if the found asset is a template. String.
-        </td>
-    </tr>
-    <tr>
-        <td>size_bytes
-        </td>
-        <td>Size of the template file in bytes, if the found asset is a template. Integer.
-        </td>
-    </tr>
-    <tr>
-        <td>premium_level_id
-        </td>
-        <td>Asset's premium (pricing) level. Integer.
-            <ul>
-                <li><inlineCode>0</inlineCode>: Core/standard</li>
-                <li><inlineCode>1</inlineCode>: Free</li>
-                <li><inlineCode>2</inlineCode>: Premium level 1</li>
-                <li><inlineCode>3</inlineCode>: Premium level 2</li>
-                <li><inlineCode>4</inlineCode>: Premium level 3</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>is_loop
-        </td>
-        <td>True if the asset is a looping video or audio clip. Boolean.
-        </td>
-    </tr>
-    <tr>
-        <td>is_transparent
-        </td>
-        <td>True for PNG assets that have transparency. Boolean.
-        </td>
-    </tr>
-    <tr>
-        <td>is_gentech
-        </td>
-        <td>True if asset was generated by AI. Boolean.
-        </td>
-    </tr>
-    <tr>
-        <td>icon_option
-        </td>
-        <td>icon type (icon_sheet, single_icon or null)
-        </td>
-    </tr>
-    </tbody>
-</table>
+| **Parameter**        | **Description** |
+|----------------------|-----------------|
+| nb_results           | Total number of found assets in the search result. Integer. |
+| id                   | Asset's unique identifier. Integer. |
+| title                | Asset's title. String. |
+| creator_id           | Unique identifier for the asset's creator. Integer. |
+| creator_name         | Asset creator's name. String. |
+| country_name         | Country in which the asset's creator lives. String. |
+| thumbnail_url        | URL for the default-sized asset thumbnail. You can use this to display the thumbnail on your page using your preferred display method. Alternatively, use `thumbnail_html_tag`. String. |
+| thumbnail_html_tag   | HTML \<img\> tag that you can use to display the default asset thumbnail. This is a convenience for displaying the thumbnail and references the `thumbnail_url`. String. Example: `"thumbnail_html_tag": "<img src='https://thumbnail-url' alt='German Shepherd Dog Sticking Head Out Driving Car Window' />"` |
+| thumbnail_width      | Thumbnail's width in pixels. Integer. |
+| thumbnail_height     | Thumbnail's height in pixels. Integer. |
+| thumbnail_*_width    | Width for the thumbnail of the requested size, where * is the thumbnail size in pixels. Float. For example: `"thumbnail_160_width": 200` |
+| thumbnail_*_height   | Height for the thumbnail of the requested size, where * is the thumbnail size in pixels. Integer. |
+| thumbnail_*_url      | URL for the requested thumbnail size, where * is the thumbnail size in pixels. You can use this to display the thumbnail on your page using your preferred display method. Alternatively, use `thumbnail_*_html_tag`. String. |
+| thumbnail_*_html_tag | HTML \<img\> tag that you can use to display the thumbnail of the requested size, where * is the thumbnail size in pixels. This is a convenience for displaying the thumbnail and references the `thumbnail_*_url`. String. |
+| width                | Width in pixels of the full-sized original asset. Integer. |
+| height               | Height in pixels of the full-sized original asset. Integer. |
+| is_licensed          | The Adobe Stock licensing state for the asset. String. Values and meaning: * `Standard`: License for the full-resolution asset * `Extended`: Extended license * `Video_HD`: Video HD license * `Video_4K`: Video 4K license * `Standard_M`: License for a medium-size asset approximately 1600x1200 pixels * `""` *(empty string)*: No license applies |
+| comp_url             | URL to the watermarked version of the asset. String. |
+| comp_width           | Width in pixels of the asset's complementary (unlicensed) image. Integer. |
+| comp_height          | Height in pixels of the asset's complementary (unlicensed) image. Integer. |
+| category             | JSON structure with information about the category assigned to the asset. `"category": { "id": 0000,"name":"..." }` For example: `"category": { "id": 47, "name": "Dogs"}` |
+| category\{*id*\}     | Identifier for the category assigned to the asset. Integer. |
+| category\{*name*\}   | Localized name of the asset's category. String. |
+| keywords             | List of localized keywords for the asset. Array. |
+| media_type_id        | Type of the asset. Integer. * `1`: Photos * `2`: Illustrations * `3`: Vectors * `4`: Videos * `6`: 3D * `7`: Templates * `8`: Premium * `9`: Audio |
+| vector_type          | If the asset is a vector, this indicates whether it is an SVG or an AI/EPS asset. String. Values and meanings: * `svg`: SVG file * `zip`: AI/EPS file |
+| content-type         | Mime type of the asset's content. String. For example: `"content_type": "image/jpeg"` |
+| framerate            | Frame rate for the asset if it is a video. Float. |
+| duration             | Duration in milliseconds of the asset if it is a video. Integer. |
+| comps                | JSON object that contains one or more of the following properties for complementary assets if applicable: Standard, Video_HD, or Video_4K. The properties contain width, height, comp URL. See [Example returned comps values](#example-returned-comps-values). |
+| details_url          | URL to the Adobe Stock details page for the asset. If you pass the Authorization header with the call, Adobe Stock generates an SSO jump URL. String. |
+| 3d_type_id           | The ID of the 3D type, if the return asset is 3D. Values and meanings: * 1 - Models * 2 - Lights * 3 - Materials |
+| template_type_id     | The ID of the template type, if the returned asset is a template. Integer. Values and meanings: * `1`: PSDT * `2`: AIT * `3`: INDT * `4`: PPRO Motion Graphics Template * `5`: AE Motion Graphics Template |
+| marketing_text       | Marketing text for the template in [Markdown format](http://daringfireball.net/projects/markdown/), if the found asset is a template. String. |
+| description          | Description text for the template in [Markdown format](http://daringfireball.net/projects/markdown/), if the found asset is a template. String. |
+| size_bytes           | Size of the template file in bytes, if the found asset is a template. Integer. |
+| premium_level_id     | Asset's premium (pricing) level. Integer. * `0`: Core/standard * `1`: Free * `2`: Premium level 1 * `3`: Premium level 2 * `4`: Premium level 3 |
+| is_loop              | True if the asset is a looping video or audio clip. Boolean. |
+| is_transparent       | True for PNG assets that have transparency. Boolean. |
+| is_gentech           | True if asset was generated by AI. Boolean. |
+| icon_option          | icon type (icon_sheet, single_icon or null) |
 
-<a id="example-returned-comps-values"></a>
+\<a id="example-returned-comps-values"\>\</a\>
 
 ## Example returned comps values
 

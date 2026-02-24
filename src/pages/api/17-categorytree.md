@@ -1,6 +1,6 @@
 # CategoryTree API reference
 
-<!-- MarkdownTOC -->
+\<!-- MarkdownTOC --\>
 
 *   [Category Tree calls](#category-tree-calls)
     *   [Authentication](#authentication)
@@ -9,7 +9,7 @@
 *   [Responses](#responses)
 *   [Example requests and responses](#example-requests-and-responses)
 
-<!-- /MarkdownTOC -->
+\<!-- /MarkdownTOC --\>
 
 The Category Tree API returns category information for selected category IDs. If you call the API without specifying a category, `CategoryTree` returns a list of all top-level Adobe Stock categories.
 
@@ -19,7 +19,7 @@ You can optionally request the results in languages other than English by using 
 
 On the other hand, keyword search *is* driven by both machine learning and by Contributor metadata. For that reason, **searching by keywords *instead of* categories is considered a best practice**, and is generally more reliable and accurate. Adobe Stock maintains this API mainly for backwards compatibility with existing applications.
 
-<a id="category-tree-calls"></a>
+\<a id="category-tree-calls"\>\</a\>
 
 ## Category Tree calls
 
@@ -27,38 +27,38 @@ On the other hand, keyword search *is* driven by both machine learning and by Co
 | ------------ | ------------- |
 | https://stock.adobe.io/Rest/Media/1/Search/CategoryTree | GET |
 
-<a id="authentication"></a>
+\<a id="authentication"\>\</a\>
 
 ### Authentication
 
 An `Authorization` header is not required.
 
-<a id="request-headers"></a>
+\<a id="request-headers"\>\</a\>
 
 ### Request headers
 
-See [API authentication](../getting-started/03-api-authentication.md) and [Headers for Stock API calls](./10-headers-for-api-calls.md) for details about header content.
+See [API authentication](../getting-started/03-api-authentication.md) and [Headers for Stock API calls](10-headers-for-api-calls.md) for details about header content.
 
 *   Required headers: `x-Product`, `x-api-key`
 *   Optional headers: `Authorization`, `X-Request-Id`
 
-<a id="url-parameters"></a>
+\<a id="url-parameters"\>\</a\>
 
 ### URL parameters
 
 Pass the following parameters with a GET request.
 
-| Parameter   | Description                                                                                            |
-|-------------|--------------------------------------------------------------------------------------------------------|
-| locale      | Location language code. String. Default is <inlineCode class="spectrum-Body--sizeS">en_US</inlineCode>. See the full list of <a href="./14-locale-codes.md">Locales</a>. String.                          |
-| category_id | Optional. Unique identifier for an existing category; results are returned for this category. Integer. |
+| Parameter   | Description                                                                                                                                                         |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| locale      | Location language code. String. Default is `en_US`. See the full list of [Locales](./14-locale-codes.md). String. |
+| category_id | Optional. Unique identifier for an existing category; results are returned for this category. Integer.                                                              |
 
-<a id="responses"></a>
+\<a id="responses"\>\</a\>
 
 ## Responses
 
 CategoryTree's response is returned in a JSON array that can contain multiple category structures. Each category may have child categories beneath it that can be discovered with subsequent requests.
-
+```json
     [
         {
             "id": Integer,
@@ -71,26 +71,29 @@ CategoryTree's response is returned in a JSON array that can contain multiple ca
             "name": String
         }
     ]
+```
 
-| Name | Description                                                                                      |
-|------|--------------------------------------------------------------------------------------------------|
-| id   | Unique identifier for the category. Integer.                                                     |
-| link | Category path. The format is: <br/>`/Category/linkname/category_id` <br/>See below for example usage. String. |
-| name | Localized category name. See <a href="./14-locale-codes.md">Locales</a>. String.                                                    |
+| Name | Description                                                                                                       |
+|------|-------------------------------------------------------------------------------------------------------------------|
+| id   | Unique identifier for the category. Integer.                                                                      |
+| link | Category path. The format is: \<br/\>`/Category/linkname/category_id` \<br/\>See below for example usage. String. |
+| name | Localized category name. See [Locales](./14-locale-codes.md). String.                                             |
 
-<a id="example-requests-and-responses"></a>
+\<a id="example-requests-and-responses"\>\</a\>
 
 ## Example requests and responses
 
 First, we obtain a list of all top-level categories by not including the `category_id` parameter.
 
+```
     GET /Rest/Media/1/Search/CategoryTree HTTP/1.1
     Host: stock.adobe.io
     X-Product: MySampleApp/1.0
     x-api-key: MyApiKey
-
+```
 The response is multiple categories, including "Food" (id 289).
 
+```json
     [
         {
             "id": 261,
@@ -108,7 +111,7 @@ The response is multiple categories, including "Food" (id 289).
             "name": "Graphic Resources"
         },
     ]
-
+```
 The category "Food" has multiple child subcategories which we cannot see here without further requests. Here is a subset of its category structure.
 
 *   Food
@@ -123,13 +126,16 @@ The category "Food" has multiple child subcategories which we cannot see here wi
 
 To get the first child level of Food, we pass its `category_id` of 289.
 
+```
     GET /Rest/Media/1/Search/CategoryTree?category_id=289 HTTP/1.1
     Host: stock.adobe.io
     X-Product: MySampleApp/1.0
     x-api-key: MyApiKey
+```
 
 We see it has child IDs of 300, 301, and 311.
 
+```
     [
         {
             "id": 300,
@@ -147,16 +153,20 @@ We see it has child IDs of 300, 301, and 311.
             "name": "Cooking"
         },
     ]
+```
 
 If we want to see the children of "Cheese and Dairy Products", we make another request for `category_id` 301.
 
+```
     GET /Rest/Media/1/Search/CategoryTree?category_id=301 HTTP/1.1
     Host: stock.adobe.io
     X-Product: MySampleApp/1.0
     x-api-key: MyApiKey
+```
 
 And get back multiple types of cheeses.
 
+```
     [
         {
             "id": 302,
@@ -179,7 +189,7 @@ And get back multiple types of cheeses.
             "name": "Feta"
         },
     ]
-
+```
 We cannot go further than this, because there is a limit of 3 to each category.
 
 From the data above, we can construct URLs to the Adobe Stock website using the `link` response fields.
