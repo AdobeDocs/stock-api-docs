@@ -184,7 +184,7 @@ You may start testing the Search APIs at any time; all that is required is a fre
 
 If you are an individual customer, go to the [Plans and Pricing](https://stock.adobe.com/plans) page to sign up for an account. Note that if you plan to sell images for print use (e.g., you have a Print on Demand business), please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) to get a quote for a Stock for Enterprise contract. If you plan to use assets only for internal use (such as for general marketing and design), then you can choose your plan accordingly.
 
-If you do not need your own account but need to sign in others using the OAuth model, refer to the [Authorization code workflow](/stock/docs/Stock-Authorization-Code-Workflow.pdf) guide. 
+If you do not need your own account but need to sign in others using the OAuth model, refer to the [Authorization code workflow](https://raw.githubusercontent.com/AdobeDocs/stock-api-docs/refs/heads/main/static/Service-Account-API-workflow.pdf) guide. 
 
 \<a id="sign-a-contract"\>\</a\>
 

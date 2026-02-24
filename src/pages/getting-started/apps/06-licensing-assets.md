@@ -340,7 +340,7 @@ Notice that one of the fields returned is the download URL, making this a conven
 https://stock.adobe.com/Download/DownloadFileDirectly/ikMRKBPqHDrtTifHkbbxGfKhIGVQPw6y?token=AccessTokenHere
 ```
 
-Note that *by default* the License History API does not return *all* history for the organization, but only for the current user and/or Stock profile. For example, if your Enterprise organization has 30 profiles (i.e., Product License Configurations, or PLCs) and you call this API, you will only get back the license history for one of the 30 profiles. The current profile is either determined by which profile you have selected in the Adobe Stock website, or by which Enterprise service account is associated with that profile--see the [Enterprise service account](/stock/docs/Service-Account-API-workflow.pdf) workflow guide for more information.
+Note that *by default* the License History API does not return *all* history for the organization, but only for the current user and/or Stock profile. For example, if your Enterprise organization has 30 profiles (i.e., Product License Configurations, or PLCs) and you call this API, you will only get back the license history for one of the 30 profiles. The current profile is either determined by which profile you have selected in the Adobe Stock website, or by which Enterprise service account is associated with that profile--see the [Enterprise service account](https://raw.githubusercontent.com/AdobeDocs/stock-api-docs/refs/heads/main/static/Service-Account-API-workflow.pdf) workflow guide for more information.
 
 To retrieve all the license history across all profiles, use the command `all=true`. Example:
 
