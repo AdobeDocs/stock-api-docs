@@ -15,8 +15,6 @@ description: Stock API Frequently Asked Questions.
 
 This guide is intended for developers migrating from Fotolia API to the Adobe Stock API.
 
-\<a id="first-steps"\>\</a\>
-
 ## First steps
 
 If you are new to using Adobe APIs, we recommend you begin by reading [Getting Started with the Adobe Stock API](https://developer.adobe.com/stock/docs/), and browse the [Adobe Stock website](https://stock.adobe.com/) to become familar with navigation, search, and the new content types available.
@@ -27,11 +25,7 @@ The most significant difference between the APIs is the authentication method. F
 
 Because the licensing workflow is different, we recommend you also review [our guide on licensing](/getting-started/apps/06-licensing-assets.md). Furthermore, unlike Fotolia, when licensing a Standard image from Stock (non-Premium and non-Editorial), you will always receive a license for the *original size*. Therefore, there is no reason for "L", "XL" and "XXL" licenses. See [Licensing changes](#licensing-changes) for specific details on the differences.
 
-\<a id="feature-mapping"\>\</a\>
-
 ## Feature mapping
-
-\<a id="endpoints"\>\</a\>
 
 ### Endpoints
 
@@ -88,8 +82,6 @@ Nearly all the Fotolia search parameters and filters are also available in Adobe
 | search_parameters[thumbnail_size]                                                                                                                                                                     | Same                                                                                                                                                                                     | Sets the desired thumbnail size in pixels                                                                                                                                              |
 | result_columns                                                                                                                                                                                        | result_columns[]                                                                                                                                                                         | Refer to the [Stock Search API Reference](/api/11-search-reference.md) for a full list of fields that can be returned. Default fields returned are mostly the same, but have slight differences.                     |
 
-\<a id="deprecated-api-methods"\>\</a\>
-
 ## Deprecated API methods
 
 The following API endpoints and methods will be deprecated in Adobe Stock API as they are either not currently being used, no longer supported, or no longer necessary. These APIs either receive no traffic, or have such low usage that they are candidates for removal.
@@ -119,11 +111,7 @@ The following API endpoints and methods will be deprecated in Adobe Stock API as
 | user.subaccount.getPurchasedContents | N/A         | Get the list of purchases made by a subaccount                            |
 | media.getLicense                     | N/A         | Get the licence between the reseller and his customer for a specific sale |
 
-\<a id="licensing-and-authentication"\>\</a\>
-
 ## Licensing and authentication
-
-\<a id="licensing-changes"\>\</a\>
 
 ### Licensing changes
 
@@ -166,19 +154,13 @@ For technical details on either workflow, see the [Stock workflow guides](/getti
 
 Both workflows result in creating an access token, which is used to identify that user (or Enterprise organization), and can be used to license assets, get license history, and authorize downloads. The token must be treated like a secret, and not be exposed to the public.
 
-\<a id="next-steps"\>\</a\>
-
 ## Next steps
 
 Now that you have an overview, check out the links below.
 
-\<a id="get-registered"\>\</a\>
-
 ### Get registered
 
 You may start testing the Search APIs at any time; all that is required is a free Adobe ID account to receive an API key. Look at [Register your application](/getting-started/02-register-app.md) for details.
-
-\<a id="get-a-stock-account"\>\</a\>
 
 ### Get a Stock account
 
@@ -186,13 +168,9 @@ If you are an individual customer, go to the [Plans and Pricing](https://stock.a
 
 If you do not need your own account but need to sign in others using the OAuth model, refer to the [Authorization code workflow](https://raw.githubusercontent.com/AdobeDocs/stock-api-docs/refs/heads/main/static/Service-Account-API-workflow.pdf) guide. 
 
-\<a id="sign-a-contract"\>\</a\>
-
 ### Sign a contract
 
 As discussed earlier, if you plan to use Adobe Stock for commercial purposes--especially for selling printed goods--please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
-
-\<a id="build-an-app"\>\</a\>
 
 ### Build an app
 

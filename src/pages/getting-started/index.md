@@ -84,8 +84,6 @@ You interact with the Adobe Stock API via HTTP requests instead of a user interf
 
 *   **Get a license history of past purchases.** In addition to allowing users to license and download content, your application can retrieve the licensing history for your users or organization, allowing download of previously purchased assets.
 
-\<a id="overview"\>\</a\>
-
 ### API workflow
 
 ![API workflow](./app-process-3-steps.png)
@@ -114,15 +112,11 @@ As you read the documentation, keep some questions in mind. Some of these will b
 *   What size and how many image thumbnails do I want to display?
 *   Do I require localization?
 
-\<a id="next-steps"\>\</a\>
-
 ## Next steps
 
 1.  Learn how to [register](/getting-started/02-register-app.md) your application on the Adobe Developer Console. You can add as many integrations as you need.
 1.  Test how your application will [authenticate](/getting-started/03-api-authentication.md) to the Adobe Stock API.
 1.  Finally, start [building](/getting-started/04-creating-apps.md) your app, test and deploy to your users!
-
-\<a id="more-topics"\>\</a\>
 
 ## More topics
 

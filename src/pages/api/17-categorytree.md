@@ -19,21 +19,16 @@ You can optionally request the results in languages other than English by using 
 
 On the other hand, keyword search *is* driven by both machine learning and by Contributor metadata. For that reason, **searching by keywords *instead of* categories is considered a best practice**, and is generally more reliable and accurate. Adobe Stock maintains this API mainly for backwards compatibility with existing applications.
 
-\<a id="category-tree-calls"\>\</a\>
-
 ## Category Tree calls
 
 | Endpoint | Methods |
 | ------------ | ------------- |
 | https://stock.adobe.io/Rest/Media/1/Search/CategoryTree | GET |
 
-\<a id="authentication"\>\</a\>
-
 ### Authentication
 
 An `Authorization` header is not required.
 
-\<a id="request-headers"\>\</a\>
 
 ### Request headers
 
@@ -41,8 +36,6 @@ See [API authentication](../getting-started/03-api-authentication.md) and [Heade
 
 *   Required headers: `x-Product`, `x-api-key`
 *   Optional headers: `Authorization`, `X-Request-Id`
-
-\<a id="url-parameters"\>\</a\>
 
 ### URL parameters
 
@@ -52,8 +45,6 @@ Pass the following parameters with a GET request.
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | locale      | Location language code. String. Default is `en_US`. See the full list of [Locales](./14-locale-codes.md). String. |
 | category_id | Optional. Unique identifier for an existing category; results are returned for this category. Integer.                                                              |
-
-\<a id="responses"\>\</a\>
 
 ## Responses
 
@@ -78,8 +69,6 @@ CategoryTree's response is returned in a JSON array that can contain multiple ca
 | id   | Unique identifier for the category. Integer.                                                                      |
 | link | Category path. The format is: \<br/\>`/Category/linkname/category_id` \<br/\>See below for example usage. String. |
 | name | Localized category name. See [Locales](./14-locale-codes.md). String.                                             |
-
-\<a id="example-requests-and-responses"\>\</a\>
 
 ## Example requests and responses
 

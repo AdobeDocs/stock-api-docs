@@ -40,8 +40,6 @@ A list of technical frequently asked questions. Don't see your question answered
   - [How do I check if the images I am selling are still available on Stock?](#how-do-i-check-if-the-images-i-am-selling-are-still-available-on-stock)
   - [How do I filter out Free content?](#how-do-i-filter-out-free-content)
 
-\<a id="general"\>\</a\>
-
 ## General
 
 ### Why is my project in a "read-only" state? Why can't I create a new Stock API integration?
@@ -55,8 +53,6 @@ Please see [Getting started](../getting-started/index.md) for more details.
 Adobe Stock uses a sequential numbering system for its assets, and currently the number type is not large enough to handle the pace of incoming new content. As a result, Stock will "run out" of numbers by the end of 2025 unless it changes to a number type that accomodates longer numbers. The current limit supported by the Stock API is 2,147,483,647 ([32-bit signed integer](https://en.wikipedia.org/wiki/2,147,483,647)), and the new limit will be 9,007,199,254,740,991 ([2⁵³ - 1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)).
 
 If your programming language or database has similar limits, you will need to update your infrastructure to accept the new limit. Otherwise, your integration could break in the future. For more information, see [Adobe Stock Content ID changes](content-id-june2025.md).
-
-\<a id="what-thumbnail-preview-sizes-are-available"\>\</a\>
 
 ### Is there a Stock Contributors API?
 
@@ -192,11 +188,7 @@ https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[words]=Flower
     ]
 ```
 
-\<a id="downloading"\>\</a\>
-
 ## Downloading
-
-\<a id="how-do-i-download-a-comp-image"\>\</a\>
 
 ### How do I download a comp image?
 
@@ -262,8 +254,6 @@ Here is an example download command using `curl`. Be sure to follow redirects (w
   curl -L 'https://stock.adobe.com/Download/DownloadFileDirectly/ikMRKBPqHDrtTifHkbbxGfKhIGVQPw6y?token=AccessTokenHere' -o myFile.jpeg
 ```
 
-\<a id="why-cant-i-download-an-asset-from-license-history"\>\</a\>
-
 ### Why can't I download an asset from license history?
 
 Adobe Stock provides access to millions of creative assets that have been submitted by our worldwide community of contributors as well as strategic content partners. In very rare situations, assets may be removed from our site. As a stock service provider, we are able to provide a downloadable copy of an asset only while it is active on our platform. We encourage all customers to download copies of assets as soon as they are licensed. Please note that, even if a licensed asset is removed from our site, your license is still valid in perpetuity (subject to the licensing terms) and that your License History will continue to display when the asset was licensed.
@@ -312,8 +302,6 @@ Be aware that if you do enable the integration and you download CC Pro assets to
 
 ### How can I detect assets from the CC Pro plan in my license history?
 The current version of the License History API cannot differentiate between CC Pro Extended licenses and perpetual Extended licenses. This makes tracking of Stock Pro assets more difficult and creates compliance risk discussed in the question above, [Why can’t I create a JWT Service Account for my CC Pro subscription?](/faq/index.md#why-cant-i-create-a-jwt-service-account-for-my-cc-pro-subscription)
-
-\<a id="how-do-i-add-license-references"\>\</a\>
 
 ### How do I add license references?
 
@@ -385,11 +373,7 @@ Note that the sample command in the documentation sets the expiration to 365 day
 
 You can set the value `-days` to whatever you want.
 
-\<a id="print-on-demand"\>\</a\>
-
 ## Print on Demand (POD)
-
-\<a id="how-do-you-license-assets-more-than-once"\>\</a\>
 
 ### How do you license assets more than once?
 
@@ -420,8 +404,6 @@ If using the Stock SDK for PHP, add `license_again` to the request object.
 ### Why do I see Premium and Video in my search results if I don't have credits?
 
 Premium assets are included in search results by default. In fact, the default API search includes *all asset types* (except Editorial--see below). Further, to increase performance, search requests are designed to be anonymous, not requiring authentication. Therefore it is not possible for the Search API to know all your contract details and entitlements when you perform a search--this would slow down the search. Therefore, if you don't have rights to these assets and don't want to see them in search results, you will need to filter them out. See next question, below.
-
-\<a id="how-do-i-filter-out-premium-content"\>\</a\>
 
 ### How do I filter out Premium content?
 
@@ -484,8 +466,6 @@ X-API-Key: YourApiKeyHere
 ```
 
 For more details, see [Search API reference](/api/11-search-reference.md).
-
-\<a id="how-do-i-check-if-the-images-i-am-selling-are-still-available-on-stock"\>\</a\>
 
 ### How do I check if the images I am selling are still available on Stock?
 

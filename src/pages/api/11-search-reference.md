@@ -15,8 +15,6 @@ description: Stock Search API reference
 
 You can query Adobe Stock for assets that meet your specified search criteria. You can filter the results, specify the sort order in which the results are returned, and choose how many assets to return for each page of results.
 
-\<a id="search-requests"/\>\</a\>
-
 ## Search requests
 
 A request using the Stock Search API retrieves a list of assets from Adobe Stock that matches a set of search and filter values. A maximum of 100 assets can be returned from one request. This is a paginated interface that you can call multiple times to retrieve the full list.
@@ -26,8 +24,6 @@ For a guide to usage and additional examples, see [Creating Adobe Stock applicat
 | Endpoint                                         | Methods                                                 |
 | ------------------------------------------------ | ------------------------------------------------------- |
 | https://stock.adobe.io/Rest/Media/1/Search/Files | GET, POST (only when using the similar_image parameter) |
-
-\<a id="about-search-and-filter-criteria"/\>\</a\>
 
 ### About search and filter criteria
 
@@ -87,15 +83,11 @@ Chain together multiple `result_columns[]` commands to get exactly the results y
 
 See [Responses](#responses), below.
 
-\<a id="authentication"/\>\</a\>
-
 ### Authentication
 
 An `Authorization` header is not required. If you do not pass a valid bearer token in the Authorization header, you can search within Adobe Stock and access preview versions of assets, but the API will not return licensing requirements or give you the licensed status for the assets. Requests made in this way are essentially anonymous, with no notion of the user making the request.
 
 If you do pass a valid token, then the Adobe Stock service returns the license state and licensed URL for each asset. See [API authentication](../getting-started/03-api-authentication.md).
-
-\<a id="request-headers"/\>\</a\>
 
 ### Request headers
 
@@ -103,8 +95,6 @@ See [API authentication](../getting-started/03-api-authentication.md) and [Heade
 
 - Required headers: `x-Product`, `x-api-key`
 - Optional headers: `Authorization` (required to view license state), `X-Request-Id`
-
-\<a id="url-parameters"/\>\</a\>
 
 ### URL parameters
 
@@ -156,7 +146,6 @@ Pass the following URL parameters with the GET request.
 | search_parameters[filters][icon_option][]             | Use to filter/exclude is_icon_sheet and is_single_icon content. The supported values are: * `icon_sheet` * `single_icon` * `icon_sheet, single_icon` * `-icon_sheet` * `-single_icon` * `-icon_sheet, -single_icon` Example: `result_columns[]=icon_option&search_parameters[filters][icon_option][]=icon_sheet&search_parameters[filters][icon_option][]=-single_icon`                                                                                                                                                                                                                                                                                                 |
 | result_columns[]                                      | Specific fields you wish to include in the search result, excluding all other fields. Array[]. For a detailed description of each field, see [Responses](#responses), below. **Tip:** To combine result columns, use this syntax: `result_columns[]=title&result_columns[]=keywords` **Note 1:** Fields marked with **\*** are returned by default, but if the `result_columns[]` command is present, the default fields will not be returned unless explicitly included. **Note 2:** `is_licensed` requires an authentication header. `*nb_results` ｜ `*id` ｜ `*title` ｜ `*creator_name` ｜ `*creator_id` ｜ `country_name` ｜ `*width` ｜ `*height` ｜ `*thumbnail_url` ｜ `*thumbnail_html_tag` ｜ `*thumbnail_width` ｜ `*thumbnail_height` ｜ `thumbnail_110_url` ｜ `thumbnail_110_width` ｜ `thumbnail_110_height` ｜ `thumbnail_160_url` ｜ `thumbnail_160_width` ｜ `thumbnail_160_height` ｜ `thumbnail_220_url` ｜ `thumbnail_220_width` ｜ `thumbnail_220_height` ｜ `thumbnail_240_url` ｜ `thumbnail_240_width` ｜ `thumbnail_240_height` ｜ `thumbnail_500_url` ｜ `thumbnail_500_width` ｜ `thumbnail_500_height` ｜ `thumbnail_1000_url` ｜ `thumbnail_1000_width` ｜ `thumbnail_1000_height` ｜ `*media_type_id` ｜ `*category` ｜ `*category_hierarchy` ｜ `keywords` ｜ `has_releases` ｜ `comp_url` ｜ `comp_width` ｜ `comp_height` ｜ `is_licensed` ｜ `*vector_type` ｜ `*content_type` ｜ `framerate` ｜ `duration` ｜ `comps` ｜ `details_url` ｜ `template_type_id` ｜ `template_category_ids` ｜ `marketing_text` ｜ `description` ｜ `size_bytes` ｜ `*premium_level_id` ｜ `is_premium` ｜ `is_loop` ｜ `is_transparent` ｜ `licenses` ｜ `video_preview_url` ｜ `video_preview_width` ｜ `video_preview_height` ｜ `video_preview_content_length` ｜ `video_preview_content_type` ｜ `video_small_preview_url` ｜ `video_small_preview_width` ｜ `video_small_preview_height` ｜ `video_small_preview_content_length` ｜ `video_small_preview_content_type` ｜ `is_gentech` ｜ `icon_option` |
 
-\<a id="responses"\>\</a\>
 
 ## Responses
 
@@ -169,8 +158,6 @@ The Adobe Stock Search service returns information about all found assets that a
 <Fragment src="./search-files-responses.md" />
 
 \<!-- End include --\>
-
-\<a id="example-queries-and-responses" \>\</a\>
 
 ## Example queries and responses
 
@@ -236,8 +223,6 @@ The preceding request returns two asset descriptions. `nb_results` shows that 39
 }
 ```
 
-\<a id="common-search-queries"\>\</a\>
-
 ### Common search queries
 
 Here are simple examples of common searches.
@@ -278,8 +263,6 @@ Here are simple examples of common searches.
   https://stock.adobe.io/Rest/Media/1/Search/Files?search_parameters[model_id]=58344279&locale=en_US
 ```
 
-\<a id="error-codes"\>\</a\>
-
 ## Error codes
 
 Each error generates a JSON array that contains the following keys and values. If your application receives this array and you need assistance, send the array to Adobe.
@@ -292,7 +275,6 @@ Each error generates a JSON array that contains the following keys and values. I
   - `31`: Invalid Method. The method that you specified does not exist in the method list.
   - `100`: Invalid data. Data that you specified as arguments are not supported.
 
-\<a id="more-information"\>\</a\>
 
 ## More information
 

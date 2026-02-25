@@ -75,8 +75,6 @@ The creation of tokens is beyond the scope of this article, however it is covere
 
 For complete information about creating access tokens, see the Adobe I/O [API Authentication Guide](https://developer.adobe.com/developer-console/docs/guides/authentication/). Here you will also find examples of creating JWTs using Java and Node.js.
 
-\<a id="important-use-the-correct-scope-in-your-jwt"\>\</a\>
-
 ### Important: Use the correct scope in your JWT
 
 Please note that if you are following the Service Account workflow, the Adobe I/O API Authentication Guide (above) uses a different scope in its sample JWT payload than the one required by the Stock API. The correct scope for your application is listed in the **JWT** tab of the Adobe Developer Console, and it will include your proper payload.

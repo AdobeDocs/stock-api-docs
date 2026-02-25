@@ -15,8 +15,6 @@ The Files API is used to retrieve metadata from Adobe Stock, either one asset at
 --\>
 \<!-- /MarkdownTOC --\>
 
-\<a id="files-requests"\>\</a\>
-
 ## Files requests
 
 The Files API returns a JSON-formatted list of metadata attributes for a given list of Stock asset IDs.
@@ -25,13 +23,9 @@ The Files API returns a JSON-formatted list of metadata attributes for a given l
 |-----------|---------|
 | https://stock.adobe.io/Rest/Media/1/Files | GET |
 
-\<a id="authentication"\>\</a\>
-
 ### Authentication
 
 Optional. The Authorization header is only required for retrieving the `is_licensed` field.
-
-\<a id="request-headers"\>\</a\>
 
 ### Request headers
 
@@ -40,8 +34,6 @@ See [Headers for Stock API Calls](/api/10-headers-for-api-calls.md) for details 
 * Required headers: `x-Product`, `x-api-key`, `Authorization`
 * Optional headers: `X-Product-Location`, `X-Request-Id`
 
-\<a id="url-parameters"\>\</a\>
-
 ### URL parameters
 
 | Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -49,8 +41,6 @@ See [Headers for Stock API Calls](/api/10-headers-for-api-calls.md) for details 
 | ids | Comma-separated list of file IDs, e.g. `ids=100,101`. Maximum number of IDs is 110. Exceeding this limit triggers an error. String.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | locale | Optional. Location language code for the API to use when returning localized messages. The API can usually get the user's default locale through the Authorization header. This value overrides that or provides a locale if not available through Authorization. String.\<br/\>\<br/\>Default is en-US. See the full list of[Locales](/api/14-locale-codes.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | result_columns[] | Optional. Fields to include in response. Note that some fields (e.g., `is_licensed`) require an authorization token. Array[].\<br/\>\<br/\>**✅Tip1:** To combine results, use this syntax: `result_columns[]=title&result_columns[]=creation_date`\<br/\>**✅Tip2:** `nb_results` will return the number of files that exist. Use this to determine if a set of content IDs are still available.\<br/\>\<br/\>By default, only `id` is returned.\<br/\>\<br/\>`id :: nb_results :: title :: creator_name :: creator_id :: country_name :: width :: height :: thumbnail_url :: thumbnail_html_tag :: thumbnail_width :: thumbnail_height :: thumbnail_110_url :: thumbnail_110_width :: thumbnail_110_height :: thumbnail_160_url :: thumbnail_160_width :: thumbnail_160_height :: thumbnail_220_url :: thumbnail_220_width :: thumbnail_220_height :: thumbnail_240_url :: thumbnail_240_width :: thumbnail_240_height :: thumbnail_500_url :: thumbnail_500_width :: thumbnail_500_height :: thumbnail_1000_url :: thumbnail_1000_width :: thumbnail_1000_height :: media_type_id :: category :: category_hierarchy :: keywords :: has_releases :: comp_url :: comp_width :: comp_height :: is_licensed :: vector_type :: content_type :: framerate :: duration :: comps :: details_url :: template_type_id :: template_category_ids :: marketing_text :: description :: size_bytes :: premium_level_id :: is_premium :: is_loop :: is_transparent :: licenses :: video_preview_url :: video_preview_width :: video_preview_height :: video_preview_content_length :: video_preview_content_type :: video_small_preview_url :: video_small_preview_width :: video_small_preview_height :: video_small_preview_content_length :: video_small_preview_content_type :: is_gentech :: icon_option` |
-
-\<a id="responses"\>\</a\>
 
 ## Responses
 
@@ -61,8 +51,6 @@ The response for any given request is dependent on the value of the `result_colu
 <Fragment src="./search-files-responses.md" />
 
 \<!-- End include --\>
-
-\<a id="example-requests-and-responses"\>\</a\>
 
 ## Example requests and responses
 
@@ -127,8 +115,6 @@ x-api-key: MyApiKey
 }
 ```
 
-\<a id="error-handling"\>\</a\>
-
 ## Error handling
 
 If any error is encountered, the response will be a JSON object containing the key `error` with a textual description of the error and the key `code` with a numeric identifier for the error.
@@ -142,8 +128,6 @@ If any error is encountered, the response will be a JSON object containing the k
 | 400 | 604 | Unrecognized query parameter received. |
 | 404 | 605 | Unknown id in supplied `ids` parameter |
 | 400 | 606 | More than 110 IDs supplied for `ids` parameter |
-
-\<a id="example-invalid-requests-and-error-responses"\>\</a\>
 
 ### Example invalid requests and error responses
 
