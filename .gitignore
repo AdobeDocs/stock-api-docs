@@ -47,3 +47,6 @@ yalc.lock
 
 # json files
 adp-site-metadata.json
+
+#.txt
+linter-report.txt
