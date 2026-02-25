@@ -377,7 +377,7 @@ To learn how to add or edit license reference fields, see [Edit a product profil
 
 Enterprise service accounts use JWT files instead of OAuth logins to retrieve access tokens. Occasionally, there will be errors in the workflow, often because the fields in the JWT do not match the fields in Adobe I/O. For a list of error codes, see [JWT authentication](https://developer.adobe.com/developer-console/docs/guides/authentication/JWT/).
 
-However, if your JWT is working one day and suddenly fails the next, the most likely cause is that your public key certificate *has expired*. If it has, all you need to do is create a new one and upload to Adobe I/O on the same integration page. Nothing will need to change in your configuration, except make sure you are pointing to the correct private key file. See page 4 of the [Enterprise service account](https://raw.githubusercontent.com/AdobeDocs/stock-api-docs/refs/heads/main/static/Service-Account-API-workflow.pdf.pdf) workflow guide.
+However, if your JWT is working one day and suddenly fails the next, the most likely cause is that your public key certificate *has expired*. If it has, all you need to do is create a new one and upload to Adobe I/O on the same integration page. Nothing will need to change in your configuration, except make sure you are pointing to the correct private key file. See page 4 of the [Enterprise service account](https://raw.githubusercontent.com/AdobeDocs/stock-api-docs/refs/heads/main/static/Service-Account-API-workflow.pdf) workflow guide.
 
 Note that the sample command in the documentation sets the expiration to 365 days (1 year):
 
