@@ -11,7 +11,7 @@ title: Stock API reference
 description: Adobe Stock API reference documentation
 ---
 
-<!-- 09-api-summary.md -->
+\<!-- 09-api-summary.md --\>
 
 # Adobe Stock API reference
 

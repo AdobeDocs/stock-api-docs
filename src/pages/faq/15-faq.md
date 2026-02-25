@@ -11,6 +11,4 @@ title: Stock API FAQs and supplemental info
 description: Stock API Frequently Asked Questions.
 ---
 
-import FAQ from './index.md'
-
-<FAQ />
+<Fragment src="./index.md"/>

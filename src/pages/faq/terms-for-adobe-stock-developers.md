@@ -13,6 +13,6 @@ description: Stock API Frequently Asked Questions.
 
 # Terms for Adobe Stock Developers
 
-See http://www.adobe.com/go/developer-terms.
+See [http://www.adobe.com/go/developer-terms](http://www.adobe.com/go/developer-terms).
 
-Source: https://www.adobe.com/legal/terms.html.
+Source: [https://www.adobe.com/legal/terms.html](https://www.adobe.com/legal/terms.html).

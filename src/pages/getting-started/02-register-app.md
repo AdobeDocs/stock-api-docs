@@ -49,10 +49,10 @@ For information on administering the Enterprise organization using the Admin Con
 Based on your business case, this table shows which integration type would best apply to your application. For a description of each business case, see [What are the different use cases for the Adobe Stock API?](#what-are-the-different-use-cases-for-the-adobe-stock-api)
 
 || **Service Account** | **OAuth** | **API Key only** |
-|----|:----:|:----:|:----:|
-| **Enterprise** | X | X<sup>[1](#note-1)</sup> |||
-| **DAM** | X | X<sup>[1](#note-1)</sup> |||
-| **Marketing Platforms** | X<sup>[2](#note-2)</sup> | X |||
+|----|:----:|:----:|----|
+| **Enterprise** | X | X [¹](#note-1) ||
+| **DAM** | X | X [¹](#note-1) ||
+| **Marketing Platforms** | X [²](#note-2) | X ||
 | **POD/Retail** | X |||
 | **Affiliates** ||| X |
 

@@ -11,14 +11,14 @@ title: Stock API FAQs and supplemental info
 description: Stock API Frequently Asked Questions.
 ---
 
-<!-- omit in toc -->
+\<!-- omit in toc --\>
 # Stock API: Business frequently asked questions
 
-A list of questions and answers for customers and partners looking to use Stock APIs, from a business perspective. For technical questions on the Stock APIs, see the [Technical FAQ](/faq/).
+A list of questions and answers for customers and partners looking to use Stock APIs, from a business perspective. For technical questions on the Stock APIs, see the [Technical FAQ](/faq/index.md).
 
 <InlineAlert variant="warning"  slots="text" />
 
-Please note that the Stock API is only open to Stock for Enterprise customers and Adobe Affiliates at this time. See [Getting started](./../getting-started/index.md) for more details. 
+Please note that the Stock API is only open to Stock for Enterprise customers and Adobe Affiliates at this time. See [Getting started](../getting-started/index.md) for more details. 
 
 - [General FAQ](#general-faq)
   - [What are the criteria for applying for the Adobe Stock API?](#what-are-the-criteria-for-applying-for-the-adobe-stock-api)
@@ -64,13 +64,13 @@ Please note that the Stock API is only open to Stock for Enterprise customers an
 
 ### What are the criteria for applying for the Adobe Stock API?
 
-Because of recent changes to our APIs, if you are not a Stock for Enterprise customer you must apply for access. Please see [Getting started](./../getting-started/index.md) for more details.
+Because of recent changes to our APIs, if you are not a Stock for Enterprise customer you must apply for access. Please see [Getting started](../getting-started/index.md) for more details.
 
 ### How can I contact Adobe Stock to discuss a business proposal or get technical assistance?
 
 If you want to discuss a partnership with Adobe Stock please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
 
-If you need technical help with your Stock API integration, please email <stockapis@adobe.com>. Please visit <https://developer.adobe.com/stock/docs/> for help resources, technical documentation and sample code.
+If you need technical help with your Stock API integration, please email [stockapis@adobe.com](stockapis@adobe.com). Please visit [https://developer.adobe.com/stock/docs/](https://developer.adobe.com/stock/docs/) for help resources, technical documentation and sample code.
 
 ### How much does it cost to access Adobe Stock API?
 
@@ -82,7 +82,7 @@ Currently we do not limit number of API requests, however we are monitoring usag
 
 ### How can I test the Search API?
 
-Create an Adobe Stock API key for free at <https://developer.adobe.com/console>.
+Create an Adobe Stock API key for free at [https://developer.adobe.com/console](https://developer.adobe.com/console).
 
 ### How can I test the Licensing API?
 
@@ -90,7 +90,7 @@ Please contact your Adobe account representative or [request a callback from the
 
 ### Where I can find a technical reference?
 
-<https://developer.adobe.com/stock/docs/>
+[https://developer.adobe.com/stock/docs/](https://developer.adobe.com/stock/docs/)
 
 ### What standard size previews are available via the API?
 
@@ -118,9 +118,9 @@ You can find technical resources [here](/faq/18-fotolia-migration-resources.md).
 
 There are two essential documents:
 
-  - Adobe Developer terms <http://www.adobe.com/go/developer-terms>
+  - Adobe Developer terms [http://www.adobe.com/go/developer-terms](http://www.adobe.com/go/developer-terms)
 
-  - Adobe Stock terms: <http://www.adobe.com/go/stockterms>
+  - Adobe Stock terms: [http://www.adobe.com/go/stockterms](http://www.adobe.com/go/stockterms)
 
 Please note that depending on your use case (see sections below), an additional contract may be required.
 
@@ -157,7 +157,7 @@ You can implement the Search API and display search results from the Adobe Stock
 
 \* Licenses must be from Enterprise licenses under _the Enterprise account model_.
 
-Consumer image subscriptions (subscription plans available at: <https://stock.adobe.com/plans> and https://stock.adobe.com/teams) **cannot be used** for print on demand, nor can "unlimited" Stock subscriptions included in Creative Cloud Pro/Plus agreements.
+Consumer image subscriptions (subscription plans available at: [https://stock.adobe.com/plans](https://stock.adobe.com/plans) and [https://stock.adobe.com/teams](https://stock.adobe.com/teams)) **cannot be used** for print on demand, nor can "unlimited" Stock subscriptions included in Creative Cloud Pro/Plus agreements.
 
 ### What type of assets can I access by using Adobe Stock API for print on demand?
 
@@ -165,7 +165,7 @@ Technically, the API will give access to any kind of asset, including Premium, V
 
 However, from a legal standpoint, Print on Demand customers may access __only Standard assets__ and must therefore *filter out* Premium content and other non-Standard asset types. If you need access to other types of content in your application, please contact your Adobe account representative or [request a callback](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi).
 
-To filter out Premium content from Stock API search results, see the [Stock API FAQ](/faq/).
+To filter out Premium content from Stock API search results, see the [Stock API FAQ](/faq/index.md).
 
 ### What are online examples of the Adobe Stock API Print on Demand use case?
 
@@ -184,9 +184,9 @@ Yes. Please contact your Adobe account representative or [request a callback](ht
 ### Is there any software with build-in support or software developers specialized in integrating Adobe Stock API for Print-on-demand?
 
 * ResetPro: [https://reset.pro/](https://reset.pro/?lang=8) 
-<!--
+\<!--
   * Learn more at: ["How the Adobe Stock API is Helping Nikkel Art Thrive in the Print-on-Demand Industry"](https://medium.com/adobetech/how-the-adobe-stock-api-is-helping-nikkel-art-thrive-in-the-print-on-demand-industry-c4793e8cd5cd)
--->
+--\>
 * Durst Smart Shop: https://durst-professional-services.com/en/smart-shop
 * OnPrintShop: https://www.onprintshop.com/
 
@@ -272,11 +272,11 @@ High commission: $72 when referred user subscribe to a plan with minimum 10 imag
 
 Cross marketing opportunity. Earn when your referred users purchase one of other Adobe products: Creative Cloud and Document Cloud.
 
-<!--
+\<!--
 ### Are there any example scripts to get started?
 
 See the Medium article, “[Get Paid to Search Adobe Stock](https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312).”
--->
+--\>
 
 ### Are there any examples of Adobe Stock API Affiliates use cases available online?
 

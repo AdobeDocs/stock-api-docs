@@ -11,8 +11,8 @@ title: Stock APIs
 description: Getting started with the Adobe Stock API. Build an API application to access millions of royalty-free stock images, photos, graphics, vectors, video footage, illustrations, templates, 3d assets, editorial assets and high-quality premium content.
 ---
 
-<!-- 01-getting-started.md -->
-<!-- omit in toc -->
+\<!-- 01-getting-started.md --\>
+\<!-- omit in toc --\>
 
 # Getting started with the Adobe Stock API
 
@@ -42,9 +42,9 @@ Approval is not required for Stock for Enteprise customers unless you need to cr
 
 You may email [the Stock API team](mailto:stockapis@adobe.com) with questions.
 
-<!--
+\<!--
 To request approval: Go to https://www.adobeprerelease.com and join the "Adobe Stock API" program. As noted, if you have been approved to join the Adobe Affiliate program, then you should be approved to use the Stock API. 
--->
+--\>
 
 ## Do I have Stock for Enterprise?
 
@@ -64,7 +64,7 @@ While most Adobe Affiliates display banner advertising on their websites, affili
   *  To join the Adobe Affiliate Program, go here: [https://www.adobe.com/affiliates.html](https://www.adobe.com/affiliates.html).
   *  For an in-depth use case, see [Get Paid to Search Adobe Stock!](https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312)
 
-See the [Affiliates FAQ](faq/stock-api-business-faq.md#affiliates-faq) for more information.
+See the [Affiliates FAQ](/faq/stock-api-business-faq.md#affiliates-faq) for more information.
 
 Note that you will still need to join the [Stock API Prerelease program](https://www.adobeprerelease.com) as well as join the Adobe Affiliate program.
 
@@ -84,8 +84,6 @@ You interact with the Adobe Stock API via HTTP requests instead of a user interf
 
 *   **Get a license history of past purchases.** In addition to allowing users to license and download content, your application can retrieve the licensing history for your users or organization, allowing download of previously purchased assets.
 
-<a id="overview"></a>
-
 ### API workflow
 
 ![API workflow](./app-process-3-steps.png)
@@ -96,7 +94,7 @@ At its simplest, all Stock API integrations include these steps:
 1.  Determine the authentication method from your use case and build appropriate headers.
 1.  Build and deploy your application using Stock APIs.
 
-<a id="design-phase"></a>
+\<a id="design-phase"\>\</a\>
 
 ### Design phase
 
@@ -114,15 +112,11 @@ As you read the documentation, keep some questions in mind. Some of these will b
 *   What size and how many image thumbnails do I want to display?
 *   Do I require localization?
 
-<a id="next-steps"></a>
-
 ## Next steps
 
 1.  Learn how to [register](/getting-started/02-register-app.md) your application on the Adobe Developer Console. You can add as many integrations as you need.
 1.  Test how your application will [authenticate](/getting-started/03-api-authentication.md) to the Adobe Stock API.
 1.  Finally, start [building](/getting-started/04-creating-apps.md) your app, test and deploy to your users!
-
-<a id="more-topics"></a>
 
 ## More topics
 
@@ -130,4 +124,4 @@ If you have already performed most of the tasks above or are in the middle of an
 
 *   Review the detailed [workflow guides](/getting-started/07-workflow-guides.md), which gives information on everything you need for a particular use case.
 *   Get [sample code and download SDKs](/getting-started/08-sample-code-sdks.md) from GitHub.
-*   Read complete reference details for all API calls, call headers, and locales in the [Adobe Stock API Reference](/api/).
+*   Read complete reference details for all API calls, call headers, and locales in the [Adobe Stock API Reference](/api/index.md).
