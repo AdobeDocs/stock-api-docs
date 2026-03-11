@@ -1,10 +1,11 @@
 {
-  "name": "dev-docs-template",
+  "private": true,
+  "name": "stock-api-docs",
   "version": "1.0.0",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AdobeDocs/dev-docs-template"
+    "url": "https://github.com/AdobeDocs/stock-api-docs"
   },
   "author": {
     "name": "Tim Kim",
