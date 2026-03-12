@@ -45,8 +45,6 @@ local-test.yml
 .yalc
 yalc.lock
 
-# json files
-adp-site-metadata.json
-
-#.txt
+#txt
+linter-output.txt
 linter-report.txt
