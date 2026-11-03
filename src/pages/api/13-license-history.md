@@ -1,19 +1,18 @@
-# License History Reference
+# License History Reference (legacy)
 
-\<!-- MarkdownTOC --\>
+- [License History Reference (legacy)](#license-history-reference-legacy)
+  - [License History calls](#license-history-calls)
+    - [Authentication](#authentication)
+    - [Request headers](#request-headers)
+    - [URL parameters](#url-parameters)
+  - [Responses](#responses)
+  - [Example requests and responses](#example-requests-and-responses)
+    - [Simple example](#simple-example)
+    - [Example fetching all history and using pagination](#example-fetching-all-history-and-using-pagination)
 
-*   [License History calls](#license-history-calls)
-    *   [Authentication](#authentication)
-    *   [Request headers](#request-headers)
-    *   [URL parameters](#url-parameters)
-*   [Responses](#responses)
-*   [Example requests and responses](#example-requests-and-responses)
-    *   [Simple example](#simple-example)
-    *   [Example fetching all history and using pagination](#example-fetching-all-history-and-using-pagination)
+The legacy License History API is used to retrieve past license history. For information on licensing Adobe Stock content, see [Licensing Stock assets](../getting-started/apps/06-licensing-assets.md).
 
-\<!-- /MarkdownTOC --\>
-
-The License History API is used to retrieve past license history. For information on licensing Adobe Stock content, see [Licensing Stock assets](../getting-started/apps/06-licensing-assets.md).
+This page describes the legacy endpoint for license history. It is intended for customers with small histories or if you only need to retrieve the most recent license records, since it can only pull in reverse chronological order. For more robust needs in which you need to export a large set of records, use the [License History CSV API](license-history-report-csv-api.md) instead.
 
 ## License History calls
 
