@@ -1,7 +1,7 @@
 {
-  "total": 28,
+  "total": 30,
   "offset": 0,
-  "limit": 28,
+  "limit": 30,
   "data": [
     {
       "page": "/",
@@ -56,12 +56,12 @@
     {
       "page": "/api/13-license-history",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/28663652?v=4",
+        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/651224?v=4",
         "https://avatars.githubusercontent.com/u/57922?v=4"
       ],
-      "lastUpdated": "2/25/2026"
+      "lastUpdated": "11/3/2026"
     },
     {
       "page": "/api/14-locale-codes",
@@ -90,6 +90,13 @@
       "lastUpdated": "2/25/2026"
     },
     {
+      "page": "/api/license-history-report-csv-api",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/28663652?v=4"
+      ],
+      "lastUpdated": "11/3/2026"
+    },
+    {
       "page": "/api/search-files-responses",
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4",
@@ -100,9 +107,10 @@
     {
       "page": "/config",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/28663652?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/25/2026"
+      "lastUpdated": "11/3/2026"
     },
     {
       "page": "/faq/",
@@ -146,6 +154,13 @@
         "https://avatars.githubusercontent.com/u/28663652?v=4"
       ],
       "lastUpdated": "2/25/2026"
+    },
+    {
+      "page": "/faq/set-up-integration-for-license-history-csv-api",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/28663652?v=4"
+      ],
+      "lastUpdated": "11/3/2026"
     },
     {
       "page": "/faq/stock-api-business-faq",
