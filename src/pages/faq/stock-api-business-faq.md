@@ -171,7 +171,7 @@ To filter out Premium content from Stock API search results, see the [Stock API 
 
 ### What are online examples of the Adobe Stock API Print on Demand use case?
 
-* https://nikkel-art.com
+* https://www.nikkel-art.pro/
 * https://www.wallsauce.com/
 
 
@@ -189,7 +189,7 @@ Yes. Please contact your Adobe account representative or [request a callback](ht
 \<!--
   * Learn more at: ["How the Adobe Stock API is Helping Nikkel Art Thrive in the Print-on-Demand Industry"](https://medium.com/adobetech/how-the-adobe-stock-api-is-helping-nikkel-art-thrive-in-the-print-on-demand-industry-c4793e8cd5cd)
 --\>
-* Durst Smart Shop: https://durst-professional-services.com/en/smart-shop
+* Durst Smart Shop: https://durstus.com/smart-shop/
 * OnPrintShop: https://www.onprintshop.com/
 
 ## Enterprise FAQ

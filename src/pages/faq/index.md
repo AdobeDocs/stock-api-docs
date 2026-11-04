@@ -75,7 +75,7 @@ See the [Search API reference](/api/11-search-reference.md).
 ### Why don't all assets show up in Search API results?
 Because of because decisions, it is expected behavior that some assets will be hidden from search results. This can include:
 
-*   Editorial: https://stock.adobe.com/editorial
+*   Editorial: https://stock.adobe.com/search?k=editorial+use+only
 *   Audio: https://stock.adobe.com/audio
 *   Free: https://stock.adobe.com/free
 

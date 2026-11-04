@@ -169,7 +169,7 @@ And get back our filtered results:
 }
 ```
 
-Since the Adobe Stock collection is constantly evolving, the result you get may be very different, but you will get back something. Now let's create a simple HTML snippet for our "application" and we're done. See the awesome results [here](https://cfsdemos.worldsecuresystems.com/stock/api/simple_app_result.html)!
+Since the Adobe Stock collection is constantly evolving, the result you get may be very different, but you will get back something. Now let's create a simple HTML snippet for our "application" and we're done. 
 
 ```html
 <h1>Young puppy listening to music on a head set.</h1>

@@ -117,7 +117,7 @@ The following API endpoints and methods will be deprecated in Adobe Stock API as
 
 Adobe Stock has a flexible licensing system that allow individual and team customers to purchase image licensing subscriptions as well as "universal" credit packs which can be used to license any asset. Enterprise customers typically have a quota of licenses that is not fixed; they can exceed their quota and simply pay the same negotiated rate for additional credits.
 
-For more information on consumer (non-Enterprise) plans, see [Adobe Stock pricing and membership plans](https://stock.adobe.com/plans). For information on Stock for Enterprise, see [this page](https://landing.adobe.com/en/na/products/creative-cloud/ctir-4625-stock-for-enterprise/index.html) for details.
+For more information on consumer (non-Enterprise) plans, see [Adobe Stock pricing and membership plans](https://stock.adobe.com/plans). For information on Stock for Enterprise, see [this page](https://www.adobe.com/creativecloud/business/enterprise.html#creativecloud-rfi) for details.
 
 Unlike Fotolia, all Standard assets require one license or credit to purchase, regardless of size. "Standard" assets include non-Premium photos, illustrations and vectors. Each Standard license gives access to the full resolution of the original asset. Other asset types may require multiple credits to purchase, and may come in different sizes. Extended licenses are also available for assets; see [License information and Terms of Use](https://stock.adobe.com/license-terms).
 
